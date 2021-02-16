@@ -8,7 +8,7 @@
 	<insert id="InsertData" parameterType="MyMember">
 	insert into members(MID , PASSWORD , NAME , EMAIL , PHONE , ZIPCODE, ADDRESS1 , ADDRESS2 , GENDER ,
                     BIRTH , MPOINT , CREATEDATE )
-	VALUES (#{id}, #{password}, #{name}, #{email}, #{phone}, #{zipcode}, #{address1}, #{address2}, #{gender}, 
+	VALUES (#{mid}, #{password}, #{name}, #{email}, #{phone}, #{zipcode}, #{address1}, #{address2}, #{gender}, 
 					#{birth}, #{mpoint}, sysdate)
 	</insert>
 
