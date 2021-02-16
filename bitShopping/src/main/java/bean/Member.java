@@ -12,7 +12,7 @@ public class Member {
 	private final String MUST_INPUT = "필수 입력 사항입니다." ;	
 	
 	@Length(min=3, max=10, message="아이디는 최소 4자리 최대 15자리 입니다.")
-	private String id ;
+	private String mid ;
 	
 	@Length(min=4, max=10, message="비밀번호는 최소 4자리 최대 10자리 입니다.")
 	private String password ;
@@ -50,7 +50,7 @@ public class Member {
 
 	@Override
 	public String toString() {
-		return "Member [MUST_INPUT=" + MUST_INPUT + ", id=" + id + ", password=" + password + ", name=" + name
+		return "Member [MUST_INPUT=" + MUST_INPUT + ", mid=" + mid + ", password=" + password + ", name=" + name
 				+ ", email=" + email + ", phone=" + phone + ", zipcode=" + zipcode + ", address1=" + address1
 				+ ", address2=" + address2 + ", gender=" + gender + ", birth=" + birth + ", mpoint=" + mpoint
 				+ ", createdate=" + createdate + "]";
@@ -58,10 +58,10 @@ public class Member {
 
 
 
-	public Member(String id, String password, String name, String email, String phone, String zipcode, String address1,
+	public Member(String mid, String password, String name, String email, String phone, String zipcode, String address1,
 			String address2, String gender, String birth, int mpoint, String createdate) {
 		super();
-		this.id = id;
+		this.mid = mid;
 		this.password = password;
 		this.name = name;
 		this.email = email;
@@ -77,14 +77,14 @@ public class Member {
 
 
 
-	public String getId() {
-		return id;
+	public String getMid() {
+		return mid;
 	}
 
 
 
-	public void setId(String id) {
-		this.id = id;
+	public void setMid(String mid) {
+		this.mid = mid;
 	}
 
 
