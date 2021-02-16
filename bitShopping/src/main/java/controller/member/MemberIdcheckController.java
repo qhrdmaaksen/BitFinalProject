@@ -43,7 +43,7 @@ public class MemberIdcheckController extends SuperClass{
 		
 		//isCheck의 값이 true면 사용 가능한 아이디
 		if (bean != null) { // 회원이 존재 함
-			if(bean.getId().equalsIgnoreCase("admin")) { // 관리자인 경우
+			if(bean.getMid().equalsIgnoreCase("admin")) { // 관리자인 경우
 				this.mav.addObject("message", id + " 은 <b>사용 불가능한</b> 아이디 입니다.<br><font color='red'><b>관리자</b></font>를 위한 아이디 입니다.") ;
 				this.mav.addObject("isCheck", false) ;
 			}else {

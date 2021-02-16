@@ -146,7 +146,7 @@
 				
 				<c:forEach var="bean" items="${requestScope.lists}">
 					<tr>
-						<td>${bean.id}</td>
+						<td>${bean.mid}</td>
 						<td>
 								${bean.name}
 						</td>

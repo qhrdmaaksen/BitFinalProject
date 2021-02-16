@@ -64,7 +64,7 @@ public class InsertController extends SuperClass{
 			@Valid Member member,
 			BindingResult errors){
 		
-		System.out.println(member.getId());
+		System.out.println(member.getMid());
 		System.out.println(member.getMpoint());
 		
 		if (errors.hasErrors()) {
