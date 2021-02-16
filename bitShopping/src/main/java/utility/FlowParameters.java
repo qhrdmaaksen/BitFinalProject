@@ -1,4 +1,4 @@
-package controller.member;
+package utility;
 
 public class FlowParameters {
 	// 페이징 처리 관련 변수들
