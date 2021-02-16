@@ -67,7 +67,6 @@ public class InsertController extends SuperClass{
 		System.out.println(member.getMid());
 		System.out.println(member.getMpoint());
 		
-		
 		if (errors.hasErrors()) {
 			System.out.println("유효성 검사에 문제가 있습니다.");
 			this.mav.setViewName(super.getpage); 
