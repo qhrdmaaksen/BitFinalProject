@@ -11,7 +11,6 @@ public class Member {
 	
 	private final String MUST_INPUT = "필수 입력 사항입니다." ;	
 	
-	@NotEmpty(message="아이디는 최소 4자리 최대 15자리 입니다.")
 	@Length(min=3, max=10, message="아이디는 최소 4자리 최대 15자리 입니다.")
 	private String mid ;
 	

@@ -1,49 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ page import="java.util.*" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<!-- 부트 스트랩 -->
+<%@ include file="./../common/common.jsp" %>
 
-<%!
-	String YesForm = null ;
-	String NoForm = null ;
-%>
-<%
-	String contextPath = request.getContextPath() ;
-	String mappingName = "/controller"; //서블릿에 정의되어 있슴
-	
-	//폼 태그에서 사용할 변수
-	//YesForm = contextPath + mappingName ;
-	
-	//폼이 아닌 곳에서 사용할 변수
-	//NoForm = contextPath + mappingName + "?command=" ;
-%>
 
-<%
-	//out.print( "YesForm : " + YesForm + "<br>") ;
-	//out.print( "NoForm : " + NoForm + "<br>") ;
-
-%>
-<%!
-	String MakeCommand(String ... args){
-		if( args.length == 0 ){
-			return YesForm  ;
-		}else if( args.length == 1 ){
-			return YesForm + "?command=" + args[0]   ;	
-		}else{
-			String imsi = args[1] ;
-			return YesForm + "?command=" + args[0] + "&" + imsi  ;
-		}
-	}
-%>
-
-<c:set var="contextPath" value="<%=contextPath%>" scope="application"/> 
 
 <!DOCTYPE html>
 <html>
@@ -60,30 +21,10 @@
 														  		// 상태 포커스 , 스크롤 바 , 리사이즈 안되게
 			//alert('우편 번호 찾기') ;
 		}
-
 		
 		
 	</script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-	
-	
-	<style type="text/css">
-		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
-		.err{ 
-			font-size : 10pt;
-			color:red;
-			font-weight: bolder;
-		}
-		#myalert{ 
-			font-size : 15px;
-			margin-top: 7px;
-			margin-right: 20px;
-			color:black;
-		}
-	</style>	
+
 </head>
 <body>
 
@@ -109,13 +50,13 @@
 			
 			<!-- -------------------------------------------------------------------------------- -->
 			<div class="form-group">
-				<label for="id" class="col-sm-3">
+				<label for="mid" class="col-sm-3">
 					아이디
 				</label>
 				<div class="col-sm-7">
-					<form:input path="id" type="text" id="id" name="id" 
-						class="form-control" value="${id}" />
-					<form:errors cssClass="err" path="id" />
+					<form:input path="mid" type="text" id="mid" name="mid" 
+						class="form-control" value="${mid}" />
+					<form:errors cssClass="err" path="mid" />
 				</div>
 				<div class="col-sm-2" align="left">
 					<input type="button" class="btn btn-info" value="ID중복체크"
@@ -197,8 +138,6 @@
 					우편번호
 				</label>
 				<div class="col-sm-7">
-				<%-- 우편 번호와 주소는 읽기 전용 이므로 form: 네임 스페이스를 사용하지 않고 처리 해야 함 --%>
-				<%-- 진짜 우편 번호와 주소란에 입력이 안되는 문제 입니다. --%>
 					<input type="text" id="fakezipcode" name="fakezipcode" 
 						class="form-control" value="123" disabled="disabled"/>
 					<form:input path="zipcode" type="hidden" name="zipcode" id="zipcode" 
