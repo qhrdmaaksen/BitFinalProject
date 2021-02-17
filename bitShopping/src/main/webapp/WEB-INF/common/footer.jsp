@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-/* footer 스타일 시작*/
+/* footer 스타일 시작
 	#footer {
 	    width: 1050px;
 	    margin: 0 auto;
@@ -17,7 +17,7 @@
 	    font-family: noto sans;
  	    letter-spacing: 0;
    		display: block;
-	}
+	}*/
 	/* #footer {
     font-family: noto sans;
     letter-spacing: 0;
@@ -28,12 +28,43 @@
     opacity: 0;
     display: block;
 	} */
+	
+	
+	body #footer{
+		width: 1500px;
+		margin-left: 250px;
+		padding-bottom: 60px;
+	    font-weight: 400;
+	    letter-spacing: -.2px;
+	    display: block;
+	    opacity: 0;
+	    font-family: noto sans;
+	    letter-spacing: 0;
+	}
+	
+	
+	
+		/* footer 스타일 시작*/
+	footer #footer {
+	    width: 1050px;
+	    margin: 0 auto;
+	    padding-bottom: 60px;
+	    font-weight: 400;
+	    letter-spacing: -.2px;
+	    display: block;
+	    opacity: 0;
+	    font-family: noto sans;
+	    letter-spacing: 0;
+	}
+
+	
 	div, th, td, li, dt, dd, p {
 	    word-break: break-all;
 	}
   	#footer .inner_footer {
-    overflow: hidden;
-    padding-bottom: 20px;
+	    overflow: hidden;
+	    padding-bottom: 20px;
+	    display: block;
 	}
 	*, *:after, *:before {
 	    -webkit-box-sizing: border-box;
@@ -44,12 +75,11 @@
 	}
 	
 	#footer .footer_cc {
-		display: block;
 	    float: left;
 	    width: 534px;
 	}
 	  #footer .tit_cc {
-	    padding: 29px 0 2px;
+	    padding: 19px 0 2px;
 	    font-weight: 700;
 	    font-size: 20px;
 	    color: #333;
@@ -73,7 +103,7 @@
 	}
 	
 	#footer .cc_call {
-    padding-top: 20px;
+   	 padding-top: 20px;
 	}
 	#footer .cc_view {
 	    overflow: hidden;
@@ -127,7 +157,7 @@
 	    margin-block-end: 1em;
 	    margin-inline-start: 0px;
 	    margin-inline-end: 0px;
-	    padding-inline-start: 40px;
+	    padding-inline-start: 10px;
 	}
 	
 	li {
@@ -169,17 +199,17 @@
 	    padding-bottom: 29px;
 	}
 	#footer .company .list .link {
-    font-size: 14px;
-    color: #333;
-    line-height: 18px;
+	    font-size: 14px;
+	    color: #333;
+	    line-height: 18px;
 	}
 	a:active, a:hover {
 	    outline: 0;
 	}
 	a {
-    background-color: transparent;
-    text-decoration: none;
-    color: inherit;
+	    background-color: transparent;
+	    text-decoration: none;
+	    color: inherit;
 	}
 	
 	#footer .company .link {
@@ -193,14 +223,15 @@
 	#footer .list_sns li {
 	    float: left;
 	}
-	#footer .list_sns .link_sns {
+	/* #footer .list_sns .link_sns {
 	    display: block;
 	    width: 30px;
 	    height: 30px;
 	    margin-right: 10px;
 	    vertical-align: top;
-	} 
+	}  */
 
+	
 
 
 
@@ -216,7 +247,7 @@
 <body>
 
 
-<!-- <footer> -->
+
 	<div id="footer" style="opacity: 1;">
 		<div class="inner_footer">
 			<div class="footer_cc">
@@ -227,7 +258,7 @@
 								<dt>365고객센터</dt>
 								<dd>오전 7시 - 오후 7시</dd>
 							</dl>
-			</div>
+					</div>
 				<div class="cc_view cc_kakao">
 					<h3><a class="tit" href="#none">카카오톡 문의</a></h3>
 						<script type="text/javascript">
@@ -319,7 +350,7 @@
 			</div>
 		</div>																								
 	</div>
-<!-- </footer> -->
+
 
 <!-- <div class="footer_link">
 	<div class="authentication">
