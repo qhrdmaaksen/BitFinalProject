@@ -27,7 +27,7 @@
   }
   
   body {
-	margin-top: 50px;
+	margin-top: 180px;
 	}
 	
 	/* footer 스타일 시작*/
@@ -226,13 +226,11 @@
   
   
   </style>
-  <style>
-  #headerLogo{position:relative;width:1050px;height:63px;margin:0 auto}
-  #headerLogo .bnr_delivery{position:absolute;left:-1px;top:-28px;margin:auto;height:22px}
-  #headerLogo .bnr_delivery img{width:163px;height:22px}
-  #headerLogo .logo{position:absolute;left:50%;bottom:6px;width:200px;height:79px;margin-left:-100px}
-  #headerLogo .logo img{display:block;width:103px;height:79px;margin:0 auto}
-  #headerLogo .logo #gnbLogoContainer {margin:0 auto}
+
+
+
+
+<style>
   
   #gnb.gnb_stop{position:fixed;z-index:300;left:0;top:0;width:100%}
   #gnb .gnb_kurly{position:relative;z-index:300;min-width:1050px;background-color:#fff;font-family:'Noto Sans';letter-spacing:-0.3px}
@@ -392,7 +390,7 @@
 
 <!-- 마켓컬리 로고 -->
 
-<div id="headerLogo" class="layout-wrapper">
+<!-- <div id="headerLogo" class="layout-wrapper">
 	<h1 class="logo">
 		<a href="https://www.kurly.com/shop/main/index.php" class="link_main">
 			<span id="gnbLogoContainer"></span>
@@ -402,9 +400,8 @@
 	<a href="/shop/board/view.php?id=notice&amp;no=64" class="bnr_delivery">
 		<img src="https://res.kurly.com/pc/service/common/1908/delivery_190819.gif" alt="서울, 경기, 인천 샛별배송, 수도권 이외 지역 택배배송">
 	</a>
-</div>
 
-
+</div>  -->
 
 
 <!-- 사진 슬라이드 시작 -->
