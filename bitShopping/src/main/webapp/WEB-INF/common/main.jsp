@@ -207,10 +207,6 @@
 	    padding-right: 16px;
 	}
 	
-	
-
-
-
 	#footer .list_sns li {
 	    float: left;
 	}
@@ -225,7 +221,7 @@
 
   
   
-  </style>
+ </style>
 
 
 
@@ -574,6 +570,8 @@
 <br><br><br>
 		<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
 <br><br><br>
+		<a href="<%=contextPath%>/pdetail.pr?pno=1&${requestScope.parameters}">
+			제품 상세 보기</a>
 <br><br><br>
 <br><br><br>
 <br><br><br>
