@@ -580,7 +580,8 @@
 
 
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div><a href="http://localhost:8989/mytest/insert.me">회원가입</a></div>
 </body>
 </html>
 

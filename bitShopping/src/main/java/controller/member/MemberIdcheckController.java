@@ -14,7 +14,7 @@ import dao.MemberDao;
 
 @Controller // 아이디 중복 체크
 public class MemberIdcheckController extends SuperClass{
-	private final String command = "/idcheck.me" ; // 요청 커맨드 // 변경 해야함
+	private final String command = "/idCheck.me" ; // 요청 커맨드 // 변경 해야함
 	private String redirect = "redirect:/main.cu" ; // 리 다이렉션 // 변경 해야함
 	
 	//View에 넘겨줄 ModelAndView 객체
@@ -34,25 +34,25 @@ public class MemberIdcheckController extends SuperClass{
 	
 	@GetMapping(command) // 파라미터 id를 이용하여 테이블에 존재하는지 파악합니다.
 	public ModelAndView doGet(
-			@RequestParam(value = "id", required = true) String id ){ //파라미터가 한두개씩 넘어올때는 이걸 쓰는게 좋다.	
-		System.out.println("idcheck");
+			@RequestParam(value = "mid", required = true) String mid ){ //파라미터가 한두개씩 넘어올때는 이걸 쓰는게 좋다.	
+		System.out.println("idCheck");
 		
-		Member bean = this.mdao.SelectDataByPk(id);
+		Member bean = this.mdao.SelectDataByPk(mid);
 		//다오에 어떤 메소드가 어떤 역할을 하고 어떤 메소드가 필요한지 정리 하세요.
 		
 		
 		//isCheck의 값이 true면 사용 가능한 아이디
 		if (bean != null) { // 회원이 존재 함
 			if(bean.getMid().equalsIgnoreCase("admin")) { // 관리자인 경우
-				this.mav.addObject("message", id + " 은 <b>사용 불가능한</b> 아이디 입니다.<br><font color='red'><b>관리자</b></font>를 위한 아이디 입니다.") ;
+				this.mav.addObject("message", mid + " 은 <b>사용 불가능한</b> 아이디 입니다.<br><font color='red'><b>관리자</b></font>를 위한 아이디 입니다.") ;
 				this.mav.addObject("isCheck", false) ;
 			}else {
-				this.mav.addObject("message", id + " 은(는) 이미 <font color='red'><b>사용중인</b></font> 아이디 입니다.") ;
+				this.mav.addObject("message", mid + " 은(는) 이미 <font color='red'><b>사용중인</b></font> 아이디 입니다.") ;
 				this.mav.addObject("isCheck", false) ;
 			}
 			
 		} else { // 아이디 사용 가능
-			this.mav.addObject("message", id + " 은(는) <font color='blue'><b>사용 가능한</b></font> 아이디 입니다.") ;
+			this.mav.addObject("message", mid + " 은(는) <font color='blue'><b>사용 가능한</b></font> 아이디 입니다.") ;
 			this.mav.addObject("isCheck", true) ;
 		}
 		

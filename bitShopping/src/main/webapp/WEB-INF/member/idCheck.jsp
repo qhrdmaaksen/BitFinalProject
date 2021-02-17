@@ -25,7 +25,7 @@
 	<h1></h1>
 	<h1></h1>
 	<div class="container">
-		<p align="center">${message}</p>
+		<p align="center">${message}</p> <%--아이디 체크에서 넘어오는 메세지가 담기는곳--%>
 		<div class="row" align="center">
 			<button class="btn btn-primary" type="button" 
 				onclick="meClose('${isCheck}');">

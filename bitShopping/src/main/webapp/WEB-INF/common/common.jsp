@@ -14,11 +14,11 @@
 	<c:set var="whologin" value="0" />
 </c:if>
 <c:if test="${not empty sessionScope.loginfo}">
-	<c:if test="${sessionScope.loginfo.id == 'admin'}">\
+	<c:if test="${sessionScope.loginfo.mid == 'admin'}">\
 		<!-- 관리자로 로그인한 경우 -->
 		<c:set var="whologin" value="2" />
 	</c:if>
-	<c:if test="${sessionScope.loginfo.id != 'admin'}">
+	<c:if test="${sessionScope.loginfo.mid != 'admin'}">
 		<!-- 일반 사용자로 로그인한 경우 -->
 		<c:set var="whologin" value="1" />
 	</c:if>
@@ -81,6 +81,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style type="text/css">
 		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
 		.err{ 
@@ -93,6 +94,12 @@
 			margin-top: 7px;
 			margin-right: 20px;
 			color:black;
+		}
+		.redPrefix{
+			color: red ; 
+		}
+		.bolPut{
+			font-weight: bold;
 		}
 	</style>	
 </head>

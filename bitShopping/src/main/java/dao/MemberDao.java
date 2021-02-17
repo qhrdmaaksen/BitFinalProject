@@ -46,8 +46,8 @@ public class MemberDao {
 
 
 
-	public Member SelectDataByPk(String id) {
-		return this.abcd.selectOne(namespace + ".SelectDataByPk", id);
+	public Member SelectDataByPk(String mid) {
+		return this.abcd.selectOne(namespace + ".SelectDataByPk", mid);
 	}
 
 	public List<Member> SelectDataList(int offset, int limit, String mode, String keyword) {
