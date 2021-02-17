@@ -13,6 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
 <title>마켓 컬리</title>
   
   <style>
@@ -225,52 +226,7 @@
   
   
   </style>
-</head>
-<body>
-
-
-
-
-
-<div id="header">
-
-<script type="text/javascript">
-    $(document).ready(function(){
-      $("#top-message-close").on("click",function(){
-        setCookie('top_msg_banner2','set_cookie',1)
-      });
-      if(getCookie('top_msg_banner2') == 'set_cookie'){
-        $("#top-message").hide()
-      }else{
-        $("#top-message").show() ;
-      }
-    });
-
-/*     function setCookie(cookieName, value, exdays){
-      var exdate = new Date();
-      exdate.setDate(exdate.getDate() + exdays);
-      var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
-      document.cookie = cookieName + "=" + cookieValue +"; path=/;"
-    }
-
-    function getCookie(cookieName) {
-      cookieName = cookieName + '=';
-      var cookieData = document.cookie;
-      var start = cookieData.indexOf(cookieName);
-      var cookieValue = '';
-      if(start != -1){
-        start += cookieName.length;
-        var end = cookieData.indexOf(';', start);
-        if(end == -1)end = cookieData.length;
-        cookieValue = cookieData.substring(start, end);
-      }
-      return unescape(cookieValue);
-    } */
-  </script>
-
-
-
-<style>
+  <style>
   #headerLogo{position:relative;width:1050px;height:63px;margin:0 auto}
   #headerLogo .bnr_delivery{position:absolute;left:-1px;top:-28px;margin:auto;height:22px}
   #headerLogo .bnr_delivery img{width:163px;height:22px}
@@ -391,6 +347,49 @@
 
 </style>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+      $("#top-message-close").on("click",function(){
+        setCookie('top_msg_banner2','set_cookie',1)
+      });
+      if(getCookie('top_msg_banner2') == 'set_cookie'){
+        $("#top-message").hide()
+      }else{
+        $("#top-message").show() ;
+      }
+    });
+
+/*     function setCookie(cookieName, value, exdays){
+      var exdate = new Date();
+      exdate.setDate(exdate.getDate() + exdays);
+      var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+      document.cookie = cookieName + "=" + cookieValue +"; path=/;"
+    }
+
+    function getCookie(cookieName) {
+      cookieName = cookieName + '=';
+      var cookieData = document.cookie;
+      var start = cookieData.indexOf(cookieName);
+      var cookieValue = '';
+      if(start != -1){
+        start += cookieName.length;
+        var end = cookieData.indexOf(';', start);
+        if(end == -1)end = cookieData.length;
+        cookieValue = cookieData.substring(start, end);
+      }
+      return unescape(cookieValue);
+    } */
+  </script>
+
+</head>
+<body>
+
+
+
+
+
+
+
 <!-- 마켓컬리 로고 -->
 
 <div id="headerLogo" class="layout-wrapper">
@@ -405,7 +404,7 @@
 	</a>
 </div>
 
-</div>
+
 
 
 <!-- 사진 슬라이드 시작 -->
@@ -448,13 +447,8 @@
 </div>
 
 
-<%-- 
-<br><br><br>
-		<a href="<%=contextPath%>/insert.me">회원 가입</a>
-<br><br><br>
-		<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
-<br><br><br>
- --%>
+
+
 
 
 
@@ -578,6 +572,11 @@
 
 
 
+<br><br><br>
+		<a href="<%=contextPath%>/insert.me">회원 가입</a>
+<br><br><br>
+		<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
+<br><br><br>
 
 
 

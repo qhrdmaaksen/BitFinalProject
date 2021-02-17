@@ -19,7 +19,7 @@ import controller.common.SuperClass;
 import dao.MemberDao;
 
 @Controller 
-public class InsertController extends SuperClass{
+public class MInsertController extends SuperClass{
 	private final String command = "/insert.me" ; // 요청 커맨드 
 	private String redirect = "redirect:/main.cu" ; // 리 다이렉션 
 	
@@ -31,9 +31,9 @@ public class InsertController extends SuperClass{
 	@Qualifier("mdao")
 	private MemberDao mdao ;
 	
-	public InsertController() {
+	public MInsertController() {
 		// 변경 해야함
-		super("insert", "null"); // super(getpage, postpage)
+		super("minsert", "null"); // super(getpage, postpage)
 		this.mav = new ModelAndView();
 	}
 	

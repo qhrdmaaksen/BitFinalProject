@@ -14,7 +14,7 @@ import controller.common.SuperClass;
 import dao.CompositeDao;
 
 @Controller // 우편번호 검색을 위한 컨트롤러
-public class MemberZipcheckController extends SuperClass{
+public class MZipcheckController extends SuperClass{
 	private final String command = "/zipcheck.me" ; // 요청 커맨드 // 변경 해야함
 	private String redirect = "redirect:/main.cu" ; // 리 다이렉션 // 변경 해야함
 	
@@ -26,7 +26,7 @@ public class MemberZipcheckController extends SuperClass{
 	@Qualifier("cdao")// 변경 해야함
 	private CompositeDao cdao ; // 복합적인 dao
 	
-	public MemberZipcheckController() {
+	public MZipcheckController() {
 		// 변경 해야함
 		super("zipCheck", "null"); // super(getpage, postpage)
 		this.mav = new ModelAndView();
