@@ -98,9 +98,9 @@
 	
 	<style type="text/css">
 	
-	*{
+	/* *{
 		margin: 0; padding: 0;
-	}
+	} */
 	
 	
 	#userMenu {
@@ -113,7 +113,7 @@
 	    letter-spacing: -.3px;
 	}
 		
-		#userMenu .list_menu {
+	#userMenu .list_menu {
 	    float: right;
 	}	
 	
@@ -152,9 +152,15 @@
 	}
 	
 	header{
-			height: 75px; background-color: #white; 
-			position: fixed; width: 100%; z-index: 9999; top: 0; left: 0px; 
+			height: 75px; background-color: #white; position: static;
+			width: 100%; z-index: 9999; top: 0; left: 0px; 
 		}
+		
+/* 	.header .container .navi{
+		position: fixed;
+	}  */
+		
+		
 	h1{   position: absolute;
     left: 50%;
     bottom: 6px;
@@ -182,7 +188,7 @@
 	
 
 	/* 추가 */
-	 .container #headerLogo{position:relative;width:1050px;height:63px;margin-top:40px;}
+	 .container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}
 	  .container #headerLogo .bnr_delivery{position:absolute;left:-1px;top:-28px;margin:auto;height:22px}
 	  .container #headerLogo .bnr_delivery img{width:163px;height:22px}
 	  .container #headerLogo .logo{position:absolute;left:50%;bottom:6px;width:200px;height:79px;margin-left:-100px}
@@ -197,7 +203,7 @@
 </head>
 <body>
 <header class="header">
-			<div id="userMenu">
+	<div id="userMenu">
 		<ul class="list_menu">
 		<c:if test="${whologin == 0}">
 		<li class="menu none_sub menu_join"><a href="" class="link_menu">회원가입</a></li> 
@@ -206,7 +212,8 @@
 		<li class="menu none_sub menu_login"><a href="" class="link_menu">로그인</a> <!----></li> <!----> 
 		</c:if>
 		<li class="menu lst"><a href="" class="link_menu">고객센터</a> <ul class="sub">
-		</ul></li></ul></div>
+		</ul></li></ul>
+	</div>
 		
 		
 	<div class="container">
@@ -221,7 +228,7 @@
 				<img src="https://res.kurly.com/pc/service/common/1908/delivery_190819.gif" alt="서울, 경기, 인천 샛별배송, 수도권 이외 지역 택배배송">
 			</a>
 		</div>
-			<nav>
+			<nav class="navi">
 				<ul class="menu"  >
 					<li class="px"><a href="">전체카테고리</a>
 					<ul class="submenu">
@@ -237,8 +244,8 @@
 					<li class="mark"><a href=""><img width="30px" height="30px" alt="" src="/WEB-INF/image/deliveryicon.png"></a>
 				</ul>
 			</nav>
-			</div>
-	</header>
+		</div>
+</header>
 
 <%-- 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
