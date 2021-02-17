@@ -84,8 +84,7 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style type="text/css">
 		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
-		/* 회원가입 유효성 검사 css 및 필수 입력 사항 * red css 사용  */
-		
+		/*여기 스타일에는 회원가입에 필요한 css 스타일 공간, 유효성 검사 css 및 필수 입력 사항 * red css 사용등등  */
 		.err{ 
 			font-size : 10pt;
 			color:red;
@@ -203,7 +202,7 @@
 	<div id="userMenu">
 		<ul class="list_menu">
 		<c:if test="${whologin == 0}">
-		<li class="menu none_sub menu_join"><a href="" class="link_menu">회원가입</a></li> 
+		<li class="menu none_sub menu_join"><a href="<%=contextPath%>/insert.me" class="link_menu">회원가입</a></li> 
 		</c:if>
 		<c:if test="${whologin == 0 }">
 		<li class="menu none_sub menu_login"><a href="" class="link_menu">로그인</a> <!----></li> <!----> 

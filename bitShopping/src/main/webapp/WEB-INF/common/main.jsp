@@ -570,20 +570,8 @@
 
 
 <br><br><br>
-		<a href="<%=contextPath%>/insert.me">회원 가입</a>
 <br><br><br>
 		<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
 <br><br><br>
 <br><br><br>
 <br><br><br>
