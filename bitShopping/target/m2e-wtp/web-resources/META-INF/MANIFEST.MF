@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: main
+=======
+Built-By: Kwon yk
+>>>>>>> 6246af87fc98e260186a13b1727cb142507480e8
 Build-Jdk: 12.0.2
 Created-By: Maven Integration for Eclipse
 

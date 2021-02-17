@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ include file="common.jsp" %>    
  <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
  
 <!DOCTYPE html>
@@ -10,6 +9,8 @@
 <meta charset="UTF-8">
 <title> 상단로고 </title>
 	<style type="text/css">
+	
+
 	
 	*{
 		margin: 0; padding: 0;
