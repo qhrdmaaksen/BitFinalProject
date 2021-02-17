@@ -98,9 +98,7 @@
 	
 	<style type="text/css">
 	
-	/* *{
-		margin: 0; padding: 0;
-	} */
+
 	
 	
 	#userMenu {
@@ -179,7 +177,7 @@
    	padding-left:0px;
    }
   	.mark {float: right; width: 100px;}
-	.px{float: left;}
+	.px{float: left; border: 1px; }
    	ul.menu > li ul.submenu {  display:none; position:absolute;  left:0;   }
    	ul.menu > li:hover ul.submenu { display:block; background-color: gray; height: 50px; }
     ul.menu > li ul.submenu > li { display:inline-block; width:150px;  background:white; text-align:center; border: 1px solid white; height: 50px;}
@@ -241,7 +239,7 @@
 						</ul></li>
 					<li class="px"><a href="">베스트</a>
 					<li class="px"><a href="">신상품</a></li>
-					<li class="mark"><a href=""><img width="30px" height="30px" alt="" src="/WEB-INF/image/deliveryicon.png"></a>
+					<li class="mark"><a href=""><img width="20px" height="30px" alt="" src="/WEB-INF/image/deliveryicon.png"></a>
 				</ul>
 			</nav>
 		</div>
