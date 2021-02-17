@@ -84,6 +84,7 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style type="text/css">
 		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
+		/* 회원가입 유효성 검사 css 및 필수 입력 사항 * red css 사용  */
 		.err{ 
 			font-size : 10pt;
 			color:red;
@@ -95,22 +96,11 @@
 			margin-right: 20px;
 			color:black;
 		}
-<<<<<<< HEAD
 		.redPrefix{
 			color: red ; 
 		}
-		.bolPut{
-			font-weight: bold;
-		}
 	</style>	
-=======
-	</style>
-	
 	<style type="text/css">
-	
-
-	
-	
 	#userMenu {
     width: 1050px;
     margin: 0 auto;
@@ -206,9 +196,6 @@
 
 
 	</style>
-	
-		
->>>>>>> 6246af87fc98e260186a13b1727cb142507480e8
 </head>
 <body>
 <header class="header">
