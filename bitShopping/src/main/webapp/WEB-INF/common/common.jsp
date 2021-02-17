@@ -85,6 +85,7 @@
 	<style type="text/css">
 		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
 		/* 회원가입 유효성 검사 css 및 필수 입력 사항 * red css 사용  */
+		
 		.err{ 
 			font-size : 10pt;
 			color:red;
