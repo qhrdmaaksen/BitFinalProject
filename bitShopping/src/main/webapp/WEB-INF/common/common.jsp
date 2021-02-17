@@ -14,11 +14,11 @@
 	<c:set var="whologin" value="0" />
 </c:if>
 <c:if test="${not empty sessionScope.loginfo}">
-	<c:if test="${sessionScope.loginfo.id == 'admin'}">
+	<c:if test="${sessionScope.loginfo.mid == 'admin'}">\
 		<!-- 관리자로 로그인한 경우 -->
 		<c:set var="whologin" value="2" />
 	</c:if>
-	<c:if test="${sessionScope.loginfo.id != 'admin'}">
+	<c:if test="${sessionScope.loginfo.mid != 'admin'}">
 		<!-- 일반 사용자로 로그인한 경우 -->
 		<c:set var="whologin" value="1" />
 	</c:if>
@@ -81,8 +81,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style type="text/css">
 		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
+		/*여기 스타일에는 회원가입에 필요한 css 스타일 공간, 유효성 검사 css 및 필수 입력 사항 * red css 사용등등  */
 		.err{ 
 			font-size : 10pt;
 			color:red;
@@ -94,13 +96,11 @@
 			margin-right: 20px;
 			color:black;
 		}
-	</style>
-	
+		.redPrefix{
+			color: red ; 
+		}
+	</style>	
 	<style type="text/css">
-	
-
-	
-	
 	#userMenu {
     width: 1050px;
     margin: 0 auto;
@@ -196,15 +196,13 @@
 
 
 	</style>
-	
-		
 </head>
 <body>
 <header class="header">
 	<div id="userMenu">
 		<ul class="list_menu">
 		<c:if test="${whologin == 0}">
-		<li class="menu none_sub menu_join"><a href="" class="link_menu">회원가입</a></li> 
+		<li class="menu none_sub menu_join"><a href="<%=contextPath%>/insert.me" class="link_menu">회원가입</a></li> 
 		</c:if>
 		<c:if test="${whologin == 0 }">
 		<li class="menu none_sub menu_login"><a href="" class="link_menu">로그인</a> <!----></li> <!----> 
