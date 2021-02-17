@@ -196,7 +196,7 @@
 		
 </head>
 <body>
-<header class="header">
+<header >
 			<div id="userMenu">
 		<ul class="list_menu">
 		<c:if test="${whologin == 0}">
