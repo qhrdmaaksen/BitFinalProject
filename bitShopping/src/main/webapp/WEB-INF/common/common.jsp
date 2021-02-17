@@ -98,55 +98,52 @@
 	
 	<style type="text/css">
 	
-
 	*{
 		margin: 0; padding: 0;
 	}
-	
-
 	
 	
 	#userMenu {
     width: 1050px;
     margin: 0 auto;
-}
-#userMenu * {
-    font-family: noto sans;
-    font-weight: 400;
-    letter-spacing: -.3px;
-}
+	}
+	#userMenu * {
+	    font-family: noto sans;
+	    font-weight: 400;
+	    letter-spacing: -.3px;
+	}
+		
+		#userMenu .list_menu {
+	    float: right;
+	}	
 	
-	#userMenu .list_menu {
-    float: right;
-}	
-
-#userMenu .menu {
-    position: relative;
-    z-index: 400;
-    float: left;
-}	
-
-#userMenu .link_menu {
-    float: left;
-    height: 37px;
-    padding: 0 22px 0 10px;
-    color: #333;
-    line-height: 35px;
-    white-space: nowrap;
-}
-#userMenu .menu_join .link_menu {
-    color: #5f0080;
-}
-#userMenu .menu_login .link_menu {
-    padding: 0 16px 0 15px;
-}
-#userMenu .menu.lst .link_menu {
-    padding-right: 13px;
-}
-
-#userMenu a {
-	font-size: 13px;
-}
+	#userMenu .menu {
+	    position: relative;
+	    z-index: 400;
+	    float: left;
+	}	
+	
+	#userMenu .link_menu {
+	    float: left;
+	    height: 37px;
+	    padding: 0 22px 0 10px;
+	    color: #333;
+	    line-height: 35px;
+	    white-space: nowrap;
+	}
+	#userMenu .menu_join .link_menu {
+	    color: #5f0080;
+	}
+	#userMenu .menu_login .link_menu {
+	    padding: 0 16px 0 15px;
+	}
+	#userMenu .menu.lst .link_menu {
+	    padding-right: 13px;
+	}
+	
+	#userMenu a {
+		font-size: 13px;
+	}
 	.wrapper{
 		width: 1170px; margin: 0 auto;}
 	
@@ -184,6 +181,16 @@
 	 ul.menu > li ul.submenu > li a {font-size: 12px;}
 	
 
+	/* 추가 */
+	 .container #headerLogo{position:relative;width:1050px;height:63px;margin-top:40px;}
+	  .container #headerLogo .bnr_delivery{position:absolute;left:-1px;top:-28px;margin:auto;height:22px}
+	  .container #headerLogo .bnr_delivery img{width:163px;height:22px}
+	  .container #headerLogo .logo{position:absolute;left:50%;bottom:6px;width:200px;height:79px;margin-left:-100px}
+	  .container #headerLogo .logo img{display:block;width:103px;height:79px;margin:0 auto}
+	  .container #headerLogo .logo #gnbLogoContainer {margin:0 auto} 
+	
+
+
 	</style>
 	
 		
@@ -202,10 +209,18 @@
 		</ul></li></ul></div>
 		
 		
-		
-		<div class="wrapper">
-		<div class="container">
-			<h1>3조로고</h1>
+	<div class="container">
+		<div id="headerLogo" class="layout-wrapper">
+			<h1 class="logo">
+				<a href="https://www.kurly.com/shop/main/index.php" class="link_main">
+					<span id="gnbLogoContainer"></span>
+					<img src="https://res.kurly.com/images/marketkurly/logo/logo_x2.png" alt="마켓컬리 로고" style="display: block;">
+				</a>
+			</h1>
+			<a href="/shop/board/view.php?id=notice&amp;no=64" class="bnr_delivery">
+				<img src="https://res.kurly.com/pc/service/common/1908/delivery_190819.gif" alt="서울, 경기, 인천 샛별배송, 수도권 이외 지역 택배배송">
+			</a>
+		</div>
 			<nav>
 				<ul class="menu"  >
 					<li class="px"><a href="">전체카테고리</a>
@@ -221,11 +236,8 @@
 					<li class="px"><a href="">신상품</a></li>
 					<li class="mark"><a href=""><img width="20px" height="30px" alt="" src="/WEB-INF/image/deliveryicon.png"></a>
 				</ul>
-				
-				
 			</nav>
 			</div>
-		</div>	
 	</header>
 
 <%-- 	<nav class="navbar navbar-inverse">

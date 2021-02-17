@@ -15,7 +15,7 @@ import utility.FlowParameters;
 import utility.Paging;
 
 @Controller // 관리자가 회원들의 목록을 조회하는 컨트롤러 입니다.
-public class ListController extends SuperClass{
+public class MListController extends SuperClass{
 	private final String command = "/list.me" ; // 요청 커맨드 // 변경 해야함
 	private String redirect = "redirect:/main.cu" ; // 리 다이렉션 // 변경 해야함
 	
@@ -27,9 +27,9 @@ public class ListController extends SuperClass{
 	@Qualifier("mdao")// 변경 해야함
 	private MemberDao mdao ;
 	
-	public ListController() {
+	public MListController() {
 		// 변경 해야함
-		super("list", "null"); // super(getpage, postpage)
+		super("mlist", "null"); // super(getpage, postpage)
 		this.mav = new ModelAndView();
 	}
 	

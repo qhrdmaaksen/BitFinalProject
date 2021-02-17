@@ -13,6 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
 <title>마켓 컬리</title>
   
   <style>
@@ -26,7 +27,7 @@
   }
   
   body {
-	margin-top: 50px;
+	margin-top: 180px;
 	}
 	
 	/* footer 스타일 시작*/
@@ -225,58 +226,11 @@
   
   
   </style>
-</head>
-<body>
 
-
-
-
-
-<div id="header">
-
-<script type="text/javascript">
-    $(document).ready(function(){
-      $("#top-message-close").on("click",function(){
-        setCookie('top_msg_banner2','set_cookie',1)
-      });
-      if(getCookie('top_msg_banner2') == 'set_cookie'){
-        $("#top-message").hide()
-      }else{
-        $("#top-message").show() ;
-      }
-    });
-
-/*     function setCookie(cookieName, value, exdays){
-      var exdate = new Date();
-      exdate.setDate(exdate.getDate() + exdays);
-      var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
-      document.cookie = cookieName + "=" + cookieValue +"; path=/;"
-    }
-
-    function getCookie(cookieName) {
-      cookieName = cookieName + '=';
-      var cookieData = document.cookie;
-      var start = cookieData.indexOf(cookieName);
-      var cookieValue = '';
-      if(start != -1){
-        start += cookieName.length;
-        var end = cookieData.indexOf(';', start);
-        if(end == -1)end = cookieData.length;
-        cookieValue = cookieData.substring(start, end);
-      }
-      return unescape(cookieValue);
-    } */
-  </script>
 
 
 
 <style>
-/*   #headerLogo{position:relative;width:1050px;height:63px;margin:0 auto}
-  #headerLogo .bnr_delivery{position:absolute;left:-1px;top:-28px;margin:auto;height:22px}
-  #headerLogo .bnr_delivery img{width:163px;height:22px}
-  #headerLogo .logo{position:absolute;left:50%;bottom:6px;width:200px;height:79px;margin-left:-100px}
-  #headerLogo .logo img{display:block;width:103px;height:79px;margin:0 auto}
-  #headerLogo .logo #gnbLogoContainer {margin:0 auto} */
   
   #gnb.gnb_stop{position:fixed;z-index:300;left:0;top:0;width:100%}
   #gnb .gnb_kurly{position:relative;z-index:300;min-width:1050px;background-color:#fff;font-family:'Noto Sans';letter-spacing:-0.3px}
@@ -391,6 +345,49 @@
 
 </style>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+      $("#top-message-close").on("click",function(){
+        setCookie('top_msg_banner2','set_cookie',1)
+      });
+      if(getCookie('top_msg_banner2') == 'set_cookie'){
+        $("#top-message").hide()
+      }else{
+        $("#top-message").show() ;
+      }
+    });
+
+/*     function setCookie(cookieName, value, exdays){
+      var exdate = new Date();
+      exdate.setDate(exdate.getDate() + exdays);
+      var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+      document.cookie = cookieName + "=" + cookieValue +"; path=/;"
+    }
+
+    function getCookie(cookieName) {
+      cookieName = cookieName + '=';
+      var cookieData = document.cookie;
+      var start = cookieData.indexOf(cookieName);
+      var cookieValue = '';
+      if(start != -1){
+        start += cookieName.length;
+        var end = cookieData.indexOf(';', start);
+        if(end == -1)end = cookieData.length;
+        cookieValue = cookieData.substring(start, end);
+      }
+      return unescape(cookieValue);
+    } */
+  </script>
+
+</head>
+<body>
+
+
+
+
+
+
+
 <!-- 마켓컬리 로고 -->
 
 <!-- <div id="headerLogo" class="layout-wrapper">
@@ -403,9 +400,8 @@
 	<a href="/shop/board/view.php?id=notice&amp;no=64" class="bnr_delivery">
 		<img src="https://res.kurly.com/pc/service/common/1908/delivery_190819.gif" alt="서울, 경기, 인천 샛별배송, 수도권 이외 지역 택배배송">
 	</a>
-</div>
 
-</div> -->
+</div>  -->
 
 
 <!-- 사진 슬라이드 시작 -->
@@ -448,13 +444,8 @@
 </div>
 
 
-<%-- 
-<br><br><br>
-		<a href="<%=contextPath%>/insert.me">회원 가입</a>
-<br><br><br>
-		<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
-<br><br><br>
- --%>
+
+
 
 
 
@@ -578,6 +569,11 @@
 
 
 
+<br><br><br>
+		<a href="<%=contextPath%>/insert.me">회원 가입</a>
+<br><br><br>
+		<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
+<br><br><br>
 
 
 

@@ -13,7 +13,7 @@ import controller.common.SuperClass;
 import dao.MemberDao;
 
 @Controller // 아이디 중복 체크
-public class MemberIdcheckController extends SuperClass{
+public class MIdcheckController extends SuperClass{
 	private final String command = "/idcheck.me" ; // 요청 커맨드 // 변경 해야함
 	private String redirect = "redirect:/main.cu" ; // 리 다이렉션 // 변경 해야함
 	
@@ -25,7 +25,7 @@ public class MemberIdcheckController extends SuperClass{
 	@Qualifier("mdao")// 변경 해야함
 	private MemberDao mdao ;
 	
-	public MemberIdcheckController() {
+	public MIdcheckController() {
 		// 변경 해야함
 		super("idCheck", "null"); // super(getpage, postpage)
 		// 이 idCheck.jsp 파일이 존재하는지 확인
