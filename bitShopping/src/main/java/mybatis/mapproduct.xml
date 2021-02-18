@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MapperProduct">
+
+<!--<insert id="InsertData" parameterType="MyProduct">
+		insert into products(num, name, company, image, stock, price, category, contents, point, inputdate)
+		values(seqprod.nextval, #{name}, #{company}, #{image}, #{stock}, #{price}, #{category}, #{contents}, #{point}, to_date(#{inputdate}, 'yyyy/MM/dd'))
+	</insert> -->
+	
+	<sql id="myselect">
+		select pno, productname, productcode, price, pqty, pcategory, pcontents, pimg1, pimg2, pimg3 
+		from products
+	</sql> 		
+
+	
+	<select id="SelectDataByPk" parameterType="Integer" resultType="MyProduct">
+		<include refid="myselect" />
+		 where pno = #{pno}
+	</select>
+
+</mapper>
+		
