@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ include file="/WEB-INF/common/nav.jsp" %>
 <%@ page import="java.util.*" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
@@ -31,27 +31,8 @@
 	String YesForm = null ;
 	String NoForm = null ;
 %>
-<%
-	String contextPath = request.getContextPath() ;
-	String mappingName = "/controller"; //서블릿에 정의되어 있슴
-	
-	//폼 태그에서 사용할 변수
-	//YesForm = contextPath + mappingName ;
-	
-	//폼이 아닌 곳에서 사용할 변수
-	//NoForm = contextPath + mappingName + "?command=" ;
-%>
-<%	
-	// 파일 업로드 관련
-	String myurl = request.getRequestURL().toString() ;
-	String uri = request.getRequestURI() ;
-	int idx = myurl.indexOf( uri ) ;	
-	//웹서버에 올릴 이미지의 저장 경로 
-	String uploadPath = "/upload" ;//개발자가 임의 지정 가능
-	String uploadedFolder 
-		= myurl.substring(0, idx) + contextPath + uploadPath ;	
-	String realPath = application.getRealPath( uploadPath ) ;
-%>
+
+
 <%
 	/* out.print( "YesForm : " + YesForm + "<br>") ;
 	out.print( "NoForm : " + NoForm + "<br>") ;
@@ -72,7 +53,7 @@
 	}
 %>
 
-<c:set var="contextPath" value="<%=contextPath%>" scope="application"/> 
+
 
 <!DOCTYPE>
 <html>
@@ -101,6 +82,12 @@
 		}
 	</style>	
 	<style type="text/css">
+	
+	body .header{
+		margin-top: 50px;
+	}
+	
+	
 	#userMenu {
     width: 1050px;
     margin: 0 auto;
@@ -149,14 +136,11 @@
 		content: ''; display: block; clear: both; 
 	}
 	
-	header{
+	.header{
 			height: 75px; background-color: #white; position: static;
-			width: 100%; z-index: 9999; top: 0; left: 0px; 
+			width: 100%; z-index: 9999; left: 0px; margin-top: 50px;
 		}
-		
-/* 	.header .container .navi{
-		position: fixed;
-	}  */
+
 		
 		
 	h1{   position: absolute;
@@ -198,7 +182,9 @@
 	</style>
 </head>
 <body>
-<header class="header">
+
+
+<%-- <header class="header">
 	<div id="userMenu">
 		<ul class="list_menu">
 		<c:if test="${whologin == 0}">
@@ -241,7 +227,9 @@
 				</ul>
 			</nav>
 		</div>
-</header>
+		--------------------------------------------------------------------------
+		
+</header> --%>
 
 <%-- 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
