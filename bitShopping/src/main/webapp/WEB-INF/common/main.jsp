@@ -132,6 +132,10 @@
 <br><br><br>
 <br><br><br>
 
+<a href="<%=contextPath%>/mypage.me">마이 페이지</a>
+
+<br><br><br>
+<br><br><br>
 
 </body>
 </html>
