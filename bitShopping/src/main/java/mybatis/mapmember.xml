@@ -34,7 +34,7 @@
 		select * from members
 		where mid = #{mid}
 	</select>
-	
+
 	<select id="DeleteData" parameterType="String">
 		select * from members
 		where mid = #{mid}
