@@ -7,28 +7,7 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-/* footer 스타일 시작
-	#footer {
-	    width: 1050px;
-	    margin: 0 auto;
-	    padding-bottom: 60px;
-	    font-weight: 400;
-	    letter-spacing: -.2px;
-	    font-family: noto sans;
- 	    letter-spacing: 0;
-   		display: block;
-	}*/
-	/* #footer {
-    font-family: noto sans;
-    letter-spacing: 0;
-    display: block;
-	} */
-	
-	/* #footer {
-    opacity: 0;
-    display: block;
-	} */
-	
+
 	
 	body #footer{
 		width: 1500px;
@@ -40,23 +19,9 @@
 	    opacity: 0;
 	    font-family: noto sans;
 	    letter-spacing: 0;
+	    align-self: center;
 	}
 	
-	
-	
-		/* footer 스타일 시작*/
-	footer #footer {
-	    width: 1050px;
-	    margin: 0 auto;
-	    padding-bottom: 60px;
-	    font-weight: 400;
-	    letter-spacing: -.2px;
-	    display: block;
-	    opacity: 0;
-	    font-family: noto sans;
-	    letter-spacing: 0;
-	}
-
 	
 	div, th, td, li, dt, dd, p {
 	    word-break: break-all;
@@ -247,7 +212,7 @@
 <body>
 
 
-
+<footer>
 	<div id="footer" style="opacity: 1;">
 		<div class="inner_footer">
 			<div class="footer_cc">
@@ -350,7 +315,7 @@
 			</div>
 		</div>																								
 	</div>
-
+</footer>
 
 <!-- <div class="footer_link">
 	<div class="authentication">
