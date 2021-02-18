@@ -10,6 +10,7 @@
 		<typeAlias alias="MyPostcode" type="bean.Postcode" />
 		<typeAlias alias="MyCheckBean" type="bean.CheckBean" />
 		<typeAlias alias="MyProduct" type="bean.Product" />
+		<typeAlias alias="MyProductreviews" type="bean.Productreviews" />
 	</typeAliases>	
 
 	<!-- mapper 태그 사용시 앞에 슬래시 붙이지 말고 패키지 경로 쭉~~~ 파일 이름 명시 -->
@@ -17,5 +18,6 @@
 		<mapper resource="mybatis/mapmember.xml" />
 		<mapper resource="mybatis/mapcomposite.xml" />
 		<mapper resource="mybatis/mapproduct.xml" />
+		<mapper resource="mybatis/mapproductreviews.xml" />
 	</mappers>
 </configuration>
