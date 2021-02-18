@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/common/nav.jsp" %>
 <%@ page import="java.util.*" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
@@ -53,12 +52,148 @@
 	}
 %>
 
+<%
+	String contextPath = request.getContextPath() ;
+	String mappingName = "/controller"; //서블릿에 정의되어 있슴
+	
+	//폼 태그에서 사용할 변수
+	//YesForm = contextPath + mappingName ;
+	
+	//폼이 아닌 곳에서 사용할 변수
+	//NoForm = contextPath + mappingName + "?command=" ;
+%>
+<%	
+	// 파일 업로드 관련
+	String myurl = request.getRequestURL().toString() ;
+	String uri = request.getRequestURI() ;
+	int idx = myurl.indexOf( uri ) ;	
+	//웹서버에 올릴 이미지의 저장 경로 
+	String uploadPath = "/upload" ;//개발자가 임의 지정 가능
+	String uploadedFolder 
+		= myurl.substring(0, idx) + contextPath + uploadPath ;	
+	String realPath = application.getRealPath( uploadPath ) ;
+%>
+<meta charset="UTF-8">
+<title> 마켓컬리 :: 내일의 장보기, 마켓컬리 </title>
+<style type="text/css">
+		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
+		/*여기 스타일에는 회원가입에 필요한 css 스타일 공간, 유효성 검사 css 및 필수 입력 사항 * red css 사용등등  */
+		.err{ 
+			font-size : 10pt;
+			color:red;
+			font-weight: bolder;
+		}
+		#myalert{ 
+			font-size : 15px;
+			margin-top: 7px;
+			margin-right: 20px;
+			color:black;
+		}
+		.redPrefix{
+			color: red ; 
+		}
+	</style>	
+	<style type="text/css">
+	
+	body .header{
+		margin-top: 50px;
+	}
+	
+	
+	#userMenu {
+    width: 1050px;
+    margin: 0 auto;
+	}
+	#userMenu * {
+	    font-family: noto sans;
+	    font-weight: 400;
+	    letter-spacing: -.3px;
+	}
+		
+	#userMenu .list_menu {
+	    float: right;
+	}	
+	
+	#userMenu .menu {
+	    position: relative;
+	    z-index: 400;
+	    float: left;
+	}	
+	
+	#userMenu .link_menu {
+	    float: left;
+	    height: 37px;
+	    padding: 0 22px 0 10px;
+	    color: #333;
+	    line-height: 35px;
+	    white-space: nowrap;
+	}
+	#userMenu .menu_join .link_menu {
+	    color: #5f0080;
+	}
+	#userMenu .menu_login .link_menu {
+	    padding: 0 16px 0 15px;
+	}
+	#userMenu .menu.lst .link_menu {
+	    padding-right: 13px;
+	}
+	
+	#userMenu a {
+		font-size: 13px;
+	}
+	.wrapper{
+		width: 1170px; margin: 0 auto;}
+	
+	.clearfix{
+		content: ''; display: block; clear: both; 
+	}
+	
+	.header{
+			height: 75px; background-color: #white; position: static;
+			width: 100%; z-index: 9999; left: 0px; margin-top: 50px;
+		}
+
+		
+		
+	h1{   position: absolute;
+    left: 50%;
+    bottom: 6px;
+    width: 200px;
+    height: 50px;
+    margin-left: -100px;
+    color: black;}
+      ul, ol, li { list-style:none; margin:0; padding:0; }
+    
+	 ul.menu {}
+	 ul.menu > li { display:inline-block;  width:120px; padding:5px 10px; text-align:center; position:relative; font-size: 15px;}
+	ul.menu > li.px{width: 150px;}
+	.menu a{line-height: 75px; color: black; padding: 0 22px 0 10px;  display: block; }	
+	ul{
+   	list-style:none;
+   	padding-left:0px;
+   }
+  	.mark {float: right; width: 100px;}
+	.px{float: left; border: 1px; }
+   	ul.menu > li ul.submenu {  display:none; position:absolute;  left:0;   }
+   	ul.menu > li:hover ul.submenu { display:block; background-color: gray; height: 50px; }
+    ul.menu > li ul.submenu > li { display:inline-block; width:150px;  background:white; text-align:center; border: 1px solid white; height: 50px;}
+	 ul.menu > li ul.submenu > li:hover { background:gray;  }
+	 ul.menu > li ul.submenu > li a {font-size: 12px;}
+	
+
+	/* 추가 */
+	 .container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}
+	  .container #headerLogo .bnr_delivery{position:absolute;left:-1px;top:-28px;margin:auto;height:22px}
+	  .container #headerLogo .bnr_delivery img{width:163px;height:22px}
+	  .container #headerLogo .logo{position:absolute;left:50%;bottom:6px;width:200px;height:79px;margin-left:-100px}
+	  .container #headerLogo .logo img{display:block;width:103px;height:79px;margin:0 auto}
+	  .container #headerLogo .logo #gnbLogoContainer {margin:0 auto} 
+	
 
 
-<!DOCTYPE>
-<html>
-<head>
-	<title>마켓 컬리</title>
+	</style>
+	
+<c:set var="contextPath" value="<%=contextPath%>" scope="application"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -184,7 +319,7 @@
 <body>
 
 
-<%-- <header class="header">
+<header class="header">
 	<div id="userMenu">
 		<ul class="list_menu">
 		<c:if test="${whologin == 0}">
@@ -227,120 +362,9 @@
 				</ul>
 			</nav>
 		</div>
-		--------------------------------------------------------------------------
 		
-</header> --%>
+</header>
 
-<%-- 	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">미니 쇼핑몰</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="<%=contextPath%>/main.jsp">Home</a></li>
-					
-					<li>
-						<a href="#" class="dropdown-toggle"> 
-							<font color='white'>
-								<c:if test="${whologin == 0}">
-									미로그인
-								</c:if> 
-								<c:if test="${whologin != 0}">
-									${sessionScope.loginfo.name}(${sessionScope.loginfo.id}) 님
-								</c:if>
-							</font>
-						</a>
-					</li>
-					
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">회원<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><c:if test="${whologin == 0}">
-									<a href="<%=contextPath%>/insert.me">회원 가입</a>
-								</c:if> <c:if test="${whologin != 0}">
-									<a href="<%=contextPath%>/update.me?id=${sessionScope.loginfo.id}">회원 정보 수정</a>
-								</c:if></li>
-							<li><c:if test="${whologin == 0}">
-									<a href="<%=contextPath%>/login.me">로그인</a>
-								</c:if> <c:if test="${whologin != 0}">
-									<a href="<%=contextPath%>/logout.me">로그 아웃</a>
-								</c:if></li>
-							<li><c:if test="${whologin == 1}">
-									<a href="<%=contextPath%>/delete.me?id=${sessionScope.loginfo.id}">회원 탈퇴</a>
-								</c:if></li>
-							<li><c:if test="${whologin == 2}">
-									<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
-								</c:if></li>
-							<li><c:if test="${whologin == 1}">
-									<a href="<%=contextPath%>/detailview.me?id=${sessionScope.loginfo.id}">회원 상세 보기</a>
-								</c:if></li>
-						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">게시물<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><c:if test="${whologin != 0}">
-									<a href="<%=contextPath%>/insert.bo">게시물 등록</a>
-								</c:if></li>
-							<li><c:if test="${whologin != 0}">
-									<a href="<%=contextPath%>/list.bo">목록 보기</a>
-								</c:if></li>
-							<!-- <li><a href="#">-- 아래 항목들은 어떻게 해야 하나??</a></li>
-							<li><a href="#">게시물 수정</a></li>
-							<li><a href="#">게시물 삭제</a></li>
-							<li><a href="#">상세 보기</a></li>
-							<li><a href="#">답글 작성</a></li> -->
-						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">상품<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><c:if test="${whologin == 2}">
-									<a href="<%=contextPath%>/insert.pr">상품 등록</a>
-								</c:if></li>
-							<li><a href="<%=contextPath%>/list.pr">목록 보기</a></li>
-							<!-- <li><a href="#">-- 아래 항목들은 어떻게 해야 하나??</a></li>
-							<li><a href="#">목록 삭제</a></li>
-							<li><a href="#">정보 수정</a></li>
-							<li><a href="./../example/detailViewEx01.jsp">상세 보기</a></li> -->
-						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">쇼핑몰<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><c:if test="${whologin != 0}">
-									<a href="<%=contextPath%>/history.mall">나의 쇼핑 내역</a>
-								</c:if></li>
-							<li><c:if test="${whologin != 0}">
-									<a href="<%=contextPath%>/list.mall">장바구니 보기</a>
-								</c:if></li>
-						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">데이터 보기<b class="caret"></b></a>
-						<ul class="dropdown-menu">							
-							<li><a href="<%=contextPath%>/exam01.vw">회원과 게시물</a></li>
-							<li><a href="<%=contextPath%>/exam02.vw">회원별 게시물 건수</a></li>
-							<li><a href="<%=contextPath%>/exam03.vw">주문 정보</a></li>
-							<li><a href="<%=contextPath%>/exam04.vw">고객별 매출 총액</a></li>
-							<li><a href="<%=contextPath%>/exam05.vw">회원별 주문 건수</a></li>
-													
-						</ul></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><c:if test="${empty sessionScope.loginfo}">
-							<a href="<%=contextPath%>/login.me"><span
-								class="glyphicon glyphicon-log-in"> 로그인 </span> </a>
-						</c:if> <c:if test="${not empty sessionScope.loginfo}">
-							<a href="<%=contextPath%>/logout.me"><span
-								class="glyphicon glyphicon-log-in"> 로그 아웃 </span> </a>
-						</c:if></li>
-				</ul>
-			</div>
-		</div> 
-	</nav>--%>
 	<c:if test="${not empty requestScope.errmsg}">
 		<div class="alert alert-danger alert-dismissable">
     		<a href="#" id="myalert" class="close" data-dismiss="alert" aria-label="close">닫기</a>

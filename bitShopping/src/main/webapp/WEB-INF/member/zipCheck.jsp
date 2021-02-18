@@ -50,6 +50,11 @@
 				return false ;
 			}
 		}
+		function frameclose() { 
+			parent.close() 
+			window.close() 
+			self.close() 
+		} 
 	</script>
 </head>
 <body>
@@ -85,7 +90,7 @@
 					</table>
 				</form>
 				<div class="row" align="center">
-					<button class="btn btn-primary" type="button">
+					<button class="btn btn-primary" type="button" onclick="frameclose()">
 						닫&nbsp;&nbsp;기</button>
 				</div>
 			</div>

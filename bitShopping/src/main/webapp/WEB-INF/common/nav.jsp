@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%
+<%-- <%
 	String contextPath = request.getContextPath() ;
 	String mappingName = "/controller"; //서블릿에 정의되어 있슴
 	
@@ -27,7 +27,7 @@
 	String realPath = application.getRealPath( uploadPath ) ;
 %>
 <meta charset="UTF-8">
-<title> 상단로고 </title>
+<title> 마켓컬리 :: 내일의 장보기, 마켓컬리 </title>
 
 
 	<style type="text/css">
@@ -147,11 +147,12 @@
 
 
 	</style>
-<c:set var="contextPath" value="<%=contextPath%>" scope="application"/> 
+	
+<c:set var="contextPath" value="<%=contextPath%>" scope="application"/>  --%>
 </head>
 <body>
 
-<header class="header">
+<%-- <header class="header">
 	<div id="userMenu">
 		<ul class="list_menu">
 		<c:if test="${whologin == 0}">
@@ -195,45 +196,8 @@
 			</nav>
 		</div>
 		
-</header>
+</header> --%>
 
-<%-- 	<header>
-			<div id="userMenu">
-		<ul class="list_menu">
-		<c:if test="${whologin == 0}">
-		<li class="menu none_sub menu_join"><a href="" class="link_menu">회원가입</a></li> 
-		</c:if>
-		<c:if test="${whologin == 0 }">
-		<li class="menu none_sub menu_login"><a href="" class="link_menu">로그인</a> <!----></li> <!----> 
-		</c:if>
-		<li class="menu lst"><a href="" class="link_menu">고객센터</a> <ul class="sub">
-		</ul></li></ul></div>
-		
-		
-		
-		<div class="wrapper">
-		<div class="container">
-			<h1>3조로고</h1>
-			<nav>
-				<ul class="menu"  >
-					<li class="px"><a href="">전체카테고리</a>
-					<ul class="submenu">
-							<li><a href="">채소</a></li>
-							<li><a href="">과일/견과/쌀</a></li>
-							<li><a href="">수산/해산/건어물</a></li>
-							<li><a href="">정육/계란</a></li>
-							<li><a href="">국/반찬/메인요리</a></li>
-							<li><a href="">샐러드/간편식</a></li>
-						</ul></li>
-					<li><a href="">베스트</a>
-					<li ><a href="">신상품</a></li>
-					<li class="mark"><a href=""><img width="50px" height="30px" alt="" src="/WEB-INF/image/shoppingcartoutline_110834.png"></a>
-				</ul>
-				
-				
-			</nav>
-			</div>
-		</div>	
-	</header> --%>
+
 </body>
 </html>
