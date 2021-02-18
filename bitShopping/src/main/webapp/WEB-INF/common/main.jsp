@@ -386,7 +386,6 @@
 			제품 상세 보기</a>
 <br><br><br>
 <br><br><br>
-
 		<a href="<%=contextPath%>/list.prr">상품 후기 게시판</a>
 
 

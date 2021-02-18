@@ -11,8 +11,8 @@
 	<autoconfigs>
 		<config>src/main/webapp/WEB-INF/applicationContext.xml</config>
 		<config>src/main/webapp/WEB-INF/config/common-config.xml</config>
-		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
 		<config>src/main/webapp/WEB-INF/config/member-config.xml</config>
+		<config>src/main/webapp/WEB-INF/config/product-config.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

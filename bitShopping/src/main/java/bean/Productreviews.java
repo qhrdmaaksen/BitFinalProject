@@ -7,14 +7,14 @@ public class Productreviews {
 	private String bcontent;
 	private String bimg;
 	private int breview;
-	private String date;
+	private String bregdate;
 	
 	public Productreviews() {
 		
 	}
 
 	public Productreviews(int bno, String btitle, String bwriter, String bcontent, String bimg, int breview,
-			String date) {
+			String bregdate) {
 		
 		this.bno = bno;
 		this.btitle = btitle;
@@ -22,7 +22,13 @@ public class Productreviews {
 		this.bcontent = bcontent;
 		this.bimg = bimg;
 		this.breview = breview;
-		this.date = date;
+		this.bregdate = bregdate;
+	}
+
+	@Override
+	public String toString() {
+		return "Productreviews [bno=" + bno + ", btitle=" + btitle + ", bwriter=" + bwriter + ", bcontent=" + bcontent
+				+ ", bimg=" + bimg + ", breview=" + breview + ", regdate=" + bregdate + "]";
 	}
 
 	public int getBno() {
@@ -73,23 +79,12 @@ public class Productreviews {
 		this.breview = breview;
 	}
 
-	public String getDate() {
-		return date;
+	public String getBregdate() {
+		return bregdate;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setBregdate(String bregdate) {
+		this.bregdate = bregdate;
 	}
-
-	@Override
-	public String toString() {
-		return "Productreviews [bno=" + bno + ", btitle=" + btitle + ", bwriter=" + bwriter + ", bcontent=" + bcontent
-				+ ", bimg=" + bimg + ", breview=" + breview + ", date=" + date + "]";
-	}
-	
-	
-	
-	
-	
 
 }

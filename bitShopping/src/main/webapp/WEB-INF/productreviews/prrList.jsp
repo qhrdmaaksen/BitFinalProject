@@ -20,16 +20,16 @@
 	<div class="container">
 		<div class="row"> 
 		 	<div class="col-md-offset-3 col-md-7 col-md-offset-2 reviews">
-		 		<h3>상품 후기 리스트</h3>
+		 		<h4>상품 후기 리스트</h4>
 		 		<table>
 		 			<thead>
 		 				<tr>
-		 					<th>번호</th>
-		 					<th>제목</th>
-		 					<th>작성자</th>
-		 					<th>내용</th>
-		 					<th>조회수</th>
-		 					<th>작성일자</th>
+		 					<th>번호&nbsp;&nbsp;</th> 
+		 					<th>제목&nbsp;&nbsp;</th>
+		 					<th>작성자&nbsp;&nbsp;</th>
+		 					<th>내용&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		 					<th>조회수&nbsp;&nbsp;</th>
+		 					<th>작성일자&nbsp;&nbsp;</th>
 		 				</tr>
 		 			</thead>
 		 	
@@ -37,13 +37,26 @@
 		 		<tr>
 		 			<td colspan="12" align="center">
 		 				<form action="<%=contextPath%>/list.prr" method="get">
-		 				
 		 				</form>
-		 			
 		 		</td>
 		 		</tr>
 		 		
+		 		<c:forEach var="bean" items="${requestScope.lists}">
+		 		<tr>
+		 			<td>${bean.bno}</td> 
+		 			<td>${bean.btitle}</td>
+		 			<td>${bean.bwriter}</td>
+		 			<td>${bean.bcontent}</td>
+		 			<td>${bean.breview}</td>
+		 			<td>${bean.bregdate}</td>
+		 		</tr>	
+		 		</c:forEach>
 			</table>
+			
+			<br>
+			&nbsp;&nbsp;
+			<a href="<%=contextPath%>/insert.prr">상품평 쓰기</a>
+			
 		</div>
 		</div>
 		</div>

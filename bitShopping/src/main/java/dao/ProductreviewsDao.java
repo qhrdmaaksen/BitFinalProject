@@ -22,13 +22,11 @@ public class ProductreviewsDao {
 
 	public int InsetData(Productreviews bean) {
 		//넘겨진 Bean 데이터를 이용하여 추가한다.
-		System.out.println(this.getClass() + "InsertData 메소드");
-		System.out.println(bean.toString());
 		return this.abcd.insert(namespace + "InsetData", bean);
 	}
 
 	public int SelectTotalCount(String mode, String keyword) {
-		// 해당 모드와 키워드를 이용하여 조건에 맞는 데이터 건수를 구한다
+		// 
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("mode", mode);
 		map.put("keyword", "%" + keyword + "%");

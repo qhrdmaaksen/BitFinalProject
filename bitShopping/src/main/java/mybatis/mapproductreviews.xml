@@ -6,8 +6,8 @@
 <mapper namespace="MapProductreivews">
 
 	<insert id="InsertData" parameterType="MyProductreviews">
-	insert into members(mno, btitle, bwriter, bcontent, bimg, breview, bregdate)
-	values (#{mno}, #{btitle}, #{bwriter}, #{bcontent}, #{bimg}, #{breview}, #{bregdate})
+	insert into productreviews(bno, btitle, bwriter, bcontent, bimg, breview, bregdate)
+	values (#{bno}, #{btitle}, #{bwriter}, #{bcontent}, #{bimg}, #{breview}, #{bregdate})
 	</insert>
 	
 	<select id="SelectTotalCount" resultType="int">
@@ -19,22 +19,10 @@
 		where bcontent like #{keyword}
 	</if>
 	</select>
-	<sql id="myselect">
+	
+	<select id="SelectDataList" resultType="MyProductreviews">
 		select bno, btitle, bwriter, bcontent, bimg, breview, bregdate
 		from productreviews 
-	</sql>
-	<select id="SelectDataList" resultType="MyProductreviews">
-		<include refid="myselect" />
-		<if test="mode == 'bwriter'">
-			where bwriter like #{keyword}
-		</if>
-		<if test="mode == 'btitle'">
-			where btitle like #{keyword}
-		</if>
-		<if test="mode == 'bcontent'">
-			where bcontent like #{keyword}
-		</if>
-		order by groupno desc, orderno asc 
-	</select>
+		</select>
 
 </mapper>

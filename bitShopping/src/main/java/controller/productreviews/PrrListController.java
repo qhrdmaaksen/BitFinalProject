@@ -2,13 +2,10 @@ package controller.productreviews;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import bean.Productreviews;
@@ -21,10 +18,11 @@ import utility.Paging;
 public class PrrListController extends SuperClass{
 	private final String command = "/list.prr";
 	private ModelAndView mav = null;
-	private String redirect = "redirect:/main.cu";
+	private String redirect = "redirect:/list.prr";
 	
 	@Autowired
 	@Qualifier("prrdao")
+	
 	private ProductreviewsDao prrdao;
 
 	public PrrListController() {
@@ -35,59 +33,40 @@ public class PrrListController extends SuperClass{
 	
 	@GetMapping(command)
 	public ModelAndView doGet(
-			HttpServletRequest request,
-			@RequestParam(value = "pageNumber" , required = false) String pageNumber,
-			@RequestParam(value = "pageSize" , required =  false) String pageSize,
-			@RequestParam(value = "mode" , required = false) String mode,
-			@RequestParam(value = "keyword" , required = false) String keyword) {
+			FlowParameters param) {
+
 		
-		//페이징과 필드 검색을 위한 파라미터를 우선 챙긴다 
-		FlowParameters parameters 
-			= new FlowParameters(pageNumber, pageSize, mode, keyword);
+		int totalcount 
+		= this.prrdao.SelectTotalCount(param.getMode(),param.getKeyword());
+		System.out.println("totalcount : "  + totalcount);
 		
-		//파라미터 확인을 위한 출력 
-		System.out.println(this.getClass() + " : "  + parameters.toString());
+		System.out.println(param);
 		
 		int totalCount 
-		=prrdao.SelectTotalCount(
-				parameters.getMode(),
-				parameters.getKeyword());
+		= this.prrdao.SelectTotalCount(param.getMode(), param.getKeyword());
 		
-		System.out.println("totalCount : " + totalCount);
+		Paging pageInfo = new Paging(
+				param.getPageNumber(),
+				param.getPageSize(),
+				totalCount,
+				null,
+				param.getMode(),
+				param.getKeyword());
 		
-		String contextpath = request.getContextPath() + "/" ;
-		String myurl = contextpath + this.command;
+		List<Productreviews> lists = this.prrdao.SelectDataList(
+											pageInfo.getOffset(), 
+											pageInfo.getLimit(), 
+											pageInfo.getMode(), 
+											pageInfo.getKeyword());
 		
-		Paging pageInfo
-			= new Paging(
-					parameters.getPageNumber(),
-					parameters.getPageSize(),
-					totalCount,
-					myurl,
-					parameters.getMode(),
-					parameters.getKeyword());
+		this.mav.addObject("lists", lists);
+		this.mav.addObject("pageInfo", pageInfo);
 		
-		List<Productreviews> lists = prrdao.SelectDataList(
-										pageInfo.getOffset(),
-										pageInfo.getLimit(),
-										parameters.getMode(),
-										parameters.getKeyword());
-			
-		//바인딩 해야 할 목록 
-		mav.addObject("lists" , lists); // 게시물 목록 
+		this.mav.addObject("mode", param.getMode());
+		this.mav.addObject("keyword", param.getKeyword());
 		
-		//페이징 관련 항목들 
-		mav.addObject("pagingHtml", pageInfo.getPagingHtml());
-		mav.addObject("pagingStatus", pageInfo.getPagingStatus());
-		
-		// 검색 필드의 상태 값 저장을 위한 항목들 
-		mav.addObject("mode", parameters.getMode());
-		mav.addObject("keyword", parameters.getKeyword());
-		
-		//상세 보기, 수정, 삭제, 답글 등 링크에 사용될 parameter list 문자열 
-		mav.addObject("parameters", parameters.toString());
-		
-		this.mav.setViewName(super.postpage);
+		System.out.println(pageInfo.getPagingHtml());
+		this.mav.setViewName(super.getpage);
 		return this.mav;
 		
 	}
