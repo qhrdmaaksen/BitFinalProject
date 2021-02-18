@@ -31,8 +31,14 @@
 	margin-top: 50px;
 	}
 	
-
-  
+.carousel-control-prev{
+	margin-top: 100px;
+	
+}
+ 
+.carousel-control-next{
+	margin-top: 100px;
+}  
   
  </style>
 
