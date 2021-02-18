@@ -73,4 +73,9 @@ public class MemberDao {
 		return this.abcd.selectOne(namespace + ".SelectTotalCount" , map);
 	}
 
+	public int DeleteData(Member bean) {
+		// 해당 id를 사용해서 회원 탈퇴
+		
+		return this.abcd.delete(namespace + ".DeleteData" , bean.getMid());
+	}
 }
