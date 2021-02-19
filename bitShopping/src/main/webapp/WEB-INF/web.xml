@@ -95,6 +95,7 @@
 		<servlet-name>productreviews</servlet-name>
 		<url-pattern>*.prr</url-pattern>
 	</servlet-mapping>
-		
+	
+	<!--  -->	
 	
 </web-app>

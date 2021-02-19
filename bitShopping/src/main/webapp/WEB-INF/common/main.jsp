@@ -130,9 +130,10 @@
 		<a href="<%=contextPath%>/pdetail.pr?pno=1&${requestScope.parameters}">
 			제품 상세 보기</a>
 <br><br><br>
-<br><br><br>
 		<a href="<%=contextPath%>/list.prr">상품 후기 게시판</a>
+<br><br><br>
 
+	<a href="<%=contextPath%>/payment.pm">결제하기</a>
 
 </body>
 </html>
