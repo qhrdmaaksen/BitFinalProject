@@ -7,16 +7,10 @@
 <meta charset="UTF-8">
 <title>마이 페이지</title>
 
-<style type="text/css">
-
-	section{
-	border: 1px;
-	}
-
-</style>
 
 <style>
 	
+
 	.sidevar{
 		width: 300px;
 		border: 1px;
@@ -42,7 +36,6 @@
 	    margin: 0;
 	    padding: 0;
 	}
-	user agent stylesheet
 	div {
 	    display: block;
 	}
@@ -54,15 +47,9 @@
 	    font-size: 12px;
 	    max-width: 100%;
 	}
-	a {
-	    background-color: transparent;
-	    text-decoration: none;
-	    color: inherit;
-	}
 	script {
 	    display: none;
 	}
-	
 	b, strong {
 	    font-weight: 700;
 	}
@@ -196,6 +183,26 @@
 	    float: right;
 	    width: 602px;
 	}
+	/* .mypage_top .list_mypage li {
+	    float: left;
+	    width: 198px;
+	    margin-right: 4px;
+	    background-color: #fff;
+	    display: block;
+	}
+	
+	.mypage_top .list_mypage .link {
+	    float: left;
+	    width: 100%;
+	    padding: 29px 0 0 30px;
+	}
+	.mypage_top .list_mypage .tit {
+	    padding-bottom: 26px;
+	    font-size: 14px;
+	    line-height: 18px;
+	    color: #333;
+	} */
+
 	.mypage_top .list_mypage li {
 	    float: left;
 	    width: 198px;
@@ -213,7 +220,7 @@
 	    line-height: 18px;
 	    color: #333;
 	}
-	.mypage_top .list_mypage .info {
+		.mypage_top .list_mypage .info {
 	    font-weight: 700;
 	    font-size: 20px;
 	    color: #5f0080;
@@ -232,23 +239,6 @@
 	    color: #999;
 	    line-height: 16px;
 	}
-	.mypage_top .list_mypage li {
-	    float: left;
-	    width: 198px;
-	    margin-right: 4px;
-	    background-color: #fff;
-	}
-	.mypage_top .list_mypage .link {
-	    float: left;
-	    width: 100%;
-	    padding: 29px 0 0 30px;
-	}
-	.mypage_top .list_mypage .tit {
-	    padding-bottom: 26px;
-	    font-size: 14px;
-	    line-height: 18px;
-	    color: #333;
-	}
 	.mypage_top .list_mypage .user_kurlypass {
 	    margin-right: 0;
 	}
@@ -257,9 +247,9 @@
 	    width: 100%;
 	    padding: 29px 0 0 30px;
 	}
-	.page_aticle.aticle_type2 {
+/* 	.page_aticle.aticle_type2 {
 	    padding-top: 65px;
-	}
+	} */
 	.page_aticle {
 	    width: 1050px;
 	    margin: 0 auto;
@@ -323,41 +313,40 @@
 	    font-weight: 700;
 	    font-size: 14px;
 	}
-	.line{
-    	color: white;
-   } 
 	.page_aticle button, .page_aticle input, .page_aticle select, .page_aticle * {
-    font-family: noto sans;
-    font-weight: 400;
-    letter-spacing: 0;
-}
-img {
-    border: 0;
-}
-
-img, video, canvas {
-    max-width: 100%;
-}
-element.style {
-    background-image: url(//img-cf.kurly.com/shop/data/skin/designgj/img/banner/ae8763d….jpg);
-}
-.mypage_top .bnr_event {
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    height: 60px;
-    margin-top: 20px;
-    background-size: 1050px 60px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-}
-
-.page_aticle button, .page_aticle input, .page_aticle select, .page_aticle * {
-    font-family: noto sans;
-    font-weight: 400;
-    letter-spacing: 0;
-}
-
+	    font-family: noto sans;
+	    font-weight: 400;
+	    letter-spacing: 0;
+	}
+	img {
+	    border: 0;
+	}
+	img, video, canvas {
+	    max-width: 100%;
+	}
+	element.style {
+	    background-image: url(//img-cf.kurly.com/shop/data/skin/designgj/img/banner/ae8763d….jpg);
+	}
+	.mypage_top .bnr_event {
+	    display: block;
+	    overflow: hidden;
+	    width: 100%;
+	    height: 60px;
+	    margin-top: 20px;
+	    background-size: 1050px 60px;
+	    background-repeat: no-repeat;
+	    background-position: 50% 50%;
+	}
+	.page_aticle button, .page_aticle input, .page_aticle select, .page_aticle * {
+	    font-family: noto sans;
+	    font-weight: 400;
+	    letter-spacing: 0;
+	}
+	body a {
+	    background-color: transparent;
+	    text-decoration: none;
+	    color: inherit;
+	}
 
   </style>
   
@@ -371,31 +360,9 @@ element.style {
 <body>
 
 
-<div class="line">
-------------------------------------------------------------------------------------------------------------------------------
-</div>
-
-
 <div id="content">
-<div id="qnb" class="quick-navigation" style="top: 2856.18px;">
-
-
-<!-- <script>
-/**
- * 상품상세일때 현재 보고 있는 상품 담기. 상품URL & 상품이미지
- * 최종 저장 날짜로 부터 24시가 지날시 localStorage 삭제
- */
-    function addDays(date, days){
-        var result = new Date(date);
-        result.setDate(result.getDate() + days);
-        return result.getTime();
-    }
-  
-
-</script> -->
-</div>
+<div id="qnb" class="quick-navigation" style="top: 2856.18px;"></div>
 <div id="myPageTop" class="page_aticle mypage_top">
-
 	<div class="mypagetop_user">
 		<div class="inner_mypagetop">
 			<div class="grade_user">
@@ -408,7 +375,7 @@ element.style {
 						</span> 
 					<div class="grade_bnenfit">
 						<div class="user">
-							<strong class="name">권연경</strong> <span class="txt">님</span></div> 
+							<strong class="name">${member.name}</strong> <span class="txt">님</span></div> 
 								 <div class="benefit"><strong class="tit"></strong>적립 0.5%</div> <!---->
 						 			<div class="benefit">
 						 		</div>
@@ -423,7 +390,7 @@ element.style {
 						<li class="user_reserve">
 							<div class="link">
 								<div class="tit">적립금  <!----></div>
-									 <a href="/shop/mypage/mypage_emoney.php" class="info"> 260 원 
+									 <a href="/shop/mypage/mypage_emoney.php" class="info">${member.mpoint}
 									 <img src="https://res.kurly.com/pc/service/common/1905/ico_arrow_56x56.png" alt="자세히 보기"> 
 								 	<span class="date">소멸 예정 0 원</span></a>
 								 </div>
