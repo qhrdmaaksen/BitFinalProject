@@ -75,7 +75,7 @@
 %>
 <meta charset="UTF-8">
 <title> 마켓컬리 :: 내일의 장보기, 마켓컬리 </title>
-<style type="text/css">
+<!-- <style type="text/css">
 		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
 		/*여기 스타일에는 회원가입에 필요한 css 스타일 공간, 유효성 검사 css 및 필수 입력 사항 * red css 사용등등  */
 		.err{ 
@@ -191,7 +191,7 @@
 	
 
 
-	</style>
+	</style> -->
 	
 <c:set var="contextPath" value="<%=contextPath%>" scope="application"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -201,28 +201,27 @@
 	<style type="text/css">
 		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
 		/*여기 스타일에는 회원가입에 필요한 css 스타일 공간, 유효성 검사 css 및 필수 입력 사항 * red css 사용등등  */
-		.err{ 
-			font-size : 10pt;
-			color:red;
-			font-weight: bolder;
-		}
-		#myalert{ 
-			font-size : 15px;
-			margin-top: 7px;
-			margin-right: 20px;
-			color:black;
-		}
-		.redPrefix{
-			color: red ; 
-		}
+	.err{ 
+		font-size : 10pt;
+		color:red;
+		font-weight: bolder;
+	}
+	#myalert{ 
+		font-size : 15px;
+		margin-top: 7px;
+		margin-right: 20px;
+		color:black;
+	}
+	.redPrefix{
+		color: red ; 
+	}
 	</style>	
+	
 	<style type="text/css">
 	
 	body .header{
 		margin-top: 50px;
 	}
-	
-	
 	#userMenu {
     width: 1050px;
     margin: 0 auto;
@@ -232,17 +231,14 @@
 	    font-weight: 400;
 	    letter-spacing: -.3px;
 	}
-		
 	#userMenu .list_menu {
 	    float: right;
 	}	
-	
 	#userMenu .menu {
 	    position: relative;
 	    z-index: 400;
 	    float: left;
 	}	
-	
 	#userMenu .link_menu {
 	    float: left;
 	    height: 37px;
@@ -260,7 +256,6 @@
 	#userMenu .menu.lst .link_menu {
 	    padding-right: 13px;
 	}
-	
 	#userMenu a {
 		font-size: 13px;
 	}
@@ -272,52 +267,48 @@
 	}
 	
 	.header{
-			height: 75px; background-color: #white; position: static;
-			width: 100%; z-index: 9999; left: 0px; margin-top: 50px;
-		}
-
+		height: 75px; background-color: #white; position: static;
+		width: 100%; z-index: 9999; left: 0px; margin-top: 50px;
+	}
 		
-		
-	h1{   position: absolute;
-    left: 50%;
-    bottom: 6px;
-    width: 200px;
-    height: 50px;
-    margin-left: -100px;
-    color: black;}
-      ul, ol, li { list-style:none; margin:0; padding:0; }
+	h1{   
+		position: absolute;
+	    left: 50%;
+	    bottom: 6px;
+	    width: 200px;
+	    height: 50px;
+	    margin-left: -100px;
+	    color: black;}
+    ul, ol, li { list-style:none; margin:0; padding:0; }
     
-	 ul.menu {}
-	 ul.menu > li { display:inline-block;  width:120px; padding:5px 10px; text-align:center; position:relative; font-size: 15px;}
+	ul.menu {}
+	ul.menu > li { display:inline-block;  width:120px; padding:5px 10px; text-align:center; position:relative; font-size: 15px;}
 	ul.menu > li.px{width: 150px;}
 	.menu a{line-height: 75px; color: black; padding: 0 22px 0 10px;  display: block; }	
 	ul{
-   	list-style:none;
-   	padding-left:0px;
+	   	list-style:none;
+	   	padding-left:0px;
    }
   	.mark {float: right; width: 100px;}
 	.px{float: left; border: 1px; }
    	ul.menu > li ul.submenu {  display:none; position:absolute;  left:0;   }
    	ul.menu > li:hover ul.submenu { display:block; background-color: gray; height: 50px; }
     ul.menu > li ul.submenu > li { display:inline-block; width:150px;  background:white; text-align:center; border: 1px solid white; height: 50px;}
-	 ul.menu > li ul.submenu > li:hover { background:gray;  }
-	 ul.menu > li ul.submenu > li a {font-size: 12px;}
+	ul.menu > li ul.submenu > li:hover { background:gray;  }
+	ul.menu > li ul.submenu > li a {font-size: 12px;}
 	
 
 	/* 추가 */
-	 .container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}
-	  .container #headerLogo .bnr_delivery{position:absolute;left:-1px;top:-28px;margin:auto;height:22px}
-	  .container #headerLogo .bnr_delivery img{width:163px;height:22px}
-	  .container #headerLogo .logo{position:absolute;left:50%;bottom:6px;width:200px;height:79px;margin-left:-100px}
-	  .container #headerLogo .logo img{display:block;width:103px;height:79px;margin:0 auto}
-	  .container #headerLogo .logo #gnbLogoContainer {margin:0 auto} 
-	
-
+	.container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}
+	.container #headerLogo .bnr_delivery{position:absolute;left:-1px;top:-28px;margin:auto;height:22px}
+	.container #headerLogo .bnr_delivery img{width:163px;height:22px}
+	.container #headerLogo .logo{position:absolute;left:50%;bottom:6px;width:200px;height:79px;margin-left:-100px}
+	.container #headerLogo .logo img{display:block;width:103px;height:79px;margin:0 auto}
+	.container #headerLogo .logo #gnbLogoContainer {margin:0 auto} 
 
 	</style>
 </head>
 <body>
-
 
 <header class="header">
 	<div id="userMenu">
@@ -331,7 +322,6 @@
 		<li class="menu lst"><a href="" class="link_menu">고객센터</a> <ul class="sub">
 		</ul></li></ul>
 	</div>
-		
 		
 	<div class="container">
 		<div id="headerLogo" class="layout-wrapper">
@@ -347,7 +337,7 @@
 		</div>
 			<nav class="navi">
 				<ul class="menu"  >
-					<li class="px"><a href="">전체카테고리</a>
+					<li class="px"><a href="">전체 카테고리</a>
 					<ul class="submenu">
 							<li><a href="">채소</a></li>
 							<li><a href="">과일/견과/쌀</a></li>
