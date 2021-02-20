@@ -1,57 +1,253 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+
 <title>결제 페이지</title>
-<%@ include file="./../common/common.jsp"%>
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript"
-	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-	crossorigin="anonymous">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-	crossorigin="anonymous"></script>
-<script
-	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<script type="text/javascript"src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style type="text/css">
-word-break:break-all;
-box-sizing:border-box;
+.tit_page{
+text-align: center;
+padding-top:70px;
+font-style: normal;
+font-weight: 900;
+
+}
+.tit_section{
+word-break: break-all;
+box-sizing: border-box;
 margin: 0;
-padding:0;
-font-weight:800;
-font-family:noto
-sans;
-font-size: 
-30px;
-color:#333;
-line-height:50px;
-text-align:center;
-letter-spacing:-.5px;
+font-family: 'Noto Sans';
+letter-spacing: -0.3px;
+padding: 74px 0 16px;
+font-weight: bold;
+font-size: 20px;
+color: #333;
+line-height: 29px;
+clear: both;
+
+}
+.short_info{
+text-align: center;
+padding-top: 100px;
+font-weight: 900;
+font-size:20px; 
+}
+#titFocusOrderer{
+color:#333333;
+font-size: 18.5px;
+font-weight: 800;
+padding-top: 70px;
+padding-top: 70px;
+}
+
+.tit_section .desc {
+    padding-left: 13px;
+    font-size: 14px;
+    color: #666;
+    vertical-align: 3px;
+    
+}
+
+.order_address {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #f4f4f4;
+}
+.order_section {
+    overflow: hidden;
+    letter-spacing: -0.3px;
+}
+
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+.data_orderer .goodsinfo_table .fst th {
+    padding-top: 19px;
+ 
+}
+.goodsinfo_table th {
+    width: 190px;
+    padding: 8px 0 0;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+    letter-spacing: -0.32px;
+    vertical-align: top;
+}
+div, th, td, li, dt, dd, p {
+    word-break: break-all;
+}
+
+.user_form {
+    font-family: Noto Sans;
+}
+.order_section .section_crux {
+    float: left;
+    width: 190px;
+    padding-top: 19px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+    letter-spacing: -0.32px;
+}   
+.order_reception {
+    border-bottom: 1px solid #f4f4f4;
+} 
+
+.order_section .section_full {
+    overflow: hidden;
+    padding: 19px 20px 20px 0;
+}
+.order_section .badge.star {
+    color: #5f0080;
+}
+
+.order_reception .receiving {
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+}
+.user_form .goodsinfo_table {
+    border-bottom: 0 none;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.tbl_left {
+    float: left;
+    width: 742px;
+}
+
+.data_payment .emoney_use input[name="using_point"] {
+    float: left;
+    width: 160px;
+    margin-right: 8px;
+}
+
+.data_payment th {
+    padding-top: 29px;
+}
+
+
+.goodsinfo_table th {
+    width: 190px;
+    padding: 8px 0 0;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+    letter-spacing: -0.32px;
+    vertical-align: top;
+}
+.goodsinfo_table th {
+    text-align: left;
+   
+}
+.goodsinfo_table tr:last-child td {
+    border: none;
+}
+.data_payment td {
+    padding: 20px 0;
+}
+.goodsinfo_table td {
+    position: relative;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+    vertical-align: top;
+}
+.goodsinfo_table tr:last-child td {
+    border: none;
+}
+
+.data_method .goodsinfo_table th, .data_method .goodsinfo_table td {
+    padding-top: 23px;
+}
+.goodsinfo_table th {
+    width: 190px;
+    padding: 8px 0 0;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+    letter-spacing: -0.32px;
+    vertical-align: top;
+}
+.goodsinfo_table th {
+    text-align: left;
+    
+}
+
+.user_form .label_radio {
+    display: inline-block;
+    padding: 0 18px 0 6px;
+    background: #fff url(https://res.kurly.com/pc/service/order/1908/ico_radio_off.png) no-repeat 0 1px;
+    font-size: 14px;
+    color: #333;
+    line-height: 18px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.user_form .label_radio.checked {
+    background: #fff url(https://res.kurly.com/pc/service/order/1908/ico_radio_on.png) no-repeat 0 1px;
+}
+
+form {
+    display: block;
+}
+.user_form .btn_payment {
+    display: block;
+    width: 240px;
+    height: 56px;
+    margin: 40px auto 0;
+    border: 0 none;
+    border-radius: 3px;
+    background-color: #5f0080;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+}
+.user_form input, .user_form select, .user_form textarea, .user_form button {
+    font-family: noto sans;
+    }
+
 </style>
+
 </head>
 <body>
 
 	<div class="tit_page">
 		<h2 class="tit">주문서</h2>
 	</div>
-	<h2 class="tit_section fst">주문상품</h2>
+	<div class="user_form">
+	<h4 class="tit_section fst">주문상품</h4>
 	<div id="itemList" class="page_aticle order_goodslist">
 		<div class="info_product">
-			<a class="btn" href="#none"><span class="screen_out">펼침 /
-					닫힘</span></a>
+		<hr>
 			<div class="short_info">[선물세트] 안동 사과빵 8개입상품을 주문합니다.</div>
 		</div>
-		<ul class="list_product">
+		<!-- <ul class="list_product">
 			<li>
 				<div class="thumb">
 					<img
@@ -66,10 +262,23 @@ letter-spacing:-.5px;
 					<span class="num"><span class="price">12,000원</span></span>
 				</div>
 			</li>
-		</ul>
+		</ul> -->
+		
 	</div>
+<form id="form" name="frmOrder" action="/checkout/settle.php" method="post" onsubmit="return chkForm2(this)" 
+class="order_view" novalidate="">
+
+<input type="hidden" name="platform" value="desktop">
+<input type="hidden" id="order_method" name="order_method" value="cart">
+<input type="hidden" name="fallback_on_delivery_fail_method" value="2">
+<input type="hidden" name="save_payment_method" value="true">
+<input type="hidden" name="settlement_price" value="0">
+<input type="hidden" name="settlekind_option" value="">
+<div id="apply_coupon"></div>
+<input type="hidden" name="apr_coupon_data" value="">
 
 	<h2 class="tit_section" id="titFocusOrderer">주문자 정보</h2>
+	<hr>
 	<div class="order_section data_orderer">
 		<table class="goodsinfo_table ">
 			<tbody>
@@ -90,8 +299,8 @@ letter-spacing:-.5px;
 						value="ghdrudgml90@naver.com" option="regEmail">
 						ghdrudgml90@naver.com
 						<p class="txt_guide">
-							<span class="txt txt_case1">이메일을 통해 주문처리과정을 보내드립니다.</span> <span
-								class="txt txt_case2">정보 변경은 <span class="txt_desc">마이컬리
+							<span class="txt txt_case1">이메일을 통해 주문처리과정을 보내드립니다.</span> 
+							<span class="txt txt_case2">정보 변경은 <span class="txt_desc">마이컬리
 									&gt; 개인정보 수정</span> 메뉴에서 가능합니다.
 							</span>
 						</p></td>
@@ -104,12 +313,12 @@ letter-spacing:-.5px;
 		배송 정보 <span class="desc">배송 휴무일: 샛별배송(휴무없음), 택배배송(일요일)</span>
 	</h2>
 
-	<div class="address_info">
+	<!-- <div class="address_info">
 		<a href="#none" id="btnLayerInfo" class="desc">배송지 변경 안내</a>
 		<div class="layer_info" id="layerInfo">
 			<strong class="emph">장바구니, 홈</strong>에서 <br> 배송지를 변경할 수 있어요.
 		</div>
-	</div>
+	</div> -->
 
 	<div class="order_section order_address" id="dataDelivery">
 		<h3 href="#none" class="section_crux">배송지</h3>
@@ -141,13 +350,48 @@ letter-spacing:-.5px;
 		</div>
 		</div>
 		<button type="button" id="btnUpdateSubAddress" data-address-no="" class="btn default">수정</button>
-
+	</div>
 	</div>
 	</div>
 	
+	<div class="tbl_left">
+<h2 class="tit_section">적립금</h2>
+<hr>
+<tr class="emoney_use ">
+<th class="">
+적립금 적용
+<input type="hidden" value="131" name="checkEmoney">
+</th>
+<td>
+<div id="ondealCheck">
+<div class="emoney_reg">
+<input type="text" name="using_point" id="emoney" class="number_only" value="" placeholder="0" pattern="[0-9]*" inputmode="decimal" onblur="chk_emoney(this);" onkeyup="debounceCalcuSettle();" onkeydown="if (event.keyCode == 13) {return false}">
+<div class="check">
+<label class="emoney_chkbox">
+<input type="checkbox" name="">
+<span class="txt_checkbox">모두사용</span>
+</label>
+</div>
+</div>
+<p class="possess">
+보유 적립금 : <strong class="emph">131</strong>원
+<input type="hidden" name="emoney_max" value="131">
+</p>
+<ul class="list_notice">
+<li>· 보유 적립금 1천원 이상부터 사용가능</li>
+<li>· 적립금 내역: 마이컬리 &gt; 적립금</li>
+</ul>
+</div>
+<p id="msgNomoney"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+	
 	<div class="data_method">
 <h2 class="tit_section" id="titFocusMethod">결제수단</h2>
-
+<hr>
 <input type="hidden" name="escrow" value="N">
 <table class="goodsinfo_table tbl_left">
 <tbody><tr>
@@ -238,8 +482,9 @@ letter-spacing:-.5px;
 <div id="paymentMethodResult">
 <input type="hidden" name="payment_method" value="">
 </div>
-<input type="submit" value="결제하기" class="btn_payment">
+<input type="submit" value="결제하기" class="btn_payment" >
 </form>
+
 
 </body>
 </html>
