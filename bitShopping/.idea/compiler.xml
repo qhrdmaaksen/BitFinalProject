@@ -9,8 +9,8 @@
         <module name="bitShopping" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="bitShopping" target="1.5" />
+    <bytecodeTargetLevel target="12">
+      <module name="bitShopping" target="12" />
     </bytecodeTargetLevel>
   </component>
 </project>
