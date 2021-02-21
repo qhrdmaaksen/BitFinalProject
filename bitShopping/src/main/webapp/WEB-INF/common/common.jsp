@@ -103,22 +103,11 @@
 	<style type="text/css">
 	
 	
-/* 	
-	.wrapper{
-		width: 1170px; margin: 0 auto;}
-	
-	.clearfix{
-		content: ''; display: block; clear: both; 
-	}
-	
-	.header{
-		height: 75px; background-color: #white; position: static;
-		width: 100%; z-index: 9999; left: 0px; margin-top: 50px;
-	}*/
-	
 	body .header{
 		margin-top: 50px;
 		width: 100%;
+		position : relative;
+		z-index : 9999;
 	}
 	form {
 	    display: block;
@@ -396,18 +385,18 @@
 	header .container a{
 		text-decoration: none;
 	}
+	.dropdown{
+		position: fixed;
+	}
 
 
-
-
-	
 	    
 	    
 	    
 	<!--===========================================================-->    
     ul, ol, li { list-style:none; margin:0; padding:0; }
     
-	ul.menu {}
+	ul.menu {position: fixed;}
 	ul.menu > li { display:inline-block;  width:120px; padding:5px 10px; text-align:center; position:relative; font-size: 15px;}
 	ul.menu > li.px{width: 150px;}
 	.menu a{line-height: 75px; color: black; padding: 0 22px 0 10px;  display: block; }	
@@ -467,11 +456,26 @@
 		<div id="gnb" class="">
 			<!-- <h2 class="screen_out">메뉴</h2> -->
 				<div id="gnbMenu" class="gnb_kurly"><div class="inner_gnbkurly">
+				
+				
 					<div class="gnb_main">
 						<ul class="gnb">
-							<li class="menu1">
+						
+						
+							<!-- <li class="menu1">
 								<a href="#none"><span class="ico"></span>
-								<span class="txt">전체 카테고리</span></a></li> 
+								<span class="txt">전체 카테고리</span></a></li> --> 
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">데이터 보기<b class="caret"></b></a>
+								<ul class="dropdown-menu">							
+									<li><a href="<%=contextPath%>/exam01.vw">회원과 게시물</a></li>
+									<li><a href="<%=contextPath%>/exam02.vw">회원별 게시물 건수</a></li>
+									<li><a href="<%=contextPath%>/exam03.vw">주문 정보</a></li>
+									<li><a href="<%=contextPath%>/exam04.vw">고객별 매출 총액</a></li>
+									<li><a href="<%=contextPath%>/exam05.vw">회원별 주문 건수</a></li>
+													
+								</ul></li>	
+								
 							<li class="menu2">
 								<a href="/shop/goods/goods_list.php?category=038" class="link new ">
 								<span class="txt">신상품</span></a></li> 
@@ -485,6 +489,8 @@
 								<a href="/shop/goods/event.php?&amp;" class="link event ">
 								<span class="txt">금주혜택</span></a></li>
 						</ul> 
+						
+						
 					<div id="side_search" class="gnb_search">
 						<form action="/shop/goods/goods_search.php?&amp;" onsubmit="return searchTracking(this)">
 							<input type="hidden" name="searched" value="Y"> 

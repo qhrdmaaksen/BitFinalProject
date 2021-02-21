@@ -9,19 +9,23 @@
 
 
 <style>
-	
 
-	.sidevar{
+/* 	body{
+		position: relative;
+	} */
+	
+	/* .sidevar{
 		width: 300px;
 		border: 1px;
 		margin-left: 20px;
-	}
+	} */
 	li .list-group-item{
 		align-items: center;
 	}
 	#content {
 	    min-width: 1050px;
 	    padding-bottom: 120px;
+	    position: relative;
 	}
 	#header, #container, #content {
 	    position: relative;
@@ -102,18 +106,18 @@
 	    text-align: center;
 	    word-break: break-all;
 	}
-	.mypage_top .grade_user .inner_grade {
-	    display: table;
-	    width: 100%;
-	    height: 64px;
-	    padding-bottom: 3px;
-	}
 	.mypage_top .grade_user .in_grade {
 	    display: table-cell;
 	    width: 100%;
 	    vertical-align: middle;
 	    line-height: 18px;
 	    word-break: keep-all;
+	}
+	.mypage_top .grade_user .inner_grade {
+	    display: table;
+	    width: 100%;
+	    height: 64px;
+	    padding-bottom: 3px;
 	}
 	.mypage_top .grade_bnenfit {
 	    overflow: hidden;
@@ -183,29 +187,9 @@
 	    float: right;
 	    width: 602px;
 	}
-	/* .mypage_top .list_mypage li {
-	    float: left;
-	    width: 198px;
-	    margin-right: 4px;
-	    background-color: #fff;
-	    display: block;
-	}
-	
-	.mypage_top .list_mypage .link {
-	    float: left;
-	    width: 100%;
-	    padding: 29px 0 0 30px;
-	}
-	.mypage_top .list_mypage .tit {
-	    padding-bottom: 26px;
-	    font-size: 14px;
-	    line-height: 18px;
-	    color: #333;
-	} */
-
 	.mypage_top .list_mypage li {
 	    float: left;
-	    width: 198px;
+	    width: 190px;
 	    margin-right: 4px;
 	    background-color: #fff;
 	}
@@ -389,7 +373,7 @@
 					<ul class="list_mypage">
 						<li class="user_reserve">
 							<div class="link">
-								<div class="tit">적립금  <!----></div>
+								<div class="tit">적립금 <!----></div>
 									 <a href="/shop/mypage/mypage_emoney.php" class="info">${member.mpoint}
 									 <img src="https://res.kurly.com/pc/service/common/1905/ico_arrow_56x56.png" alt="자세히 보기"> 
 								 	<span class="date">소멸 예정 0 원</span></a>
@@ -397,7 +381,7 @@
 						</li> 
 						<li class="user_coupon">
 							<div class="link">
-								<div class="tit">쿠폰  <!----></div> 
+								<div class="tit">쿠폰 <!----></div> 
 									<a href="/shop/mypage/mypage_coupon.php" class="info"> 2 개 
 									<img src="https://res.kurly.com/pc/service/common/1905/ico_arrow_56x56.png" alt="자세히 보기">
 									</a>
