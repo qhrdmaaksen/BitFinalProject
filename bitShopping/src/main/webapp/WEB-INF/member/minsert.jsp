@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<!-- <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script>
 		 //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 	    function sample4_execDaumPostcode() {
@@ -36,16 +36,11 @@
 	                }
 	
 	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-	                document.getElementById('sample4_postcode').value = data.zonecode;
-	                document.getElementById("sample4_roadAddress").value = roadAddr;
-	                document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+	                document.getElementById('fakezipcode').value = data.zonecode;
+	                document.getElementById('zipcode').value = data.zonecode;
+	                document.getElementById("address1").value = roadAddr;
 	                
 	                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-	                if(roadAddr !== ''){
-	                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-	                } else {
-	                    document.getElementById("sample4_extraAddress").value = '';
-	                }
 	
 	                var guideTextBox = document.getElementById("guide");
 	                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
@@ -64,7 +59,7 @@
 	                }
 	            }
 	        }).open();
-	    } -->
+	    }
 	</script>
 	<script type="text/javascript">
 		function checkDuplicateId(){//아이디 중복 체크 함수
@@ -77,13 +72,13 @@
 			var url = '<%=contextPath%>/idCheck.me?mid=' + mid ;
 			window.open(url , 'mywin' , 'height=150,width=300') ;
 		}
-		function findZipcode() { /*우편 번호 찾기 버튼 클릭*/
+		<%-- function findZipcode() { /*우편 번호 찾기 버튼 클릭*/
 			
 			var url = '<%=contextPath%>/zipcheck.me';
 			window.open(url, 'mywin', 'height=600, width=720, statusbar=yes, scrollbars=yes, resizable=no');
 														  		// 상태 포커스 , 스크롤 바 , 리사이즈 안되게
 			//alert('우편 번호 찾기') ;
-		}
+		} --%>
 		function checkForm() { // 회원 가입 버튼 클릭 함수
 			var isCheck = document.myform.isCheck.value ; 
 			if (isCheck == 'false'){
@@ -219,7 +214,8 @@
 				</div>
 			</div>
 				<!-- ----------------------------------우편번호 api---------------------------------------------- -->
-			<!-- <div class="form-group">
+			<span id="guide" style="color:#999;display:none"></span>
+			<div class="form-group">
 				<label for="zipcode" class="col-sm-3">
 					우편번호
 					<span  class="redPrefix">
@@ -229,25 +225,25 @@
 				<div class="col-sm-7" style="margin-top: 5px;">
 					<input type="text" id="fakezipcode" name="fakezipcode" 
 						class="form-control" value="우편번호 찾기를 눌러주세요." disabled="disabled"/>
-						<input type="hidden" name="sample4_postcode" id="sample4_postcode" value="">
+						<input type="hidden" name="zipcode" id="zipcode" value="">
 					<div class="col-sm-2" style="margin-bottom: 1px;" align="left">
 						<input type="button" class="w3-btn w3-white w3-border w3-border-purple w3-round-large" value="우편 번호 찾기"
 								style="font-weight: bold;" onclick="sample4_execDaumPostcode();">
 					</div>
 					<div class="form-group" class="col-sm-7" style="margin-top: 5px;">
 						<label for="address1"></label>
-						<input type="text" name="sample4_roadAddress" id="sample4_roadAddress"
+						<input type="text" name="address1" id="address1"
 								class="form-control" placeholder="도로명주소" value="">
 					</div>
 					<div class="form-group" class="col-sm-7" style="margin-top: 5px;">
 						<label for="address2"></label>
-						<input type="text" name="sample4_jibunAddress" id="sample4_jibunAddress"
-								class="form-control" placeholder="지번주소" value="">
+						<input type="text" name="address2" id="address2"
+								class="form-control" placeholder="상세주소" value="">
 					</div>
 				</div>
-			</div> -->
+			</div>
 			<!-- -------------------------------------------------------------------------------- -->
-			<div class="form-group">
+			<%-- <div class="form-group">
 				<label for="zipcode" class="col-sm-3">
 					우편번호
 					<span  class="redPrefix">
@@ -265,9 +261,9 @@
 					<input type="button" class="w3-btn w3-white w3-border w3-border-purple w3-round-large" style="font-weight: bold;" value="주소 검색" 
 						onclick="javascript:findZipcode();" >
 				</div>
-			</div>
+			</div> --%>
 			<!-- -------------------------------------------------------------------------------- -->
-			<div class="form-group">
+			<%-- <div class="form-group">
 				<label for="address1" class="col-sm-3">
 					주소
 					<span  class="redPrefix">
@@ -281,9 +277,9 @@
 						<input type="hidden" id="address1" name="address1" value="${address1}">
 					<form:errors cssClass="err" path="address1" />
 				</div>
-			</div>
+			</div> --%>
 			<!-- -------------------------------------------------------------------------------- -->
-			<div class="form-group">
+			<%-- <div class="form-group">
 				<label for="address2" class="col-sm-3">
 					상세 주소
 					<span  class="redPrefix">
@@ -295,7 +291,7 @@
 						class="form-control" value="${address2}" />
 					<form:errors cssClass="err" path="address2" />
 				</div>
-			</div>
+			</div> --%>
 			<!-- -------------------------------------------------------------------------------- -->
 			<div class="form-group">
 				<label for="createdate" class="col-sm-3">

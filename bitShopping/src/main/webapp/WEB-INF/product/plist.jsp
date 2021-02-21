@@ -9,24 +9,24 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="./../assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/mytest/resources/assets/img/favicon.png">
 
     <!-- all css here -->
-    <link rel="stylesheet" href="./../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./../assets/css/animate.css">
-    <link rel="stylesheet" href="./../assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./../assets/css/chosen.min.css">
-    <link rel="stylesheet" href="./../assets/css/themify-icons.css">
-    <link rel="stylesheet" href="./../assets/css/fontawesome-all.css">
-    <link rel="stylesheet" href="./../assets/css/ionicons.min.css">
-    <link rel="stylesheet" href="./../assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="./../assets/css/material-design-iconic-font.css">
-    <link rel="stylesheet" href="./../assets/css/meanmenu.min.css">
-    <link rel="stylesheet" href="./../assets/css/tippy.css">
-    <link rel="stylesheet" href="./../assets/css/bundle.css">
-    <link rel="stylesheet" href="./../assets/css/style.css">
-    <link rel="stylesheet" href="./../assets/css/responsive.css">
-    <script src="./../assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="/mytest/resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/animate.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/chosen.min.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/tippy.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/bundle.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/style.css">
+    <link rel="stylesheet" href="/mytest/resources/assets/css/responsive.css">
+    <script src="/mytest/resources/assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
@@ -131,7 +131,7 @@
                         <div class="col-md-2 col-xs-12">
                             <div class="logo_area">
                                 <a href="index.html">
-                                    <img src="./../assets/img/logo/logo.png" alt="">
+                                    <img src="/mytest/resources/assets/img/logo/logo.png" alt="">
                                 </a>
                             </div>
                         </div>
@@ -192,7 +192,7 @@
                                                         </li>
                                                         <li class="mega-menu-img">
                                                             <ul>
-                                                                <li><a class="dot-none" href="shop.html"><img alt="" src="./../assets/img/banner/17.jpg"></a></li>
+                                                                <li><a class="dot-none" href="shop.html"><img alt="" src="/mytest/resources/assets/img/banner/17.jpg"></a></li>
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -238,7 +238,7 @@
                                                         <div class="single-cart-box">
                                                             <div class="cart-img">
                                                                 <a href="#">
-                                                                    <img alt="cart-image" src="./../assets/img/products/mini1.jpg">
+                                                                    <img alt="cart-image" src="/mytest/resources/assets/img/products/mini1.jpg">
                                                                 </a>
                                                             </div>
                                                             <div class="cart-content">
@@ -257,7 +257,7 @@
                                                         <div class="single-cart-box">
                                                             <div class="cart-img">
                                                                 <a href="#">
-                                                                    <img alt="cart-image" src="./../assets/img/products/mini2.jpg">
+                                                                    <img alt="cart-image" src="/mytest/resources/assets/img/products/mini2.jpg">
                                                                 </a>
                                                             </div>
                                                             <div class="cart-content">
@@ -467,7 +467,7 @@
                                                 <li>
                                                     <div class="product-image">
                                                         <a title="Phasellus vel hendrerit" href="#">
-                                                            <img alt="" src="./../assets/img/products/side_p_1.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/side_p_1.jpg">
                                                         </a>
                                                     </div>
                                                     <div class="product-info">
@@ -500,7 +500,7 @@
                                                 <li>
                                                     <div class="product-image">
                                                         <a title="Phasellus vel hendrerit" href="#">
-                                                            <img alt="" src="./../assets/img/products/side_p_2.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/side_p_2.jpg">
                                                         </a>
                                                     </div>
                                                     <div class="product-info">
@@ -559,7 +559,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-12 ">
                                         <div class="shop_top_banner">
-                                            <img src="/./../assets/img/banner/shop-banner.jpg" alt="hahaha">
+                                            <img src="/mytest/resources/assets/img/banner/shop-banner.jpg" alt="hahaha">
                                         </div>
                                         <div class="tolbar__area">
                                             <div class="toolbar clearfix">
@@ -601,7 +601,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/11.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/11.jpg">
                                                         </a>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
@@ -654,7 +654,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/5.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/5.jpg">
                                                         </a>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
@@ -708,7 +708,7 @@
                                                     <div class="product-img">
                                                         <a href="product-details.html">
                                                             <span class="onsale">Sale!</span>
-                                                            <img alt="" src="./../assets/img/products/8.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/8.jpg">
                                                         </a>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
@@ -765,7 +765,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/2.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/2.jpg">
                                                         </a>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
@@ -818,7 +818,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/3.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/3.jpg">
                                                         </a>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
@@ -871,7 +871,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/1.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/1.jpg">
                                                         </a>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
@@ -924,7 +924,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/11.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/11.jpg">
                                                         </a>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
@@ -977,7 +977,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/5.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/5.jpg">
                                                         </a>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
@@ -1031,7 +1031,7 @@
                                                     <div class="product-img">
                                                         <a href="product-details.html">
                                                             <span class="onsale">Sale!</span>
-                                                            <img alt="" src="./../assets/img/products/8.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/8.jpg">
                                                         </a>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
@@ -1088,7 +1088,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/2.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/2.jpg">
                                                         </a>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
@@ -1141,7 +1141,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/3.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/3.jpg">
                                                         </a>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
@@ -1194,7 +1194,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/1.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/1.jpg">
                                                         </a>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
@@ -1255,7 +1255,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/6.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/6.jpg">
                                                         </a>
                                                     </div>
                                                     <div class="product-content">
@@ -1312,7 +1312,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/5.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/5.jpg">
                                                         </a>
                                                     </div>
                                                     <div class="product-content">
@@ -1369,7 +1369,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/9.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/9.jpg">
                                                         </a>
                                                     </div>
                                                     <div class="product-content">
@@ -1427,7 +1427,7 @@
                                                     <div class="product-img">
                                                         <a href="product-details.html">
                                                             <span class="onsale">Sale!</span>
-                                                            <img alt="" src="./../assets/img/products/1.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/1.jpg">
                                                         </a>
                                                     </div>
                                                     <div class="product-content">
@@ -1488,7 +1488,7 @@
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img alt="" src="./../assets/img/products/11.jpg">
+                                                            <img alt="" src="/mytest/resources/assets/img/products/11.jpg">
                                                         </a>
                                                     </div>
                                                     <div class="product-content">
@@ -1586,7 +1586,7 @@
                                 <!--Footer Logo Start-->
                                 <div class="footer-logo">
                                     <a href="index.html">
-                                        <img alt="" src="./../assets/img/logo/logo.png">
+                                        <img alt="" src="/mytest/resources/assets/img/logo/logo.png">
                                     </a>
                                 </div>
                                 <!--Footer Logo End-->
@@ -1685,25 +1685,25 @@
                             <div class="quick-view-learg-img">
                                 <div class="quick-view-tab-content tab-content">
                                     <div class="tab-pane active show fade" id="modal1" role="tabpanel">
-                                        <img src="./../assets/img/quick-view/l1.jpg" alt="">
+                                        <img src="/mytest/resources/assets/img/quick-view/l1.jpg" alt="">
                                     </div>
                                     <div class="tab-pane fade" id="modal2" role="tabpanel">
-                                        <img src="./../assets/img/quick-view/l2.jpg" alt="">
+                                        <img src="/mytest/resources/assets/img/quick-view/l2.jpg" alt="">
                                     </div>
                                     <div class="tab-pane fade" id="modal3" role="tabpanel">
-                                        <img src="./../assets/img/quick-view/l3.jpg" alt="">
+                                        <img src="/mytest/resources/assets/img/quick-view/l3.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
                             <div class="quick-view-list nav" role="tablist">
                                 <a class="active" href="#modal1" data-toggle="tab">
-                                    <img src="./../assets/img/quick-view/s1.jpg" alt="">
+                                    <img src="/mytest/resources/assets/img/quick-view/s1.jpg" alt="">
                                 </a>
                                 <a href="#modal2" data-toggle="tab">
-                                    <img src="./../assets/img/quick-view/s2.jpg" alt="">
+                                    <img src="/mytest/resources/assets/img/quick-view/s2.jpg" alt="">
                                 </a>
                                 <a href="#modal3" data-toggle="tab">
-                                    <img src="./../assets/img/quick-view/s3.jpg" alt="">
+                                    <img src="/mytest/resources/assets/img/quick-view/s3.jpg" alt="">
                                 </a>
                             </div>
                         </div>
@@ -1770,17 +1770,17 @@
     </div>
 
     <!-- all js here -->
-    <script src="./../assets/js/vendor/jquery-1.12.0.min.js"></script>
-    <script src="./../assets/js/popper.js"></script>
-    <script src="./../assets/js/bootstrap.min.js"></script>
-    <script src="./../assets/js/isotope.pkgd.min.js"></script>
-    <script src="./../assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="./../assets/js/jquery.counterup.min.js"></script>
-    <script src="./../assets/js/waypoints.min.js"></script>
-    <script src="./../assets/js/ajax-mail.js"></script>
-    <script src="./../assets/js/owl.carousel.min.js"></script>
-    <script src="./../assets/js/plugins.js"></script>
-    <script src="./../assets/js/main.js"></script><a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: none;"><i class="ion-arrow-up-c"></i></a>
+    <script src="/mytest/resources/assets/js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/mytest/resources/assets/js/popper.js"></script>
+    <script src="/mytest/resources/assets/js/bootstrap.min.js"></script>
+    <script src="/mytest/resources/assets/js/isotope.pkgd.min.js"></script>
+    <script src="/mytest/resources/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/mytest/resources/assets/js/jquery.counterup.min.js"></script>
+    <script src="/mytest/resources/assets/js/waypoints.min.js"></script>
+    <script src="/mytest/resources/assets/js/ajax-mail.js"></script>
+    <script src="/mytest/resources/assets/js/owl.carousel.min.js"></script>
+    <script src="/mytest/resources/assets/js/plugins.js"></script>
+    <script src="/mytest/resources/assets/js/main.js"></script><a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: none;"><i class="ion-arrow-up-c"></i></a>
 
 </body>
 </html>
