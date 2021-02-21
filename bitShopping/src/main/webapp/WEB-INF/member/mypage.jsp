@@ -10,15 +10,6 @@
 
 <style>
 
-/* 	body{
-		position: relative;
-	} */
-	
-	/* .sidevar{
-		width: 300px;
-		border: 1px;
-		margin-left: 20px;
-	} */
 	li .list-group-item{
 		align-items: center;
 	}
@@ -401,12 +392,6 @@
 				</div>
 				</div>
 
-
-<!-- 	<div class="bg_loading" id="bgLoading" style="display: none;">
-		<div class="loading_show"></div>
-	</div> -->
-<!-- <script src="/common_js/common_filter.js?ver=1.26.6"></script>
-<script src="/common_js/mypage_v1.js?ver=1.26.6"></script> -->
 	<div class="page_aticle aticle_type2">
 		<div id="snb" class="snb_my">
 			<h2 class="tit_snb">마이컬리</h2>

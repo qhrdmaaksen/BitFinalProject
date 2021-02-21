@@ -81,6 +81,27 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	 <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="<%=contextPath%>/assets/img/favicon.png">
+    <!-- all css here -->
+   <link rel="stylesheet" href="<%=contextPath%>/assets/css/bootstrap.min.css">
+     <link rel="stylesheet" href="<%=contextPath%>/assets/css/animate.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/chosen.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/fontawesome-all.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/tippy.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/bundle.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/style.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/responsive.css"> 
+    <script src="<%=contextPath%>/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text<%=contextPath%>/assets/css">
+    </style>
 	<style type="text/css">
 		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
 		/*여기 스타일에는 회원가입에 필요한 css 스타일 공간, 유효성 검사 css 및 필수 입력 사항 * red css 사용등등  */
@@ -101,7 +122,6 @@
 	</style>	
 	
 	<style type="text/css">
-	
 	
 	body .header{
 		margin-top: 50px;
@@ -129,6 +149,18 @@
 	ol, ul {
 	    list-style-type: none;
 	}
+	.row {
+	    display: inline-block !important;
+	    width: 100%
+	}
+	.wrapper{
+		height: 120px;
+	}
+	.hdr_1 .container-fluid {
+	    padding-left: 10px;
+	    padding-right: 30px;
+	}
+	
 	#userMenu {
 	    width: 1050px;
 	    margin: 0 auto;
@@ -172,246 +204,8 @@
 	    border-bottom: 0;
 	}
 
-
-	<!--===========================================================-->
-	
-	.screen_out {
-    display: block;
-    overflow: hidden;
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    font-size: 0;
-    line-height: 0;
-    text-indent: -9999px;
-	}
-	#gnb .gnb_kurly {
-	    position: relative;
-	    z-index: 300;
-	    min-width: 1050px;
-	    background-color: #fff;
-	    font-family: 'Noto Sans';
-	    letter-spacing: -0.3px;
-	}
-	#gnb .inner_gnb kurly {
-	    position: relative;
-	    width: 1050px;
-	    height: 56px;
-	    margin: 0 auto;
-	}
-	#gnb .gnb_main {
-	    overflow: hidden;
-	    width: 1050px;
-	    margin: 0 auto;
-	}
-	#gnb .gnb_main .gnb {
-	    float: left;
-	    width: 100%;
-	}
-
-	#gnb .gnb_main .gnb li {
-	    float: left;
-	}
-	
-	#gnb .gnb_main .gnb a {
-	    overflow: hidden;
-	    float: left;
-	    width: 124px;
-	    height: 55px;
-	    padding: 16px 0 0;
-	    font-size: 16px;
-	    color: #333;
-	    line-height: 20px;
-	    text-align: center;
-	    text-decoration: none;
-	}
-	#gnb .gnb_main .menu1 a {
-	    width: 168px;
-	}
-	/* @media only screen and (-webkit-min-device-pixel-ratio: 1.5), not all, only screen and (min-resolution: 1.5dppx) */
-	
-	#gnb .gnb_main .menu1 .ico {
-	    background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_off_x2.png) no-repeat 0 0;
-	    background-size: 16px 14px;
-	}
-	#gnb .gnb_main .menu1 .ico {
-	    float: left;
-	    width: 16px;
-	    height: 14px;
-	    margin: 5px 14px 0 0;
-	    background: url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_off.png) no-repeat;
-	}
-	#gnb .gnb_main .gnb a .txt {
-	    font-weight: 700;
-	}
-	#gnb .gnb_main .gnb .lst {
-	    background: none;
-	}
-	#gnb .gnb_main .lst a {
-	    width: 116px;
-	}
-	#gnb .gnb_search {
-	    position: absolute;
-	    right: 108px;
-	    top: 10px;
-	    width: 242px;
-	}
-	.gnb_search .init .btn_delete {
-	    overflow: hidden;
-	    position: absolute;
-	    left: 170px;
-	    top: -36px;
-	    width: 36px;
-	    height: 36px;
-	    border: 0 none;
-	    background: url(https://res.kurly.com/pc/ico/2010/ico_search_del.svg) no-repeat 50% 50%;
-	    background-size: 12px 12px;
-	    font-size: 0;
-	    line-height: 0;
-	    text-indent: -9999px;
-	    opacity: 0;
-	}
-	button {
-	    outline: none;
-	}
-	#gnb .cart_count {
-	    position: absolute;
-	    right: -5px;
-	    top: 10px;
-	}
-	#gnb .cart_count .inner_cartcount {
-	    text-align: center;
-	    font-weight: 400;
-	}
-	#gnb .cart_count .msg_cart {
-	    display: none;
-	    position: absolute;
-	    right: -7px;
-	    top: 61px;
-	    width: 348px;
-	    border: 1px solid #ddd;
-	    background-color: #fff;
-	    /* opacity: 0; */
-	}
-	#gnb .btn_location.on {
-	    background-image: url(https://res.kurly.com/pc/ico/2008/ico_delivery_setting.svg?ver=1);
-	}
-	
-	#gnb .btn_location {
-	    overflow: hidden;
-	    position: absolute;
-	    right: 51px;
-	    top: 10px;
-	    width: 36px;
-	    height: 36px;
-	    border: 0 none;
-	    background: url(https://res.kurly.com/pc/ico/2008/ico_delivery_setting_done.svg) no-repeat 50% 50%;
-	    font-size: 0;
-	    text-indent: -9999px;
-	}
-	#gnb .layer_location * {
-	    font-weight: 700;
-	    font-size: 16px;
-	    color: #333;
-	    line-height: 24px;
-	    letter-spacing: -0.3px;
-	}
-	#gnb .layer_location .star {
-	    color: #5f0080;
-	}
-	#gnb .gnb_sub {
-	    display: none;
-	    overflow: hidden;
-	    position: absolute;
-	    z-index: 301;
-	    left: 0;
-	    top: 55px;
-	    width: 213px;
-	    padding-top: 1px;
-	}
-	#gnb .cart_count .num {
-	    display: none;
-	    position: absolute;
-	    left: 19px;
-	    top: -1px;
-	    min-width: 20px;
-	    height: 20px;
-	    padding: 0 5px;
-	    border: 2px solid #fff;
-	    border-radius: 10px;
-	    background-color: #5f0080;
-	    font-size: 9px;
-	    color: #fff;
-	    line-height: 15px;
-	    text-align: center;
-	    white-space: nowrap;
-	}
-	#gnb .cart_count .btn_cart {
-	    display: block;
-	    width: 36px;
-	    height: 36px;
-	    background: url(https://res.kurly.com/pc/service/common/2011/ico_cart.svg) no-repeat 50% 50%;
-	}
-	#gnb .gnb_search .inp_search {
-	    width: 242px;
-	    height: 36px;
-	    padding: 0 60px 0 14px;
-	    border: 1px solid #f7f7f6;
-	    border-radius: 18px;
-	    background-color: #f7f7f7;
-	    font-family: 'Noto Sans';
-	    font-weight: 400;
-	    font-size: 12px;
-	    color: #666;
-	    line-height: 16px;
-	    outline: none;
-	}
-	#gnb .gnb_search .btn_search {
-	    position: absolute;
-	    right: 5px;
-	    top: 3px;
-	    width: 30px;
-	    height: 30px;
-	}
-	#gnb .gnb_sub .gnb_menu {
-	    width: 219px;
-	}
-	#gnb .gnb_sub .inner_sub {
-	    width: 100%;
-	    border: 1px solid #ddd;
-	    background: url(https://res.kurly.com/pc/service/common/1908/bg_gnb_sub_v3.png) repeat-y 0 0;
-	}
-	header .container a{
-		text-decoration: none;
-	}
-	.dropdown{
-		position: fixed;
-	}
-
-
-	    
-	    
-	    
-	<!--===========================================================-->    
     ul, ol, li { list-style:none; margin:0; padding:0; }
-    
-	ul.menu {position: fixed;}
-	ul.menu > li { display:inline-block;  width:120px; padding:5px 10px; text-align:center; position:relative; font-size: 15px;}
-	ul.menu > li.px{width: 150px;}
-	.menu a{line-height: 75px; color: black; padding: 0 22px 0 10px;  display: block; }	
-	ul{
-	   	list-style:none;
-	   	padding-left:0px;
-   }
-  	.mark {float: right; width: 100px;}
-	.px{float: left; border: 1px; }
-   	ul.menu > li ul.submenu {  display:none; position:absolute;  left:0;   }
-   	ul.menu > li:hover ul.submenu { display:block; background-color: gray; height: 50px; }
-    ul.menu > li ul.submenu > li { display:inline-block; width:150px;  background:white; text-align:center; border: 1px solid white; height: 50px;}
-	ul.menu > li ul.submenu > li:hover { background:gray;  }
-	ul.menu > li ul.submenu > li a {font-size: 12px;}
-	
+    ul{	list-style:none; padding-left:0px;}
 
 	/* 추가 */
 	.container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}
@@ -453,259 +247,226 @@
 			</a>
 		</div>
 		
-		<div id="gnb" class="">
-			<!-- <h2 class="screen_out">메뉴</h2> -->
-				<div id="gnbMenu" class="gnb_kurly"><div class="inner_gnbkurly">
-				
-				
-					<div class="gnb_main">
-						<ul class="gnb">
+		<!-- <div id="gnb" class=""> -->
+			 <div class="wrapper">
+        <!-- header start -->
+        <header>
+            <div class="header_area hdr_1">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-10 col-xs-12">
+                            <div class="main_menu_area">
+                                <div class="main-menu">
+									<nav>
+                                            <ul>
+                                                <li><a href="#">Features <i class="ion-ios-arrow-down"></i></a>
+                                                    <ul class="mega-menu">
+                                                        <li>
+                                                            <ul>
+                                                                <li class="mega-menu-title">Pages</li>
+                                                                <li><a href="portfolio.html"> portfolio</a></li>
+                                                                <li><a href="service.html"> service One</a></li>
+                                                                <li><a href="service-2.html"> service Two</a></li>
+                                                                <li><a href="faq.html"> FAQ Page</a></li>
+                                                                <li><a href="404.html"> 404 Error </a></li>
+                                                                <li><a href="single-blog.html"> single blog</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li class="mega-menu-title">special pages</li>
+                                                                <li><a href="cart.html"> cart page</a></li>
+                                                                <li><a href="checkout.html"> Checkout Page</a></li>
+                                                                <li><a href="login-register.html"> login register</a></li>
+                                                                <li><a href="my-account.html"> my account Page</a></li>
+                                                                <li><a href="wishlist.html"> wishlist Page</a></li>
+                                                                <li><a href="product-details.html"> product details </a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li class="mega-menu-title">products</li>
+                                                                <li><a href="product-details.html">Awesome wood chair</a></li>
+                                                                <li><a href="product-details.html">Good product name</a></li>
+                                                                <li><a href="product-details.html">Another Product name</a></li>
+                                                                <li><a href="product-details.html">test Producr name</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <!-- <li class="mega-menu-img">
+                                                            <ul>
+                                                                <li><a class="dot-none" href="shop.html"><img alt="" src="<%=contextPath%>/assets/img/banner/17.jpg"></a></li>
+                                                            </ul>
+                                                        </li> -->
+                                                    </ul>
+                                                </li>
+												
+                                                <li><a href="about-us.html">about us </a></li>
+												
+                                                <li><a href="shop.html">Shop</a></li>
 						
-						
-							<!-- <li class="menu1">
-								<a href="#none"><span class="ico"></span>
-								<span class="txt">전체 카테고리</span></a></li> --> 
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">데이터 보기<b class="caret"></b></a>
-								<ul class="dropdown-menu">							
-									<li><a href="<%=contextPath%>/exam01.vw">회원과 게시물</a></li>
-									<li><a href="<%=contextPath%>/exam02.vw">회원별 게시물 건수</a></li>
-									<li><a href="<%=contextPath%>/exam03.vw">주문 정보</a></li>
-									<li><a href="<%=contextPath%>/exam04.vw">고객별 매출 총액</a></li>
-									<li><a href="<%=contextPath%>/exam05.vw">회원별 주문 건수</a></li>
-													
-								</ul></li>	
-								
-							<li class="menu2">
-								<a href="/shop/goods/goods_list.php?category=038" class="link new ">
-								<span class="txt">신상품</span></a></li> 
-							<li class="menu3">
-								<a href="/shop/goods/goods_list.php?category=029" class="link best ">
-								<span class="txt">베스트</span></a></li> 
-							<li class="menu4">
-								<a href="/shop/goods/goods_list.php?list=sale" class="link bargain ">
-								<span class="txt">알뜰쇼핑</span></a></li> 
-							<li class="lst">
-								<a href="/shop/goods/event.php?&amp;" class="link event ">
-								<span class="txt">금주혜택</span></a></li>
-						</ul> 
-						
-						
-					<div id="side_search" class="gnb_search">
-						<form action="/shop/goods/goods_search.php?&amp;" onsubmit="return searchTracking(this)">
-							<input type="hidden" name="searched" value="Y"> 
-							<input type="hidden" name="log" value="1"> 
-							<input type="hidden" name="skey" value="all"> 
-							<input type="hidden" name="hid_pr_text" value=""> 
-							<input type="hidden" name="hid_link_url" value=""> 
-							<input type="hidden" id="edit" name="edit" value=""> 
-							<input name="sword" type="text" id="" value="" required="required" label="검색어" class="inp_search"> 
-							<input type="image" src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png" class="btn_search"> 
-								<div class="init">
-									<button type="button" id="searchInit" class="btn_delete">검색어 삭제하기</button>
-								</div>
-						</form>
-					</div> 
-						<div class="cart_count">
-							<div class="inner_cartcount">
-								<a href="/shop/goods/goods_cart.php" class="btn_cart">
-									<!-- <span class="screen_out">장바구니</span>  -->
-									<span id="cart_item_count" class="num realtime_cartcount ten" style="display: inline;">51</span>
-								</a>
-							</div> 
-								<div id="addMsgCart" class="msg_cart">
-									<span class="point"></span> 
-									<div class="inner_msgcart">
-									<img src="https://res.kurly.com/images/common/bg_1_1.gif" alt="" class="thumb"> 
-										<p id="msgReaddedItem" class="desc">
-											<span class="tit"></span> 
-												<span class="txt">장바구니에 상품을 담았습니다.
-													<span class="repeat">이미 담으신 상품이 있어 추가되었습니다.</span>
-												</span>
-										</p>
-									</div>
-								</div>
-							</div>
-					
-					
-			<!--  <div class="location_set">
-			 	<button type="button" class="btn_location on">배송지 설정하기</button> 
-			 		<div class="layer_location">
-			 			<div class="address">        
-			 				<div class="address">        
-			 					<p class="addr">경기 광명시 신촌로 49 (신촌휴먼시아1단지아파트) 108동 502호</p>        
-			 						<span class="delivery star">샛별배송</span>        
-			 						<a href="#none" class="btn default modifyAddress">배송지 변경</a>        
-			 				</div>      
-			 			</div>
-			 		</div>
-			 </div> -->
-		 </div>
-			 
-			 
-			 
-		  <div class="gnb_sub">
-		  	<div class="inner_sub">
-		  		<ul data-default="219" data-min="219" data-max="731" class="gnb_menu" style="height: auto;">
-		  			<li><a class="menu">
-		  				<span class="ico">
-		  					<img src="https://img-cf.kurly.com/shop/data/category/icon_veggies_inactive_pc@2x.1586324570.png" alt="카테고리 아이콘" class="ico_off"> 
-		  					<img src="https://img-cf.kurly.com/shop/data/category/icon_veggies_active_pc@2x.1586324570.png" alt="카테고리 아이콘" class="ico_on"></span> 
-		  						<span class="tit"><span class="txt">채소</span><!----></span>
-		  				</a> 
-						<ul class="sub_menu">
-							<li><a class="sub"><span class="name">고구마·감자·당근</span></a> <!----></li>
-							<li><a class="sub"><span class="name">시금치·쌈채소·나물</span></a> <!----></li>
-							<li><a class="sub"><span class="name">브로콜리·파프리카·양배추</span></a> <!----></li>
-							<li><a class="sub"><span class="name">양파·대파·마늘·배추</span></a> <!----></li>
-							<li><a class="sub"><span class="name">오이·호박·고추</span></a> <!----></li>
-							<li><a class="sub"><span class="name">냉동·이색·간편채소</span></a> <!----></li>
-							<li><a class="sub"><span class="name">콩나물·버섯</span></a> <!----></li>
-						</ul>
-					</li>
-					<li><a class="menu">
-						<span class="ico">
-						<img src="https://img-cf.kurly.com/shop/data/category/icon_fruit_inactive_pc@2x.1568684150.png" alt="카테고리 아이콘" class="ico_off"> 
-						<img src="https://img-cf.kurly.com/shop/data/category/icon_fruit_active_pc@2x.1568684150.png" alt="카테고리 아이콘" class="ico_on"></span>
-							<span class="tit"><span class="txt">과일·견과·쌀</span> <!----></span>
-					   </a> 
-					   <ul class="sub_menu">
-					   		<li><a class="sub"><span class="name">제철과일</span></a> <!----></li>
-					   		<li><a class="sub"><span class="name">국산과일</span></a> <!----></li>
-					   		<li><a class="sub"><span class="name">수입과일</span></a> <!----></li>
-					   		<li><a class="sub"><span class="name">간편과일</span></a> <!----></li>
-					   		<li><a class="sub"><span class="name">냉동·건과일</span></a> <!----></li>
-					   		<li><a class="sub"><span class="name">견과류</span></a> <!----></li>
-					   		<li><a class="sub"><span class="name">쌀·잡곡</span></a> <!----></li>
-					   	</ul>
-					</li>
-					<li><a class="menu">
-						<span class="ico">
-						<img src="https://img-cf.kurly.com/shop/data/category/icon_seafood_inactive_pc@2x.1568684352.png" alt="카테고리 아이콘" class="ico_off"> 
-						<img src="https://img-cf.kurly.com/shop/data/category/icon_seafood_active_pc@2x.1568684353.png" alt="카테고리 아이콘" class="ico_on"></span> 
-							<span class="tit"><span class="txt">수산·해산·건어물</span> <!----></span>
-						</a> 
-						<ul class="sub_menu">
-							<li><a class="sub"><span class="name">제철수산</span></a> <!----></li>
-							<li><a class="sub"><span class="name">생선류</span></a> <!----></li>
-							<li><a class="sub"><span class="name">굴비·반건류</span></a> <!----></li>
-							<li><a class="sub"><span class="name">오징어·낙지·문어</span></a> <!----></li>
-							<li><a class="sub"><span class="name">새우·게·랍스터</span></a> <!----></li>
-							<li><a class="sub"><span class="name">해산물·조개류</span></a> <!----></li>
-							<li><a class="sub"><span class="name">수산가공품</span></a> <!----></li>
-							<li><a class="sub"><span class="name">김·미역·해조류</span></a> <!----></li>
-							<li><a class="sub"><span class="name">건어물·다시팩</span></a> <!----></li>
-						</ul>
-					</li>
-					<li><a class="menu">
-						<span class="ico">
-						<img src="https://img-cf.kurly.com/shop/data/category/icon_meat_inactive_pc@2x.1568684452.png" alt="카테고리 아이콘" class="ico_off"> 
-						<img src="https://img-cf.kurly.com/shop/data/category/icon_meat_active_pc@2x.1568684452.png" alt="카테고리 아이콘" class="ico_on"></span> 
-							<span class="tit"><span class="txt">정육·계란</span> <!----></span>
-						</a> 
-						<ul class="sub_menu">
-							<li><a class="sub"><span class="name">국내산 소고기</span></a> <!----></li>
-							<li><a class="sub"><span class="name">수입산 소고기</span></a> <!----></li>
-							<li><a class="sub"><span class="name">돼지고기</span></a> <!----></li>
-							<li><a class="sub"><span class="name">계란류</span></a> <!----></li>
-							<li><a class="sub"><span class="name">닭·오리고기</span></a> <!----></li>
-							<li><a class="sub"><span class="name">양념육·돈까스</span></a> <!----></li>
-							<li><a class="sub"><span class="name">양고기</span></a> <!----></li>
-						</ul>
-					</li>
-					<li><a class="menu">
-						<span class="ico">
-						<img src="https://img-cf.kurly.com/shop/data/category/icon_side_inactive_pc@2x.1572243579.png" alt="카테고리 아이콘" class="ico_off"> 
-						<img src="https://img-cf.kurly.com/shop/data/category/icon_side_active_pc@2x.1572243579.png" alt="카테고리 아이콘" class="ico_on"></span> 
-							<span class="tit"><span class="txt">국·반찬·메인요리</span> <!----></span>
-						</a> 
-						<ul class="sub_menu">
-							<li><a class="sub"><span class="name">국·탕·찌개</span></a> <!----></li>
-							<li><a class="sub"><span class="name">밀키트·메인요리</span></a> <!----></li>
-							<li><a class="sub"><span class="name">밑반찬</span></a> <!----></li>
-							<li><a class="sub"><span class="name">김치·젓갈·장류</span></a> <!----></li>
-							<li><a class="sub"><span class="name">두부·어묵·부침개</span></a> <!----></li>
-							<li><a class="sub"><span class="name">베이컨·햄·통조림</span></a> <!----></li>
-						</ul>
-					</li>
-					<li><a class="menu">
-						<span class="ico">
-						<img src="https://img-cf.kurly.com/shop/data/category/icon_convenient_inactive_pc@2x.1572243542.png" alt="카테고리 아이콘" class="ico_off"> 
-						<img src="https://img-cf.kurly.com/shop/data/category/icon_convenient_active_pc@2x.1572243543.png" alt="카테고리 아이콘" class="ico_on"></span> 
-							<span class="tit"><span class="txt">샐러드·간편식</span> <!----></span>
-						</a> 
-						<ul class="sub_menu">
-							<li><a class="sub"><span class="name">샐러드·닭가슴살</span></a> <!----></li>
-							<li><a class="sub"><span class="name">도시락·밥류</span></a> <!----></li>
-							<li><a class="sub"><span class="name">파스타·면류</span></a> <!----></li>
-							<li><a class="sub"><span class="name">떡볶이·튀김·순대</span></a> <!----></li>
-							<li><a class="sub"><span class="name">피자·핫도그·만두</span></a> <!----></li>
-							<li><a class="sub"><span class="name">폭립·떡갈비·안주</span></a> <!----></li>
-							<li><a class="sub"><span class="name">죽·스프·카레</span></a> <!----></li>
-							<li><a class="sub"><span class="name">선식·시리얼</span></a> <!----></li>
-						</ul>
-					</li>
-					<li><a class="menu">
-						<span class="ico">
-							<img src="https://img-cf.kurly.com/shop/data/category/icon_sauce_inactive_pc@2x.1572243594.png" alt="카테고리 아이콘" class="ico_off"> 
-							<img src="https://img-cf.kurly.com/shop/data/category/icon_sauce_active_pc@2x.1572243594.png" alt="카테고리 아이콘" class="ico_on"></span> 
-							<span class="tit"><span class="txt">면·양념·오일</span> <!----></span>
-						</a> 
-						<ul class="sub_menu">
-							<li><a class="sub"><span class="name">파스타·면류</span></a> <!----></li>
-							<li><a class="sub"><span class="name">식초·소스·드레싱</span></a> <!----></li>
-							<li><a class="sub"><span class="name">양념·액젓·장류</span></a> <!----></li>
-							<li><a class="sub"><span class="name">식용유·참기름·오일</span></a> <!----></li>
-							<li><a class="sub"><span class="name">소금·설탕·향신료</span></a> <!----></li>
-							<li><a class="sub"><span class="name">밀가루·가루·믹스</span></a> <!----></li>
-						</ul>넹~~
-					</li>
-					<li><a class="menu">
-							<span class="ico">
-							<img src="https://img-cf.kurly.com/shop/data/category/icon_snacks_inactive_pc@2x.1572243615.png" alt="카테고리 아이콘" class="ico_off"> 
-							<img src="https://img-cf.kurly.com/shop/data/category/icon_snacks_active_pc@2x.1572243616.png" alt="카테고리 아이콘" class="ico_on"></span> 
-							<span class="tit"><span class="txt">생수·음료·우유·커피</span> <!----></span>
-						</a> 
-						<ul class="sub_menu">
-							<li><a class="sub"><span class="name">생수·탄산수</span></a> <!----></li>
-							<li><a class="sub"><span class="name">음료·주스</span></a> <!----></li>
-							<li><a class="sub"><span class="name">우유·두유·요거트</span></a> <!----></li>
-							<li><a class="sub"><span class="name">커피</span></a> <!----></li>
-							<li><a class="sub"><span class="name">차</span></a> <!----></li>
-						</ul>
-					</li>
-					
-					<!-- <li><a class="menu"><span class="ico"><img src="https://img-cf.kurly.com/shop/data/category/icon_cookie_inactive_pc.1610074008.png" alt="카테고리 아이콘" class="ico_off"> <img src="https://img-cf.kurly.com/shop/data/category/icon_cookie_active_pc.1610074008.png" alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span class="txt">간식·과자·떡</span></span></a> <ul class="sub_menu"><li><a class="sub"><span class="name">과자·스낵·쿠키</span></a></li><li><a class="sub"><span class="name">초콜릿·젤리·캔디</span></a></li><li><a class="sub"><span class="name">떡·한과</span></a></li><li><a class="sub"><span class="name">아이스크림</span></a></li></ul></li><li><a class="menu"><span class="ico"><img src="https://img-cf.kurly.com/shop/data/category/icon_deli_inactive_pc@2x.1568687352.png" alt="카테고리 아이콘" class="ico_off"> <img src="https://img-cf.kurly.com/shop/data/category/icon_deli_active_pc@2x.1568687352.png" alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span class="txt">베이커리·치즈·델리</span></span></a> <ul class="sub_menu"><li><a class="sub"><span class="name">식빵·빵류</span></a></li><li><a class="sub"><span class="name">잼·버터·스프레드</span></a></li><li><a class="sub"><span class="name">케이크·파이·디저트</span></a></li><li><a class="sub"><span class="name">치즈</span></a></li><li><a class="sub"><span class="name">델리</span></a></li><li><a class="sub"><span class="name">올리브·피클</span></a></li></ul></li><li><a class="menu"><span class="ico"><img src="https://img-cf.kurly.com/shop/data/category/icon_health_inactive_pc@2x.1574645922.png" alt="카테고리 아이콘" class="ico_off"> <img src="https://img-cf.kurly.com/shop/data/category/icon_health_active_pc@2x.1574645923.png" alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span class="txt">건강식품</span></span></a> <ul class="sub_menu"><li><a class="sub"><span class="name">영양제</span></a></li><li><a class="sub"><span class="name">유산균</span></a></li><li><a class="sub"><span class="name">홍삼·인삼·꿀</span></a></li><li><a class="sub"><span class="name">건강즙·건강음료</span></a></li><li><a class="sub"><span class="name">건강분말·건강환</span></a></li><li><a class="sub"><span class="name">다이어트·이너뷰티</span></a></li><li><a class="sub"><span class="name">유아동</span></a></li></ul></li><li><a class="menu"><span class="ico"><img src="https://img-cf.kurly.com/shop/data/category/icon_living_inactive_pc@2x.1588814089.png" alt="카테고리 아이콘" class="ico_off"> <img src="https://img-cf.kurly.com/shop/data/category/icon_living_active_pc@2x.1588814090.png" alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span class="txt">생활용품·리빙</span></span></a> <ul class="sub_menu"><li><a class="sub"><span class="name">휴지·티슈</span></a></li><li><a class="sub"><span class="name">여성·위생용품</span></a></li><li><a class="sub"><span class="name">세제·청소용품</span></a></li><li><a class="sub"><span class="name">화훼·인테리어소품</span></a></li><li><a class="sub"><span class="name">의약외품·마스크</span></a></li><li><a class="sub"><span class="name">생활잡화·문구</span></a></li></ul></li><li><a class="menu"><span class="ico"><img src="https://img-cf.kurly.com/shop/data/category/icon_beauty_inactive_pc@2x.1588750188.png" alt="카테고리 아이콘" class="ico_off"> <img src="https://img-cf.kurly.com/shop/data/category/icon_beauty_active_pc@2x.1588750188.png" alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span class="txt">뷰티·바디케어</span></span></a> <ul class="sub_menu"><li><a class="sub"><span class="name">스킨케어</span></a></li><li><a class="sub"><span class="name">구강·면도</span></a></li><li><a class="sub"><span class="name">바디·제모</span></a></li><li><a class="sub"><span class="name">헤어케어</span></a></li><li><a class="sub"><span class="name">미용기기·소품</span></a></li></ul></li><li><a class="menu"><span class="ico"><img src="https://img-cf.kurly.com/shop/data/category/icon_kitchen_inactive_pc@2x.1574646457.png" alt="카테고리 아이콘" class="ico_off"> <img src="https://img-cf.kurly.com/shop/data/category/icon_kitchen_active_pc@2x.1574646458.png" alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span class="txt">주방용품</span></span></a> <ul class="sub_menu"><li><a class="sub"><span class="name">주방소모품·잡화</span></a></li><li><a class="sub"><span class="name">주방·조리도구</span></a></li><li><a class="sub"><span class="name">냄비·팬·솥</span></a></li><li><a class="sub"><span class="name">보관용기·텀블러</span></a></li><li><a class="sub"><span class="name">식기·테이블웨어</span></a></li><li><a class="sub"><span class="name">컵·잔·커피도구</span></a></li></ul></li><li><a class="menu"><span class="ico"><img src="https://img-cf.kurly.com/shop/data/category/icon_electronic__inactive_pc@2x.1574417978.png" alt="카테고리 아이콘" class="ico_off"> <img src="https://img-cf.kurly.com/shop/data/category/icon_electronic__active_pc@2x.1574417978.png" alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span class="txt">가전제품</span></span></a> <ul class="sub_menu"><li><a class="sub"><span class="name">주방가전</span></a></li><li><a class="sub"><span class="name">생활가전</span></a></li><li><a class="sub"><span class="name">계절가전</span></a></li></ul></li><li><a class="menu"><span class="ico"><img src="https://img-cf.kurly.com/shop/data/category/icon_kids_inactive_pc@2x.1568687537.png" alt="카테고리 아이콘" class="ico_off"> <img src="https://img-cf.kurly.com/shop/data/category/icon_kids_active_pc@2x.1568687537.png" alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span class="txt">베이비·키즈</span></span></a> <ul class="sub_menu"><li><a class="sub"><span class="name">분유·간편 이유식</span></a></li><li><a class="sub"><span class="name">이유식 재료</span></a></li><li><a class="sub"><span class="name">간식·음식·음료</span></a></li><li><a class="sub"><span class="name">건강식품</span></a></li><li><a class="sub"><span class="name">이유·수유용품</span></a></li><li><a class="sub"><span class="name">기저귀·물티슈</span></a></li><li><a class="sub"><span class="name">세제·위생용품</span></a></li><li><a class="sub"><span class="name">스킨·구강케어</span></a></li><li><a class="sub"><span class="name">완구·잡화류</span></a></li></ul></li><li><a class="menu"><span class="ico"><img src="https://img-cf.kurly.com/shop/data/category/icon_pet_inactive_pc@2x.1587442293.png" alt="카테고리 아이콘" class="ico_off"> <img src="https://img-cf.kurly.com/shop/data/category/icon_pet_active_pc@2x.1587442294.png" alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span class="txt">반려동물</span></span></a> <ul class="sub_menu"><li><a class="sub"><span class="name">강아지 간식</span></a></li><li><a class="sub"><span class="name">강아지 주식</span></a></li><li><a class="sub"><span class="name">고양이 간식</span></a></li><li><a class="sub"><span class="name">고양이 주식</span></a></li><li><a class="sub"><span class="name">반려동물 용품</span></a></li><li><a class="sub"><span class="name">배변·위생</span></a></li><li><a class="sub"><span class="name">소용량·샘플</span></a></li></ul></li><li><a class="menu"><span class="ico"><img src="https://res.kurly.com/pc/service/common/1908/ico_recommend_v2.png" alt="카테고리 아이콘" class="ico_off"> <img src="https://res.kurly.com/pc/service/common/1908/ico_recommend_on_v2.png" alt="카테고리 아이콘" class="ico_on"></span> <span class="tit"><span class="txt">컬리의 추천</span></span></a> <ul class="sub_menu recommend"><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_diet.1585551225.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">식단관리</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_breakfast.1585549149.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">간편한 아침식사</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_kp_best_201207.1607408493.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">재구매 BEST</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_kp_3000_201207.1607408565.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">3천원의 행복</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_kp_210108_4.1610088265.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">컬리마트</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_single.1594026881.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">1인 가구</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/category_kurly_s-pick_thumbnail_shrimp.1589797274.png&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">뚝딱! 간편식</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumb_kp_bakery_201217.1608624742.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">베이커리 맛집</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail.1598235634.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">반찬가게</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/Thum_Cytogenic.1592469678.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">키토제닉</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/Thum_vegan.1592469659.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">비건</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/Thum_sustainable.1589875827.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">지속가능한 상품</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/pb.1594027365.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">컬리가 만든 상품</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumbnail_kp_only_201207.1607408395.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">Kurly Only</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/kf3651016.1602814588.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">KF365</span></a></li><li> <a class="sub"><span class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/category/thumb_kp_1PT_201222.1608611417.jpg&quot;);"><img src="https://res.kurly.com/pc/img/1810/bg_blink_236x179.png" alt=""></span> <span class="name">1% Table</span></a></li></ul></li>-->
-					
-						</ul>
-					</div> 
-				</div>
-			</div>
-		</div>
+                                                <li><a href="contact.html">contact us</a></li>
+                                            </ul>
+                                        </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-12">
+                            <div class="header-site-icon">
+                                <div class="header-search same-style">
+                                    <div class="sidebar-trigger-search">
+
+                                        <span class="zmdi zmdi-search"></span>
+                                        <div class="search__form">
+                                            <form>
+                                                <div class="form-search">
+                                                    <input type="search" placeholder="Enter your search..." value="" class="input-text" id="search">
+                                                    <button>
+                                                        <i class="zmdi zmdi-search"></i>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="header-cart same-style">
+                                    <div class="sidebar-trigger">
+                                        <ul>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="zmdi zmdi-shopping-cart-plus"></i>
+                                                    <span class="count-style">2</span>
+                                                </a>
+
+                                                <ul class="ht-dropdown main-cart-box">
+                                                    <li>
+                                                        <!-- Cart Box Start -->
+                                                        <div class="single-cart-box">
+                                                            <div class="cart-img">
+                                                                <a href="#">
+                                                                    <img alt="cart-image" src="<%=contextPath%>/assets/img/products/mini1.jpg">
+                                                                </a>
+                                                            </div>
+                                                            <div class="cart-content">
+                                                                <h6>
+                                                                    <a href="product.html">Alpha Block Black Polo</a>
+                                                                </h6>
+                                                                <span class="quantitys">Qty: 1</span>
+                                                                <span>$399.00</span>
+                                                            </div>
+                                                            <a href="#" class="del-icone">
+                                                                <i class="zmdi zmdi-close"></i>
+                                                            </a>
+                                                        </div>
+                                                        <!-- Cart Box End -->
+                                                        <!-- Cart Box Start -->
+                                                        <div class="single-cart-box">
+                                                            <div class="cart-img">
+                                                                <a href="#">
+                                                                    <img alt="cart-image" src="<%=contextPath%>/assets/img/products/mini2.jpg">
+                                                                </a>
+                                                            </div>
+                                                            <div class="cart-content">
+                                                                <h6>
+                                                                    <a href="product.html">Red Printed Round Neck</a>
+                                                                </h6>
+                                                                <span class="quantitys">Qty: 1</span>
+                                                                <span>$299.00</span>
+                                                            </div>
+                                                            <a href="#" class="del-icone">
+                                                                <i class="zmdi zmdi-close"></i>
+                                                            </a>
+                                                        </div>
+                                                        <!-- Cart Box End -->
+                                                        <!-- Cart Footer Inner Start -->
+                                                        <div class="cart-footer fix">
+                                                            <h5>Subtotal :
+                                                                <span class="f-right">$698.00</span>
+                                                            </h5>
+                                                            <div class="cart-actions">
+                                                                <a href="cart.html" class="checkout">View cart</a>
+                                                                <a href="checkout.html" class="checkout">Checkout</a>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Cart Footer Inner End -->
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mobile-menu-area ">
+                            <div class="mobile-menu">
+                                    <nav id="mobile-menu-active">
+                                        <ul class="menu-overflow">
+											<li class="active"><a href="#">home <i class="ion-ios-arrow-down"></i></a>
+												<ul>
+													<li><a href="index.html">home version 1</a></li>
+													<li><a href="index-2.html">home version 2</a></li>
+													<li><a href="index-3.html">home version 3</a></li>
+													<li><a href="index-4.html">home version 4</a></li>
+													<li><a href="index-5.html">home version 5</a></li>
+													<li><a href="index-6.html">home version 6</a></li>
+												</ul>
+											</li>
+											
+											<li><a href="about-us.html">about us </a></li>
+											
+											<li><a href="shop.html">Shop</a></li>
+											
+											<li><a href="blog.html">blog</a></li>
+											
+											<li><a href="#">Features <i class="ion-ios-arrow-down"></i></a>
+												<ul>
+													<li><a href="portfolio.html"> portfolio</a></li>
+													<li><a href="service.html"> service One</a></li>
+													<li><a href="service-2.html"> service Two</a></li>
+													<li><a href="faq.html"> FAQ Page</a></li>
+													<li><a href="404.html"> 404 Error </a></li>
+													<li><a href="single-blog.html"> single blog</a></li>
+													<li><a href="cart.html"> cart page</a></li>
+													<li><a href="checkout.html"> Checkout Page</a></li>
+													<li><a href="login-register.html"> login register</a></li>
+													<li><a href="my-account.html"> my account Page</a></li>
+													<li><a href="wishlist.html"> wishlist Page</a></li>
+													<li><a href="product-details.html"> product details </a></li>	
+												</ul>
+											</li>
+											
+											<li><a href="contact.html">contact us</a></li>
+                                        </ul>
+                                    </nav>  
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+      </div>
+		
+ <!-- all js here -->
+    <script src="<%=contextPath%>/assets/js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/popper.js"></script>
+    <script src="<%=contextPath%>/assets/js/bootstrap.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/isotope.pkgd.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/jquery.counterup.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/waypoints.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/tippy.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/ajax-mail.js"></script>
+    <script src="<%=contextPath%>/assets/js/owl.carousel.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/plugins.js"></script>
+    <script src="<%=contextPath%>/assets/js/main.js"></script>		
+		
 	</div>
 		
 		
 		
-		
-			<!-- <div class="navigation">
-				<nav class="navi">
-					<ul class="menu"  >
-						<li class="px"><a href="">전체 카테고리</a>
-						<ul class="submenu">
-								<li><a href="">채소</a></li>
-								<li><a href="">과일/견과/쌀</a></li>
-								<li><a href="">수산/해산/건어물</a></li>
-								<li><a href="">정육/계란</a></li>
-								<li><a href="">국/반찬/메인요리</a></li>
-								<li><a href="">샐러드/간편식</a></li>
-							</ul></li>
-						<li class="px"><a href="">베스트</a>
-						<li class="px"><a href="">신상품</a></li>
-						<li class="mark"><a href=""><img width="20px" height="30px" alt="" src="/WEB-INF/image/deliveryicon.png"></a>
-					</ul>
-				</nav>
-			</div> -->
-	</div>
+
 		
 </header>
 

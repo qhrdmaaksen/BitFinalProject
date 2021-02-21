@@ -21,63 +21,21 @@
   /* Make the image fully responsive */
 	.carousel-inner img {
 	   width: 100%;
-	   height: 350px;
+	   height: 300px;
 	}
     .logo{
     	align-items: center;
     }
-   .line{
-    	color: white;
-   } 
 	.carousel-control-prev{
  		  background: url(https://res.kurly.com/pc/service/main/1908/ico_prev1_x2.png) no-repeat 50% 50%;
   		  background-size: 52px 52px;
 	}
  </style>
 	
-
-<script type="text/javascript">
-    $(document).ready(function(){
-      $("#top-message-close").on("click",function(){
-        setCookie('top_msg_banner2','set_cookie',1)
-      });
-      if(getCookie('top_msg_banner2') == 'set_cookie'){
-        $("#top-message").hide()
-      }else{
-        $("#top-message").show() ;
-      }
-    });
-
-/*     function setCookie(cookieName, value, exdays){
-      var exdate = new Date();
-      exdate.setDate(exdate.getDate() + exdays);
-      var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
-      document.cookie = cookieName + "=" + cookieValue +"; path=/;"
-    }
-
-    function getCookie(cookieName) {
-      cookieName = cookieName + '=';
-      var cookieData = document.cookie;
-      var start = cookieData.indexOf(cookieName);
-      var cookieValue = '';
-      if(start != -1){
-        start += cookieName.length;
-        var end = cookieData.indexOf(';', start);
-        if(end == -1)end = cookieData.length;
-        cookieValue = cookieData.substring(start, end);
-      }
-      return unescape(cookieValue);
-    } */
-  </script>
-
 </head>
 <body>
 
-
-<div class="line">
-------------------------------------------------------------------------------------------------------------------------------
-</div>
-
+<div class="container">
 <!-- 사진 슬라이드 시작 -->
 <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -118,8 +76,6 @@
 </div>
 
 
-
-
 <%@ include file="/WEB-INF/common/footer.jsp" %>
 
 
@@ -137,6 +93,9 @@
 
 <br><br><br>
 <br><br><br>
+
+
+</div>
 
 </body>
 </html>

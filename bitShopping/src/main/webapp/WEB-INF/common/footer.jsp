@@ -11,7 +11,7 @@
 	
 	body #footer{
 		width: 1500px;
-		margin-left: 250px;
+		/* padding-left : 50px; */
 		padding-bottom: 60px;
 	    font-weight: 400;
 	    letter-spacing: -.2px;
@@ -21,7 +21,6 @@
 	    letter-spacing: 0;
 	    align-self: center;
 	}
-	
 	
 	div, th, td, li, dt, dd, p {
 	    word-break: break-all;
@@ -38,7 +37,6 @@
 	    margin: 0;
 	    padding: 0;
 	}
-	
 	#footer .footer_cc {
 	    float: left;
 	    width: 534px;
@@ -66,7 +64,6 @@
 	    margin-inline-end: 0px;
 	    font-weight: bold;
 	}
-	
 	#footer .cc_call {
    	 padding-top: 20px;
 	}
@@ -74,7 +71,6 @@
 	    overflow: hidden;
 	    padding-top: 16px;
 	}
-	
 	h3 {
 	    display: block;
 	    font-size: 1.17em;
@@ -84,7 +80,6 @@
 	    margin-inline-end: 0px;
 	    font-weight: bold;
 	}
-	
 	#footer .cc_call .tit {
 	    padding-top: 4px;
 	    font-weight: 800;
@@ -106,7 +101,6 @@
 	    line-height: 22px;
 	    letter-spacing: -.2px;
 	}
-	
 	#footer .company {
 	    float: left;
 	    padding-top: 29px;
@@ -114,7 +108,6 @@
 	    color: #999;
 	    line-height: 20px;
 	}
-	
 	ul {
 	    display: block;
 	    list-style-type: disc;
@@ -124,17 +117,14 @@
 	    margin-inline-end: 0px;
 	    padding-inline-start: 10px;
 	}
-	
 	li {
 	    display: list-item;
 	    text-align: -webkit-match-parent;
 	}
-	
 	#footer .authentication {
 	    float: left;
 	    padding-top: 3px;
 	}
-	
 	#footer .footer_link {
 	    overflow: hidden;
 	    padding-top: 19px;
@@ -176,7 +166,6 @@
 	    text-decoration: none;
 	    color: inherit;
 	}
-	
 	#footer .company .link {
 	    color: #5f0080;
 	}
@@ -184,7 +173,6 @@
 	    float: left;
 	    padding-right: 16px;
 	}
-	
 	#footer .list_sns li {
 	    float: left;
 	}
@@ -198,10 +186,6 @@
 
 	
 
-
-
-
-
 </style>
 
 
@@ -213,6 +197,7 @@
 
 
 <footer>
+	<div class="container">
 	<div id="footer" style="opacity: 1;">
 		<div class="inner_footer">
 			<div class="footer_cc">
@@ -314,6 +299,7 @@
 			</div>
 			</div>
 		</div>																								
+	</div>
 	</div>
 </footer>
 
