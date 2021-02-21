@@ -21,7 +21,7 @@ import dao.MemberDao;
 @Controller 
 public class MInsertController extends SuperClass{
 	private final String command = "/insert.me" ; // 요청 커맨드 
-	private String redirect = "redirect:/minsert.cu" ; // 리 다이렉션 
+	private String redirect = "redirect:/main.cu" ; // 리 다이렉션 
 	
 	//View에 넘겨줄 ModelAndView 객체
 	private ModelAndView mav = null ;
