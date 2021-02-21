@@ -89,13 +89,21 @@
 
 		<a href="<%=contextPath%>/list.prr">상품 후기 게시판</a>
 <br><br><br>
+
+	<a href="<%=contextPath%>/payment.pm">결제하기</a>
+
+<br><br><br>
+<a href="<%=contextPath%>/mypage.me">마이 페이지</a>
+
 <a href="<%=contextPath%>/mypage.me?mid=admin&${requestScope.parameters}">마이 페이지</a>
+
 
 <br><br><br>
 <br><br><br>
 
 
 </div>
+
 
 </body>
 </html>

@@ -4,20 +4,46 @@
 
 <mapper namespace="MapperProduct">
 
-<!--<insert id="InsertData" parameterType="MyProduct">
-		insert into products(num, name, company, image, stock, price, category, contents, point, inputdate)
-		values(seqprod.nextval, #{name}, #{company}, #{image}, #{stock}, #{price}, #{category}, #{contents}, #{point}, to_date(#{inputdate}, 'yyyy/MM/dd'))
-	</insert> -->
+	<insert id="InsertData" parameterType="MyProduct">
+		insert into products(pno, productname, productcode, price, pqty, pcategory, pcontents, pimg1, pimg2, pimg3)
+		values(seqpno.nextval, #{productname}, #{productcode}, #{price}, #{pqty}, #{pcategory}, #{pcontents}, #{pimg1}, #{pimg2}, #{pimg3})
+	</insert>
 	
 	<sql id="myselect">
 		select pno, productname, productcode, price, pqty, pcategory, pcontents, pimg1, pimg2, pimg3 
 		from products
 	</sql> 		
-
 	
 	<select id="SelectDataByPk" parameterType="Integer" resultType="MyProduct">
 		<include refid="myselect" />
 		 where pno = #{pno}
+	</select>
+	
+	<select id="SelectDataList" resultType="MyProduct">
+		<include refid="myselect" />
+		<if test="mode == 'productname'">
+			where name like #{keyword}
+		</if>
+		<if test="mode == 'pcategory'">
+			where name like #{keyword}
+		</if>
+		<if test="mode == 'pcontents'">
+			where name like ${keyword}
+		</if>
+		order by pno desc 
+	</select>
+	
+	<select id="SelectTotalCount" resultType="int">
+		select count(*) as cnt from products
+		<if test="mode == 'productname'">
+			where name like #{keyword}
+		</if>
+		<if test="mode == 'pcategory'">
+			where name like #{keyword}
+		</if>
+		<if test="mode == 'pcontents'">
+			where name like ${keyword}
+		</if>
 	</select>
 
 </mapper>

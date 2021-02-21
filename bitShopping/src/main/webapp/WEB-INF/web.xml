@@ -95,22 +95,36 @@
 		<servlet-name>productreviews</servlet-name>
 		<url-pattern>*.prr</url-pattern>
 	</servlet-mapping>
-		
-		<!-- mall section -->
+	
+	<!-- payment section -->
+	<servlet>
+		<servlet-name>mypayments</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/config/mypayments-config.xml</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>mypayments</servlet-name>
+		<url-pattern>*.pm</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- mall section -->
 	<servlet>
 		<servlet-name>mall</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/config/mall-config.xml</param-value>
-		</init-param>		
-	</servlet>
+		</init-param>
+	</servlet>	
 	
 	<servlet-mapping>
 		<servlet-name>mall</servlet-name>
 		<url-pattern>*.mall</url-pattern>
 	</servlet-mapping>
-	
-	
 	
 </web-app>

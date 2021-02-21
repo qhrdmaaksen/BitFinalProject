@@ -341,7 +341,7 @@
                                                 <ul class="ht-dropdown main-cart-box">
                                                     <li>
                                                         <!-- Cart Box Start -->
-                                                        <div class="single-cart-box">
+                                                       <%--  <div class="single-cart-box">
                                                             <div class="cart-img">
                                                                 <a href="#">
                                                                     <img alt="cart-image" src="<%=contextPath%>/assets/img/products/mini1.jpg">
@@ -387,7 +387,7 @@
                                                                 <a href="cart.html" class="checkout">View cart</a>
                                                                 <a href="checkout.html" class="checkout">Checkout</a>
                                                             </div>
-                                                        </div>
+                                                        </div> --%>
                                                         <!-- Cart Footer Inner End -->
                                                     </li>
                                                 </ul>
@@ -397,51 +397,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="mobile-menu-area ">
-                            <div class="mobile-menu">
-                                    <nav id="mobile-menu-active">
-                                        <ul class="menu-overflow">
-											<li class="active"><a href="#">home <i class="ion-ios-arrow-down"></i></a>
-												<ul>
-													<li><a href="index.html">home version 1</a></li>
-													<li><a href="index-2.html">home version 2</a></li>
-													<li><a href="index-3.html">home version 3</a></li>
-													<li><a href="index-4.html">home version 4</a></li>
-													<li><a href="index-5.html">home version 5</a></li>
-													<li><a href="index-6.html">home version 6</a></li>
-												</ul>
-											</li>
-											
-											<li><a href="about-us.html">about us </a></li>
-											
-											<li><a href="shop.html">Shop</a></li>
-											
-											<li><a href="blog.html">blog</a></li>
-											
-											<li><a href="#">Features <i class="ion-ios-arrow-down"></i></a>
-												<ul>
-													<li><a href="portfolio.html"> portfolio</a></li>
-													<li><a href="service.html"> service One</a></li>
-													<li><a href="service-2.html"> service Two</a></li>
-													<li><a href="faq.html"> FAQ Page</a></li>
-													<li><a href="404.html"> 404 Error </a></li>
-													<li><a href="single-blog.html"> single blog</a></li>
-													<li><a href="cart.html"> cart page</a></li>
-													<li><a href="checkout.html"> Checkout Page</a></li>
-													<li><a href="login-register.html"> login register</a></li>
-													<li><a href="my-account.html"> my account Page</a></li>
-													<li><a href="wishlist.html"> wishlist Page</a></li>
-													<li><a href="product-details.html"> product details </a></li>	
-												</ul>
-											</li>
-											
-											<li><a href="contact.html">contact us</a></li>
-                                        </ul>
-                                    </nav>  
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
