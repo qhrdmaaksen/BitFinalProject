@@ -79,7 +79,7 @@ padding-top: 2ex;
 					<div class="form-group">
 						<label class="control label col-sm-<%=formleft%>" for="bregdate">작성 일자</label>
 						<div class="col-sm-<%=formright%>">
-							<form:input path="bregdate" type="datetime" class="form-control" name="bregdate"
+							<form:input path="bregdate" type="text" class="form-control" name="bregdate"
 								id="bregdate" placeholder="작성 일자" value="${bean.bregdate}"/>
 							<form:errors cssClass="err" path="bregdate" />
 						</div>
