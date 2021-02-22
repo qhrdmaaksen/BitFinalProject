@@ -84,23 +84,23 @@
 	 <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="<%=contextPath%>/assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<%=contextPath%>/resources/assets/img/favicon.png">
     <!-- all css here -->
-   <link rel="stylesheet" href="<%=contextPath%>/assets/css/bootstrap.min.css">
-     <link rel="stylesheet" href="<%=contextPath%>/assets/css/animate.css">
-    <link rel="stylesheet" href="<%=contextPath%>/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="<%=contextPath%>/assets/css/chosen.min.css">
-    <link rel="stylesheet" href="<%=contextPath%>/assets/css/themify-icons.css">
-    <link rel="stylesheet" href="<%=contextPath%>/assets/css/fontawesome-all.css">
-    <link rel="stylesheet" href="<%=contextPath%>/assets/css/ionicons.min.css">
-    <link rel="stylesheet" href="<%=contextPath%>/assets/css/material-design-iconic-font.css">
-    <link rel="stylesheet" href="<%=contextPath%>/assets/css/meanmenu.min.css">
-    <link rel="stylesheet" href="<%=contextPath%>/assets/css/tippy.css">
-    <link rel="stylesheet" href="<%=contextPath%>/assets/css/bundle.css">
-    <link rel="stylesheet" href="<%=contextPath%>/assets/css/style.css">
-    <link rel="stylesheet" href="<%=contextPath%>/assets/css/responsive.css"> 
-    <script src="<%=contextPath%>/assets/js/vendor/modernizr-2.8.3.min.js"></script>
-    <style type="text<%=contextPath%>/assets/css">
+   <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/bootstrap.min.css">
+     <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/animate.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/chosen.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/fontawesome-all.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/tippy.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/bundle.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/style.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/responsive.css"> 
+    <script src="<%=contextPath%>/resources/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text<%=contextPath%>/resources/assets/css">
     </style>
 	<style type="text/css">
 		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
@@ -294,7 +294,7 @@
                                                         </li>
                                                         <!-- <li class="mega-menu-img">
                                                             <ul>
-                                                                <li><a class="dot-none" href="shop.html"><img alt="" src="<%=contextPath%>/assets/img/banner/17.jpg"></a></li>
+                                                                <li><a class="dot-none" href="shop.html"><img alt="" src="<%=contextPath%>/resources/assets/img/banner/17.jpg"></a></li>
                                                             </ul>
                                                         </li> -->
                                                     </ul>
@@ -344,7 +344,7 @@
                                                        <%--  <div class="single-cart-box">
                                                             <div class="cart-img">
                                                                 <a href="#">
-                                                                    <img alt="cart-image" src="<%=contextPath%>/assets/img/products/mini1.jpg">
+                                                                    <img alt="cart-image" src="<%=contextPath%>/resources/assets/img/products/mini1.jpg">
                                                                 </a>
                                                             </div>
                                                             <div class="cart-content">
@@ -363,7 +363,7 @@
                                                         <div class="single-cart-box">
                                                             <div class="cart-img">
                                                                 <a href="#">
-                                                                    <img alt="cart-image" src="<%=contextPath%>/assets/img/products/mini2.jpg">
+                                                                    <img alt="cart-image" src="<%=contextPath%>/resources/assets/img/products/mini2.jpg">
                                                                 </a>
                                                             </div>
                                                             <div class="cart-content">
@@ -404,18 +404,18 @@
       </div>
 		
  <!-- all js here -->
-    <script src="<%=contextPath%>/assets/js/vendor/jquery-1.12.0.min.js"></script>
-    <script src="<%=contextPath%>/assets/js/popper.js"></script>
-    <script src="<%=contextPath%>/assets/js/bootstrap.min.js"></script>
-    <script src="<%=contextPath%>/assets/js/isotope.pkgd.min.js"></script>
-    <script src="<%=contextPath%>/assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="<%=contextPath%>/assets/js/jquery.counterup.min.js"></script>
-    <script src="<%=contextPath%>/assets/js/waypoints.min.js"></script>
-    <script src="<%=contextPath%>/assets/js/tippy.min.js"></script>
-    <script src="<%=contextPath%>/assets/js/ajax-mail.js"></script>
-    <script src="<%=contextPath%>/assets/js/owl.carousel.min.js"></script>
-    <script src="<%=contextPath%>/assets/js/plugins.js"></script>
-    <script src="<%=contextPath%>/assets/js/main.js"></script>		
+    <script src="<%=contextPath%>/resources/assets/js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/popper.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/bootstrap.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/isotope.pkgd.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/jquery.counterup.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/waypoints.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/tippy.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/ajax-mail.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/owl.carousel.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/plugins.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/main.js"></script>		
 		
 	</div>
 		

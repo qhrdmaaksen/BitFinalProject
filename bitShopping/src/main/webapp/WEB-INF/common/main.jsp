@@ -21,7 +21,7 @@
   /* Make the image fully responsive */
 	.carousel-inner img {
 	   width: 100%;
-	   height: 300px;
+	   height: 370px;
 	}
     .logo{
     	align-items: center;
@@ -35,7 +35,6 @@
 </head>
 <body>
 
-<div class="container">
 <!-- 사진 슬라이드 시작 -->
 <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -102,7 +101,6 @@
 <br><br><br>
 
 
-</div>
 
 
 </body>
