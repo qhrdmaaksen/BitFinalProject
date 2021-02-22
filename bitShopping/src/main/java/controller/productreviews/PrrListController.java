@@ -69,6 +69,7 @@ public class PrrListController extends SuperClass{
 		this.mav.setViewName(super.getpage);
 		return this.mav;
 		
+	
 	}
 	
 	

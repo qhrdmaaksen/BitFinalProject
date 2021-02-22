@@ -6,9 +6,19 @@
 <mapper namespace="MapProductreivews">
 
 	<insert id="InsertData" parameterType="MyProductreviews">
-	insert into productreviews(bno, btitle, bwriter, bcontent, bimg, breview, bregdate)
-	values (#{bno}, #{btitle}, #{bwriter}, #{bcontent}, #{bimg}, #{breview}, #{bregdate})
+	insert into productreviews(bno, btitle, bwriter, bcontent, bimg, breivew, bregdate)
+	values (seqbno.nextval, #{btitle}, #{bwriter}, #{bcontent}, #{bimg}, default, sysdate)
 	</insert>
+	
+	<update id="updateReviewCnt" parameterType="MyProductreviews">
+
+        update productreviews
+
+        set breview = breview + 1
+
+        where bno = #{bno}
+
+ </update>
 	
 	<select id="SelectTotalCount" resultType="int">
 		select count(*) as cnt from productreviews 
