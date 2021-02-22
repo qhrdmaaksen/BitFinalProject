@@ -42,5 +42,11 @@ public class ProductreviewsDao {
 		return this.abcd.selectList(namespace + "SelectDataList" , map, rowBounds);
 	}
 	
+	public int updateViewCnt(int bno) {
+		//조회수 증가 
+		return this.abcd.update(namespace + "updateViewCnt", bno);
+		
+	}
+	
 
 }

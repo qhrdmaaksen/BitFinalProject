@@ -39,6 +39,14 @@
 		select * from members
 		where mid = #{mid}
 	</select>
+	
+	<select id="SelectShoppingInfo" parameterType="String">
+		select * from shoppinginfo
+		where mid = #{mid}
+	
+	
+	</select>
+	
 </mapper>
 
 

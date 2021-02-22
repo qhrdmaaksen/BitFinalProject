@@ -28,6 +28,14 @@ public class MyCartList {
 	
 	// 장바구니 내역 정보 반환, 수정, 추가, 삭제 ///////////////////////////
 	// 요기는 연경씨 파트 맞죠 ? ㅎㅎ 화이팅 ! 
-	
+	// 장바구니에 상품을 추가합니다.
+	public void AddOrder(int pnum, int stock) {
+		if (this.orderlists.containsKey(pnum)) { // 동일 상품이 이미 있는 경우
+			int newstock = this.orderlists.get(pnum) + stock ; 
+			this.orderlists.put(pnum, newstock);
+		} else {
+			this.orderlists.put(pnum, stock) ;
+		}
+	}
 
 }

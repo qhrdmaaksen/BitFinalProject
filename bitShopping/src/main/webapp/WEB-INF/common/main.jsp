@@ -23,6 +23,17 @@
 	   width: 100%;
 	   height: 300px;
 	}
+<<<<<<< HEAD
+	
+.carousel-control-prev{
+	margin-top: 100px;
+	
+}
+ 
+.carousel-control-next{
+	margin-top: 100px;
+}  
+=======
     .logo{
     	align-items: center;
     }
@@ -30,6 +41,11 @@
  		  background: url(https://res.kurly.com/pc/service/main/1908/ico_prev1_x2.png) no-repeat 50% 50%;
   		  background-size: 52px 52px;
 	}
+<<<<<<< HEAD
+>>>>>>> 61c2221493814c94f39f94bea8962b420b5e52a8
+  
+=======
+>>>>>>> a1316fc6767ea56ecf64d1d778a192a2fde991ae
  </style>
 	
 </head>
