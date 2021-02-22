@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/common/nav.jsp" %>
 <%@ page import="java.util.*" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
@@ -53,61 +52,132 @@
 	}
 %>
 
+<%
+	String contextPath = request.getContextPath() ;
+	String mappingName = "/controller"; //서블릿에 정의되어 있슴
+	
+	//폼 태그에서 사용할 변수
+	//YesForm = contextPath + mappingName ;
+	
+	//폼이 아닌 곳에서 사용할 변수
+	//NoForm = contextPath + mappingName + "?command=" ;
+%>
+<%	
+	// 파일 업로드 관련
+	String myurl = request.getRequestURL().toString() ;
+	String uri = request.getRequestURI() ;
+	int idx = myurl.indexOf( uri ) ;	
+	//웹서버에 올릴 이미지의 저장 경로 
+	String uploadPath = "/upload" ;//개발자가 임의 지정 가능
+	String uploadedFolder 
+		= myurl.substring(0, idx) + contextPath + uploadPath ;	
+	String realPath = application.getRealPath( uploadPath ) ;
+%>
+<meta charset="UTF-8">
+<title> 마켓컬리 :: 내일의 장보기, 마켓컬리 </title>
 
-
-<!DOCTYPE>
-<html>
-<head>
-	<title>마켓 컬리</title>
+<c:set var="contextPath" value="<%=contextPath%>" scope="application"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	 <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="<%=contextPath%>/assets/img/favicon.png">
+    <!-- all css here -->
+   <link rel="stylesheet" href="<%=contextPath%>/assets/css/bootstrap.min.css">
+     <link rel="stylesheet" href="<%=contextPath%>/assets/css/animate.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/chosen.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/fontawesome-all.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/tippy.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/bundle.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/style.css">
+    <link rel="stylesheet" href="<%=contextPath%>/assets/css/responsive.css"> 
+    <script src="<%=contextPath%>/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text<%=contextPath%>/assets/css">
+    </style>
 	<style type="text/css">
 		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
 		/*여기 스타일에는 회원가입에 필요한 css 스타일 공간, 유효성 검사 css 및 필수 입력 사항 * red css 사용등등  */
-		.err{ 
-			font-size : 10pt;
-			color:red;
-			font-weight: bolder;
-		}
-		#myalert{ 
-			font-size : 15px;
-			margin-top: 7px;
-			margin-right: 20px;
-			color:black;
-		}
-		.redPrefix{
-			color: red ; 
-		}
+	.err{ 
+		font-size : 10pt;
+		color:red;
+		font-weight: bolder;
+	}
+	#myalert{ 
+		font-size : 15px;
+		margin-top: 7px;
+		margin-right: 20px;
+		color:black;
+	}
+	.redPrefix{
+		color: red ; 
+	}
 	</style>	
+	
 	<style type="text/css">
 	
 	body .header{
 		margin-top: 50px;
+		width: 100%;
+		position : relative;
+		z-index : 9999;
+	}
+	form {
+	    display: block;
+	    margin-top: 0em;
+	}
+	a {
+	    background-color: transparent;
+	    text-decoration: none;
+	    color: inherit;
+	}
+	h1{   
+		position: absolute;
+	    left: 50%;
+	    bottom: 6px;
+	    width: 200px;
+	    height: 50px;
+	    margin-left: -100px;
+	    color: black;} 
+	ol, ul {
+	    list-style-type: none;
+	}
+	.row {
+	    display: inline-block !important;
+	    width: 100%
+	}
+	.wrapper{
+		height: 120px;
+	}
+	.hdr_1 .container-fluid {
+	    padding-left: 10px;
+	    padding-right: 30px;
 	}
 	
-	
 	#userMenu {
-    width: 1050px;
-    margin: 0 auto;
+	    width: 1050px;
+	    margin: 0 auto;
 	}
 	#userMenu * {
 	    font-family: noto sans;
 	    font-weight: 400;
 	    letter-spacing: -.3px;
 	}
-		
 	#userMenu .list_menu {
 	    float: right;
 	}	
-	
 	#userMenu .menu {
 	    position: relative;
 	    z-index: 400;
 	    float: left;
 	}	
-	
 	#userMenu .link_menu {
 	    float: left;
 	    height: 37px;
@@ -125,22 +195,16 @@
 	#userMenu .menu.lst .link_menu {
 	    padding-right: 13px;
 	}
-	
 	#userMenu a {
 		font-size: 13px;
 	}
-	.wrapper{
-		width: 1170px; margin: 0 auto;}
-	
-	.clearfix{
-		content: ''; display: block; clear: both; 
+	#gnb .gnb_main .menu1 a.on .txt, #gnb .gnb_main .menu1 a:hover .txt, #gnb .gnb_main .menu1 .txt {
+	    float: left;
+	    font-weight: 700;
+	    border-bottom: 0;
 	}
-	
-	.header{
-			height: 75px; background-color: #white; position: static;
-			width: 100%; z-index: 9999; left: 0px; margin-top: 50px;
-		}
 
+<<<<<<< HEAD
 		
 		
 	h1{   position: absolute;
@@ -168,23 +232,26 @@
 	 ul.menu > li ul.submenu > li:hover { background:gray;  }
 	 ul.menu > li ul.submenu > li a {font-size: 12px;}
 	
+=======
+    ul, ol, li { list-style:none; margin:0; padding:0; }
+    ul{	list-style:none; padding-left:0px;}
+>>>>>>> a1316fc6767ea56ecf64d1d778a192a2fde991ae
 
 	/* 추가 */
-	 .container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}
-	  .container #headerLogo .bnr_delivery{position:absolute;left:-1px;top:-28px;margin:auto;height:22px}
-	  .container #headerLogo .bnr_delivery img{width:163px;height:22px}
-	  .container #headerLogo .logo{position:absolute;left:50%;bottom:6px;width:200px;height:79px;margin-left:-100px}
-	  .container #headerLogo .logo img{display:block;width:103px;height:79px;margin:0 auto}
-	  .container #headerLogo .logo #gnbLogoContainer {margin:0 auto} 
-	
-
+	.container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}
+	.container #headerLogo .bnr_delivery{position:absolute;left:-1px;top:-28px;margin:auto;height:22px}
+	.container #headerLogo .bnr_delivery img{width:163px;height:22px}
+	.container #headerLogo .logo{position:absolute;left:50%;bottom:6px;width:200px;height:79px;margin-left:-100px}
+	.container #headerLogo .logo img{display:block;width:103px;height:79px;margin:0 auto}
+	.container #headerLogo .logo #gnbLogoContainer {margin:0 auto} 
 
 	</style>
+	
+	<script src="/common_js/gnb_v1.js?ver=1.26.6"></script>
 </head>
 <body>
 
-
-<%-- <header class="header">
+<header class="header">
 	<div id="userMenu">
 		<ul class="list_menu">
 		<c:if test="${whologin == 0}">
@@ -196,7 +263,6 @@
 		<li class="menu lst"><a href="" class="link_menu">고객센터</a> <ul class="sub">
 		</ul></li></ul>
 	</div>
-		
 		
 	<div class="container">
 		<div id="headerLogo" class="layout-wrapper">
@@ -210,137 +276,185 @@
 				<img src="https://res.kurly.com/pc/service/common/1908/delivery_190819.gif" alt="서울, 경기, 인천 샛별배송, 수도권 이외 지역 택배배송">
 			</a>
 		</div>
-			<nav class="navi">
-				<ul class="menu"  >
-					<li class="px"><a href="">전체카테고리</a>
-					<ul class="submenu">
-							<li><a href="">채소</a></li>
-							<li><a href="">과일/견과/쌀</a></li>
-							<li><a href="">수산/해산/건어물</a></li>
-							<li><a href="">정육/계란</a></li>
-							<li><a href="">국/반찬/메인요리</a></li>
-							<li><a href="">샐러드/간편식</a></li>
-						</ul></li>
-					<li class="px"><a href="">베스트</a>
-					<li class="px"><a href="">신상품</a></li>
-					<li class="mark"><a href=""><img width="20px" height="30px" alt="" src="/WEB-INF/image/deliveryicon.png"></a>
-				</ul>
-			</nav>
-		</div>
-		--------------------------------------------------------------------------
 		
-</header> --%>
+		<!-- <div id="gnb" class=""> -->
+			 <div class="wrapper">
+        <!-- header start -->
+        <header>
+            <div class="header_area hdr_1">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-10 col-xs-12">
+                            <div class="main_menu_area">
+                                <div class="main-menu">
+									<nav>
+                                            <ul>
+                                                <li><a href="#">Features <i class="ion-ios-arrow-down"></i></a>
+                                                    <ul class="mega-menu">
+                                                        <li>
+                                                            <ul>
+                                                                <li class="mega-menu-title">Pages</li>
+                                                                <li><a href="portfolio.html"> portfolio</a></li>
+                                                                <li><a href="service.html"> service One</a></li>
+                                                                <li><a href="service-2.html"> service Two</a></li>
+                                                                <li><a href="faq.html"> FAQ Page</a></li>
+                                                                <li><a href="404.html"> 404 Error </a></li>
+                                                                <li><a href="single-blog.html"> single blog</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li class="mega-menu-title">special pages</li>
+                                                                <li><a href="cart.html"> cart page</a></li>
+                                                                <li><a href="checkout.html"> Checkout Page</a></li>
+                                                                <li><a href="login-register.html"> login register</a></li>
+                                                                <li><a href="my-account.html"> my account Page</a></li>
+                                                                <li><a href="wishlist.html"> wishlist Page</a></li>
+                                                                <li><a href="product-details.html"> product details </a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li class="mega-menu-title">products</li>
+                                                                <li><a href="product-details.html">Awesome wood chair</a></li>
+                                                                <li><a href="product-details.html">Good product name</a></li>
+                                                                <li><a href="product-details.html">Another Product name</a></li>
+                                                                <li><a href="product-details.html">test Producr name</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <!-- <li class="mega-menu-img">
+                                                            <ul>
+                                                                <li><a class="dot-none" href="shop.html"><img alt="" src="<%=contextPath%>/assets/img/banner/17.jpg"></a></li>
+                                                            </ul>
+                                                        </li> -->
+                                                    </ul>
+                                                </li>
+												
+                                                <li><a href="about-us.html">about us </a></li>
+												
+                                                <li><a href="shop.html">Shop</a></li>
+						
+                                                <li><a href="contact.html">contact us</a></li>
+                                            </ul>
+                                        </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-12">
+                            <div class="header-site-icon">
+                                <div class="header-search same-style">
+                                    <div class="sidebar-trigger-search">
 
-<%-- 	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">미니 쇼핑몰</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="<%=contextPath%>/main.jsp">Home</a></li>
-					
-					<li>
-						<a href="#" class="dropdown-toggle"> 
-							<font color='white'>
-								<c:if test="${whologin == 0}">
-									미로그인
-								</c:if> 
-								<c:if test="${whologin != 0}">
-									${sessionScope.loginfo.name}(${sessionScope.loginfo.id}) 님
-								</c:if>
-							</font>
-						</a>
-					</li>
-					
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">회원<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><c:if test="${whologin == 0}">
-									<a href="<%=contextPath%>/insert.me">회원 가입</a>
-								</c:if> <c:if test="${whologin != 0}">
-									<a href="<%=contextPath%>/update.me?id=${sessionScope.loginfo.id}">회원 정보 수정</a>
-								</c:if></li>
-							<li><c:if test="${whologin == 0}">
-									<a href="<%=contextPath%>/login.me">로그인</a>
-								</c:if> <c:if test="${whologin != 0}">
-									<a href="<%=contextPath%>/logout.me">로그 아웃</a>
-								</c:if></li>
-							<li><c:if test="${whologin == 1}">
-									<a href="<%=contextPath%>/delete.me?id=${sessionScope.loginfo.id}">회원 탈퇴</a>
-								</c:if></li>
-							<li><c:if test="${whologin == 2}">
-									<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
-								</c:if></li>
-							<li><c:if test="${whologin == 1}">
-									<a href="<%=contextPath%>/detailview.me?id=${sessionScope.loginfo.id}">회원 상세 보기</a>
-								</c:if></li>
-						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">게시물<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><c:if test="${whologin != 0}">
-									<a href="<%=contextPath%>/insert.bo">게시물 등록</a>
-								</c:if></li>
-							<li><c:if test="${whologin != 0}">
-									<a href="<%=contextPath%>/list.bo">목록 보기</a>
-								</c:if></li>
-							<!-- <li><a href="#">-- 아래 항목들은 어떻게 해야 하나??</a></li>
-							<li><a href="#">게시물 수정</a></li>
-							<li><a href="#">게시물 삭제</a></li>
-							<li><a href="#">상세 보기</a></li>
-							<li><a href="#">답글 작성</a></li> -->
-						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">상품<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><c:if test="${whologin == 2}">
-									<a href="<%=contextPath%>/insert.pr">상품 등록</a>
-								</c:if></li>
-							<li><a href="<%=contextPath%>/list.pr">목록 보기</a></li>
-							<!-- <li><a href="#">-- 아래 항목들은 어떻게 해야 하나??</a></li>
-							<li><a href="#">목록 삭제</a></li>
-							<li><a href="#">정보 수정</a></li>
-							<li><a href="./../example/detailViewEx01.jsp">상세 보기</a></li> -->
-						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">쇼핑몰<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><c:if test="${whologin != 0}">
-									<a href="<%=contextPath%>/history.mall">나의 쇼핑 내역</a>
-								</c:if></li>
-							<li><c:if test="${whologin != 0}">
-									<a href="<%=contextPath%>/list.mall">장바구니 보기</a>
-								</c:if></li>
-						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">데이터 보기<b class="caret"></b></a>
-						<ul class="dropdown-menu">							
-							<li><a href="<%=contextPath%>/exam01.vw">회원과 게시물</a></li>
-							<li><a href="<%=contextPath%>/exam02.vw">회원별 게시물 건수</a></li>
-							<li><a href="<%=contextPath%>/exam03.vw">주문 정보</a></li>
-							<li><a href="<%=contextPath%>/exam04.vw">고객별 매출 총액</a></li>
-							<li><a href="<%=contextPath%>/exam05.vw">회원별 주문 건수</a></li>
-													
-						</ul></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><c:if test="${empty sessionScope.loginfo}">
-							<a href="<%=contextPath%>/login.me"><span
-								class="glyphicon glyphicon-log-in"> 로그인 </span> </a>
-						</c:if> <c:if test="${not empty sessionScope.loginfo}">
-							<a href="<%=contextPath%>/logout.me"><span
-								class="glyphicon glyphicon-log-in"> 로그 아웃 </span> </a>
-						</c:if></li>
-				</ul>
-			</div>
-		</div> 
-	</nav>--%>
+                                        <span class="zmdi zmdi-search"></span>
+                                        <div class="search__form">
+                                            <form>
+                                                <div class="form-search">
+                                                    <input type="search" placeholder="Enter your search..." value="" class="input-text" id="search">
+                                                    <button>
+                                                        <i class="zmdi zmdi-search"></i>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="header-cart same-style">
+                                    <div class="sidebar-trigger">
+                                        <ul>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="zmdi zmdi-shopping-cart-plus"></i>
+                                                    <span class="count-style">2</span>
+                                                </a>
+
+                                                <ul class="ht-dropdown main-cart-box">
+                                                    <li>
+                                                        <!-- Cart Box Start -->
+                                                       <%--  <div class="single-cart-box">
+                                                            <div class="cart-img">
+                                                                <a href="#">
+                                                                    <img alt="cart-image" src="<%=contextPath%>/assets/img/products/mini1.jpg">
+                                                                </a>
+                                                            </div>
+                                                            <div class="cart-content">
+                                                                <h6>
+                                                                    <a href="product.html">Alpha Block Black Polo</a>
+                                                                </h6>
+                                                                <span class="quantitys">Qty: 1</span>
+                                                                <span>$399.00</span>
+                                                            </div>
+                                                            <a href="#" class="del-icone">
+                                                                <i class="zmdi zmdi-close"></i>
+                                                            </a>
+                                                        </div>
+                                                        <!-- Cart Box End -->
+                                                        <!-- Cart Box Start -->
+                                                        <div class="single-cart-box">
+                                                            <div class="cart-img">
+                                                                <a href="#">
+                                                                    <img alt="cart-image" src="<%=contextPath%>/assets/img/products/mini2.jpg">
+                                                                </a>
+                                                            </div>
+                                                            <div class="cart-content">
+                                                                <h6>
+                                                                    <a href="product.html">Red Printed Round Neck</a>
+                                                                </h6>
+                                                                <span class="quantitys">Qty: 1</span>
+                                                                <span>$299.00</span>
+                                                            </div>
+                                                            <a href="#" class="del-icone">
+                                                                <i class="zmdi zmdi-close"></i>
+                                                            </a>
+                                                        </div>
+                                                        <!-- Cart Box End -->
+                                                        <!-- Cart Footer Inner Start -->
+                                                        <div class="cart-footer fix">
+                                                            <h5>Subtotal :
+                                                                <span class="f-right">$698.00</span>
+                                                            </h5>
+                                                            <div class="cart-actions">
+                                                                <a href="cart.html" class="checkout">View cart</a>
+                                                                <a href="checkout.html" class="checkout">Checkout</a>
+                                                            </div>
+                                                        </div> --%>
+                                                        <!-- Cart Footer Inner End -->
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+      </div>
+		
+ <!-- all js here -->
+    <script src="<%=contextPath%>/assets/js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/popper.js"></script>
+    <script src="<%=contextPath%>/assets/js/bootstrap.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/isotope.pkgd.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/jquery.counterup.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/waypoints.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/tippy.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/ajax-mail.js"></script>
+    <script src="<%=contextPath%>/assets/js/owl.carousel.min.js"></script>
+    <script src="<%=contextPath%>/assets/js/plugins.js"></script>
+    <script src="<%=contextPath%>/assets/js/main.js"></script>		
+		
+	</div>
+		
+		
+		
+
+		
+</header>
+
 	<c:if test="${not empty requestScope.errmsg}">
 		<div class="alert alert-danger alert-dismissable">
     		<a href="#" id="myalert" class="close" data-dismiss="alert" aria-label="close">닫기</a>

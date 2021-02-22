@@ -9,7 +9,7 @@
 <body>
 <%
 	String imsi = request.getContextPath() + "/main.cu" ; // 컬리에 cu
-	//out.print(imsi);
+	//System.out.print(imsi);
 	response.sendRedirect(imsi) ;
 %>
 </body>

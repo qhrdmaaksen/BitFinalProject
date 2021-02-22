@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    
-<%@ include file="/WEB-INF/common/common.jsp" %>
 
+<%@ include file="/WEB-INF/common/common.jsp" %>
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +21,7 @@
   /* Make the image fully responsive */
 	.carousel-inner img {
 	   width: 100%;
-	   height: 350px;
+	   height: 300px;
 	}
 <<<<<<< HEAD
 	
@@ -37,68 +37,21 @@
     .logo{
     	align-items: center;
     }
-  
-   .line{
-    	color: white;
-   } 
-
 	.carousel-control-prev{
  		  background: url(https://res.kurly.com/pc/service/main/1908/ico_prev1_x2.png) no-repeat 50% 50%;
   		  background-size: 52px 52px;
 	}
+<<<<<<< HEAD
 >>>>>>> 61c2221493814c94f39f94bea8962b420b5e52a8
   
+=======
+>>>>>>> a1316fc6767ea56ecf64d1d778a192a2fde991ae
  </style>
 	
-
-
-
-<style>
- 
-</style>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-      $("#top-message-close").on("click",function(){
-        setCookie('top_msg_banner2','set_cookie',1)
-      });
-      if(getCookie('top_msg_banner2') == 'set_cookie'){
-        $("#top-message").hide()
-      }else{
-        $("#top-message").show() ;
-      }
-    });
-
-/*     function setCookie(cookieName, value, exdays){
-      var exdate = new Date();
-      exdate.setDate(exdate.getDate() + exdays);
-      var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
-      document.cookie = cookieName + "=" + cookieValue +"; path=/;"
-    }
-
-    function getCookie(cookieName) {
-      cookieName = cookieName + '=';
-      var cookieData = document.cookie;
-      var start = cookieData.indexOf(cookieName);
-      var cookieValue = '';
-      if(start != -1){
-        start += cookieName.length;
-        var end = cookieData.indexOf(';', start);
-        if(end == -1)end = cookieData.length;
-        cookieValue = cookieData.substring(start, end);
-      }
-      return unescape(cookieValue);
-    } */
-  </script>
-
 </head>
 <body>
 
-
-<div class="line">
-------------------------------------------------------------------------------------------------------------------------------
-</div>
-
+<div class="container">
 <!-- 사진 슬라이드 시작 -->
 <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -139,39 +92,6 @@
 </div>
 
 
-
-
-
-
-
-<!-- <div class="footer_link">
-<div class="authentication">
-<a href="#none" onclick="popup('https://res.kurly.com/pc/img/1909/img_isms.jpg',550,700);return false;" class="mark" target="_blank">
-<img src="https://res.kurly.com/pc/ico/2001/logo_isms.png" alt="isms 로고" class="logo">
-<p class="txt">
-[인증범위] 마켓컬리 쇼핑몰 서비스 개발 · 운영<br>
-[유효기간] 2019.04.01 ~ 2022.03.31
-</p>
-</a>
-<a href="#none" onclick="popup('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&amp;certNum=2020-EP-N001',527,720);return false;" class="mark" target="_blank">
-<img src="https://res.kurly.com/pc/ico/2001/logo_eprivacyplus.png" alt="eprivacy plus 로고" class="logo">
-<p class="txt">
-개인정보보호 우수 웹사이트 ·<br>
-개인정보처리시스템 인증 (ePRIVACY PLUS)
-</p>
-</a>
-<a href="#none" onclick="popup('http://pgweb.uplus.co.kr/ms/escrow/s_escrowYn.do?mertid=go_thefarmers',460,550);return false;" class="mark lguplus" target="_blank">
-<img src="https://res.kurly.com/pc/service/main/2009/logo_payments.png" alt="payments 로고" class="logo">
-<p class="txt">
-고객님의 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한<br>
-토스 페이먼츠 구매안전(에스크로) 서비스를 이용하실 수 있습니다.
-</p>
-</a>
-</div>
-</div> -->
-
-
-
 <%@ include file="/WEB-INF/common/footer.jsp" %>
 
 
@@ -182,7 +102,23 @@
 		<a href="<%=contextPath%>/pdetail.pr?pno=1&${requestScope.parameters}">
 			제품 상세 보기</a>
 <br><br><br>
+
+		<a href="<%=contextPath%>/list.prr">상품 후기 게시판</a>
 <br><br><br>
+
+	<a href="<%=contextPath%>/payment.pm">결제하기</a>
+
+<br><br><br>
+<a href="<%=contextPath%>/mypage.me">마이 페이지</a>
+
+<a href="<%=contextPath%>/mypage.me?mid=admin&${requestScope.parameters}">마이 페이지</a>
+
+
+<br><br><br>
+<br><br><br>
+
+
+</div>
 
 
 </body>
