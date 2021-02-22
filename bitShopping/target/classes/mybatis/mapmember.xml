@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MapMember">
+
+	<insert id="InsertData" parameterType="MyMember">
+	insert into members(mid , password , name , email , phone , zipcode, address1 , address2 , gender ,
+                    birth , mpoint , createdate )
+	VALUES (#{mid}, #{password}, #{name}, #{email}, #{phone}, #{zipcode}, #{address1}, #{address2}, #{gender}, 
+					#{birth}, #{mpoint}, sysdate)
+	</insert>
+
+	
+	<select id="GetList" parameterType="String" resultType="MyCheckBean">
+		select *
+		from checkes
+		where module = #{module} and field = #{field} and kind = #{kind}
+		order by mykey asc
+	</select>
+		
+	<select id="SelectDataList" resultType="MyMember">
+		select mid , password , name , email , phone , zipcode, address1 , address2 , gender ,
+                    birth , mpoint , createdate
+		from members
+	</select>
+	
+	<select id="SelectTotalCount" resultType="int">
+		select count(*) as cnt from members
+	</select>	
+	
+	<select id="SelectDataByPk" parameterType="String" resultType="MyMember">
+		select * from members
+		where mid = #{mid}
+	</select>
+
+	<select id="DeleteData" parameterType="String">
+		select * from members
+		where mid = #{mid}
+	</select>
+</mapper>
+
+
+
+
+
+
