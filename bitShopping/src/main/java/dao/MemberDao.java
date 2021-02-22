@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import bean.CheckBean;
 import bean.Member;
+import shopping.ShoppingInfo;
 
 
 @Component("mdao")
@@ -77,5 +78,14 @@ public class MemberDao {
 		// 해당 id를 사용해서 회원 탈퇴
 		
 		return this.abcd.delete(namespace + ".DeleteData" , bean.getMid());
+	}
+
+
+
+
+	public List<ShoppingInfo> getShoppingInfo(String mid) {
+		// TODO Auto-generated method stub
+		
+		return this.abcd.selectList(namespace+".SelectShoppingInfo", mid);
 	}
 }
