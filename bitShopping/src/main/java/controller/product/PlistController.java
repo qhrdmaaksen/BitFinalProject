@@ -40,14 +40,20 @@ public class PlistController extends SuperClass{ // 상품 목록을 보여주�
 	public ModelAndView doGet(
 			HttpServletRequest request ,//리퀘스트 저장소만들어주기
 			FlowParameters param) { //검색 키워드 필요 파라미터 세팅해주기
+		param.setPageSize("18");
 		
 		System.out.println(this.getClass() + " : " + param.toString());//여기클래스에 파라미터 왔는지 확인
 		
 		int totalCount  // 검색으로 총 몇개 나왔는지 
 			= pdao.SelectTotalCount(param.getMode(), param.getKeyword() + "%");
 		
+		System.out.println("param.getMode() : " + param.getMode());
+		System.out.println("totalCount : " + totalCount);
+		
 		String contextpath = request.getContextPath() + "/" ;//contextpath 주소지 설정
+		
 		String myurl = contextpath + this.command ; //url 문자열 짜집기 
+		
 		
 		Paging pageInfo = new Paging( //유틸에있는 paging 객체 생성
 				param.getPageNumber() ,
@@ -57,12 +63,14 @@ public class PlistController extends SuperClass{ // 상품 목록을 보여주�
 				param.getMode() , 
 				param.getKeyword()
 				);
-		
+		System.out.println("pageInfo : " + pageInfo);
 		List<Product> lists = pdao.SelectDataList(
 				pageInfo.getOffset(), 
 				pageInfo.getLimit(), 
 				param.getMode(),
 				param.getKeyword() + "%");
+		
+		System.out.println("lists : " + lists);
 		
 		mav.addObject("lists", lists); // 표에 들어갈 상품 목록들
 
