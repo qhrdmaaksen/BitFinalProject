@@ -302,7 +302,7 @@
 												
                                                 <li><a href="about-us.html">about us </a></li>
 												
-                                                <li><a href="shop.html">Shop</a></li>
+                                                <li><a href="<%=contextPath%>/plist.pr">Shop</a></li>
 						
                                                 <li><a href="contact.html">contact us</a></li>
                                             </ul>
