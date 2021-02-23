@@ -204,6 +204,16 @@
 	    border-bottom: 0;
 	}
 
+		
+	h1{   position: absolute;
+    left: 50%;
+    bottom: 6px;
+    width: 200px;
+    height: 50px;
+    margin-left: -100px;
+    color: black;}
+
+	
     ul, ol, li { list-style:none; margin:0; padding:0; }
     ul{	list-style:none; padding-left:0px;}
 
@@ -228,7 +238,7 @@
 		<li class="menu none_sub menu_join"><a href="<%=contextPath%>/insert.me" class="link_menu">회원가입</a></li> 
 		</c:if>
 		<c:if test="${whologin == 0 }">
-		<li class="menu none_sub menu_login"><a href="" class="link_menu">로그인</a> <!----></li> <!----> 
+		<li class="menu none_sub menu_login"><a href="<%=contextPath%>/login.me" class="link_menu">로그인</a> <!----></li> <!----> 
 		</c:if>
 		<li class="menu lst"><a href="" class="link_menu">고객센터</a> <ul class="sub">
 		</ul></li></ul>

@@ -1,9 +1,15 @@
 package bean;
 
+import org.hibernate.validator.constraints.Length;
+
 public class Productreviews {
 	private int bno;
+	
+	@Length(min = 5, max = 15, message = "제목은 5글자 이상 10글자 이하여야 합니다.")
 	private String btitle;
 	private String bwriter;
+	
+	@Length(min = 10, max = 50, message = "내용은 10글자 이상 50글자 이하여야 합니다.")
 	private String bcontent;
 	private String bimg;
 	private int breview;
