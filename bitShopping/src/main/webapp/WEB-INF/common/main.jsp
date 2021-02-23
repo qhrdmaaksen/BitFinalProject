@@ -112,7 +112,15 @@
 <br><br><br>
 
 
-
+<br><br><br>
+<br><br><br>
+<a href="<%=contextPath%>/delete.me?mid=">회원 탈퇴하기</a>
+<br><br><br>
+<br><br><br>
+<a href="<%=contextPath%>/plist.pr">제품 목록 보기</a>
+<br><br><br>
+<br><br><br>
+<a href="<%=contextPath%>/address.ad">배송지 관리 페이지 보기</a>
 
 </body>
 </html>

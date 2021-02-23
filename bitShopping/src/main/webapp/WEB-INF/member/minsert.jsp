@@ -325,9 +325,5 @@
 		</div>
 	</div>
 </div>
-<br><br><br>
-<a href="<%=contextPath%>/delete.me?mid=">회원 탈퇴하기</a>
-<br><br><br>
-<a href="<%=contextPath%>/plist.pr">제품 목록 보기</a>
 </body>
 </html>

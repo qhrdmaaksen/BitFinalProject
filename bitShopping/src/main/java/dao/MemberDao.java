@@ -81,8 +81,6 @@ public class MemberDao {
 	}
 
 
-
-
 	public List<ShoppingInfo> getShoppingInfo(String mid) {
 		// TODO Auto-generated method stub
 		
