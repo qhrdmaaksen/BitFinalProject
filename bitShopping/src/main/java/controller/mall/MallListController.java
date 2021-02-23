@@ -31,22 +31,22 @@ public class MallListController extends SuperClass{
 	private ProductDao pdao ;
 	
 	public MallListController() {
-		super("MallList", null);
+		super("malllist", null);
 		this.mav = new ModelAndView();
 	}
 	
 	@GetMapping(command)
 	public ModelAndView doGet(
 			HttpSession session){	
-		if (session.getAttribute("loginfo") == null) {			
-			this.mav.setViewName("redirect:/login.me"); 
-		} else {
+//		if (session.getAttribute("loginfo") == null) {			
+//			this.mav.setViewName("redirect:/login.me"); 
+//		} else {
 			MyCartList mycart = (MyCartList)session.getAttribute("mycart") ;
-			if (mycart==null) {
-				String errmsg = "쇼핑 내역이 없어서 상품 목록으로 이동합니다." ;
-				this.mav.addObject("errmsg", errmsg );
-				this.mav.setViewName("redirect:/list.pr");
-			}else {
+//			if (mycart==null) {
+//				String errmsg = "쇼핑 내역이 없어서 상품 목록으로 이동합니다." ;
+//				this.mav.addObject("errmsg", errmsg );
+//				this.mav.setViewName("redirect:/list.pr");
+//			}else {
 				Map<Integer, Integer> maplists =  mycart.GetAllOrderLists() ;
 				
 				// keylist : 구매하고자 하는 상품 번호를 저장하고 있는 Set 자료 구조
@@ -80,7 +80,6 @@ public class MallListController extends SuperClass{
 					shopinfo.setPimg(bean.getPimg1());
 					shopinfo.setPrice(price);
 					shopinfo.setProductcode(pno);
-					shopinfo.setProductname(bean.getProductname());
 					
 					shoplists.add(shopinfo) ;
 				}
@@ -92,8 +91,8 @@ public class MallListController extends SuperClass{
 				session.setAttribute("shoplists", shoplists) ;
 				
 				this.mav.setViewName(super.getpage);
-			}
-		}	
+			//}
+		//}	
 		return this.mav ;
 	}
 }

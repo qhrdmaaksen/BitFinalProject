@@ -92,12 +92,14 @@
 	<a href="<%=contextPath%>/payment.pm">결제하기</a>
 
 <br><br><br>
-<a href="<%=contextPath%>/mypage.me">마이 페이지</a>
+
 
 <a href="<%=contextPath%>/mypage.me?mid=admin&${requestScope.parameters}">마이 페이지</a>
 
 
 <br><br><br>
+<a href="<%=contextPath%>/list.mall">장바구니(아직 사용 불가)</a>
+
 <br><br><br>
 
 
