@@ -3,6 +3,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controller.common.SuperClass;
@@ -17,7 +18,8 @@ public class MypaymentsController extends SuperClass {
 	
 	@Autowired
 	@Qualifier("pmdao")
-	private MypaymentDao pmdao;
+	private MypaymentDao pmdao;//
+	//private OrdersDao ordao;
 	public MypaymentsController() {
 		
 		super("mypayments","plist");
@@ -25,7 +27,17 @@ public class MypaymentsController extends SuperClass {
 	}
 	
 	@GetMapping(command)
-	public ModelAndView doPost() {
+	public ModelAndView doPost(
+			@RequestParam(value = "odid", required = true)int odid
+			) {
+		Orders bean = ordao.SelectDataByPk(odid);
+		if (bean != ) {
+			
+		} else {
+
+		}
+		
+		
 		this.mav.setViewName(super.postpage); // 어디로 갈 것인가
 		
 		
