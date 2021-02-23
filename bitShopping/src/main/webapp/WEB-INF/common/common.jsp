@@ -204,9 +204,6 @@
 	    border-bottom: 0;
 	}
 
-<<<<<<< HEAD
-		
-		
 	h1{   position: absolute;
     left: 50%;
     bottom: 6px;
@@ -232,10 +229,8 @@
 	 ul.menu > li ul.submenu > li:hover { background:gray;  }
 	 ul.menu > li ul.submenu > li a {font-size: 12px;}
 	
-=======
     ul, ol, li { list-style:none; margin:0; padding:0; }
     ul{	list-style:none; padding-left:0px;}
->>>>>>> a1316fc6767ea56ecf64d1d778a192a2fde991ae
 
 	/* 추가 */
 	.container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}
