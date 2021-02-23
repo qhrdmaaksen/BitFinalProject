@@ -1,5 +1,7 @@
 package bean;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.Length;
 
 public class Productreviews {
@@ -13,6 +15,8 @@ public class Productreviews {
 	private String bcontent;
 	private String bimg;
 	private int breview;
+	
+	@Pattern(regexp = "\\d{4}[-/]\\d{2}[-/]\\d{2}" , message = "날짜는 yyyy/MM/dd 또는 yyyy-MM-dd 형식으로 입력해 주세요.")
 	private String bregdate;
 	
 	public Productreviews() {

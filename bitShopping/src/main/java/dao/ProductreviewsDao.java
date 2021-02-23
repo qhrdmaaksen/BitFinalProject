@@ -20,9 +20,11 @@ public class ProductreviewsDao {
 	
 	public ProductreviewsDao() {}
 
-	public int InsetData(Productreviews bean) {
+	public int InsertData(Productreviews bean) {
 		//넘겨진 Bean 데이터를 이용하여 추가한다.
-		return this.abcd.insert(namespace + "InsetData", bean);
+		System.out.println(this.getClass() + " : 게시물을 등록합니다." ); 
+		System.out.println(bean.toString());
+		return this.abcd.insert(namespace + "InsertData", bean);
 	}
 
 	public int SelectTotalCount(String mode, String keyword) {
@@ -42,9 +44,9 @@ public class ProductreviewsDao {
 		return this.abcd.selectList(namespace + "SelectDataList" , map, rowBounds);
 	}
 	
-	public int updateViewCnt(int bno) {
+	public int UpdateReadhit(int bno) {
 		//조회수 증가 
-		return this.abcd.update(namespace + "updateViewCnt", bno);
+		return this.abcd.update(namespace + "UpdateReadhit", bno);
 		
 	}
 	

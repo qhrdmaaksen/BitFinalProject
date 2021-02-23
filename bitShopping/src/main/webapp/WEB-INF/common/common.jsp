@@ -204,18 +204,8 @@
 	    border-bottom: 0;
 	}
 
-		
-	h1{   position: absolute;
-    left: 50%;
-    bottom: 6px;
-    width: 200px;
-    height: 50px;
-    margin-left: -100px;
-    color: black;}
 
-	
-    ul, ol, li { list-style:none; margin:0; padding:0; }
-    ul{	list-style:none; padding-left:0px;}
+
 
 	/* 추가 */
 	.container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}
@@ -312,7 +302,7 @@
 												
                                                 <li><a href="about-us.html">about us </a></li>
 												
-                                                <li><a href="shop.html">Shop</a></li>
+                                                <li><a href="<%=contextPath%>/plist.pr">Shop</a></li>
 						
                                                 <li><a href="contact.html">contact us</a></li>
                                             </ul>

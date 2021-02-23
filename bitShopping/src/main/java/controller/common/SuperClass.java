@@ -6,6 +6,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class SuperClass  { //implementsSuperController, Validator{
 //	// PREFIX는 유효성 검사시 앞에 붙여줄 접두사
@@ -27,7 +28,7 @@ public class SuperClass  { //implementsSuperController, Validator{
 	
 	private HttpServletRequest request = null ;
 	private HttpServletResponse response = null ;
-//	protected HttpSession session = null ;
+	protected HttpSession session = null ;
 	
 
 	public void doProcess(HttpServletRequest request, HttpServletResponse response) 
@@ -35,7 +36,7 @@ public class SuperClass  { //implementsSuperController, Validator{
 		// get, post에 상관없이 무조건 호출되도록 합니다.
 		this.request = request ; 
 		this.response = response ;
-//		this.session = request.getSession() ;		
+		this.session = request.getSession() ;		
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 				throws ServletException, IOException {

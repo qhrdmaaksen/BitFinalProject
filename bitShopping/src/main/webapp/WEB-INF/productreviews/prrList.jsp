@@ -222,8 +222,12 @@ ${bean.bwriter} </td>
 </tr>
 </tbody>
 </c:forEach>
+<div align="center">
+			<footer>${requestScope.pagingHtml}</footer>			
+		</div>	
 <br>
 <div id="foot">
 <a href="<%=contextPath%>/insert.prr">상품 후기 작성</a></div>
+
 </body>
 </html>
