@@ -46,10 +46,10 @@ padding-top: 2ex;
 					<div class="form-group">
 						<label class="control-label col-sm-<%=formleft%>" for="bwriter">작성자</label>
 						<div class="col-sm-<%=formright%>">
-							<input type="text" class="form-control" name="fakebwriter" id="fakebwriter"
-							placeholder="작성자" value="${sessionScope.loginfo.name}(${sessionScope.loginfo.id})" disabled="disabled">
-							<input type="hidden" name="bwriter" id="bwriter"
-								value="${sessionScope.loginfo.id}" />
+							<%-- <input type="text" class="form-control" name="fakebwriter" id="fakebwriter"
+							placeholder="작성자" value="${sessionScope.loginfo.name}(${sessionScope.loginfo.id})" disabled="disabled"> --%>
+							<input type="text" name="bwriter" id="bwriter"
+								value="${bwriter}" />
 						</div>
 					</div>
 					<div class="form-group">
@@ -79,8 +79,8 @@ padding-top: 2ex;
 					<div class="form-group">
 						<label class="control label col-sm-<%=formleft%>" for="bregdate">작성 일자</label>
 						<div class="col-sm-<%=formright%>">
-							<form:input path="bregdate" type="text" class="form-control" name="bregdate"
-								id="bregdate" placeholder="작성 일자" value="${bean.bregdate}"/>
+							<form:input path="bregdate" type="datetime" class="form-control" name="bregdate"
+								id="bregdate" placeholder="작성 일자" value="$bregdate}"/>
 							<form:errors cssClass="err" path="bregdate" />
 						</div>
 					</div>
@@ -88,7 +88,7 @@ padding-top: 2ex;
 						<label class="control label col-sm-<%=formleft%>" for="bimg">사진 등록</label>
 						<div class="col-sm-<%=formright%>">
 							<form:input path="bimg" type="file" class="form-control" name="bimg"
-								id="bimg" value="${bean.bimg}"/>
+								id="bimg" value="${bimg}"/>
 							<%-- <form:errors cssClass="err" path="bimg" /> --%>
 						</div>
 					</div>

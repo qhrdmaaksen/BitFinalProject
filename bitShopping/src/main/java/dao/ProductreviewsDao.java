@@ -22,6 +22,7 @@ public class ProductreviewsDao {
 
 	public int InsetData(Productreviews bean) {
 		//넘겨진 Bean 데이터를 이용하여 추가한다.
+		System.out.println(this.getClass() + " : 게시물을 등록합니다." ); 
 		return this.abcd.insert(namespace + "InsetData", bean);
 	}
 

@@ -11,7 +11,7 @@ import dao.MypaymentDao;
 @Controller
 public class MypaymentsController extends SuperClass {
 	private final String command ="/payment.pm";
-	private String redirect = "redirect:/main.cu";
+	private String redirect = "redirect:/plist.pr";
 	
 	private ModelAndView mav = null;
 	
@@ -20,13 +20,16 @@ public class MypaymentsController extends SuperClass {
 	private MypaymentDao pmdao;
 	public MypaymentsController() {
 		
-		super("mypayments","null");
+		super("mypayments","plist");
 		this.mav = new ModelAndView();
 	}
 	
 	@GetMapping(command)
-	public ModelAndView doGet() {
-		this.mav.setViewName(super.getpage); // 어디로 갈 것인가
+	public ModelAndView doPost() {
+		this.mav.setViewName(super.postpage); // 어디로 갈 것인가
+		
+		
+		
 		
 		return this.mav;
 	}
