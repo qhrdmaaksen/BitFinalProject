@@ -616,7 +616,7 @@
 																onclick="writeForm();">상품 등록</button>
 														</c:if>
 													</form>
-													<form method="get" role="form" name="myform"
+													<%-- <form method="get" role="form" name="myform"
 														action="<%=contextPath%>/plist.pr" class="woocommerce-ordering hidden-xs">
 														<input type="hidden" name="command" value="plist.pr">
                                                         <div class="orderby-wrapper">
@@ -633,7 +633,7 @@
                                                                 <option value="price-desc">낮은 가격</option>
                                                             </select>
                                                         </div>
-                                                    </form>
+                                                    </form> --%>
                                                 </div>
                                             </div>
                                         </div>
@@ -721,7 +721,7 @@
                                                             <div class="price-box">
                                                                 <ins>
                                                                     <span class="amount">
-                                                                        <span class="Price-currencySymbol"></span>${bean.price}</span>
+                                                                        <span class="Price-currencySymbol"></span>${bean.price} 원</span>
                                                                 </ins>
                                                             </div>
                                                         </div>

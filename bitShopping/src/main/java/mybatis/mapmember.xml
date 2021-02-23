@@ -40,7 +40,7 @@
 		where mid = #{mid}
 	</select>
 	
-	<select id="SelectShoppingInfo" parameterType="String">
+	<select id="SelectShoppingInfo" parameterType="String" resultType="MyShopInfo">
 		select * from shoppinginfo
 		where mid = #{mid}
 	

@@ -204,8 +204,6 @@
 	    border-bottom: 0;
 	}
 
-<<<<<<< HEAD
-		
 		
 	h1{   position: absolute;
     left: 50%;
@@ -214,28 +212,10 @@
     height: 50px;
     margin-left: -100px;
     color: black;}
-      ul, ol, li { list-style:none; margin:0; padding:0; }
-    
-	 ul.menu {}
-	 ul.menu > li { display:inline-block;  width:120px; padding:5px 10px; text-align:center; position:relative; font-size: 15px;}
-	ul.menu > li.px{width: 150px;}
-	.menu a{line-height: 75px; color: black; padding: 0 22px 0 10px;  display: block;  }	
-	ul{
-   	list-style:none;
-   	padding-left:0px;
-   }
-  	.mark {float: right; width: 100px;}
-	.px{float: left; border: 1px; }
-   	ul.menu > li ul.submenu {  display:none; position:absolute;  left:0; }
-   	ul.menu > li:hover ul.submenu { display:block; background-color: gray; height: 50px; }
-    ul.menu > li ul.submenu > li { display:inline-block; width:150px;  background:white; text-align:center; border: 1px solid white; height: 50px;}
-	 ul.menu > li ul.submenu > li:hover { background:gray;  }
-	 ul.menu > li ul.submenu > li a {font-size: 12px;}
+
 	
-=======
     ul, ol, li { list-style:none; margin:0; padding:0; }
     ul{	list-style:none; padding-left:0px;}
->>>>>>> a1316fc6767ea56ecf64d1d778a192a2fde991ae
 
 	/* 추가 */
 	.container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}

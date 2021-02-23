@@ -21,9 +21,8 @@
   /* Make the image fully responsive */
 	.carousel-inner img {
 	   width: 100%;
-	   height: 300px;
+	   height: 370px;
 	}
-<<<<<<< HEAD
 	
 .carousel-control-prev{
 	margin-top: 100px;
@@ -33,7 +32,6 @@
 .carousel-control-next{
 	margin-top: 100px;
 }  
-=======
     .logo{
     	align-items: center;
     }
@@ -41,17 +39,11 @@
  		  background: url(https://res.kurly.com/pc/service/main/1908/ico_prev1_x2.png) no-repeat 50% 50%;
   		  background-size: 52px 52px;
 	}
-<<<<<<< HEAD
->>>>>>> 61c2221493814c94f39f94bea8962b420b5e52a8
-  
-=======
->>>>>>> a1316fc6767ea56ecf64d1d778a192a2fde991ae
  </style>
 	
 </head>
 <body>
 
-<div class="container">
 <!-- 사진 슬라이드 시작 -->
 <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -109,16 +101,17 @@
 	<a href="<%=contextPath%>/payment.pm">결제하기</a>
 
 <br><br><br>
-<a href="<%=contextPath%>/mypage.me">마이 페이지</a>
+
 
 <a href="<%=contextPath%>/mypage.me?mid=admin&${requestScope.parameters}">마이 페이지</a>
 
 
 <br><br><br>
+<a href="<%=contextPath%>/list.mall">장바구니(아직 사용 불가)</a>
+
 <br><br><br>
 
 
-</div>
 
 
 </body>
