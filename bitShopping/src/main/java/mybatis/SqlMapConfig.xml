@@ -12,6 +12,9 @@
 		<typeAlias alias="MyProduct" type="bean.Product" />
 		<typeAlias alias="MyProductreviews" type="bean.Productreviews" />
 		<typeAlias alias="Mypayments" type="bean.Mypayments"/>
+		<typeAlias alias="MyShopInfo" type="shopping.ShoppingInfo"/>
+	
+	
 	</typeAliases>	
 
 	<!-- mapper 태그 사용시 앞에 슬래시 붙이지 말고 패키지 경로 쭉~~~ 파일 이름 명시 -->

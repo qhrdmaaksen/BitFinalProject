@@ -14,28 +14,42 @@ public class MyCartList {
 		this.orderlists= new HashMap<Integer, Integer>();
 	}
 	
-	//장바 구니 내역을 결제한 내역만 삭제한다. 
-	//이 부분은 주로 결제가 이루어질 때만 사용 된다.
-	public void RemoveProductInfo() {
-		this.orderlists.clear();
-	}
-
-	public Map<Integer, Integer> GetAllOrderLists() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
+	// 장바구니 내역을 모두 삭제합니다.
+		// 주로 결재가 이루어질 때 사용이 됩니다.
+		public void RemoveAllProductInfo() {
+			this.orderlists.clear();
+		}
+		
+		// 장바구니 내역 정보를 반환해줍니다.
+		public Map<Integer, Integer> GetAllOrderLists(){
+			return this.orderlists ;
+		}
+		
+		// 장바구니 내역 정보를 수정합니다.
+		public void EditOrder(int pnum, int stock) {
+			// pnum는 수정될 상품 번호, stock은 수정할 수량
+			this.AddOrder(pnum, stock);
+		}
+		
+		// 장바구니에 들어 있는 해당 상품을 삭제합니다.
+		public void DeleteOrder(int pnum) {
+			// pnum는 삭제될 상품 번호
+			this.orderlists.remove(pnum) ;
+		}
+		
+		// 장바구니에 상품을 추가합니다.
+		public void AddOrder(int pnum, int stock) {
+			if (this.orderlists.containsKey(pnum)) { // 동일 상품이 이미 있는 경우
+				int newstock = this.orderlists.get(pnum) + stock ; 
+				this.orderlists.put(pnum, newstock);
+			} else {
+				this.orderlists.put(pnum, stock) ;
+			}
+		}
 	
 	// 장바구니 내역 정보 반환, 수정, 추가, 삭제 ///////////////////////////
 	// 요기는 연경씨 파트 맞죠 ? ㅎㅎ 화이팅 ! 
-	// 장바구니에 상품을 추가합니다.
-	public void AddOrder(int pnum, int stock) {
-		if (this.orderlists.containsKey(pnum)) { // 동일 상품이 이미 있는 경우
-			int newstock = this.orderlists.get(pnum) + stock ; 
-			this.orderlists.put(pnum, newstock);
-		} else {
-			this.orderlists.put(pnum, stock) ;
-		}
-	}
+	// ㅎㅎㅎ 넵 감사합니다! 경희씨도 화이팅~~
+
 
 }
