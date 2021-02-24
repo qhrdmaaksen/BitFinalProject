@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import bean.Product;
 import controller.common.SuperClass;
 import dao.ProductDao;
-
 
 @Controller
 public class PdetailController extends SuperClass{
@@ -31,7 +31,6 @@ public class PdetailController extends SuperClass{
 		this.mav = new ModelAndView();
 	}
 	
-	
 	@GetMapping(command)
 	public ModelAndView doGet(
 			@RequestParam(value = "pno", required = true) int pno
@@ -40,7 +39,6 @@ public class PdetailController extends SuperClass{
 		
 		if( bean != null){ //상세 보기로 이동			 
 			mav.addObject("bean", bean);
-			
 			this.mav.setViewName(super.getpage);	
 		}else{
 			this.mav.setViewName(this.redirect);		 

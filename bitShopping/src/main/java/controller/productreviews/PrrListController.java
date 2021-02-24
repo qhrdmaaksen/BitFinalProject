@@ -49,6 +49,8 @@ public class PrrListController extends SuperClass{
 		//파라미터 확인을 위한 출력 
 		System.out.println(this.getClass() + " : " + parameters.toString());
 		
+	
+		
 		int totalCount 
 			= prrdao.SelectTotalCount(
 								parameters.getMode(), 

@@ -343,7 +343,7 @@ body, input, select, textarea, button {
 							<ul>
 								<li><a href="#">${bean.pcategory}</a></li>
 								<!--   <li>  추후 카테고리가 늘어날 수 있으므로
-=======
+
         <!-- breadcrumbs area start -->
         <div class="title-breadcrumbs">
             <div class="title-breadcrumbs-inner">
@@ -357,7 +357,7 @@ body, input, select, textarea, button {
             </div>
         </div>
         <!-- breadcrumbs area End -->
-        <!-- product details area start -->
+       <%--  <!-- product details area start -->
         <div class="product-details-area hm-3-padding ptb-100">
             <div class="container">
                 <div class="row">
@@ -444,7 +444,7 @@ body, input, select, textarea, button {
 						<form class="form-inline" role="form" method="post" action="<%=contextPath%>/insert.mall">
 							<input type="hidden" name="pqty" value="${bean.pqty}">
 							<input type="hidden" name="pno" value="${bean.pno}">
-							<%-- <input type="hidden" name="qty" value="1"> --%>
+							<input type="hidden" name="qty" value="1">
                             <div class="quickview-plus-minus">
                                 <div class="cart-plus-minus">
                                     <input type="text" value="1" name="qty" class="cart-plus-minus-box">
@@ -472,11 +472,10 @@ body, input, select, textarea, button {
                                         <a href="#">${bean.pcategory}</a>
                                     </li>
                                   <!--   <li>  추후 카테고리가 늘어날 수 있으므로
->>>>>>> 89d8fd4c3c91749f3eb8e4e2b3723a742664b8e9
                                         <a href="#">electronics ,</a>
                                     </li> -->
 							</ul>
-						</div>
+						</div> --%>
 						<div class="product-share">
 							<h5 class="pd-sub-title">Share</h5>
 							<ul>
@@ -496,8 +495,9 @@ body, input, select, textarea, button {
 			</div>
 		</div>
 	</div>
-	<!-- product details area End -->
+	<!-- product details area End --> --%>
 	<!--Product Description Review Area Start-->
+	
 	<div class="product-description-review-area pb-55">
 		<div class="container">
 			<div class="row">
@@ -630,7 +630,7 @@ body, input, select, textarea, button {
 			type="hidden" name="page_num" value=""> <input type="hidden"
 			name="goodsno" value="13677">
 		<div class="title_txt">
-			<h2>PRODUCT REVIEW</h2>
+			<h2>PRODUCT REVIEW LIST</h2>
 			<div class="sort-wrap">
 				<ul class="list_type1 old">
 					<li><span class="ico"></span>
@@ -744,13 +744,13 @@ body, input, select, textarea, button {
 						</tr>
 					</tbody>
 					
-<c:forEach var="bean" items="${requestScope.lists}">
-	<td align="center">${bean.bno}</td>
+<c:forEach var="bean" items="${requestScope.productreviews.lists}">
+	<td align="center">${requestScope.productreviews.bno}</td>
 	<td class="btitle">
-		<div>${bean.btitle}</div>
+		<div>${requestScope.productreviews.btitle}</div>
 	<td><details>
 			<summary>내용 자세히 보기</summary>
-			<p>${bean.bcontent}</p>
+			<p>${requestScope.productreviews.bcontent}</p>
 		</details></td>
 	</td>
 	<td class="user_grade grade_comm"></td>
@@ -770,6 +770,10 @@ body, input, select, textarea, button {
 </div> --%>
 
 
+<br>
+<br>
+<br>
+<br>
 
 
 
