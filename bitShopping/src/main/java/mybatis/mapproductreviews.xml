@@ -20,6 +20,16 @@
         where bno = #{bno}
 
  </update>
+ 
+ <update id="reviewsTotalCount" parameterType="int">
+
+        update productreviews
+
+        set bno = bno + 1
+
+        where bno = #{bno}
+
+ </update>
 	
 	<select id="SelectTotalCount" resultType="int">
 		select count(*) as cnt from productreviews 
