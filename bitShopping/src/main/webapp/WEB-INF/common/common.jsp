@@ -6,6 +6,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+
+
+
+
 <!-- whologin 변수는 로그인 상태를 저장하고 있는 변수입니다. -->
 <c:set var="whologin" value="0" />
 <c:if test="${empty sessionScope.loginfo}">
@@ -217,7 +221,7 @@
 
 	</style>
 	
-	<script src="/common_js/gnb_v1.js?ver=1.26.6"></script>
+	
 </head>
 <body>
 

@@ -41,15 +41,14 @@ padding-top: 2ex;
 				<h5 class="write-title" align="center">상품 후기 등록</h5>
 			</div>
 			<div class="panel-body">
-				<c:set var="apppath" value="<%=request.getContextPath()%>" />
-				<form:form modelAttribute="productreviews" class="form-horizontal" role="form" action="${apppath}/insert.prr" method="post">
+				<form:form modelAttribute="productreviews" class="form-horizontal" name="myform" role="form" action="${contextPath}/insert.prr" method="post">
 					<div class="form-group">
 						<label class="control-label col-sm-<%=formleft%>" for="bwriter">작성자</label>
 						<div class="col-sm-<%=formright%>">
 							<input type="text" class="form-control" name="fakebwriter" id="fakebwriter"
-							placeholder="작성자" value="${sessionScope.loginfo.name}(${sessionScope.loginfo.id})" disabled="disabled">
-							<input type="hidden" name="bwriter" id="bwriter"
-								value="${sessionScope.loginfo.id}" />
+							placeholder="작성자" value="${sessionScope.loginfo.name}(${sessionScope.loginfo.mid})" disabled="disabled"> 
+							<input type="hidden" name="bwriter"
+								id="bwriter" value="${sessionScope.loginfo.mid}">
 						</div>
 					</div>
 					<div class="form-group">
@@ -72,23 +71,23 @@ padding-top: 2ex;
 						<label class="control-label col-sm-<%=formleft%>" for="bcontent">내용</label>
 					<div class="col-sm-<%=formright%>">
 						<form:textarea path="bcontent" name="bcontent" id="bcontent" rows="5" cols=""
-								placeholder="내용" class="form-control"/>
+								placeholder="내용" class="form-control" />
 						<form:errors cssClass="err" path="bcontent"/>
 					</div>
 					</div>
 					<div class="form-group">
 						<label class="control label col-sm-<%=formleft%>" for="bregdate">작성 일자</label>
 						<div class="col-sm-<%=formright%>">
-							<form:input path="bregdate" type="text" class="form-control" name="bregdate"
-								id="bregdate" placeholder="작성 일자" value="${bean.bregdate}"/>
+							<form:input path="bregdate" type="datetime" class="form-control" name="bregdate"
+								id="bregdate" placeholder="작성 일자" value="${bregdate}"/>
 							<form:errors cssClass="err" path="bregdate" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control label col-sm-<%=formleft%>" for="bimg">사진 등록</label>
+						<label class="control-label col-sm-<%=formleft%>" for="bimg">사진 등록</label>
 						<div class="col-sm-<%=formright%>">
-							<form:input path="bimg" type="file" class="form-control" name="bimg"
-								id="bimg" value="${bean.bimg}"/>
+							<input type="file" class="form-control" name="bimg"
+								id="bimg" placeholder="이미지를 넣어주세요" "/>
 							<%-- <form:errors cssClass="err" path="bimg" /> --%>
 						</div>
 					</div>

@@ -5,16 +5,27 @@
 
 <mapper namespace="MapProductreivews">
 
-	<insert id="InsertData" parameterType="MyProductreviews">
-	insert into productreviews(bno, btitle, bwriter, bcontent, bimg, breivew, bregdate)
-	values (seqbno.nextval, #{btitle}, #{bwriter}, #{bcontent}, #{bimg}, default, sysdate)
+	<insert id="InsertData" parameterType="MyProductreviews" >
+	insert into productreviews(bno, btitle, bwriter, bcontent, bimg, breview, bregdate)
+	values (seqbno.nextval, #{btitle}, #{bwriter}, #{bcontent,jdbcType=VARCHAR}, #{bimg,jdbcType=VARCHAR}, default, sysdate)
+
 	</insert>
 	
-	<update id="updateReviewCnt" parameterType="MyProductreviews">
+	<update id="UpdateReadhit" parameterType="int">
 
         update productreviews
 
         set breview = breview + 1
+
+        where bno = #{bno}
+
+ </update>
+ 
+ <update id="reviewsTotalCount" parameterType="int">
+
+        update productreviews
+
+        set bno = bno + 1
 
         where bno = #{bno}
 

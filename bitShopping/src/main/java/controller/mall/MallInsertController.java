@@ -24,7 +24,7 @@ public class MallInsertController extends SuperClass{
 	private CompositeDao dao ;
 	
 	public MallInsertController() {
-		super(null, null);
+		super("plist", null);
 		this.mav = new ModelAndView();
 	}	
 	
@@ -32,7 +32,7 @@ public class MallInsertController extends SuperClass{
 	public ModelAndView doPost(
 			@RequestParam(value = "pno", required = true) int pno,
 			@RequestParam(value = "pqty", required = true) int pqty,
-			@RequestParam(value = "qty", required = true) int qty,
+			@RequestParam(value = "qty", required = true) int qty, 
 			HttpSession session){
 //		if (session.getAttribute("loginfo") == null) {
 //			String message = "로그인이 필요합니다.";
@@ -40,7 +40,7 @@ public class MallInsertController extends SuperClass{
 //			// 로그인 하지 않았다면 로그인 페이지로 이동
 //			this.mav.setViewName("meLoginForm");
 //		} else { // 누군가 로그인 한 상태입니다.
-			// qty : 재고, pqty : 구매 수량			
+			// pqty : 재고, qty : 구매 수량			
 			if (pqty < qty) { //재고 수량 초과				
 				String message = "재고 수량이 부족합니다." ;
 				System.out.println(message);

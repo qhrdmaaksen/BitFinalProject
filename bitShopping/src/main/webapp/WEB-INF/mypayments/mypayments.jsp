@@ -484,7 +484,12 @@ class="order_view" novalidate="">
 </div>
 <input type="submit" value="결제하기" class="btn_payment" >
 </form>
-
+<script type="text/javascript">
+var IMP = window.IMP; // 생략해도 괜찮습니다.
+IMP.init("imp38748327"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
+</script>
 
 </body>
+
+
 </html>

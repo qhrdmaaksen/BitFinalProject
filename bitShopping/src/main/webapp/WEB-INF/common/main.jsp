@@ -91,7 +91,7 @@
 <br><br><br>
 		<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
 <br><br><br>
-		<a href="<%=contextPath%>/pdetail.pr?pno=1&${requestScope.parameters}">
+		<a href="<%=contextPath%>/pdetail.pr?pno=22&${requestScope.parameters}">
 			제품 상세 보기</a>
 <br><br><br>
 
@@ -107,7 +107,7 @@
 
 
 <br><br><br>
-<a href="<%=contextPath%>/list.mall">장바구니(아직 사용 불가)</a>
+<a href="<%=contextPath%>/list.mall">장바구니</a>
 
 <br><br><br>
 
