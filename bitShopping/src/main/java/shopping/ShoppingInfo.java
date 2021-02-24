@@ -3,7 +3,7 @@ package shopping;
 public class ShoppingInfo {
 	//mid 컬럼은 shoppingInfos 테이블에 저장할 때만 사용 된다. 
 	private String mid; // 고객 아이디 
-	private int productcode; // 상품 번호 
+	private int productcode; // 상품 번호 pno와 포린 키
 	private String productname; // 상품 이름
 	private int qty; // 상품 수량
 	private int price; // 상품 가격
