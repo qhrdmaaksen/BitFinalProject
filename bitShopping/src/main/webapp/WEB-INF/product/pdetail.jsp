@@ -16,27 +16,12 @@
 </head>
 <body>
 
-<%--
- <br><br><br><br><br><br>
-상품 상세 페이지 입니다.
-<br><br><br>
-	상품 이름 : ${bean.productname}
-<br><br><br>
-	상품 가격 : ${bean.price}
-<br><br><br>
-	상품 재고 : ${bean.pqty}
-<br><br><br>
-	상품 카테고리 : ${bean.pcategory}
-<br><br><br>
-<br><br><br>
- --%>
-
 
 <c:set var="discountprice" value="${bean.price*0.85}" scope="application"/>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Single Product - Benco</title>
+    <title>Product Detail</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->

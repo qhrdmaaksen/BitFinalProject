@@ -231,10 +231,13 @@
 	<div id="userMenu">
 		<ul class="list_menu">
 		<c:if test="${whologin == 0}">
-		<li class="menu none_sub menu_join"><a href="<%=contextPath%>/insert.me" class="link_menu">회원가입</a></li> 
+			<li class="menu none_sub menu_join"><a href="<%=contextPath%>/insert.me" class="link_menu">회원가입</a></li> 
 		</c:if>
 		<c:if test="${whologin == 0 }">
-		<li class="menu none_sub menu_login"><a href="<%=contextPath%>/login.me" class="link_menu">로그인</a> <!----></li> <!----> 
+			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/login.me" class="link_menu">로그인</a> <!----></li> <!----> 
+		</c:if>
+		<c:if test="${whologin != 0 }">
+			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/logout.me" class="link_menu">로그아웃</a> <!----></li> <!----> 
 		</c:if>
 		<li class="menu lst"><a href="" class="link_menu">고객센터</a> <ul class="sub">
 		</ul></li></ul>
@@ -243,7 +246,7 @@
 	<div class="container">
 		<div id="headerLogo" class="layout-wrapper">
 			<h1 class="logo">
-				<a href="https://www.kurly.com/shop/main/index.php" class="link_main">
+				<a href="<%=contextPath%>/main.cu" class="link_main">
 					<span id="gnbLogoContainer"></span>
 					<img src="https://res.kurly.com/images/marketkurly/logo/logo_x2.png" alt="마켓컬리 로고" style="display: block;">
 				</a>
