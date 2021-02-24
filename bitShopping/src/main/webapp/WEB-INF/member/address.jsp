@@ -5,7 +5,8 @@
   Time: 오후 12:26
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ include file="./../common/common.jsp"%>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <html>
@@ -71,7 +72,8 @@
     </script>
 </head>
 <body>
-    <form method="get" action="<%=contextPath%>/mlist.me" name="myform">
+    <form  method="get" action="<%=contextPath%>/address.ad">
+    	<input type="hidden" name="address" value="address">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title" style="font-weight: bold;">
@@ -91,14 +93,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="bean" items="${requestScope.lists}">
-                                <tr class="record">
-                                    <td align="center">${bean.name}</td>
-                                    <td align="center">${bean.phone}</td>
-                                    <td align="center">${bean.address1}</td>
-                                    <td align="center">${bean.address2}</td>
-                                </tr>
-                            </c:forEach>
+	                        <tr class="record">
+	                            <td align="center">${lists.name}</td>
+	                            <td align="center">${lists.phone}</td>
+	                            <td align="center">${lists.address1}</td>
+	                            <td align="center">${lists.address2}</td>
+	                        </tr>
                         </tbody>
                     </table>
                     <input type="text" id="sample4_postcode" placeholder="우편번호">
