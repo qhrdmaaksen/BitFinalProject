@@ -401,7 +401,7 @@
 					<a href="/shop/mypage/mypage_orderlist.php">주문 내역</a>
 				</li>
 				<li>
-					<a href="#none" onclick="KurlyTracker.setAction('select_shipping_address_list').sendData();location.href = '/shop/mypage/destination/list.php';">배송지 관리</a>
+					<a href="<%=contextPath%>/address.ad" onclick="KurlyTracker.setAction('select_shipping_address_list').sendData();location.href = '/shop/mypage/destination/list.php';">배송지 관리</a>
 				</li>
 				<li>
 					<a href="/shop/mypage/mypage_wishlist.php">늘 사는 것</a>
@@ -430,20 +430,6 @@
 	</div>	
 
 </div>
-
-
-
-
-다른 페이지 들어갈 공간.
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-<%@ include file="/WEB-INF/common/footer.jsp" %>
-
-
-
-
-
+<!-- 다른 페이지 들어갈 공간. -->
 </body>
 </html>
