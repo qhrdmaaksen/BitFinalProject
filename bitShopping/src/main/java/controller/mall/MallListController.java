@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,7 +25,7 @@ public class MallListController extends SuperClass{
 	private final String command = "/list.mall" ; 
 	private ModelAndView mav = null ;
 	//private String redirect = "redirect:/list.mall" ;
-	private final double discount = 0.2 ;// 할인율 지정
+	private final double DISCOUNT = 0.15 ;// 할인율 지정
 	
 	@Autowired
 	@Qualifier("pdao")
@@ -57,7 +58,8 @@ public class MallListController extends SuperClass{
 				List<ShoppingInfo> shoplists = new ArrayList<ShoppingInfo>();
 				
 				int totalAmount = 0 ; // 총 판매 금액
-				//int totalPoint = 0 ; // 할인 후 총 금액
+				int discountPrice = 0 ; // 할인 후 가격
+				int disTotalPrice = 0 ; // 할인 후 총 금액
 				
 				for(Integer pno :  keylist){  // pno : 상품 번호
 					Integer qty = maplists.get(pno) ;// 구매 수량
@@ -71,11 +73,12 @@ public class MallListController extends SuperClass{
 					int price = bean.getPrice() ;
 					
 					totalAmount += qty * price ;
-					//totalPoint += qty * point ;
+					discountPrice = (int)(price * (1-DISCOUNT));
+					disTotalPrice += qty * discountPrice;
 					
 					shopinfo.setProductname(bean.getProductname());
 					shopinfo.setQty(qty);
-					shopinfo.setDiscount(this.discount);
+					shopinfo.setDiscount(this.DISCOUNT);
 					shopinfo.setMid(session.getId());
 					shopinfo.setPimg(bean.getPimg1());
 					shopinfo.setPrice(price);
@@ -85,7 +88,7 @@ public class MallListController extends SuperClass{
 				}
 				
 				session.setAttribute("totalAmount", totalAmount) ;
-				//session.setAttribute("totalPoint", totalPoint) ;
+				session.setAttribute("disTotalPrice", disTotalPrice) ;
 				
 				// 이번에 구매할 총 목록
 				session.setAttribute("shoplists", shoplists) ;

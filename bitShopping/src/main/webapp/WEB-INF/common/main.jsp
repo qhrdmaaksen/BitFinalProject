@@ -107,7 +107,7 @@
 
 
 <br><br><br>
-<a href="<%=contextPath%>/list.mall">장바구니(아직 사용 불가)</a>
+<a href="<%=contextPath%>/list.mall">장바구니</a>
 
 <br><br><br>
 

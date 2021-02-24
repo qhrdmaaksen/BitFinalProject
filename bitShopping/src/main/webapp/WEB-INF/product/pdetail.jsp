@@ -32,7 +32,7 @@
  --%>
 
 
-<c:set var="discount" value="0.15" scope="application"/>
+<c:set var="discountprice" value="${bean.price*0.85}" scope="application"/>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -143,42 +143,47 @@
                     <div class="col-lg-6">
                         <div class="product-details-content">
                             <h2>${bean.productname}</h2>
-                           <!-- <div class="product-rating">
-                                 <i class="ion-ios-star"></i>
+                            <div class="product-rating">
+                                <!-- <i class="ion-ios-star"></i>
                                 <i class="ion-ios-star"></i>
                                 <i class="ion-ios-star"></i>
                                 <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                               		 <span>별점</span>
-                            </div> -->
+                                <i class="ion-ios-star"></i>-->
+                               		 <span>재고 : ${bean.pqty}</span>
+                            </div> 
+                         
                             <div class="product-price">
                                 <span class="old">${bean.price} 원</span>
-                                <span class="discountprice"><fmt:formatNumber value="${bean.price*0.85}" pattern="#,##0" /> 원</span>
+                                <span><fmt:formatNumber value="${discountprice}" pattern="#,##0" /> 원</span>
                             </div>
                             <div class="product-overview">
                                 <h5 class="pd-sub-title">Product Overview</h5>
-                                <p>상품 설명 : ${bean.pcontents}<br>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                enim ad minim veniam, quisnostrud orbit asom exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetur.</p>
+                                <p>상품 설명 : ${bean.pcontents}<br></p>
                             </div>
-                       
-
+						<form class="form-inline" role="form" method="post" action="<%=contextPath%>/insert.mall">
+							<input type="hidden" name="pqty" value="${bean.pqty}">
+							<input type="hidden" name="pno" value="${bean.pno}">
+							<%-- <input type="hidden" name="qty" value="1"> --%>
                             <div class="quickview-plus-minus">
                                 <div class="cart-plus-minus">
-                                    <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
+                                    <input type="text" value="1" name="qty" class="cart-plus-minus-box">
                                 </div>
-                                <div class="quickview-btn-cart">
-                                    <a class="btn-style cr-btn" href="<%-- <%ContextPath%>/insert.mall --%>">
-                                        <span>add to cart</span>
-                                    </a>
-                                </div>
-                                <div class="quickview-btn-wishlist">
-                                    <a class="btn-hover cr-btn" href="#">
-                                        <span>
-                                            <i class="ion-ios-heart-outline"></i>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
+	                                <div class="quickview-btn-cart">
+	                                	<button type="submit" class="btn-style cr-btn">
+	                                	  <span>add to cart</span>
+	                                	</button>
+	                                   <!--  <a class="btn-style cr-btn" href="">
+	                                      <span>add to cart</span>	버튼
+	                                    </a> -->
+	                                </div>
+	                                <!-- <div class="quickview-btn-wishlist">
+	                                    <a class="btn-hover cr-btn" href="#">
+	                                        <span>
+	                                            <i class="ion-ios-heart-outline"></i>
+	                                        </span>
+	                                    </a>	위시 리스트 구현 안함
+	                                </div> -->
+                            </div></form> 
                             <div class="product-categories">
                                 <h5 class="pd-sub-title">Categories</h5>
                                 <ul>
