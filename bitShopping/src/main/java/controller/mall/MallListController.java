@@ -24,7 +24,7 @@ import shopping.ShoppingInfo;
 public class MallListController extends SuperClass{
 	private final String command = "/list.mall" ; 
 	private ModelAndView mav = null ;
-	//private String redirect = "redirect:/list.mall" ;
+	//private String redirect = "redirect:/plist.pr" ;
 	private final double DISCOUNT = 0.15 ;// 할인율 지정
 	
 	@Autowired
@@ -43,11 +43,11 @@ public class MallListController extends SuperClass{
 //			this.mav.setViewName("redirect:/login.me"); 
 //		} else {
 			MyCartList mycart = (MyCartList)session.getAttribute("mycart") ;
-//			if (mycart==null) {
-//				String errmsg = "쇼핑 내역이 없어서 상품 목록으로 이동합니다." ;
-//				this.mav.addObject("errmsg", errmsg );
-//				this.mav.setViewName("redirect:/list.pr");
-//			}else {
+			if (mycart==null) {
+				String errmsg = "쇼핑 내역이 없어서 상품 목록으로 이동합니다." ;
+				//this.mav.addObject("errmsg", errmsg );
+				this.mav.setViewName("redirect:/plist.pr");
+			}else {
 				Map<Integer, Integer> maplists =  mycart.GetAllOrderLists() ;
 				
 				// keylist : 구매하고자 하는 상품 번호를 저장하고 있는 Set 자료 구조
@@ -95,7 +95,7 @@ public class MallListController extends SuperClass{
 				
 				this.mav.setViewName(super.getpage);
 			//}
-		//}	
+		}	
 		return this.mav ;
 	}
 }

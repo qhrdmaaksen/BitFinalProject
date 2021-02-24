@@ -1,3 +1,4 @@
+<%@page import="org.springframework.web.context.annotation.SessionScope"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
@@ -217,7 +218,13 @@
 
 	</style>
 	
-	
+	<% ArrayList list = (ArrayList)session.getAttribute("shopinfo");
+		if(list != null){
+			int cnt = list.size();
+		}else if(list == null){
+			int cnt = 0 ;
+		}
+	%>
 </head>
 <body>
 
@@ -272,7 +279,7 @@
                                                                 <li><a href="single-blog.html"> single blog</a></li>
                                                             </ul>
                                                         </li>
-                                                        <li>
+                                                        <!-- <li> 드롭다운 목록 일단 줄여 놓았습니다.
                                                             <ul>
                                                                 <li class="mega-menu-title">special pages</li>
                                                                 <li><a href="cart.html"> cart page</a></li>
@@ -290,13 +297,15 @@
                                                                 <li><a href="product-details.html">Good product name</a></li>
                                                                 <li><a href="product-details.html">Another Product name</a></li>
                                                                 <li><a href="product-details.html">test Producr name</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <!-- <li class="mega-menu-img">
+                                                            </ul> 
+                                                        </li> -->
+                                                        
+                                                        <!-- <li class="mega-menu-img"> 드롭다운 하단에 사진 넣게되면 넣을 공간
                                                             <ul>
                                                                 <li><a class="dot-none" href="shop.html"><img alt="" src="<%=contextPath%>/resources/assets/img/banner/17.jpg"></a></li>
                                                             </ul>
                                                         </li> -->
+                                                        
                                                     </ul>
                                                 </li>
 												
@@ -333,7 +342,7 @@
                                     <div class="sidebar-trigger">
                                         <ul>
                                             <li>
-                                                <a href="cart.html">
+                                                <a href="<%=contextPath%>/list.mall">
                                                     <i class="zmdi zmdi-shopping-cart-plus"></i>
                                                     <span class="count-style">2</span>
                                                 </a>

@@ -91,7 +91,7 @@
 <br><br><br>
 		<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
 <br><br><br>
-		<a href="<%=contextPath%>/pdetail.pr?pno=22&${requestScope.parameters}">
+		<a href="<%=contextPath%>/pdetail.pr?pno=">
 			제품 상세 보기</a>
 <br><br><br>
 

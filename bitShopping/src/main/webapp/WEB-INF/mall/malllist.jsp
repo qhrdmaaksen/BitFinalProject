@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="./../common/common.jsp"%>
+<%@ include file="/WEB-INF/common/common.jsp"%> 
 <%
 	int myoffset = 2;
 	int mywidth = twelve - 2 * myoffset;
@@ -38,7 +38,7 @@
 						<th class="text-center">상품명</th>
 						<th class="text-center">수량</th>
 						<th class="text-center">단가</th>
-						<th class="text-center">할인 금액</th>
+						<th class="text-center">할인율</th>
 						<th class="text-center">금액</th>
 						<th class="text-center">누적 포인트</th>
 						<th class="text-center">삭제</th>
@@ -68,9 +68,9 @@
 				</c:forEach>
 				<tr class="header">
 			<td colspan="4" align="center">
-				<a href="<%-- <%=contextPath%>/calculate.mall --%>">결재하기</a>
+				<a href="<%=contextPath%>/calculate.mall">결재하기</a>
 				&nbsp;&nbsp; 
-				<a href="<%-- <%=contextPath%>/list.pr --%>">추가 주문</a>
+				<a href="<%=contextPath%>/plist.pr">추가 주문</a>
 			</td>
 			<td colspan="4" align="center">
 				총 금액 : <fmt:formatNumber value="${sessionScope.totalAmount}" pattern="###,###"/> 원

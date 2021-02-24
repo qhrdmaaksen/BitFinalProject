@@ -1,10 +1,27 @@
 ## Main Section
-main.cu=mypkg.common.MainController
+main.cu=mypkg.common.MainController // 메인 화면		
+common+navigation = common.common.jsp // 부트 스트랩 설정 및 네비게이션
 #### Member Section ######################################################
+mypage.me = controller.member.MypageController // 마이 페이지
+list.me = controller.member.MListController // 회원 목록
+
 
 #### Board Section ######################################################
 
 #### Product Section ######################################################
+plist.pr = controller.product.PlistController // 상품 리스트
+pdetail.pr = controller.product.PdetailController // 상품 상세 보기
 
+
+
+#### Product Section ######################################################
+list.mall = controller.mall.MallListController // 장바구니
+delete.mall = controller.mall.MallDeleteController // 장바구니 품목 삭제
+insert.mall = controller.mall.MallInsertController // 장바구니에 품목 넣기
 
 ########################################################################  
+
+
+다른 페이지에서 주소 참조해야할 때 찾기 힘들어서 작성했습니다.
+
+
