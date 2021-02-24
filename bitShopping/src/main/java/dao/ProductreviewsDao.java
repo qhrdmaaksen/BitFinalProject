@@ -28,7 +28,7 @@ public class ProductreviewsDao {
 	}
 
 	public int SelectTotalCount(String mode, String keyword) {
-		// 
+		// 해당 모드와 키워드를 이용하여 조건에 맞는 데이터의 건수를 구해 줍니다. 
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("mode", mode);
 		map.put("keyword", "%" + keyword + "%");
@@ -49,6 +49,12 @@ public class ProductreviewsDao {
 		return this.abcd.update(namespace + "UpdateReadhit", bno);
 		
 	}
+	
+	public int reviewsTotalCount(int bno) {
+		return this.abcd.update(namespace + "reviewsTotalCount",bno);
+	}
+	
+	
 	
 
 }

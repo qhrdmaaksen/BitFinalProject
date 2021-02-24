@@ -5,9 +5,10 @@
 
 <mapper namespace="MapAddress">
 
-	<select id="SelectDataList" resultType="MyAddress">
+	<select id="SelectDataList" parameterType="MyMember" resultType="MyMember">
 		select name , address1 , address2 , phone
 		from members
+		where mid = #{mid}
 	</select>
 </mapper>
 

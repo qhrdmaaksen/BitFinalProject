@@ -1,7 +1,5 @@
 package controller.member;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import bean.Address;
 import bean.Member;
 import controller.common.SuperClass;
 
@@ -39,25 +36,12 @@ public class MAddressController extends SuperClass{
 			HttpServletRequest request ,
 			HttpSession session) {
 		
-		Member loginfo = (Member)super.session.getAttribute("loginfo");
-		// 로그인했을때 가져올 회원 정보들
-		String name = loginfo.getName() ; 
-		String address1 = loginfo.getAddress1() ; 
-		String address2 = loginfo.getAddress2() ; 
-		String phone = loginfo.getPhone() ; 
+		Member loginfo = (Member)session.getAttribute("loginfo");
+		System.out.println("id : "+loginfo.getMid());
 		
-		System.out.println("name : " + name);
-		System.out.println("address1 : " + address1);
-		System.out.println("address2 : " + address2);
-		System.out.println("phone : " + phone);
-		
-		List<Address> lists = adao.SelectDataList(//가져올 정보들의 다리역할
-				name , 
-				address1 , 
-				address2 , 
-				phone);
-		
-		mav.addObject("lists", lists);
+		//가져올 정보들의 다리역할
+		Member userInfo = adao.SelectDataList(loginfo);
+		mav.addObject("lists", userInfo);
 		
 		this.mav.setViewName(super.getpage); 
 		return this.mav ;

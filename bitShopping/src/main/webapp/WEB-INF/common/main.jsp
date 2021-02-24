@@ -91,9 +91,6 @@
 <br><br><br>
 		<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
 <br><br><br>
-		<a href="<%=contextPath%>/pdetail.pr?pno=">
-			제품 상세 보기</a>
-<br><br><br>
 
 		<a href="<%=contextPath%>/list.prr">상품 후기 게시판</a>
 <br><br><br>
@@ -102,22 +99,13 @@
 
 <br><br><br>
 
-
 <a href="<%=contextPath%>/mypage.me?mid=admin&${requestScope.parameters}">마이 페이지</a>
 
-
 <br><br><br>
-<a href="<%=contextPath%>/list.mall">장바구니</a>
-
-<br><br><br>
-
 
 <br><br><br>
 <br><br><br>
 <a href="<%=contextPath%>/delete.me?mid=">회원 탈퇴하기</a>
-<br><br><br>
-<br><br><br>
-<a href="<%=contextPath%>/plist.pr">제품 목록 보기</a>
 <br><br><br>
 <br><br><br>
 <a href="<%=contextPath%>/address.ad">배송지 관리 페이지 보기</a>
