@@ -355,10 +355,10 @@
                                                     </span>
                                                 </a>
 
-                                                <ul class="ht-dropdown main-cart-box">
+                                                <%--<ul class="ht-dropdown main-cart-box">
                                                     <li>
                                                         <!-- Cart Box Start -->
-                                                       <%--  <div class="single-cart-box">
+                                                         <div class="single-cart-box">
                                                             <div class="cart-img">
                                                                 <a href="#">
                                                                     <img alt="cart-image" src="<%=contextPath%>/resources/assets/img/products/mini1.jpg">
@@ -404,10 +404,10 @@
                                                                 <a href="cart.html" class="checkout">View cart</a>
                                                                 <a href="checkout.html" class="checkout">Checkout</a>
                                                             </div>
-                                                        </div> --%>
+                                                        </div> 
                                                         <!-- Cart Footer Inner End -->
                                                     </li>
-                                                </ul>
+                                                </ul>--%>
                                             </li>
                                         </ul>
                                     </div>
