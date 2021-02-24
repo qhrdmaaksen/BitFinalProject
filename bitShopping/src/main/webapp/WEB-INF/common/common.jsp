@@ -24,6 +24,15 @@
 	</c:if>
 </c:if>
 
+
+<!-- 네비게이션 안에 장바구니 품목 갯수 구하기 -->
+<c:set var="cnt" value="0"/>
+<c:if test="${not empty sessionScope.pcnt}">
+	<!-- 로그인 하지 않은 경우 -->
+	<c:set var="cnt" value="${sessionScope.pcnt}" />
+</c:if>
+
+
 <!-- 부트 스트랩 -->
 <% int twelve = 12 ; %>
 <c:set var="twelve" value="12" />
@@ -205,9 +214,6 @@
 	    border-bottom: 0;
 	}
 
-
-
-
 	/* 추가 */
 	.container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}
 	.container #headerLogo .bnr_delivery{position:absolute;left:-1px;top:-28px;margin:auto;height:22px}
@@ -218,13 +224,6 @@
 
 	</style>
 	
-	<% ArrayList list = (ArrayList)session.getAttribute("shopinfo");
-		if(list != null){
-			int cnt = list.size();
-		}else if(list == null){
-			int cnt = 0 ;
-		}
-	%>
 </head>
 <body>
 
@@ -344,7 +343,9 @@
                                             <li>
                                                 <a href="<%=contextPath%>/list.mall">
                                                     <i class="zmdi zmdi-shopping-cart-plus"></i>
-                                                    <span class="count-style">2</span>
+                                                    <span class="count-style">
+	                                                  	${pcnt}
+                                                    </span>
                                                 </a>
 
                                                 <ul class="ht-dropdown main-cart-box">
@@ -428,9 +429,6 @@
 		
 	</div>
 		
-		
-		
-
 		
 </header>
 

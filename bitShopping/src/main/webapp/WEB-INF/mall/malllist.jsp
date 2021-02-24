@@ -21,6 +21,11 @@
 </head>
 <body>
 
+<%-- 장바구니 품목 갯수 : ${sessionScope.pcnt} --%>
+
+
+
+
 
 
 
