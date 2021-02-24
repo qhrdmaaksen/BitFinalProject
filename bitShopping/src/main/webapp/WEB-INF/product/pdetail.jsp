@@ -133,216 +133,38 @@ body, input, select, textarea, button {
 </head>
 <body>
 
-	<%--
- <br><br><br><br><br><br>
-상품 상세 페이지 입니다.
-<br><br><br>
-	상품 이름 : ${bean.productname}
-<br><br><br>
-	상품 가격 : ${bean.price}
-<br><br><br>
-	상품 재고 : ${bean.pqty}
-<br><br><br>
-	상품 카테고리 : ${bean.pcategory}
-<br><br><br>
-<br><br><br>
- --%>
-
-<c:set var="discount" value="0.15" scope="application" />
 
 <c:set var="discountprice" value="${bean.price*0.85}" scope="application"/>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Single Product - Benco</title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Favicon -->
-<link rel="shortcut icon" type="image/x-icon"
-	href="<%=contextPath%>/resources/assets/img/favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Product Detail</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="<%=contextPath%>/resources/assets/img/favicon.png">
 
-<!-- all css here -->
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/animate.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/owl.carousel.min.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/chosen.min.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/themify-icons.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/fontawesome-all.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/ionicons.min.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/jquery-ui.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/material-design-iconic-font.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/meanmenu.min.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/tippy.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/bundle.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/easyzoom.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/style.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/assets/css/responsive.css">
-<script
-	src="<%=contextPath%>/resources/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- all css here -->
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/animate.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/chosen.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/fontawesome-all.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/tippy.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/bundle.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/easyzoom.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/style.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/responsive.css">
+    <script src="<%=contextPath%>/resources/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
 
 <body>
-	<!-- breadcrumbs area start -->
-	<div class="title-breadcrumbs">
-		<div class="title-breadcrumbs-inner">
-			<div class="container">
-				<nav class="woocommerce-breadcrumb">
-					<a href="#">Home</a> <span class="separator">/</span> <a
-						href="shop.html">Shop</a> <span class="separator"> /</span>
-					${bean.pcategory} <span class="separator"> /</span>
-					${bean.productname}
-				</nav>
-			</div>
-		</div>
-	</div>
-	<!-- breadcrumbs area End -->
-	<!-- product details area start -->
-	<div class="product-details-area hm-3-padding ptb-100">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="product-details-img-content">
-						<div class="product-details-tab">
-							<div class="product-details-large tab-content">
-								<div class="tab-pane active" id="pro-details1">
-									<div class="easyzoom easyzoom--overlay">
-										<a
-											href="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}">
-											<img
-											src="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}"
-											alt="">
-										</a>
-									</div>
-								</div>
-								<div class="tab-pane" id="pro-details2">
-									<div class="easyzoom easyzoom--overlay">
-										<a
-											href="<%=contextPath%>/resources/assets/img/product-details/bl2.jpg">
-											<img
-											src="<%=contextPath%>/resources/assets/img/product-details/l2.jpg"
-											alt="">
-										</a>
-									</div>
-								</div>
-								<div class="tab-pane" id="pro-details3">
-									<div class="easyzoom easyzoom--overlay">
-										<a
-											href="<%=contextPath%>/resources/assets/img/product-details/bl3.jpg">
-											<img
-											src="<%=contextPath%>/resources/assets/img/product-details/l3.jpg"
-											alt="">
-										</a>
-									</div>
-								</div>
-								<div class="tab-pane" id="pro-details4">
-									<div class="easyzoom easyzoom--overlay">
-										<a
-											href="<%=contextPath%>/resources/assets/img/product-details/bl4.jpg">
-											<img
-											src="<%=contextPath%>/resources/assets/img/product-details/l4.jpg"
-											alt="">
-										</a>
-									</div>
-								</div>
-								<div class="tab-pane" id="pro-details5">
-									<div class="easyzoom easyzoom--overlay">
-										<a
-											href="<%=contextPath%>/resources/assets/img/product-details/bl3.jpg">
-											<img
-											src="<%=contextPath%>/resources/assets/img/product-details/l3.jpg"
-											alt="">
-										</a>
-									</div>
-								</div>
-							</div>
-							<div
-								class="product-details-small nav mt-12 product-dec-slider owl-carousel">
-								<a class="active" href="#pro-details1"> <img
-									src="<%=contextPath%>/resources/assets/img/product-details/s1.jpg"
-									alt="">
-								</a> <a href="#pro-details2"> <img
-									src="<%=contextPath%>/resources/assets/img/product-details/s2.jpg"
-									alt="">
-								</a> <a href="#pro-details3"> <img
-									src="<%=contextPath%>/resources/assets/img/product-details/s3.jpg"
-									alt="">
-								</a> <a href="#pro-details4"> <img
-									src="<%=contextPath%>/resources/assets/img/product-details/s4.jpg"
-									alt="">
-								</a> <a href="#pro-details5"> <img
-									src="<%=contextPath%>/resources/assets/img/product-details/s3.jpg"
-									alt="">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="product-details-content">
-						<h2>${bean.productname}</h2>
-						<!-- <div class="product-rating">
-                                 <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                               		 <span>별점</span>
-                            </div> -->
-						<div class="product-price">
-							<span class="old">${bean.price} 원</span> <span
-								class="discountprice"><fmt:formatNumber
-									value="${bean.price*0.85}" pattern="#,##0" /> 원</span>
-						</div>
-						<div class="product-overview">
-							<h5 class="pd-sub-title">Product Overview</h5>
-							<p>
-								상품 설명 : ${bean.pcontents}<br>Lorem ipsum dolor sit amet,
-								consectetur adipic it, sed do eiusmod tempor incididunt ut
-								labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quisnostrud orbit asom exercitation ullamco laboris nisi ut
-								aliquip ex ea commodo consequat consectetur.
-							</p>
-						</div>
-
-
-						<div class="quickview-plus-minus">
-							<div class="cart-plus-minus">
-								<input type="text" value="02" name="qtybutton"
-									class="cart-plus-minus-box">
-							</div>
-							<div class="quickview-btn-cart">
-								<a class="btn-style cr-btn"
-									href="<%-- <%ContextPath%>/insert.mall --%>"> <span>add
-										to cart</span>
-								</a>
-							</div>
-							<div class="quickview-btn-wishlist">
-								<a class="btn-hover cr-btn" href="#"> <span> <i
-										class="ion-ios-heart-outline"></i>
-								</span>
-								</a>
-							</div>
-						</div>
-						<div class="product-categories">
-							<h5 class="pd-sub-title">Categories</h5>
-							<ul>
-								<li><a href="#">${bean.pcategory}</a></li>
-								<!--   <li>  추후 카테고리가 늘어날 수 있으므로
 
         <!-- breadcrumbs area start -->
         <div class="title-breadcrumbs">
@@ -357,7 +179,7 @@ body, input, select, textarea, button {
             </div>
         </div>
         <!-- breadcrumbs area End -->
-       <%--  <!-- product details area start -->
+       <!-- product details area start -->
         <div class="product-details-area hm-3-padding ptb-100">
             <div class="container">
                 <div class="row">
@@ -444,7 +266,7 @@ body, input, select, textarea, button {
 						<form class="form-inline" role="form" method="post" action="<%=contextPath%>/insert.mall">
 							<input type="hidden" name="pqty" value="${bean.pqty}">
 							<input type="hidden" name="pno" value="${bean.pno}">
-							<input type="hidden" name="qty" value="1">
+							<!-- <input type="hidden" name="qty" value="1"> -->
                             <div class="quickview-plus-minus">
                                 <div class="cart-plus-minus">
                                     <input type="text" value="1" name="qty" class="cart-plus-minus-box">
@@ -453,9 +275,6 @@ body, input, select, textarea, button {
 	                                	<button type="submit" class="btn-style cr-btn">
 	                                	  <span>add to cart</span>
 	                                	</button>
-	                                   <!--  <a class="btn-style cr-btn" href="">
-	                                      <span>add to cart</span>	버튼
-	                                    </a> -->
 	                                </div>
 	                                <!-- <div class="quickview-btn-wishlist">
 	                                    <a class="btn-hover cr-btn" href="#">
@@ -475,7 +294,7 @@ body, input, select, textarea, button {
                                         <a href="#">electronics ,</a>
                                     </li> -->
 							</ul>
-						</div> --%>
+						</div>
 						<div class="product-share">
 							<h5 class="pd-sub-title">Share</h5>
 							<ul>
@@ -495,9 +314,10 @@ body, input, select, textarea, button {
 			</div>
 		</div>
 	</div>
-	<!-- product details area End --> --%>
-	<!--Product Description Review Area Start-->
 	
+	
+	<!-- product details area End -->
+	<!--Product Description Review Area Start-->
 	<div class="product-description-review-area pb-55">
 		<div class="container">
 			<div class="row">
@@ -1066,15 +886,3 @@ body, input, select, textarea, button {
 
 
 
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>

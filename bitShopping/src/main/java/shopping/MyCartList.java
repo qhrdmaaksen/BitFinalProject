@@ -7,6 +7,7 @@ import java.util.Map;
 public class MyCartList {
 	//orderlist: 카트에 담은 정보를 저장하고 있는 맵 컬랙션 
 	//key는 상품 번호(기본 키), value는 구매 수량 
+	public static int PCNT = 0;
 	
 	private Map<Integer, Integer> orderlists = null;
 	
@@ -37,13 +38,23 @@ public class MyCartList {
 			this.orderlists.remove(pnum) ;
 		}
 		
-		// 장바구니에 상품을 추가합니다.
-		public void AddOrder(int pnum, int stock) {
-			if (this.orderlists.containsKey(pnum)) { // 동일 상품이 이미 있는 경우
-				int newstock = this.orderlists.get(pnum) + stock ; 
-				this.orderlists.put(pnum, newstock);
+//		// 장바구니에 상품을 추가합니다.
+//		public void AddOrder(int pnum, int stock) {
+//			if (this.orderlists.containsKey(pnum)) { // 동일 상품이 이미 있는 경우
+//				int newstock = this.orderlists.get(pnum) + stock ; 
+//				this.orderlists.put(pnum, newstock);
+//			} else {
+//				this.orderlists.put(pnum, stock) ;
+//			}
+//		}
+
+		public void AddOrder(int pno, int qty) {
+			if (this.orderlists.containsKey(pno)) { // 동일 상품이 이미 있는 경우
+				int newstock = this.orderlists.get(pno) + qty ; 
+				this.orderlists.put(pno, newstock);
 			} else {
-				this.orderlists.put(pnum, stock) ;
+				this.orderlists.put(pno, qty) ;
+				MyCartList.PCNT += 1 ;
 			}
 		}
 	
