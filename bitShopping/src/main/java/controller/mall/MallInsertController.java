@@ -24,7 +24,7 @@ public class MallInsertController extends SuperClass{
 	private CompositeDao dao ;
 	
 	public MallInsertController() {
-		super(null, null);
+		super("plist", null);
 		this.mav = new ModelAndView();
 	}	
 	

@@ -217,7 +217,7 @@
 
 	</style>
 	
-	<script src="/common_js/gnb_v1.js?ver=1.26.6"></script>
+	
 </head>
 <body>
 
