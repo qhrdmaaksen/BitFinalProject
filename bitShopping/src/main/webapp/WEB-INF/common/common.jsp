@@ -243,7 +243,7 @@
 		<c:if test="${whologin != 0 }">
 			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/logout.me" class="link_menu">로그아웃</a> <!----></li> <!----> 
 		</c:if>
-		<li class="menu lst"><a href="" class="link_menu">고객센터</a> <ul class="sub">
+		<li class="menu lst"><a href="<%=contextPath%>/service.sr" class="link_menu">고객센터</a> <ul class="sub">
 		</ul></li></ul>
 	</div>
 		
@@ -280,7 +280,7 @@
                                                                 <li><a href="portfolio.html"> portfolio</a></li>
                                                                 <li><a href="service.html"> service One</a></li>
                                                                 <li><a href="service-2.html"> service Two</a></li>
-                                                                <li><a href="faq.html"> FAQ Page</a></li>
+                                                                <li><a href="<%=contextPath%>/faq.sr"> FAQ Page</a></li>
                                                                 <li><a href="404.html"> 404 Error </a></li>
                                                                 <li><a href="single-blog.html"> single blog</a></li>
                                                             </ul>
