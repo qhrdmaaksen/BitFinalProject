@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MapService">
+	
+	<select id="SelectService" resultType="MyService" parameterType="String">
+		select sno,swriter,stitle,scontent,swritedate,simg
+		from service
+		where swriter = #{writer}
+	</select>
+	
+	<insert id="InsertData" parameterType="MyService">
+		insert into service (sno,swriter,stitle,scontent,swritedate,simg)
+		values (seqsno.nextval,#{swriter,jdbcType=VARCHAR},#{stitle,jdbcType=VARCHAR},#{scontent,jdbcType=VARCHAR},sysdate,#{simg,jdbcType=VARCHAR})
+		
+	
+	</insert>
+
+</mapper>

@@ -342,7 +342,7 @@
 		<div class="inner_mypagetop">
 			<div class="grade_user">
 				<div class="grade">
-					<span class="screen_out">등급</span> 
+					<span class="screen_out">일반 등급</span> 
 						<span class="ico_grade class0">
 							<span class="inner_grade">
 								<span class="in_grade">일반</span>
@@ -350,7 +350,7 @@
 						</span> 
 					<div class="grade_bnenfit">
 						<div class="user">
-							<strong class="name">${member.name}</strong> <span class="txt">님</span></div> 
+							<strong class="name">${sessionScope.loginfo.name}</strong> <span class="txt">님</span></div> 
 								 <div class="benefit"><strong class="tit"></strong>적립 0.5%</div> <!---->
 						 			<div class="benefit">
 						 		</div>
@@ -365,7 +365,7 @@
 						<li class="user_reserve">
 							<div class="link">
 								<div class="tit">적립금 <!----></div>
-									 <a href="/shop/mypage/mypage_emoney.php" class="info">${member.mpoint}
+									 <a href="/shop/mypage/mypage_emoney.php" class="info">${sessionScope.loginfo.mpoint}
 									 <img src="https://res.kurly.com/pc/service/common/1905/ico_arrow_56x56.png" alt="자세히 보기"> 
 								 	<span class="date">소멸 예정 0 원</span></a>
 								 </div>
@@ -401,7 +401,10 @@
 					<a href="/shop/mypage/mypage_orderlist.php">주문 내역</a>
 				</li>
 				<li>
-					<a href="<%=contextPath%>/address.ad" onclick="KurlyTracker.setAction('select_shipping_address_list').sendData();location.href = '/shop/mypage/destination/list.php';">배송지 관리</a>
+					<a href="<%=contextPath%>/address.ad?" 
+						onclick="KurlyTracker.setAction('select_shipping_address_list').sendData();location.href = '/shop/mypage/destination/list.php';">
+						배송지 관리
+					</a>
 				</li>
 				<li>
 					<a href="/shop/mypage/mypage_wishlist.php">늘 사는 것</a>
@@ -427,9 +430,10 @@
 	<script src="/common_js/common_filter.js?ver=1.26.6"></script>
 	<script src="/common_js/orderlist_v1.js?ver=1.26.6"></script>
 
-	</div>	
-
+<!-- </div>	
 </div>
+ -->
+
 <!-- 다른 페이지 들어갈 공간. -->
 </body>
 </html>

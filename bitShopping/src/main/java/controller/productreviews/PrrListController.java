@@ -21,7 +21,7 @@ import utility.Paging;
 public class PrrListController extends SuperClass{
 	private final String command = "/list.prr";
 	private ModelAndView mav = null;
-	private String redirect = "redirect:/list.prr";
+	private String redirect = "redirect:/detail.pr";
 	
 	@Autowired
 	@Qualifier("prrdao")
@@ -90,7 +90,8 @@ public class PrrListController extends SuperClass{
 		//상세 보기, 수정, 삭제, 답글 등의 링크에 사용될 parameter list 문자열 
 		mav.addObject("parameters", parameters.toString());
 		
-		this.mav.setViewName(super.postpage);
+		this.mav.setViewName(this.redirect);
+	
 		return this.mav;
 
 	

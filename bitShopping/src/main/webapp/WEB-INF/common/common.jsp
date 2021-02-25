@@ -8,9 +8,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
-
-
-
 <!-- whologin 변수는 로그인 상태를 저장하고 있는 변수입니다. -->
 <c:set var="whologin" value="0" />
 <c:if test="${empty sessionScope.loginfo}">
@@ -32,7 +29,6 @@
 <!-- 네비게이션 안에 장바구니 품목 갯수 구하기 -->
 <c:set var="cnt" value="0"/>
 <c:if test="${not empty sessionScope.pcnt}">
-	<!-- 로그인 하지 않은 경우 -->
 	<c:set var="cnt" value="${sessionScope.pcnt}" />
 </c:if>
 
@@ -115,7 +111,18 @@
     <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/responsive.css"> 
     <script src="<%=contextPath%>/resources/assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <style type="text<%=contextPath%>/resources/assets/css">
+	
+
     </style>
+    
+    <script type="text/javascript">
+	    function logincheck(){
+		        console.log("login check!");
+		        console.log(${whologin});
+		        alert("로그인이 필요합니다");
+			}
+	</script> 
+	
 	<style type="text/css">
 		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
 		/*여기 스타일에는 회원가입에 필요한 css 스타일 공간, 유효성 검사 css 및 필수 입력 사항 * red css 사용등등  */
@@ -241,9 +248,9 @@
 			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/login.me" class="link_menu">로그인</a> <!----></li> <!----> 
 		</c:if>
 		<c:if test="${whologin != 0 }">
-			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/logout.me" class="link_menu">로그아웃</a> <!----></li> <!----> 
+			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/logout.me?mid=${sessionScope.loginfo.mid}" class="link_menu">로그아웃</a> <!----></li> <!----> 
 		</c:if>
-		<li class="menu lst"><a href="" class="link_menu">고객센터</a> <ul class="sub">
+		<li class="menu lst"><a href="<%=contextPath%>/faq.sr" class="link_menu">고객센터</a> <ul class="sub">
 		</ul></li></ul>
 	</div>
 		
@@ -272,7 +279,7 @@
                                 <div class="main-menu">
 									<nav>
                                             <ul>
-                                                <li><a href="#">Features <i class="ion-ios-arrow-down"></i></a>
+                                                <li><a href="<%=contextPath%>/plist.pr"> 전체 카테고리 <i class="ion-ios-arrow-down"></i></a>
                                                     <ul class="mega-menu">
                                                         <li>
                                                             <ul>
@@ -280,7 +287,7 @@
                                                                 <li><a href="portfolio.html"> portfolio</a></li>
                                                                 <li><a href="service.html"> service One</a></li>
                                                                 <li><a href="service-2.html"> service Two</a></li>
-                                                                <li><a href="faq.html"> FAQ Page</a></li>
+                                                                <li><a href="<%=contextPath%>/faq.sr"> FAQ Page</a></li>
                                                                 <li><a href="404.html"> 404 Error </a></li>
                                                                 <li><a href="single-blog.html"> single blog</a></li>
                                                             </ul>
@@ -315,11 +322,19 @@
                                                     </ul>
                                                 </li>
 												
-                                                <li><a href="about-us.html">about us </a></li>
+                                                <li><a href="about-us.html"> about us </a></li>
 												
-                                                <li><a href="<%=contextPath%>/plist.pr">Shop</a></li>
-						
-                                                <li><a href="contact.html">contact us</a></li>
+                                                <li><a href="<%=contextPath%>/plist.pr"> 인기상품? </a></li>
+                                                
+												<li>
+													<c:if test="${whologin == 0}">
+														<a href="<%=contextPath%>/login.me" onclick="logincheck()"> 마이페이지 </a>
+													</c:if>
+													
+													<c:if test="${whologin != 0}">
+														<a href="<%=contextPath%>/mypage.me?mid=${sessionScope.loginfo.mid}"> 마이페이지 </a>
+													</c:if>
+												</li>
                                             </ul>
                                         </nav>
                                 </div>
@@ -351,63 +366,47 @@
                                                 <a href="<%=contextPath%>/list.mall">
                                                     <i class="zmdi zmdi-shopping-cart-plus"></i>
                                                     <span class="count-style">
-	                                                  	${pcnt}
+	                                                  	${cnt}
                                                     </span>
                                                 </a>
 
-                                                <%--<ul class="ht-dropdown main-cart-box">
+                                                <ul class="ht-dropdown main-cart-box">
                                                     <li>
                                                         <!-- Cart Box Start -->
-                                                         <div class="single-cart-box">
+                                                    <c:forEach items="${sessionScope.shoplists}" var="shopinfo">
+                                                      <div class="single-cart-box">
                                                             <div class="cart-img">
                                                                 <a href="#">
-                                                                    <img alt="cart-image" src="<%=contextPath%>/resources/assets/img/products/mini1.jpg">
+                                                                    <img alt="cart-image" src="<%=contextPath%>/resources/assets/img/products/${shopinfo.pimg}">
                                                                 </a>
                                                             </div>
                                                             <div class="cart-content">
                                                                 <h6>
-                                                                    <a href="product.html">Alpha Block Black Polo</a>
+                                                                    <a href="product.html">${shopinfo.productname}</a>
                                                                 </h6>
-                                                                <span class="quantitys">Qty: 1</span>
-                                                                <span>$399.00</span>
+                                                                <span class="quantitys">Qty: ${shopinfo.qty}</span>
+                                                                <span><fmt:formatNumber value="${shopinfo.price*(1-shopinfo.discount)}" pattern="###,###"/> ￦</span>
                                                             </div>
                                                             <a href="#" class="del-icone">
                                                                 <i class="zmdi zmdi-close"></i>
                                                             </a>
                                                         </div>
+                                                      </c:forEach>
                                                         <!-- Cart Box End -->
-                                                        <!-- Cart Box Start -->
-                                                        <div class="single-cart-box">
-                                                            <div class="cart-img">
-                                                                <a href="#">
-                                                                    <img alt="cart-image" src="<%=contextPath%>/resources/assets/img/products/mini2.jpg">
-                                                                </a>
-                                                            </div>
-                                                            <div class="cart-content">
-                                                                <h6>
-                                                                    <a href="product.html">Red Printed Round Neck</a>
-                                                                </h6>
-                                                                <span class="quantitys">Qty: 1</span>
-                                                                <span>$299.00</span>
-                                                            </div>
-                                                            <a href="#" class="del-icone">
-                                                                <i class="zmdi zmdi-close"></i>
-                                                            </a>
-                                                        </div>
-                                                        <!-- Cart Box End -->
+                                                        
                                                         <!-- Cart Footer Inner Start -->
                                                         <div class="cart-footer fix">
                                                             <h5>Subtotal :
-                                                                <span class="f-right">$698.00</span>
+                                                                <span class="f-right"><fmt:formatNumber value="${sessionScope.disTotalPrice}" pattern="###,###"/> ￦</span>
                                                             </h5>
                                                             <div class="cart-actions">
-                                                                <a href="cart.html" class="checkout">View cart</a>
+                                                                <a href="<%=contextPath%>/list.mall" class="checkout">View cart</a>
                                                                 <a href="checkout.html" class="checkout">Checkout</a>
                                                             </div>
-                                                        </div> 
+                                                        </div>
                                                         <!-- Cart Footer Inner End -->
                                                     </li>
-                                                </ul>--%>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>

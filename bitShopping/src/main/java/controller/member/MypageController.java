@@ -36,7 +36,8 @@ public class MypageController extends SuperClass{
 		@GetMapping(command)
 		public ModelAndView doGet( // mid 파라미터로 , 필수 , 타입은 String
 				@RequestParam(value = "mid" , required = true) String mid ) {
-					
+			
+			
 			Member member = this.mdao.SelectDataByPk(mid) ;
 			System.out.println(member);
 			

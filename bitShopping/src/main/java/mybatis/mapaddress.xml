@@ -11,6 +11,7 @@
 		where mid = #{mid}
 	</select>
 	
+<<<<<<< HEAD
 	<select id="SelectDataByPk" parameterType="MyMember" resultType="MyMember">
 		select * from members
 		where mid = #{mid}
@@ -23,6 +24,15 @@
 		address2 = #{address2}
 		where mid = #{mid}
 	</update>
+=======
+<!-- 	<select id="selectAllAddress" parameterType="MyMember" resultType="MyMember">
+		select 
+		from adresses
+		where id = #{id}
+
+	</select> -->
+		
+>>>>>>> f2958e877a79d4bc4b513960096b5e5ed82b6e27
 </mapper>
 
 
