@@ -280,7 +280,7 @@
                                                                 <li><a href="portfolio.html"> portfolio</a></li>
                                                                 <li><a href="service.html"> service One</a></li>
                                                                 <li><a href="service-2.html"> service Two</a></li>
-                                                                <li><a href="faq.html"> FAQ Page</a></li>
+                                                                <li><a href="<%=contextPath%>/faq.sr"> FAQ Page</a></li>
                                                                 <li><a href="404.html"> 404 Error </a></li>
                                                                 <li><a href="single-blog.html"> single blog</a></li>
                                                             </ul>
