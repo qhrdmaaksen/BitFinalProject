@@ -37,7 +37,6 @@ int formright = 12 - formleft;
 div {
 	word-break: break-all;
 }
-
 h2 {
 	display: block;
 	font-size: 1.5em;
@@ -47,31 +46,25 @@ h2 {
 	margin-inline-end: 0px;
 	font-weight: bold;
 }
-
 summary {
 	cursor: pointer;
 }
-
 /*삼각형 없애기*/
 summary {
 	list-style: none;
 }
-
 summary::-webkit-details-marker {
 	display: none;
 }
-
 tr {
 	display: table-row;
 	vertical-align: inherit;
 	border-color: inherit;
 }
-
 form {
 	display: block;
 	margin-top: 0em;
 }
-
 body, input, select, textarea, button {
 	line-height: 1;
 	color: #4c4c4c;
@@ -82,12 +75,10 @@ body, input, select, textarea, button {
 .xans-board-listheader {
 	border-top: 2px solid #522772;
 }
-
 .btitle {
 	padding-left: 50px;
 	text-align: left;
 }
-
 #foot {
 	position: fixed;
 	clear: right;
@@ -97,7 +88,6 @@ body, input, select, textarea, button {
 	left: 20;
 	bottom: 0px;
 }
-
 .input_txt {
 	padding-left: 20px
 }
@@ -107,7 +97,6 @@ body, input, select, textarea, button {
 	font-size: 0;
 	letter-spacing: -4px;
 }
-
 .star_rating a {
 	font-size: 22px;
 	letter-spacing: 0;
@@ -116,15 +105,12 @@ body, input, select, textarea, button {
 	color: #ccc;
 	text-decoration: none;
 }
-
 .star_rating a:first-child {
 	margin-left: 0;
 }
-
 .star_rating a.on {
 	color: #777;
 }
-
 .input-element .comment-form-comment {
 	font-weight: bolder;
 }

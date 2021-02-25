@@ -95,12 +95,6 @@
 	<a href="<%=contextPath%>/payment.pm">결제하기</a>
 
 <br><br><br>
-
-<a href="<%=contextPath%>/mypage.me?mid=admin&${requestScope.parameters}">마이 페이지</a>
-
-<br><br><br>
-
-<br><br><br>
 <br><br><br>
 <a href="<%=contextPath%>/delete.me?mid=">회원 탈퇴하기</a>
 <br><br><br>

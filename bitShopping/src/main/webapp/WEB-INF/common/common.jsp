@@ -111,7 +111,18 @@
     <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/responsive.css"> 
     <script src="<%=contextPath%>/resources/assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <style type="text<%=contextPath%>/resources/assets/css">
+	
+
     </style>
+    
+    <script type="text/javascript">
+	    function logincheck(){
+		        console.log("login check!");
+		        console.log(${whologin});
+		        alert("로그인이 필요합니다");
+			}
+	</script> 
+	
 	<style type="text/css">
 		/* 유효성 검사시 보여 주는 빨간색 글자를 위한 스타일 입니다. */
 		/*여기 스타일에는 회원가입에 필요한 css 스타일 공간, 유효성 검사 css 및 필수 입력 사항 * red css 사용등등  */
@@ -314,9 +325,17 @@
                                                 <li><a href="about-us.html"> about us </a></li>
 												
                                                 <li><a href="<%=contextPath%>/plist.pr"> 인기상품? </a></li>
-						
-                                                <li><a href="<%=contextPath%>/mypage.me?mid=${sessionScope.loginfo.mid}"> 마이페이지 </a></li>
-                                            </ul>```
+                                                
+												<li>
+													<c:if test="${whologin == 0}">
+														<a href="<%=contextPath%>/login.me" onclick="logincheck()"> 마이페이지 </a>
+													</c:if>
+													
+													<c:if test="${whologin != 0}">
+														<a href="<%=contextPath%>/mypage.me?mid=${sessionScope.loginfo.mid}"> 마이페이지 </a>
+													</c:if>
+												</li>
+                                            </ul>
                                         </nav>
                                 </div>
                             </div>
@@ -347,60 +366,44 @@
                                                 <a href="<%=contextPath%>/list.mall">
                                                     <i class="zmdi zmdi-shopping-cart-plus"></i>
                                                     <span class="count-style">
-	                                                  	${pcnt}
+	                                                  	${cnt}
                                                     </span>
                                                 </a>
 
                                                 <ul class="ht-dropdown main-cart-box">
                                                     <li>
                                                         <!-- Cart Box Start -->
-                                                       <%--  <div class="single-cart-box">
+                                                    <c:forEach items="${sessionScope.shoplists}" var="shopinfo">
+                                                      <div class="single-cart-box">
                                                             <div class="cart-img">
                                                                 <a href="#">
-                                                                    <img alt="cart-image" src="<%=contextPath%>/resources/assets/img/products/mini1.jpg">
+                                                                    <img alt="cart-image" src="<%=contextPath%>/resources/assets/img/products/${shopinfo.pimg}">
                                                                 </a>
                                                             </div>
                                                             <div class="cart-content">
                                                                 <h6>
-                                                                    <a href="product.html">Alpha Block Black Polo</a>
+                                                                    <a href="product.html">${shopinfo.productname}</a>
                                                                 </h6>
-                                                                <span class="quantitys">Qty: 1</span>
-                                                                <span>$399.00</span>
+                                                                <span class="quantitys">Qty: ${shopinfo.qty}</span>
+                                                                <span><fmt:formatNumber value="${shopinfo.price*(1-shopinfo.discount)}" pattern="###,###"/> ￦</span>
                                                             </div>
                                                             <a href="#" class="del-icone">
                                                                 <i class="zmdi zmdi-close"></i>
                                                             </a>
                                                         </div>
+                                                      </c:forEach>
                                                         <!-- Cart Box End -->
-                                                        <!-- Cart Box Start -->
-                                                        <div class="single-cart-box">
-                                                            <div class="cart-img">
-                                                                <a href="#">
-                                                                    <img alt="cart-image" src="<%=contextPath%>/resources/assets/img/products/mini2.jpg">
-                                                                </a>
-                                                            </div>
-                                                            <div class="cart-content">
-                                                                <h6>
-                                                                    <a href="product.html">Red Printed Round Neck</a>
-                                                                </h6>
-                                                                <span class="quantitys">Qty: 1</span>
-                                                                <span>$299.00</span>
-                                                            </div>
-                                                            <a href="#" class="del-icone">
-                                                                <i class="zmdi zmdi-close"></i>
-                                                            </a>
-                                                        </div>
-                                                        <!-- Cart Box End -->
+                                                        
                                                         <!-- Cart Footer Inner Start -->
                                                         <div class="cart-footer fix">
                                                             <h5>Subtotal :
-                                                                <span class="f-right">$698.00</span>
+                                                                <span class="f-right"><fmt:formatNumber value="${sessionScope.disTotalPrice}" pattern="###,###"/> ￦</span>
                                                             </h5>
                                                             <div class="cart-actions">
-                                                                <a href="cart.html" class="checkout">View cart</a>
+                                                                <a href="<%=contextPath%>/list.mall" class="checkout">View cart</a>
                                                                 <a href="checkout.html" class="checkout">Checkout</a>
                                                             </div>
-                                                        </div> --%>
+                                                        </div>
                                                         <!-- Cart Footer Inner End -->
                                                     </li>
                                                 </ul>
