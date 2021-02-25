@@ -243,7 +243,7 @@
 		<c:if test="${whologin != 0 }">
 			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/logout.me" class="link_menu">로그아웃</a> <!----></li> <!----> 
 		</c:if>
-		<li class="menu lst"><a href="<%=contextPath%>/service.sr" class="link_menu">고객센터</a> <ul class="sub">
+		<li class="menu lst"><a href="<%=contextPath%>/faq.sr" class="link_menu">고객센터</a> <ul class="sub">
 		</ul></li></ul>
 	</div>
 		
