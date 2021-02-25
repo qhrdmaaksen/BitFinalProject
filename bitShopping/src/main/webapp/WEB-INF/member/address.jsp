@@ -33,16 +33,8 @@
                     }
 
                     // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                    document.getElementById('sample4_postcode').value = data.zonecode;
-                    document.getElementById("sample4_roadAddress").value = roadAddr;
-                    document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
-
-                    // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-                    if(roadAddr !== ''){
-                        document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-                    } else {
-                        document.getElementById("sample4_extraAddress").value = '';
-                    }
+                    document.getElementById('zipcode').value = data.zonecode;
+                    document.getElementById("address1").value = roadAddr;
 
                     var guideTextBox = document.getElementById("guide");
                     // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
@@ -83,6 +75,7 @@
 	                            <tr style="font-weight: bolder;">
 	                                <td class="text-center">수령인</td>
 	                                <td class="text-center">전화번호</td>
+	                                <td class="text-center">우편번호</td>
 	                                <td class="text-center">배송주소</td>
 	                                <td class="text-center">배송 상세주소</td>
 	                            </tr>
@@ -91,24 +84,16 @@
 		                        <tr class="record">
 		                            <td align="center">${lists.name}</td>
 		                            <td align="center">${lists.phone}</td>
-		                            <td align="center">${lists.address1}</td>
-		                            <td align="center">${lists.address2}</td>
+		                            <td id="zipcode" align="center">${lists.zipcode}</td>
+		                            <td id="address1" align="center">${lists.address1}</td>
+		                            <td id="sample4_detailAddress" align="center">${lists.address2}</td>
 		                        </tr>
 	                        </tbody>
 	                    </table>
-	                    <!-- <input type="text" id="sample4_postcode" placeholder="우편번호">
-	                    <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-	                    <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-	                    <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
 	                    <span id="guide" style="color:#999;display:none"></span>
-	                    <input type="text" id="sample4_detailAddress" placeholder="상세주소">
-	                    <input type="text" id="sample4_extraAddress" placeholder="참고항목"> -->
 	                    <div align="center">
-		                    <button class="w3-btn w3-white w3-border w3-border-purple w3-round-large"
-		                                type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-		                                    id="shippingchange">
-		                        <span>배송지 변경</span>
-		                    </button>
+		                    <input class="w3-btn w3-white w3-border w3-border-purple w3-round-large"
+		                                type="button" id="shippingchange" onclick="sample4_execDaumPostcode()" value="배송지 변경"/>
 	                    </div>
 	                </div>
 	            </div>

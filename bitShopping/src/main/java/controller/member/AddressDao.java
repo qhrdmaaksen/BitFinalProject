@@ -21,5 +21,13 @@ public class AddressDao extends SuperDao{
 	public Member SelectDataList(Member member) {
 		return this.abcd.selectOne(namespace + ".SelectDataList" , member);
 	}
+
+	public Member SelectDataByPk(String mid) {
+		return this.abcd.selectOne(namespace + ".SelectDataByPk" , mid);
+	}
+
+	public int ShippingUpdataData(Member bean) {
+		return this.abcd.update(namespace + ".ShippingUpdataData" , bean);
+	}
 	
 }
