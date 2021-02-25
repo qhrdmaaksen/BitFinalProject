@@ -106,7 +106,8 @@
 <br><br><br>
 <br><br><br>
 <a href="<%=contextPath%>/address.ad">배송지 관리 페이지 보기</a>
-
+<br><br><br>
+<a href="<%=contextPath%>/service.sr"> 1:1문의 Page</a>
 </body>
 </html>
 

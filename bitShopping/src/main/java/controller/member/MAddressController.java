@@ -36,7 +36,7 @@ public class MAddressController extends SuperClass{
 			HttpServletRequest request ,
 			HttpSession session) {
 		
-		Member loginfo = (Member)session.getAttribute("loginfo");
+		Member loginfo = (Member)session.getAttribute("loginfo"); 
 		System.out.println("id : "+loginfo.getMid());
 		
 		//가져올 정보들의 다리역할
