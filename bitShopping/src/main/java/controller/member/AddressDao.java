@@ -26,13 +26,13 @@ public class AddressDao extends SuperDao{
 	}
 
 
-	public List<Address> SelectAllAddress(String mid) {
-		return this.abcd.selectOne(namespace, ".SelectAllAddress");
-	}
-
-
-	public Address SelectDataByPk(String id) {
-		return this.abcd.selectOne(namespace + ".SelectDataByPk",id);
-	}
+	/*
+	 * public List<Address> SelectAllAddress(String mid) { return
+	 * this.abcd.selectOne(namespace, ".SelectAllAddress"); }
+	 * 
+	 * 
+	 * public Address SelectDataByPk(String id) { return
+	 * this.abcd.selectOne(namespace + ".SelectDataByPk",id); }
+	 */
 	
 }
