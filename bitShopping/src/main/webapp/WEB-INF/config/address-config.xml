@@ -13,7 +13,7 @@
 		
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 	<!-- controller라는 패키지에서 컨트롤러를 검색합니다. -->		
-	<context:component-scan base-package="controller.address" />
+	<context:component-scan base-package="controller.member" />
 	<context:component-scan base-package="dao" />
 		
 	<!-- ViewResolver 설정하기 -->

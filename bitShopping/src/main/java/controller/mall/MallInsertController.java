@@ -40,7 +40,8 @@ public class MallInsertController extends SuperClass{
 //			// 로그인 하지 않았다면 로그인 페이지로 이동
 //			this.mav.setViewName("meLoginForm");
 //		} else { // 누군가 로그인 한 상태입니다.
-			// pqty : 재고, qty : 구매 수량			
+			// pqty : 재고, qty : 구매 수량
+		int pcnt = 0 ; // 장바구니에 담긴 상품 수량 체크
 			if (pqty < qty) { //재고 수량 초과				
 				String message = "재고 수량이 부족합니다." ;
 				System.out.println(message);
@@ -52,6 +53,9 @@ public class MallInsertController extends SuperClass{
 					mycart = new MyCartList() ; // 매장 입구에서 카트 준비
 				}
 				mycart.AddOrder(pno, qty); // 카트에 담기
+				pcnt = MyCartList.PCNT;
+				System.out.println("pcnt : " + pcnt);
+				session.setAttribute("pcnt", pcnt);
 				session.setAttribute("mycart", mycart);
 				//new list.mallController().doGet(request, response);
 				this.mav.setViewName("redirect:/list.mall"); 

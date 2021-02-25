@@ -1,3 +1,4 @@
+<%@page import="org.springframework.web.context.annotation.SessionScope"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
@@ -26,6 +27,15 @@
 		<c:set var="whologin" value="1" />
 	</c:if>
 </c:if>
+
+
+<!-- 네비게이션 안에 장바구니 품목 갯수 구하기 -->
+<c:set var="cnt" value="0"/>
+<c:if test="${not empty sessionScope.pcnt}">
+	<!-- 로그인 하지 않은 경우 -->
+	<c:set var="cnt" value="${sessionScope.pcnt}" />
+</c:if>
+
 
 <!-- 부트 스트랩 -->
 <% int twelve = 12 ; %>
@@ -208,9 +218,6 @@
 	    border-bottom: 0;
 	}
 
-
-
-
 	/* 추가 */
 	.container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}
 	.container #headerLogo .bnr_delivery{position:absolute;left:-1px;top:-28px;margin:auto;height:22px}
@@ -221,7 +228,6 @@
 
 	</style>
 	
-	
 </head>
 <body>
 
@@ -229,10 +235,13 @@
 	<div id="userMenu">
 		<ul class="list_menu">
 		<c:if test="${whologin == 0}">
-		<li class="menu none_sub menu_join"><a href="<%=contextPath%>/insert.me" class="link_menu">회원가입</a></li> 
+			<li class="menu none_sub menu_join"><a href="<%=contextPath%>/insert.me" class="link_menu">회원가입</a></li> 
 		</c:if>
 		<c:if test="${whologin == 0 }">
-		<li class="menu none_sub menu_login"><a href="<%=contextPath%>/login.me" class="link_menu">로그인</a> <!----></li> <!----> 
+			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/login.me" class="link_menu">로그인</a> <!----></li> <!----> 
+		</c:if>
+		<c:if test="${whologin != 0 }">
+			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/logout.me" class="link_menu">로그아웃</a> <!----></li> <!----> 
 		</c:if>
 		<li class="menu lst"><a href="" class="link_menu">고객센터</a> <ul class="sub">
 		</ul></li></ul>
@@ -241,7 +250,7 @@
 	<div class="container">
 		<div id="headerLogo" class="layout-wrapper">
 			<h1 class="logo">
-				<a href="https://www.kurly.com/shop/main/index.php" class="link_main">
+				<a href="<%=contextPath%>/main.cu" class="link_main">
 					<span id="gnbLogoContainer"></span>
 					<img src="https://res.kurly.com/images/marketkurly/logo/logo_x2.png" alt="마켓컬리 로고" style="display: block;">
 				</a>
@@ -276,7 +285,7 @@
                                                                 <li><a href="single-blog.html"> single blog</a></li>
                                                             </ul>
                                                         </li>
-                                                        <li>
+                                                        <!-- <li> 드롭다운 목록 일단 줄여 놓았습니다.
                                                             <ul>
                                                                 <li class="mega-menu-title">special pages</li>
                                                                 <li><a href="cart.html"> cart page</a></li>
@@ -294,13 +303,15 @@
                                                                 <li><a href="product-details.html">Good product name</a></li>
                                                                 <li><a href="product-details.html">Another Product name</a></li>
                                                                 <li><a href="product-details.html">test Producr name</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <!-- <li class="mega-menu-img">
+                                                            </ul> 
+                                                        </li> -->
+                                                        
+                                                        <!-- <li class="mega-menu-img"> 드롭다운 하단에 사진 넣게되면 넣을 공간
                                                             <ul>
                                                                 <li><a class="dot-none" href="shop.html"><img alt="" src="<%=contextPath%>/resources/assets/img/banner/17.jpg"></a></li>
                                                             </ul>
                                                         </li> -->
+                                                        
                                                     </ul>
                                                 </li>
 												
@@ -337,15 +348,17 @@
                                     <div class="sidebar-trigger">
                                         <ul>
                                             <li>
-                                                <a href="cart.html">
+                                                <a href="<%=contextPath%>/list.mall">
                                                     <i class="zmdi zmdi-shopping-cart-plus"></i>
-                                                    <span class="count-style">2</span>
+                                                    <span class="count-style">
+	                                                  	${pcnt}
+                                                    </span>
                                                 </a>
 
-                                                <ul class="ht-dropdown main-cart-box">
+                                                <%--<ul class="ht-dropdown main-cart-box">
                                                     <li>
                                                         <!-- Cart Box Start -->
-                                                       <%--  <div class="single-cart-box">
+                                                         <div class="single-cart-box">
                                                             <div class="cart-img">
                                                                 <a href="#">
                                                                     <img alt="cart-image" src="<%=contextPath%>/resources/assets/img/products/mini1.jpg">
@@ -391,10 +404,10 @@
                                                                 <a href="cart.html" class="checkout">View cart</a>
                                                                 <a href="checkout.html" class="checkout">Checkout</a>
                                                             </div>
-                                                        </div> --%>
+                                                        </div> 
                                                         <!-- Cart Footer Inner End -->
                                                     </li>
-                                                </ul>
+                                                </ul>--%>
                                             </li>
                                         </ul>
                                     </div>
@@ -423,9 +436,6 @@
 		
 	</div>
 		
-		
-		
-
 		
 </header>
 
