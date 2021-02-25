@@ -23,15 +23,12 @@
 	   width: 100%;
 	   height: 370px;
 	}
-	
-.carousel-control-prev{
-	margin-top: 100px;
-	
-}
- 
-.carousel-control-next{
-	margin-top: 100px;
-}  
+	.carousel-control-prev{
+		margin-top: 100px;
+	}
+	.carousel-control-next{
+		margin-top: 100px;
+	}  
     .logo{
     	align-items: center;
     }

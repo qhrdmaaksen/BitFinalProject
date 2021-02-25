@@ -63,39 +63,67 @@
             }).open();
         }
     </script>
+    <style type="text/css">
+    	.con{
+    		width: 1000px;
+    		height: 800px;
+    	}
+    	.app{
+    		padding: 10px;
+    	}
+    	.dashboard{
+    		padding-left: 50px;
+    		height: 1000px;
+    	}
+    	.dashboard-content {
+		    padding-left: 200px;
+		    padding-top: 100px;
+		    height: 700px;
+		}
+		table{
+			width: 1000px;
+		}
+    </style>
+    
 </head>
 <body>
-	<div class="contater" align="center" style="width: 1300; position: relative; bottom: 420; left: 400;">
-	<div class="col-sm-offset-2 col-sm-8">
-	    <form  method="get" action="<%=contextPath%>/address.ad">
-	    	<input type="hidden" name="address" value="address">
-	        <div class="panel panel-success">
-	            <div class="panel-heading">
-	                <h3 class="panel-title" style="font-weight: bold;">
-	                    ${sessionScope.loginfo.name} 님 배송지 관리 페이지입니다.
-	                </h3>
-	                <h6 style="color: black">배송지에 따라 상품 정보가 달라질 수 있습니다.</h6>
-	            </div>
-	            <div class="panel-body">
-	                <div class="table-responsive">
-	                    <table class="table table-condensed">
-	                        <thead>
-	                            <tr style="font-weight: bolder;">
-	                                <td class="text-center">수령인</td>
-	                                <td class="text-center">전화번호</td>
-	                                <td class="text-center">배송주소</td>
-	                                <td class="text-center">배송 상세주소</td>
-	                            </tr>
-	                        </thead>
-	                        <tbody>
-		                        <tr class="record">
-		                            <td align="center">${lists.name}</td>
-		                            <td align="center">${lists.phone}</td>
-		                            <td align="center">${lists.address1}</td>
-		                            <td align="center">${lists.address2}</td>
-		                        </tr>
-	                        </tbody>
-	                    </table>
+
+		<div class="tab-content dashboard-content">
+	  		<div id="dashboard" class="tab-pane fade show active">
+                 <table>
+                  	<tr>
+                      <td>
+                      <!-- 내용 들어갈 공간 -->
+                         <div class="col-sm col-sm-10">
+						    <form  method="get" action="<%=contextPath%>/address.ad">
+						    	<input type="hidden" name="address" value="address">
+						        <div class="panel panel-success">
+						            <div class="panel-heading">
+						                <h3 class="panel-title" style="font-weight: bold;">
+						                    ${sessionScope.loginfo.name} 님 배송지 관리 페이지입니다.
+						                </h3>
+						                <h6 style="color: black">배송지에 따라 상품 정보가 달라질 수 있습니다.</h6>
+						            </div>
+						            <div class="panel-body">
+						                <div class="table-responsive">
+						                    <table class="table table-condensed">
+						                        <thead>
+						                            <tr style="font-weight: bolder;">
+						                                <td class="text-center">수령인</td>
+						                                <td class="text-center">전화번호</td>
+						                                <td class="text-center">배송주소</td>
+						                                <td class="text-center">배송 상세주소</td>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+							                        <tr class="record">
+							                            <td align="center">${lists.name}</td>
+							                            <td align="center">${lists.phone}</td>
+							                            <td align="center">${lists.address1}</td>
+							                            <td align="center">${lists.address2}</td>
+							                        </tr>
+						                        </tbody>
+						                    </table>
 	                    <!-- <input type="text" id="sample4_postcode" placeholder="우편번호">
 	                    <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
 	                    <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
@@ -103,25 +131,28 @@
 	                    <span id="guide" style="color:#999;display:none"></span>
 	                    <input type="text" id="sample4_detailAddress" placeholder="상세주소">
 	                    <input type="text" id="sample4_extraAddress" placeholder="참고항목"> -->
-	                    <div align="center">
-		                    <button class="w3-btn w3-white w3-border w3-border-purple w3-round-large"
-		                                type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-		                                    id="shippingchange">
-		                        <span>배송지 변경</span>
-		                    </button>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </form>
-    </div>
-    <table>
-    	<tr>
-    		<td style="position: relative; top: 400; right: 50;">
-    			<%@ include file="./../common/footer.jsp" %>
-    		</td>
-    	</tr>
-    </table>
+										                    <div align="center">
+											                    <button class="w3-btn w3-white w3-border w3-border-purple w3-round-large"
+											                                type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+											                                    id="shippingchange">
+											                        <span>배송지 변경</span>
+											                    </button>
+										                    </div>
+										                </div>
+										            </div>
+										        </div>
+										    </form>
+									    </div>
+									    <!-- 내용끝나는 곳 -->
+                            		</td>	
+                               	</tr>
+                            </table>
+                          </div>
+                      <div id="orders" class="tab-pane fade">
+				</div>
+	</div>
 </div>
+
 </body>
+ <%@ include file="./../common/footer.jsp" %> 
 </html>
