@@ -27,7 +27,7 @@ public class SuperClass  { //implementsSuperController, Validator{
 	////?////////////////////////////////////////
 	
 	private HttpServletRequest request = null ;
-	private HttpServletResponse response = null ;
+	protected HttpServletResponse response = null ;
 	protected HttpSession session = null ;
 	
 

@@ -13,7 +13,7 @@
 		<typeAlias alias="MyProductreviews" type="bean.Productreviews" />
 		<typeAlias alias="Mypayments" type="bean.Mypayments"/>
 		<typeAlias alias="MyShopInfo" type="shopping.ShoppingInfo"/>
-		<typeAlias alias="MyService" type="bean.Serivce"/>
+		<!-- <typeAlias alias="MyService" type="bean.Serivce"/> -->
 	
 	</typeAliases>	
 
@@ -25,6 +25,6 @@
 		<mapper resource="mybatis/mapproductreviews.xml" />
 		<mapper resource="mybatis/mappayments.xml"/>
 		<mapper resource="mybatis/mapaddress.xml"/>
-		<mapper resource="mybatis/mapservice.xml"/>
+		<!-- <mapper resource="mybatis/mapservice.xml"/> -->
 	</mappers>
 </configuration>

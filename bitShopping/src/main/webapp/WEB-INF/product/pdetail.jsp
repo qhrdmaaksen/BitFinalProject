@@ -438,17 +438,11 @@ body, input, select, textarea, button {
 				</div>
 			</div>
 			<!--Review And Description Tab Content End-->
-		</div>
-	</div>
-	
-	
-<!----------------------------------------------------- 상품 후기 게시판 ------------------------------------------------------------------------------------>
-
-<!----------------------------------------------------- 상품 후기 리스트  ------------------------------------------------------------------------------------>
-<form name="frmList">
-		<input type="hidden" name="sort" value=""> <input
-			type="hidden" name="page_num" value=""> <input type="hidden"
-			name="goodsno" value="13677">
+			<!----------------------------------------------------- 상품 후기 리스트  ------------------------------------------------------------------------------------>
+	<form name="frmList">
+		<input type="hidden" name="sort" value=""> 
+		<inputtype="hidden" name="page_num" value=""> 
+		<input type="hidden"name="goodsno" value="13677">
 		<div class="title_txt">
 			<h2>PRODUCT REVIEW LIST</h2>
 			<div class="sort-wrap">
@@ -458,9 +452,8 @@ body, input, select, textarea, button {
 							담당 게시판으로 이동될 수 있습니다.</p></li>
 					<li><span class="ico"></span>
 					<p class="txt">
-							배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 마이컬리 내 <a href="#none"
-								onclick="window.parent.location.href = '/shop/mypage/mypage_qna.php'"
-								class="emph">1:1 문의</a>에 남겨주세요.
+							배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 마이컬리 내 
+							<a href="#none" onclick="window.parent.location.href = '/shop/mypage/mypage_qna.php'" class="emph">1:1 문의</a>에 남겨주세요.
 						</p></li>
 				</ul>
 				<div class="sort" style="bottom: -9px">
@@ -564,27 +557,27 @@ body, input, select, textarea, button {
 						</tr>
 					</tbody>
 					
-<c:forEach var="bean" items="${requestScope.productreviews.lists}">
-	<td align="center">${requestScope.productreviews.bno}</td>
-	<td class="btitle">
+		<c:forEach var="bean" items="${requestScope.productreviews.lists}">
+		<td align="center">${requestScope.productreviews.bno}</td>
+		<td class="btitle">
 		<div>${requestScope.productreviews.btitle}</div>
-	<td><details>
-			<summary>내용 자세히 보기</summary>
-			<p>${requestScope.productreviews.bcontent}</p>
-		</details></td>
-	</td>
-	<td class="user_grade grade_comm"></td>
-	<td class="bwirter">${requestScope.productreviews.bwriter}</td>
-	<td class="bregdate">$requestScope.productreviews.bregdate}</td>
-	<td><span class="breview">$requestScope.productreviews.breview}</span></td>
-	</tr>
-</c:forEach>
-</tbody>
+		<td><details>
+				<summary>내용 자세히 보기</summary>
+				<p>${requestScope.productreviews.bcontent}</p>
+			</details></td>
+		</td>
+		<td class="user_grade grade_comm"></td>
+		<td class="bwirter">${requestScope.productreviews.bwriter}</td>
+		<td class="bregdate">$requestScope.productreviews.bregdate}</td>
+		<td><span class="breview">$requestScope.productreviews.breview}</span></td>
+		</tr>
+	</c:forEach>
+	</tbody>
 </table>
 
-<div id="foot">
+<%-- <div id="foot">
 	<a href="<%=contextPath%>/insert.prr">상품 후기 작성</a>
-</div>
+</div> --%>
 <%-- <div align="center">
 	<footer>${requestScope.pagingHtml}</footer>
 </div> --%>
@@ -598,6 +591,13 @@ body, input, select, textarea, button {
 
 
 <!----------------------------------------------------- 상품 후기 리스트  ------------------------------------------------------------------------------------>
+		</div>
+	</div>
+	
+	
+<!----------------------------------------------------- 상품 후기 게시판 ------------------------------------------------------------------------------------>
+
+
 
 	<!--Product Description Review Area Start-->
 	<!-- may also like product start -->
