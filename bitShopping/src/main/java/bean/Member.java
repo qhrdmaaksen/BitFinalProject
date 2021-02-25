@@ -12,7 +12,7 @@ public class Member {
 	private final String MUST_INPUT = "필수 입력 사항입니다." ;	
 	
 	@Length(min=3, max=10, message="아이디는 최소 4자리 최대 15자리 입니다.")
-	private String mid ;
+	private static String mid ;
 	
 	@Length(min=4, max=10, message="비밀번호는 최소 4자리 최대 10자리 입니다.")
 	private String password ;
@@ -77,7 +77,7 @@ public class Member {
 
 
 
-	public String getMid() {
+	public static String getMid() {
 		return mid;
 	}
 
