@@ -3,376 +3,193 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
  <%@ include file="/WEB-INF/common/common.jsp" %>  
-
-<!doctype html>
-<html class="no-js" lang="zxx">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
     <title>Shopping Cart</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-
-    <!-- all css here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/chosen.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.css">
-    <link rel="stylesheet" href="assets/css/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="assets/css/material-design-iconic-font.css">
-    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
-    <link rel="stylesheet" href="assets/css/tippy.css">
-    <link rel="stylesheet" href="assets/css/bundle.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-    
-    <style type="">
-    
-    .anadi-product-thumbnail img{
-    	width: 100px;
-    	height: 100px;
-    }
-    
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('.mdb-select').materialSelect();
+            $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
+                $(this).closest('.select-outline').find('label').toggleClass('active');
+                $(this).closest('.select-outline').find('.caret').toggleClass('active');
+            });
+        })
+    </script>
+    <style>
+	    body{
+	    	padding-bottom: 50px;
+	    }
+        .nodiscount{
+            position: relative;
+            right: 71px;
+            bottom: 20px;
+        }
+        .red{
+        	font: red;
+        }
+        .btn {
+		    height: 50px;
+		    margin: 5px;
+		}
+		.text-center {
+  			text-align: center!important;
+		}
+		.pb-5, .py-5 {
+		    padding-bottom: 1rem!important;
+		}
+		.pt-5, .py-5 {
+		    padding-top: 2rem!important;
+		}
+		.p-5 {
+   			padding: 2rem!important;
+		}
     </style>
-    
-    
 </head>
-
-<body>
-    <div class="wrapper">
-        <!-- breadcrumbs area start -->
-        <div class="title-breadcrumbs">
-            <div class="title-breadcrumbs-inner">
-                <div class="container">
-                    <nav class="woocommerce-breadcrumb">
-                        <a href="#">Home</a>
-                        <span class="separator">/</span> Shopping Cart
-                    </nav>
-                </div>
-            </div>
+<body id="cartlist_body">
+    <div class="px-4 px-lg-0">
+        <!-- For demo purpose -->
+        <div class="container text-#8B4513 py-5 text-center">
+            <h4><i class="fas fa-shopping-cart"></i> Shopping Cart</h4>
         </div>
-        <!-- breadcrumbs area End -->
-        <!--Shopping Cart Area Strat-->
-        <div class="Shopping-cart-area ptb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="pg___title">
-                            <h2>Shopping Cart</h2>
-                        </div>
-                        <form action="#">
-                            <div class="table-content table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th class="anadi-product-remove">remove</th>
-                                            <th class="anadi-product-thumbnail">images</th>
-                                            <th class="cart-product-name">Product</th>
-                                            <th class="anadi-product-price">Unit Price</th>
-                                            <th class="anadi-product-quantity">Quantity</th>
-                                            <th class="anadi-product-subtotal">Total</th>
-                                        </tr>
-                                    </thead>
-                                  <c:forEach items="${sessionScope.shoplists}" var="shopinfo">  
-                                    <tbody>
-                                        <tr>
-                                            <td class="anadi-product-remove">
-                                                <a href="<%=contextPath%>/pdelete.pr?pno=${shopinfo.productcode}">
-                                                    <i class="fa fa-times"></i>
-                                                </a>
-                                            </td>
-                                            <td class="anadi-product-thumbnail">
-                                                <a href="<%=contextPath%>/pdetail.pr?pno=${shopinfo.productcode}">
-                                                    <img src="<%=contextPath%>/resources/assets/img/products/${shopinfo.pimg}" alt="">
-                                                </a>
-                                            </td>
-                                            <td class="anadi-product-name">
-                                            	<span class="amount">
-                                                	<a href="<%=contextPath%>/pdetail.mall?pno=${shopinfo.productcode}">${shopinfo.productname}</a>
-                                                </span>
-                                            </td>
-                                            <td class="anadi-product-price">
-                                                <span class="amount">
-                                                	<fmt:formatNumber value="${shopinfo.price}" pattern="###,###"/> 원
-                                                </span>
-                                            </td>
-                                            <td class="anadi-product-quantity">
-                                                <input value="${shopinfo.qty}" type="number">
-                                            </td>
-                                            <td class="product-subtotal">
-                                                <span class="amount">
-                                                	<fmt:formatNumber value="${shopinfo.qty * shopinfo.price}" pattern="###,###"/> 원
-                                                </span>
-                                            </td>
-                                        </tr>
-                                      </c:forEach>
-                                      
-                                      
-                                      
-                                       <!--  <tr>
-                                            <td class="anadi-product-remove">
-                                                <a href="#">
-                                                    <i class="fa fa-times"></i>
-                                                </a>
-                                            </td>
-                                            <td class="anadi-product-thumbnail">
-                                                <a href="#">
-                                                    <img src="assets/img/cart/cart2.jpg" alt="">
-                                                </a>
-                                            </td>
-                                            <td class="anadi-product-name">
-                                                <a href="#">Cras neque metus</a>
-                                            </td>
-                                            <td class="anadi-product-price">
-                                                <span class="amount">$60.50</span>
-                                            </td>
-                                            <td class="anadi-product-quantity">
-                                                <input value="1" type="number">
-                                            </td>
-                                            <td class="product-subtotal">
-                                                <span class="amount">$60.50</span>
-                                            </td>
-                                        </tr> -->
-                                    </tbody>
-                                </table>
-                            </div>
+        <!-- End -->
+        <!-- <div class="container"> -->
+            <!-- Tab panes -->
+                <div id="home" class="container tab-pane active"><br>
+                    <div class="pb-5">
+                        <div class="container">
                             <div class="row">
-                                <div class="col-12">
-                                    <div class="coupon-all">
-                                         <div class="coupon">
-                                         	
-                                         	
-                                           <!-- <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
-                                            <input class="button" name="apply_coupon" value="Apply coupon" type="submit">-->
-                                        </div> 
-                                        <div class="coupon2">
-                                            <input class="button" name="update_cart" value="Update cart" type="submit">
-                                        </div>
+                                <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+                                    <!-- Shopping cart table -->
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col" class="border-0 bg-light">
+                                                    <div class="p-2 px-3 text-uppercase">Product</div>
+                                                </th>
+                                                <th scope="col" class="border-0 bg-light">
+                                                    <div class="py-2 text-uppercase">Price</div>
+                                                </th>
+                                                <th scope="col" class="border-0 bg-light">
+                                                    <div class="py-2 text-uppercase">Quantity</div>
+                                                </th>
+                                                <th scope="col" class="border-0 bg-light">
+                                                    <div class="py-2 text-uppercase">Remove</div>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <c:forEach items="${sessionScope.shoplists}" var="shopinfo">
+                                                    <tr>
+                                                        <th scope="row" class="border-0">
+                                                            <div class="p-2">
+                                                                <img src="<%=contextPath%>/resources/assets/img/products/${shopinfo.pimg}"
+                                                                     alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                                <div class="ml-3 d-inline-block align-middle">
+                                                                    <h5 class="mb-0"><a href="#"
+                                                                                        class="text-dark d-inline-block align-middle">
+                                                                            ${shopinfo.productname}</a></h5>
+                                                                    <span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td class="border-0 align-middle">
+                                                            <span class="text-danger mr-1 ">
+                                                                <strong><fmt:formatNumber value="${shopinfo.price*(1-shopinfo.discount)}" pattern="###,###"/> ￦</strong>
+                                                            </span>
+                                                            <span class="text-grey nodiscount"><s>
+																<fmt:formatNumber value="${shopinfo.price}" pattern="###,###"/> ￦
+                                                            </s></span>
+                                                        </td>
+                                                        <td class="border-0 align-middle"><strong>${shopinfo.qty}</strong></td>
+                                                        <td class="border-0 align-middle">
+                                                            <a href="<%=contextPath%>/pdelete.pr?pno=${shopinfo.productcode}" type="button"
+                                                               class="card-link-secondary small text-uppercase mr-3">
+                                                                Delete
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </c:forEach>
+                                            </tbody>
+                                        </table>
                                     </div>
+                                    <!-- End -->
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-5 ml-auto">
-                                    <div class="cart-page-total">
-                                        <h2>Cart totals</h2>
-                                        <ul>
-                                            <li>총 구매 금액
-                                                <span>
-                                                	<fmt:formatNumber value="${sessionScope.totalAmount}" pattern="###,###"/> 원
-                                                </span>
-                                            </li>
-                                            <li>할인 금액
-                                                <span>
-                                                	<fmt:formatNumber value="${sessionScope.totalAmount - sessionScope.disTotalPrice}" pattern="###,###"/> 원
-                                                </span>
-                                            </li>
-                                            <li>할인 후 최종 결재 금액
-                                                <span>
-                                                	<fmt:formatNumber value="${sessionScope.disTotalPrice}" pattern="###,###"/> 원
-												</span>
-                                            </li>
-                                        </ul>
-                                        <a href="#">Proceed to checkout</a>
+                            <div class="row py-5 p-4 bg-white rounded shadow-sm">
+                                
+                                
+                                <div class="col-lg-6">
+                                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">
+                                           품절 시 대체 물품으로 출고됩니다.
                                     </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Shopping Cart Area End-->
-        <footer>
-            <div class="footer-container">
-                <!--Footer Top Area Start-->
-                <div class="footer-top-area styles___1 ptb-90 text-center">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-10 offset-lg-1 col-12">
-                                <!--Footer Logo Start-->
-                                <div class="footer-logo">
-                                    <a href="index.html">
-                                        <img alt="" src="assets/img/logo/logo.png">
-                                    </a>
-                                </div>
-                                <!--Footer Logo End-->
-                                <!--Footer Nav Start-->
-                                <div class="footer-nav">
-                                    <nav>
-                                        <ul>
-                                            <li>
-                                                <a href="#">Home</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Shop</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Policies</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">About Us</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Contact</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <!--Footer Nav End-->
-                                <!--Footer Social Icon Start-->
-                                <div class="footer-social">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fab fa-facebook-f"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fab fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fab fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fab fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fas fa-rss"></i>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                                <!--Footer Social Icon End-->
-                                <!--Footer Newsletter Start-->
-                                <div class="footer-newsletter">
-                                    <!-- Newsletter Form -->
-                                    <form novalidate="" target="_blank" class="popup-subscribe-form validate" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form"
-                                        method="post" action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef">
-                                        <div id="mc_embed_signup_scroll">
-                                            <div class="mc-form subscribe-form" id="mc-form">
-                                                <input type="email" placeholder="Enter your email here" autocomplete="off" id="mc-email">
-                                                <button id="mc-submit"> Subscribe! </button>
+                                    <div class="p-4">
+                                       <!--  <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p> -->
+                                        <div class="input-group mb-4 border rounded-pill p-2">
+                                        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill">
+                                            	<i class="fa fa-gift mr-2"></i>쇼핑 더 하기
+                                            	</button>
+                                            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <div class="input-group-append border-0">
+                                                <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill">
+                                                    전체 목록 삭제하기
+                                                </button>
                                             </div>
                                         </div>
-                                    </form>
-                                </div>
-                                <!--Footer Newsletter End-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Footer Top Area End-->
-                <!--Footer Bottom Area Start-->
-                <div class="footer-bottom-area">
-                    <div class="container text-center">
-                        <p>&copy; Copyright Banco All Rights Reserved</p>
-                    </div>
-                </div>
-                <!--Footer Bottom Area End-->
-            </div>
-        </footer>
-        <!-- modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span class="ion-android-close" aria-hidden="true"></span>
-                        </button>
-                        <div class="qwick-view-left">
-                            <div class="quick-view-learg-img">
-                                <div class="quick-view-tab-content tab-content">
-                                    <div class="tab-pane active show fade" id="modal1" role="tabpanel">
-                                        <img src="assets/img/quick-view/l1.jpg" alt="">
-                                    </div>
-                                    <div class="tab-pane fade" id="modal2" role="tabpanel">
-                                        <img src="assets/img/quick-view/l2.jpg" alt="">
-                                    </div>
-                                    <div class="tab-pane fade" id="modal3" role="tabpanel">
-                                        <img src="assets/img/quick-view/l3.jpg" alt="">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="quick-view-list nav" role="tablist">
-                                <a class="active" href="#modal1" data-toggle="tab">
-                                    <img src="assets/img/quick-view/s1.jpg" alt="">
-                                </a>
-                                <a href="#modal2" data-toggle="tab">
-                                    <img src="assets/img/quick-view/s2.jpg" alt="">
-                                </a>
-                                <a href="#modal3" data-toggle="tab">
-                                    <img src="assets/img/quick-view/s3.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="qwick-view-right">
-                            <div class="qwick-view-content">
-                                <h3>Handcrafted Supper Mug</h3>
-                                <div class="price">
-                                    <span class="new">$90.00</span>
-                                    <span class="old">$120.00 </span>
-                                </div>
-                                <div class="rating-number">
-                                    <div class="quick-view-rating">
-                                        <i class="ion-ios-star red-star"></i>
-                                        <i class="ion-ios-star red-star"></i>
-                                        <i class="ion-ios-star red-star"></i>
-                                        <i class="ion-ios-star red-star"></i>
-                                        <i class="ion-ios-star red-star"></i>
+                                
+                                
+                                <div class="col-lg-6">
+                                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">
+                                        Order summary
                                     </div>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do tempor incididun ut labore et dolore
-                                    magna aliqua. Ut enim ad mi , quis nostrud veniam exercitation .</p>
-                                <div class="quick-view-select">
-                                    <div class="select-option-part">
-                                        <label>Size*</label>
-                                        <select class="select">
-                                            <option value="">- Please Select -</option>
-                                            <option value="">900</option>
-                                            <option value="">700</option>
-                                        </select>
-                                    </div>
-                                    <div class="select-option-part">
-                                        <label>Color*</label>
-                                        <select class="select">
-                                            <option value="">- Please Select -</option>
-                                            <option value="">orange</option>
-                                            <option value="">pink</option>
-                                            <option value="">yellow</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="quickview-plus-minus">
-                                    <div class="cart-plus-minus">
-                                        <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                    </div>
-                                    <div class="quickview-btn-cart">
-                                        <a class="btn-style cr-btn" href="#">
-                                            <span>add to cart</span>
-                                        </a>
-                                    </div>
-                                    <div class="quickview-btn-wishlist">
-                                        <a class="btn-hover cr-btn" href="#">
-                                            <span>
-                                                <i class="ion-ios-heart-outline"></i>
-                                            </span>
-                                        </a>
+                                    <div class="p-4">
+                                        <p class="font-italic mb-4">총 구매금액이 50,000원 이상 일 경우 배송비가 부과되지 않습니다.</p>
+                                        <ul class="list-unstyled mb-4">
+                                            <li class="d-flex justify-content-between py-3 border-bottom">
+                                                <strong class="text-muted">Pre-discount totalamount </strong>
+                                                <strong><fmt:formatNumber value="${sessionScope.totalAmount}" pattern="###,###"/> ￦</strong>
+                                            </li>
+                                            <li class="d-flex justify-content-between py-3 border-bottom">
+                                                <strong class="text-muted">
+                                                    <i class='fas fa-shipping-fast'></i>
+                                                    Shipping and handling
+                                                </strong>
+                                                <strong>
+                                                    <c:if test="${sessionScope.disTotalPrice >= 50000}">
+                                                        <span class="text-grey">
+                                                            <s>+ <fmt:formatNumber value="3000" pattern="###,###"/> ￦</s>
+                                                        </span>
+                                                        ￦<fmt:formatNumber value="0" pattern="###,###"/>
+                                                    </c:if>
+                                                    <c:if test="${sessionScope.disTotalPrice < 50000}">
+                                                        <fmt:formatNumber value="3000" pattern="###,###"/> ￦</c:if>
+                                                </strong>
+                                            </li>
+                                            <li class="d-flex justify-content-between py-3 border-bottom">
+                                                <strong class="text-muted">Discount</strong>
+                                                <strong class="red"><fmt:formatNumber value="${sessionScope.totalAmount - sessionScope.disTotalPrice}" pattern="###,###"/> ￦</strong>
+                                            </li>
+                                            <li class="d-flex justify-content-between py-3 border-bottom">
+                                                <strong class="text-muted">Total</strong>
+                                                <strong>
+                                                    <c:if test="${sessionScope.disTotalPrice >= 50000}">
+                                                        <h5 class="font-weight-bold"><fmt:formatNumber value="${sessionScope.disTotalPrice}" pattern="###,###"/> ￦</h5>
+                                                    </c:if>
+                                                    <c:if test="${sessionScope.disTotalPrice < 50000}">
+                                                         <h5 class="font-weight-bold"><fmt:formatNumber value="${sessionScope.disTotalPrice + 3000}" pattern="###,###"/> ￦</h5>
+                                                    </c:if>
+                                                </strong>
+                                                <%-- <h5 class="font-weight-bold"><fmt:formatNumber value="${sessionScope.disTotalPrice}" pattern="###,###"/> ￦</h5> --%>
+                                            </li>
+                                        </ul>
+                                        <%-- <form id="order" action="<%=YesForm%>" method="post"> --%>
+                                            <button type="button" class="btn btn-dark rounded-pill py-2 btn-block"> 주문 하기 </button>
+                                        <!-- </form> -->
                                     </div>
                                 </div>
                             </div>
@@ -380,21 +197,24 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- all js here -->
-    <script src="assets/js/vendor/jquery-1.12.0.min.js"></script>
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/ajax-mail.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+ <script>
+        var command = "<input type='hidden' name='command' value='payment'>";
+        var directbuy = "<input type='hidden' name='directbuy' value='-1'>"
+
+        function goOrder(){
+            $("#order").append(command);
+            $("#order").append(directbuy);
+            $("#order").append("<input type='hidden' name='regular' value='-1'>");
+            $("#order").submit();
+        }
+
+        function goReguler(){
+            $("#reguler").append(command);
+            $("#reguler").append(directbuy);
+            $("#reguler").append("<input type='hidden' name='regular' value='1'>");
+            $("#reguler").submit();
+        }
+    </script>
 </body>
-
 </html>

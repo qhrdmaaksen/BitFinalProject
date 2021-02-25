@@ -8,9 +8,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
-
-
-
 <!-- whologin 변수는 로그인 상태를 저장하고 있는 변수입니다. -->
 <c:set var="whologin" value="0" />
 <c:if test="${empty sessionScope.loginfo}">
@@ -32,7 +29,6 @@
 <!-- 네비게이션 안에 장바구니 품목 갯수 구하기 -->
 <c:set var="cnt" value="0"/>
 <c:if test="${not empty sessionScope.pcnt}">
-	<!-- 로그인 하지 않은 경우 -->
 	<c:set var="cnt" value="${sessionScope.pcnt}" />
 </c:if>
 
@@ -241,7 +237,7 @@
 			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/login.me" class="link_menu">로그인</a> <!----></li> <!----> 
 		</c:if>
 		<c:if test="${whologin != 0 }">
-			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/logout.me" class="link_menu">로그아웃</a> <!----></li> <!----> 
+			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/logout.me?mid=${sessionScope.loginfo.mid}" class="link_menu">로그아웃</a> <!----></li> <!----> 
 		</c:if>
 		<li class="menu lst"><a href="" class="link_menu">고객센터</a> <ul class="sub">
 		</ul></li></ul>
@@ -272,7 +268,7 @@
                                 <div class="main-menu">
 									<nav>
                                             <ul>
-                                                <li><a href="#">Features <i class="ion-ios-arrow-down"></i></a>
+                                                <li><a href="<%=contextPath%>/plist.pr"> 전체 카테고리 <i class="ion-ios-arrow-down"></i></a>
                                                     <ul class="mega-menu">
                                                         <li>
                                                             <ul>
@@ -315,12 +311,12 @@
                                                     </ul>
                                                 </li>
 												
-                                                <li><a href="about-us.html">about us </a></li>
+                                                <li><a href="about-us.html"> about us </a></li>
 												
-                                                <li><a href="<%=contextPath%>/plist.pr">Shop</a></li>
+                                                <li><a href="<%=contextPath%>/plist.pr"> 인기상품? </a></li>
 						
-                                                <li><a href="contact.html">contact us</a></li>
-                                            </ul>
+                                                <li><a href="<%=contextPath%>/mypage.me?mid=${sessionScope.loginfo.mid}"> 마이페이지 </a></li>
+                                            </ul>```
                                         </nav>
                                 </div>
                             </div>
@@ -355,10 +351,10 @@
                                                     </span>
                                                 </a>
 
-                                                <%--<ul class="ht-dropdown main-cart-box">
+                                                <ul class="ht-dropdown main-cart-box">
                                                     <li>
                                                         <!-- Cart Box Start -->
-                                                         <div class="single-cart-box">
+                                                       <%--  <div class="single-cart-box">
                                                             <div class="cart-img">
                                                                 <a href="#">
                                                                     <img alt="cart-image" src="<%=contextPath%>/resources/assets/img/products/mini1.jpg">
@@ -404,10 +400,10 @@
                                                                 <a href="cart.html" class="checkout">View cart</a>
                                                                 <a href="checkout.html" class="checkout">Checkout</a>
                                                             </div>
-                                                        </div> 
+                                                        </div> --%>
                                                         <!-- Cart Footer Inner End -->
                                                     </li>
-                                                </ul>--%>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
