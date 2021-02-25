@@ -11,12 +11,12 @@
 		where mid = #{mid}
 	</select>
 	
-	<select id="selectAllAddress" parameterType="MyMember" resultType="MyMember">
+<!-- 	<select id="selectAllAddress" parameterType="MyMember" resultType="MyMember">
 		select 
 		from adresses
 		where id = #{id}
 
-	</select>
+	</select> -->
 		
 </mapper>
 
