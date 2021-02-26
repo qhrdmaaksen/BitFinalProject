@@ -66,10 +66,8 @@
         	$('#addrChange').on("click" , function(){
         		var text = $("#inputValue input").eq(0).val();
         		$("#address2").text(text);
-        	});
-			$('#addrChange').click(function(){
     			$('#myModal').modal('hide');
-    		});
+        	});
         });
     </script>
     <style type="text/css">
@@ -154,8 +152,7 @@
 											      	<input type="text" value="" placeholder="여기에 상세주소를 입력해주세요.">
 											      </div>
 											      <div class="modal-footer">
-											        <button id="addrChange" type="button" class="btn btn-primary">변경</button>
-											        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+											        <button id="addrChange" type="button" class="btn btn-primary" data-dismiss="modal">변경하기</button>
 											      </div>
 											    </div>
 											  </div>
