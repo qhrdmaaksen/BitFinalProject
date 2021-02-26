@@ -23,13 +23,31 @@
 		address2 = #{address2}
 		where mid = #{mid}
 	</update>
+
+	<!-- 경희 수정 부분 -->
+	<select id="SelectAllAddress" parameterType="MyAddress" resultType="MyAddress">
+		select  * 
+		from addresses
+
 <!-- 	<select id="selectAllAddress" parameterType="MyMember" resultType="MyMember">
 		select 
 		from adresses
-		where id = #{id}
 
-	</select> -->
+		where id = #{id}
 		
+
+	
+	</select>
+	
+	<select id="SelectDataByPk2" parameterType="MyAddress" resultType="MyAddress">
+		select  seq_add, id, shippingname, name, address1, address2, phone
+		from addresses
+		where id = #{id} -->
+		
+	
+	</select>
+
+
 </mapper>
 
 

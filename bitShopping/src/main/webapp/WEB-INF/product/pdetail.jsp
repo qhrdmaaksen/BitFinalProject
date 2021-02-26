@@ -426,8 +426,10 @@ body, input, select, textarea, button {
 			<!--Review And Description Tab Content End-->
 			<!----------------------------------------------------- 상품 후기 리스트  ------------------------------------------------------------------------------------>
 	<form name="frmList">
+	<form:form modelAttribute="productreviews" name="myform"
+									action="${contextPath}/list.prr" method="get">
 		<input type="hidden" name="sort" value=""> 
-		<inputtype="hidden" name="page_num" value=""> 
+		<input type="hidden" name="page_num" value=""> 
 		<input type="hidden"name="goodsno" value="13677">
 		<div class="title_txt">
 			<h2>PRODUCT REVIEW LIST</h2>
@@ -558,8 +560,13 @@ body, input, select, textarea, button {
 		<td><span class="breview">$requestScope.productreviews.breview}</span></td>
 		</tr>
 	</c:forEach>
+	
 	</tbody>
+	
 </table>
+</div>
+</div>
+</form:form>
 
 <%-- <div id="foot">
 	<a href="<%=contextPath%>/insert.prr">상품 후기 작성</a>
