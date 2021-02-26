@@ -194,9 +194,9 @@
                                                 <%-- <h5 class="font-weight-bold"><fmt:formatNumber value="${sessionScope.disTotalPrice}" pattern="###,###"/> ￦</h5> --%>
                                             </li>
                                         </ul>
-                                        <%-- <form id="order" action="<%=YesForm%>" method="post"> --%>
-                                            <button type="button" class="btn btn-dark rounded-pill py-2 btn-block"> 주문 하기 </button>
-                                        <!-- </form> -->
+                                        <form id="order" action="<%=YesForm%>" method="post">
+                                            <button type="button" class="btn btn-dark rounded-pill py-2 btn-block" onclick="goOrder()"> 주문 하기 </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -206,22 +206,25 @@
             </div>
 
  <script>
-        var command = "<input type='hidden' name='command' value='payment'>";
-        var directbuy = "<input type='hidden' name='directbuy' value='-1'>"
+        var command = "<input type='hidden' name='command' value='mypayments'>";
+       /*  var directbuy = "<input type='hidden' name='directbuy' value='-1'>" */
 
         function goOrder(){
-            $("#order").append(command);
+    	   
+    	   location.href ="payment.pm" ;
+    	   
+          /*   $("#order").append(command);
             $("#order").append(directbuy);
             $("#order").append("<input type='hidden' name='regular' value='-1'>");
-            $("#order").submit();
+            $("#order").submit(); */
         }
 
-        function goReguler(){
+        /* function goReguler(){
             $("#reguler").append(command);
             $("#reguler").append(directbuy);
             $("#reguler").append("<input type='hidden' name='regular' value='1'>");
             $("#reguler").submit();
-        }
+        } */
     </script>
 </body>
 </html>

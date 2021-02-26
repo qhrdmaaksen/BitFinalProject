@@ -5,7 +5,9 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>
         //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
         function sample4_execDaumPostcode() {
@@ -33,16 +35,9 @@
                     }
 
                     // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                    document.getElementById('sample4_postcode').value = data.zonecode;
-                    document.getElementById("sample4_roadAddress").value = roadAddr;
-                    document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
-
-                    // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-                    if(roadAddr !== ''){
-                        document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-                    } else {
-                        document.getElementById("sample4_extraAddress").value = '';
-                    }
+                    document.getElementById('zipcode').textContent = data.zonecode;
+                    document.getElementById("address1").textContent = roadAddr;
+                    document.getElementById("address2").textContent = "상세주소변경 여기를 클릭해주세요";
 
                     var guideTextBox = document.getElementById("guide");
                     // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
@@ -62,6 +57,18 @@
                 }
             }).open();
         }
+        function address2click() {
+			/* alert('아래 상세주소 변경클릭.'); */
+			//$('#myModal').modal("show");
+			$("#modalBtn").click();
+		}
+        $(document).ready(function(){
+        	$('#addrChange').on("click" , function(){
+        		var text = $("#inputValue input").eq(0).val();
+        		$("#address2").text(text);
+    			$('#myModal').modal('hide');
+        	});
+        });
     </script>
     <style type="text/css">
     	.con{
@@ -87,72 +94,89 @@
     
 </head>
 <body>
-
-		<div class="tab-content dashboard-content">
-	  		<div id="dashboard" class="tab-pane fade show active">
-                 <table>
-                  	<tr>
-                      <td>
-                      <!-- 내용 들어갈 공간 -->
-                         <div class="col-sm col-sm-10">
-						    <form  method="get" action="<%=contextPath%>/address.ad">
-						    	<input type="hidden" name="address" value="address">
-						        <div class="panel panel-success">
-						            <div class="panel-heading">
-						                <h3 class="panel-title" style="font-weight: bold;">
-						                    ${sessionScope.loginfo.name} 님 배송지 관리 페이지입니다.
-						                </h3>
-						                <h6 style="color: black">배송지에 따라 상품 정보가 달라질 수 있습니다.</h6>
-						            </div>
-						            <div class="panel-body">
-						                <div class="table-responsive">
-						                    <table class="table table-condensed">
-						                        <thead>
-						                            <tr style="font-weight: bolder;">
-						                                <td class="text-center">수령인</td>
-						                                <td class="text-center">전화번호</td>
-						                                <td class="text-center">배송주소</td>
-						                                <td class="text-center">배송 상세주소</td>
-						                            </tr>
-						                        </thead>
-						                        <tbody>
-							                        <tr class="record">
-							                            <td align="center">${lists.name}</td>
-							                            <td align="center">${lists.phone}</td>
-							                            <td align="center">${lists.address1}</td>
-							                            <td align="center">${lists.address2}</td>
-							                        </tr>
-						                        </tbody>
-						                    </table>
-	                    <!-- <input type="text" id="sample4_postcode" placeholder="우편번호">
-	                    <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-	                    <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-	                    <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
-	                    <span id="guide" style="color:#999;display:none"></span>
-	                    <input type="text" id="sample4_detailAddress" placeholder="상세주소">
-	                    <input type="text" id="sample4_extraAddress" placeholder="참고항목"> -->
-										                    <div align="center">
-											                    <button class="w3-btn w3-white w3-border w3-border-purple w3-round-large"
-											                                type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-											                                    id="shippingchange">
-											                        <span>배송지 변경</span>
-											                    </button>
-										                    </div>
-										                </div>
-										            </div>
-										        </div>
-										    </form>
-									    </div>
-									    <!-- 내용끝나는 곳 -->
-                            		</td>	
-                               	</tr>
-                            </table>
-                          </div>
-                      <div id="orders" class="tab-pane fade">
-				</div>
+	<div class="tab-content dashboard-content">
+		<div id="dashboard" class="tab-pane fade show active">
+			<table>
+				<tr>
+					<td>
+						<!-- 내용 들어갈 공간 -->
+						<div class="col-sm col-sm-10">
+							<form method="get" action="<%=contextPath%>/address.ad">
+								<input type="hidden" name="address" value="address">
+								<div class="panel panel-success">
+									<div class="panel-heading">
+										<h3 class="panel-title" style="font-weight: bold;">
+											${sessionScope.loginfo.name} 님 배송지 관리 페이지입니다.</h3>
+										<h6 style="color: black">배송지에 따라 상품 정보가 달라질 수 있습니다.</h6>
+									</div>
+									<div class="panel-body">
+										<div class="table-responsive">
+											<table class="table table-condensed">
+												<thead>
+													<tr style="font-weight: bolder;">
+														<td class="text-center">수령인</td>
+														<td class="text-center">전화번호</td>
+														<td class="text-center">우편번호</td>
+														<td class="text-center">배송주소</td>
+														<td class="text-center">배송 상세주소</td>
+													</tr>
+												</thead>
+												<tbody>
+													<tr class="record">
+														<td align="center">${lists.name}</td>
+														<td align="center">${lists.phone}</td>
+														<td id="zipcode" align="center">${lists.zipcode}</td>
+														<td id="address1" align="center">${lists.address1}</td>
+														<td id="address2" align="center" onclick="address2click()">${lists.address2}</td>
+													</tr>
+												</tbody>
+											</table>
+											<!-- Trigger the modal with a button -->
+											<div align="right" style="display: none">
+												<button id="modalBtn" type="button" class="btn btn-info btn-lg" style="margin-bottom: 20; margin-top: 10; font-size: 10;"
+													data-toggle="modal" data-target="#myModal">
+														<span style="margin-bottom: 20;">상세 주소 변경</span>
+												</button>
+											</div>
+											
+											<!-- Modal -->
+											<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+											  <div class="modal-dialog modal-dialog-centered" role="document">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											          <span aria-hidden="true">&times;</span>
+											        </button>
+											      </div>
+											      <div class="modal-body" id="inputValue">
+											      	<input type="text" value="" placeholder="여기에 상세주소를 입력해주세요.">
+											      </div>
+											      <div class="modal-footer">
+											        <button id="addrChange" type="button" class="btn btn-primary" data-dismiss="modal">변경하기</button>
+											      </div>
+											    </div>
+											  </div>
+											</div>
+											<div>
+											</div>
+											<span id="guide" style="color: #999; display: none"></span>
+											<div align="center">
+												<input
+													class="w3-btn w3-white w3-border w3-border-purple w3-round-large"
+													type="button" id="shippingchange"
+													onclick="sample4_execDaumPostcode()" value="배송지 변경" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div> <!-- 내용끝나는 곳 -->
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="orders" class="tab-pane fade"></div>
 	</div>
-</div>
-
 </body>
- <%@ include file="./../common/footer.jsp" %> 
+<%@ include file="./../common/footer.jsp" %> 
 </html>

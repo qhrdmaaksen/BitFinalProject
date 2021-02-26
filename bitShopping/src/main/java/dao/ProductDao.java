@@ -42,8 +42,9 @@ public class ProductDao {
 		return this.abcd.selectList(namespace + "SelectDataList", map, rowBounds);
 	}	
 
-	public Product SelectDataByPk(int num) {
-		return this.abcd.selectOne(namespace + "SelectDataByPk", num);
+	//int = num 을 int = productcode 로 바꿔줌 
+	public Product SelectDataByPk(int productcode) {
+		return this.abcd.selectOne(namespace + "SelectDataByPk", productcode);
 	}
 	
 	public int UpdateData(Product bean) {

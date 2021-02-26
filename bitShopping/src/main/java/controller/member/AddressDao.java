@@ -1,7 +1,5 @@
 package controller.member;
 
-import java.util.List;
-
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -26,6 +24,26 @@ public class AddressDao extends SuperDao{
 	}
 
 
+	public Member SelectDataByPk(String mid) {
+		return this.abcd.selectOne(namespace + ".SelectDataByPk" , mid);
+	}
+
+	public int ShippingUpdataData(Member bean) {
+		return this.abcd.update(namespace + ".ShippingUpdataData" , bean);
+	}
+
+
+	// 경희 수정 부분 
+	public Address SelectDataByPk2(String id) {
+		return this.abcd.selectOne(namespace + ".SelectDataByPk2" , id);
+	}
+
+
+	public Object SelectAllAddress(String id) {
+		return this.abcd.selectList(namespace + ".SelectAllAddress", id);
+	}
+
+
 	/*
 	 * public List<Address> SelectAllAddress(String mid) { return
 	 * this.abcd.selectOne(namespace, ".SelectAllAddress"); }
@@ -34,5 +52,6 @@ public class AddressDao extends SuperDao{
 	 * public Address SelectDataByPk(String id) { return
 	 * this.abcd.selectOne(namespace + ".SelectDataByPk",id); }
 	 */
+
 	
 }

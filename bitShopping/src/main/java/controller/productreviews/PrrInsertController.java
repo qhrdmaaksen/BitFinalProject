@@ -19,7 +19,7 @@ import dao.ProductreviewsDao;
 public class PrrInsertController extends SuperClass {
 	private final String command ="/insert.prr";
 	private ModelAndView mav = null;
-	private String redirect = "redirect:/insert.prr";
+	private String redirect = "redirect:/plist.pr";
 	
 	@ModelAttribute("productreviews")
 	public Productreviews myproductreviews() {
@@ -36,14 +36,6 @@ public class PrrInsertController extends SuperClass {
 		this.mav = new ModelAndView();
 		
 	}
-	
-	@GetMapping(command)
-	public ModelAndView doGet() {
-		this.mav.setViewName(super.getpage);
-		System.out.println("doGet 메소드");
-		return this.mav;
-	}
-	
 	@PostMapping(command)
 	public ModelAndView doPost(
 		@ModelAttribute("productreviews") @Valid Productreviews bean,
@@ -61,7 +53,7 @@ public class PrrInsertController extends SuperClass {
 			cnt = prrdao.InsertData(bean);
 			
 			//request 객체의 내용을 보존하면서 목록 보기 페이지로 넘겨 준다
-			this.mav.setViewName(this.redirect+"");
+			this.mav.setViewName(this.redirect);
 		}
 		return this.mav;
 	}
