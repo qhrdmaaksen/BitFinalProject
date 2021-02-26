@@ -36,7 +36,33 @@
  		  background: url(https://res.kurly.com/pc/service/main/1908/ico_prev1_x2.png) no-repeat 50% 50%;
   		  background-size: 52px 52px;
 	}
+	.row img{
+		width: 250px !important;
+		height: 320px !important;
+	}
+
+	 <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="<%=contextPath%>/resources/assets/img/favicon.png">
+
+    <!-- all css here -->
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/animate.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/chosen.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/fontawesome-all.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/tippy.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/bundle.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/easyzoom.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/style.css">
+    <link rel="stylesheet" href="<%=contextPath%>/resources/assets/css/responsive.css">
+    <script src="<%=contextPath%>/resources/assets/js/vendor/modernizr-2.8.3.min.js"></script>
  </style>
+	
 	
 </head>
 <body>
@@ -80,6 +106,167 @@
   </a>
 </div>
 
+<br><br><br>
+
+
+
+
+ <!-- may also like product start -->
+        <div class="product-area pb-65   product-padding">
+            <div class="container">
+                <div class="section-title-2 text-center mb-25">
+                    <h2 class="m-0">간식 추천</h2>
+                    <p>컬리가 추천하는 지루한 오후를 위한 간식 추천</p>
+                </div>
+
+                <div class="row">
+                    <div class="product-slider-active owl-carousel">
+	                    <c:forEach var="bean" items="${requestScope.lists3}">
+	                        <div class="col-lg-4 col-md-6 col-12">
+	                            <div class="product-wrapper mb-35">
+	                                <div class="product-img">
+	                                    <a href="<%=contextPath%>/pdetail.pr?pno=${bean.pno}">
+	                                        <span class="onsale">Sale!</span>
+	                                        <img alt="" src="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}">
+	                                    </a>
+	                                    <div class="product-action-2">
+	                                        <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-refresh"></i>
+	                                        </a>
+	                                        <a href="#" title="Add to Wishlist" class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-favorite-outline"></i>
+	                                        </a>
+	                                        <a href="#" title="Quick View" data-target="#exampleModal" data-toggle="modal" class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-search"></i>
+	                                        </a>
+	                                        <a href="#" title="Add To Cart"  class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-shopping-cart-plus"></i>
+	                                        </a>
+	                                    </div>
+	                                    <div class="rating-box">
+	                                        <a href="#" title="1 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                        <a href="#" title="2 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                        <a href="#" title="3 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                        <a href="#" title="4 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                        <a href="#" title="5 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                    </div>
+	                                </div>
+	                                <div class="product-content text-center">
+	                                    <h4>
+	                                        <a href="<%=contextPath%>/pdetail.pr?pno=${bean.pno}">${bean.productname}</a>
+	                                    </h4>
+	                                    <div class="product-price-2">
+	                                        <div class="price-box">
+	                                            <del>
+	                                                <span class="amount">
+	                                                    <span class="Price-currencySymbol"></span><fmt:formatNumber value="${bean.price}" pattern="#,##0" /> 원</span>
+	                                            </del>
+	                                            <ins>
+	                                                <span class="amount">
+	                                                    <span class="Price-currencySymbol"></span><fmt:formatNumber value="${bean.price*0.85}" pattern="#,##0" /> 원</span>
+	                                            </ins>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                      </c:forEach>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+ <!-- may also like product start -->
+        <div class="product-area pb-65   product-padding">
+            <div class="container">
+                <div class="section-title-2 text-center mb-25">
+                    <h2 class="m-0">신선식품 추천</h2>
+                    <p>컬리가 추천하는 건강을 위한 신선식품 추천</p>
+                </div>
+
+                <div class="row">
+                    <div class="product-slider-active owl-carousel">
+	                    <c:forEach var="bean" items="${requestScope.lists2}">
+	                        <div class="col-lg-4 col-md-6 col-12">
+	                            <div class="product-wrapper mb-35">
+	                                <div class="product-img">
+	                                    <a href="<%=contextPath%>/pdetail.pr?pno=${bean.pno}">
+	                                        <span class="onsale">Sale!</span>
+	                                        <img alt="" src="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}">
+	                                    </a>
+	                                    <div class="product-action-2">
+	                                        <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-refresh"></i>
+	                                        </a>
+	                                        <a href="#" title="Add to Wishlist" class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-favorite-outline"></i>
+	                                        </a>
+	                                        <a href="#" title="Quick View" data-target="#exampleModal" data-toggle="modal" class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-search"></i>
+	                                        </a>
+	                                        <a href="#" title="Add To Cart"  class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-shopping-cart-plus"></i>
+	                                        </a>
+	                                    </div>
+	                                    <div class="rating-box">
+	                                        <a href="#" title="1 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                        <a href="#" title="2 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                        <a href="#" title="3 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                        <a href="#" title="4 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                        <a href="#" title="5 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                    </div>
+	                                </div>
+	                                <div class="product-content text-center">
+	                                    <h4>
+	                                        <a href="<%=contextPath%>/pdetail.pr?pno=${bean.pno}">${bean.productname}</a>
+	                                    </h4>
+	                                    <div class="product-price-2">
+	                                        <div class="price-box">
+	                                            <del>
+	                                                <span class="amount">
+	                                                    <span class="Price-currencySymbol"></span><fmt:formatNumber value="${bean.price}" pattern="#,##0" /> 원</span>
+	                                            </del>
+	                                            <ins>
+	                                                <span class="amount">
+	                                                    <span class="Price-currencySymbol"></span><fmt:formatNumber value="${bean.price*0.85}" pattern="#,##0" /> 원</span>
+	                                            </ins>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                      </c:forEach>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
 <%@ include file="/WEB-INF/common/footer.jsp" %>
 
@@ -102,6 +289,20 @@
 <a href="<%=contextPath%>/address.ad">배송지 관리 페이지 보기</a>
 <br><br><br>
 <a href="<%=contextPath%>/service.sr"> 1:1문의 Page</a>
+
+    <!-- all js here -->
+    <script src="<%=contextPath%>/resources/assets/js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/popper.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/bootstrap.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/isotope.pkgd.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/jquery.counterup.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/waypoints.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/ajax-mail.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/owl.carousel.min.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/plugins.js"></script>
+    <script src="<%=contextPath%>/resources/assets/js/main.js"></script>
+
 </body>
 </html>
 

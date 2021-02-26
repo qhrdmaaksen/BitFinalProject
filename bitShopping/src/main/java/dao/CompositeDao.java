@@ -4,15 +4,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.session.RowBounds;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import bean.Postcode;
+import bean.Product;
 
 @Component("cdao")
 public class CompositeDao {
 	private final String namespace = "MapperComposite" ;	
+
+	
 	
 	@Autowired
 	SqlSessionTemplate abcd;
@@ -27,7 +31,50 @@ public class CompositeDao {
 		map.put("dong", "%" + dong + "%");
 		return this.abcd.selectList(namespace + ".SelectDataByPk" , map);
 		
-		
 	}
+
+//	public List<Product> SelectDataList1() { // 가장 많이 팔린 순서
+//		return this.abcd.selectList(namespace + ".SelectDataList1");
+//	}
+	public List<Product> SelectDataList2(String mode1, String mode2) { // 과일 & 채소 목록
+		//System.out.println("여기까지는 왔나");
+		Map<String, String> map1 = new HashMap<String, String>() ;
+		map1.put("mode1", mode1) ;
+		map1.put("mode2", mode2) ;
+		//System.out.println(mode1);
+		//System.out.println(mode2);
+		return this.abcd.selectList(namespace + ".SelectDataList2", map1);
+	}
+	public List<Product> SelectDataList3(String mode3, String mode4) { // 베이커리 & 간식 목록
+		Map<String, String> map2 = new HashMap<String, String>() ;
+		map2.put("mode3", mode3) ;
+		map2.put("mode4", mode4) ;
+		return this.abcd.selectList(namespace + ".SelectDataList3", map2);
+	}
+//	public List<Product> SelectDataList4() {
+//		return this.abcd.selectList(namespace + ".SelectDataList4");
+//	}
+//	public List<Product> SelectDataList5() {
+//		return this.abcd.selectList(namespace + ".SelectDataList5");
+//	}
+//	public List<Product> SelectDataList6() {
+//		return this.abcd.selectList(namespace + ".SelectDataList6");
+//	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
