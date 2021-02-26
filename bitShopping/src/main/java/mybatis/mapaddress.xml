@@ -11,10 +11,6 @@
 		where mid = #{mid}
 	</select>
 	
-<<<<<<< HEAD
-
-=======
->>>>>>> f21b4ca3055d67e8ebcc206daf83f7308ad72cb5
 	<select id="SelectDataByPk" parameterType="MyMember" resultType="MyMember">
 		select * from members
 		where mid = #{mid}
@@ -27,33 +23,31 @@
 		address2 = #{address2}
 		where mid = #{mid}
 	</update>
-<<<<<<< HEAD
-	
+
 	<!-- 경희 수정 부분 -->
 	<select id="SelectAllAddress" parameterType="MyAddress" resultType="MyAddress">
 		select  * 
 		from addresses
-=======
+
 <!-- 	<select id="selectAllAddress" parameterType="MyMember" resultType="MyMember">
 		select 
 		from adresses
->>>>>>> f21b4ca3055d67e8ebcc206daf83f7308ad72cb5
+
 		where id = #{id}
 		
-<<<<<<< HEAD
+
 	
 	</select>
 	
 	<select id="SelectDataByPk2" parameterType="MyAddress" resultType="MyAddress">
 		select  seq_add, id, shippingname, name, address1, address2, phone
 		from addresses
-		where id = #{id}
+		where id = #{id} -->
 		
 	
 	</select>
 
-=======
->>>>>>> f21b4ca3055d67e8ebcc206daf83f7308ad72cb5
+
 </mapper>
 
 
