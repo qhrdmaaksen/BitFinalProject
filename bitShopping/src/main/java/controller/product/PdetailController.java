@@ -36,6 +36,8 @@ public class PdetailController extends SuperClass{
 			@RequestParam(value = "pno", required = true) int pno
 			){
 		Product bean  = dao.SelectDataByPk( pno );
+		mav.addObject("pno", pno);
+				
 		
 		if( bean != null){ //상세 보기로 이동			 
 			mav.addObject("bean", bean);

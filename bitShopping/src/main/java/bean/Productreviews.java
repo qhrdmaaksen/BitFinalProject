@@ -19,12 +19,22 @@ public class Productreviews {
 	@Pattern(regexp = "\\d{4}[-/]\\d{2}[-/]\\d{2}" , message = "날짜는 yyyy/MM/dd 또는 yyyy-MM-dd 형식으로 입력해 주세요.")
 	private String bregdate;
 	
+	private int pno ; // 상품 번호
+	
+	public int getPno() {
+		return pno;
+	}
+
+	public void setPno(int pno) {
+		this.pno = pno;
+	}
+
 	public Productreviews() {
 		
 	}
 
 	public Productreviews(int bno, String btitle, String bwriter, String bcontent, String bimg, int breview,
-			String bregdate) {
+			String bregdate, int pno) {
 		
 		this.bno = bno;
 		this.btitle = btitle;
@@ -33,6 +43,7 @@ public class Productreviews {
 		this.bimg = bimg;
 		this.breview = breview;
 		this.bregdate = bregdate;
+		this.pno =pno;
 	}
 
 	@Override
