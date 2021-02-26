@@ -156,8 +156,11 @@
 	}
 	a {
 	    background-color: transparent;
-	    text-decoration: none;
+	    text-decoration: none !important;
 	    color: inherit;
+	}
+	.main-menu ul li a {
+		font-size: 17px;
 	}
 	h1{   
 		position: absolute;
@@ -207,9 +210,9 @@
 	    line-height: 35px;
 	    white-space: nowrap;
 	}
-	#userMenu .menu_join .link_menu {
+	/* #userMenu .menu_join .link_menu {
 	    color: #5f0080;
-	}
+	} */
 	#userMenu .menu_login .link_menu {
 	    padding: 0 16px 0 15px;
 	}
@@ -223,6 +226,10 @@
 	    float: left;
 	    font-weight: 700;
 	    border-bottom: 0;
+	}
+	a:hover {
+	    color: #8B008B !important;
+	    text-decoration: none !important;
 	}
 
 	/* 추가 */
