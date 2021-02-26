@@ -358,7 +358,7 @@ body, input, select, textarea, button {
                                                             <i class="fa fa-star-o"></i>
                                                         </div> -->
 													<p class="meta">
-
+														<input name="pno" id="pno" type="hidden" value="${bean.pno}">
 														<strong>
 															<div>
 																<input type="text" class="form-control"

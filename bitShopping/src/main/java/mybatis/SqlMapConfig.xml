@@ -11,7 +11,7 @@
 		<typeAlias alias="MyCheckBean" type="bean.CheckBean" />
 		<typeAlias alias="MyProduct" type="bean.Product" />
 		<typeAlias alias="MyProductreviews" type="bean.Productreviews" />
-		<typeAlias alias="Mypayments" type="bean.Mypayments"/>
+		<typeAlias alias="Mypayments" type="bean.Mypayments"/> 
 		<typeAlias alias="MyShopInfo" type="shopping.ShoppingInfo"/>
 		<typeAlias alias="MyAddress" type="bean.Address"/>
 		<!-- <typeAlias alias="MyService" type="bean.Serivce"/> -->
