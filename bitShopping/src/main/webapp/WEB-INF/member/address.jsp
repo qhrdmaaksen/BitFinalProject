@@ -37,7 +37,7 @@
                     // 우편번호와 주소 정보를 해당 필드에 넣는다.
                     document.getElementById('zipcode').textContent = data.zonecode;
                     document.getElementById("address1").textContent = roadAddr;
-                    document.getElementById("address2").textContent = "상세주소변경 여기를 클릭해주세요";
+                    document.getElementById("address2").textContent = "상세주소변경 여기를 클릭해주세요";//api 값적용시 상세주소란 내용변경
 
                     var guideTextBox = document.getElementById("guide");
                     // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
@@ -57,12 +57,12 @@
                 }
             }).open();
         }
-        function address2click() {
+        function address2click() {//상세주소란 클릭시 modal open
 			/* alert('아래 상세주소 변경클릭.'); */
 			//$('#myModal').modal("show");
 			$("#modalBtn").click();
 		}
-        $(document).ready(function(){
+        $(document).ready(function(){//모달활용 input text내용 td에 값넣기
         	$('#addrChange').on("click" , function(){
         		var text = $("#inputValue input").eq(0).val();
         		$("#address2").text(text);
