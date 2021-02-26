@@ -6,8 +6,8 @@
 <mapper namespace="MapProductreivews">
 
 	<insert id="InsertData" parameterType="MyProductreviews" >
-	insert into productreviews(bno, btitle, bwriter, bcontent, bimg, breview, bregdate)
-	values (seqbno.nextval, #{btitle}, #{bwriter}, #{bcontent,jdbcType=VARCHAR}, #{bimg,jdbcType=VARCHAR}, default, sysdate)
+	insert into productreviews(bno, btitle, bwriter, bcontent, bimg, breview, bregdate,pno)
+	values (seqbno.nextval, #{btitle}, #{bwriter}, #{bcontent,jdbcType=VARCHAR}, #{bimg,jdbcType=VARCHAR}, default, sysdate,#{pno})
 
 	</insert>
 	
