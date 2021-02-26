@@ -61,7 +61,7 @@ public class PrrInsertController extends SuperClass {
 			cnt = prrdao.InsertData(bean);
 			
 			//request 객체의 내용을 보존하면서 목록 보기 페이지로 넘겨 준다
-			this.mav.setViewName(this.redirect+"");
+			this.mav.setViewName(this.redirect);
 		}
 		return this.mav;
 	}
