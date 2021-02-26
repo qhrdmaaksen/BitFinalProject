@@ -25,7 +25,7 @@ public class AddressDao extends SuperDao{
 		return this.abcd.selectOne(namespace + ".SelectDataList" , member);
 	}
 
-<<<<<<< HEAD
+
 	public Member SelectDataByPk(String mid) {
 		return this.abcd.selectOne(namespace + ".SelectDataByPk" , mid);
 	}
@@ -33,7 +33,18 @@ public class AddressDao extends SuperDao{
 	public int ShippingUpdataData(Member bean) {
 		return this.abcd.update(namespace + ".ShippingUpdataData" , bean);
 	}
-=======
+
+
+	// 경희 수정 부분 
+	public Address SelectDataByPk2(String id) {
+		return this.abcd.selectOne(namespace + ".SelectDataByPk2" , id);
+	}
+
+
+	public Object SelectAllAddress(String id) {
+		return this.abcd.selectList(namespace + ".SelectAllAddress", id);
+	}
+
 
 	/*
 	 * public List<Address> SelectAllAddress(String mid) { return
@@ -43,6 +54,6 @@ public class AddressDao extends SuperDao{
 	 * public Address SelectDataByPk(String id) { return
 	 * this.abcd.selectOne(namespace + ".SelectDataByPk",id); }
 	 */
->>>>>>> f2958e877a79d4bc4b513960096b5e5ed82b6e27
+
 	
 }
