@@ -37,7 +37,7 @@ public class MAddressController extends SuperClass{
 			HttpSession session) {
 		
 		Member loginfo = (Member)session.getAttribute("loginfo"); 
-		System.out.println("id : "+loginfo.getMid());
+		System.out.println("mid : "+loginfo.getMid());
 		
 		//가져올 정보들의 다리역할
 		Member userInfo = adao.SelectDataList(loginfo);

@@ -45,6 +45,13 @@
 		.p-5 {
    			padding: 2rem!important;
 		}
+		h5, h6 {
+		    color: #303030;
+		    font-weight: 400;
+		    letter-spacing: 0;
+		    line-height: 1.35;
+		    margin: 0 0 5px;
+		}
     </style>
 </head>
 <body id="cartlist_body">
@@ -88,7 +95,7 @@
                                                                 <img src="<%=contextPath%>/resources/assets/img/products/${shopinfo.pimg}"
                                                                      alt="" width="70" class="img-fluid rounded shadow-sm">
                                                                 <div class="ml-3 d-inline-block align-middle">
-                                                                    <h5 class="mb-0"><a href="#"
+                                                                    <h5 class="mb-0"><a href="<%=contextPath%>/pdetail.pr?pno=${shopinfo.productcode}"
                                                                                         class="text-dark d-inline-block align-middle">
                                                                             ${shopinfo.productname}</a></h5>
                                                                     <span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
@@ -97,7 +104,7 @@
                                                         </th>
                                                         <td class="border-0 align-middle">
                                                             <span class="text-danger mr-1 ">
-                                                                <strong><fmt:formatNumber value="${shopinfo.price*(1-shopinfo.discount)}" pattern="###,###"/> ￦</strong>
+                                                                <strong><fmt:formatNumber value="${shopinfo.price *(1-shopinfo.discount)}" pattern="###,###"/> ￦</strong>
                                                             </span>
                                                             <span class="text-grey nodiscount"><s>
 																<fmt:formatNumber value="${shopinfo.price}" pattern="###,###"/> ￦

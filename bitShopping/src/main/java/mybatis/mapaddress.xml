@@ -6,11 +6,25 @@
 <mapper namespace="MapAddress">
 
 	<select id="SelectDataList" parameterType="MyMember" resultType="MyMember">
-		select name , address1 , address2 , phone
+		select name , zipcode , address1 , address2 , phone
 		from members
 		where mid = #{mid}
 	</select>
 	
+<<<<<<< HEAD
+	<select id="SelectDataByPk" parameterType="MyMember" resultType="MyMember">
+		select * from members
+		where mid = #{mid}
+	</select>
+	
+	<update id="ShippingUpdataData" parameterType="MyMember">
+		update members set
+		zipcode = #{zipcode} ,
+		address1 = #{address1} ,
+		address2 = #{address2}
+		where mid = #{mid}
+	</update>
+=======
 <!-- 	<select id="selectAllAddress" parameterType="MyMember" resultType="MyMember">
 		select 
 		from adresses
@@ -18,6 +32,7 @@
 
 	</select> -->
 		
+>>>>>>> f2958e877a79d4bc4b513960096b5e5ed82b6e27
 </mapper>
 
 

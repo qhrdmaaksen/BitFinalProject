@@ -33,16 +33,8 @@
                     }
 
                     // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                    document.getElementById('sample4_postcode').value = data.zonecode;
-                    document.getElementById("sample4_roadAddress").value = roadAddr;
-                    document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
-
-                    // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-                    if(roadAddr !== ''){
-                        document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-                    } else {
-                        document.getElementById("sample4_extraAddress").value = '';
-                    }
+                    document.getElementById('zipcode').value = data.zonecode;
+                    document.getElementById("address1").value = roadAddr;
 
                     var guideTextBox = document.getElementById("guide");
                     // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
@@ -87,6 +79,58 @@
     
 </head>
 <body>
+<<<<<<< HEAD
+	<div class="contater" align="center" style="width: 1300; position: relative; bottom: 420; left: 400;">
+	<div class="col-sm-offset-2 col-sm-8">
+	    <form  method="get" action="<%=contextPath%>/address.ad">
+	    	<input type="hidden" name="address" value="address">
+	        <div class="panel panel-success">
+	            <div class="panel-heading">
+	                <h3 class="panel-title" style="font-weight: bold;">
+	                    ${sessionScope.loginfo.name} 님 배송지 관리 페이지입니다.
+	                </h3>
+	                <h6 style="color: black">배송지에 따라 상품 정보가 달라질 수 있습니다.</h6>
+	            </div>
+	            <div class="panel-body">
+	                <div class="table-responsive">
+	                    <table class="table table-condensed">
+	                        <thead>
+	                            <tr style="font-weight: bolder;">
+	                                <td class="text-center">수령인</td>
+	                                <td class="text-center">전화번호</td>
+	                                <td class="text-center">우편번호</td>
+	                                <td class="text-center">배송주소</td>
+	                                <td class="text-center">배송 상세주소</td>
+	                            </tr>
+	                        </thead>
+	                        <tbody>
+		                        <tr class="record">
+		                            <td align="center">${lists.name}</td>
+		                            <td align="center">${lists.phone}</td>
+		                            <td id="zipcode" align="center">${lists.zipcode}</td>
+		                            <td id="address1" align="center">${lists.address1}</td>
+		                            <td id="sample4_detailAddress" align="center">${lists.address2}</td>
+		                        </tr>
+	                        </tbody>
+	                    </table>
+	                    <span id="guide" style="color:#999;display:none"></span>
+	                    <div align="center">
+		                    <input class="w3-btn w3-white w3-border w3-border-purple w3-round-large"
+		                                type="button" id="shippingchange" onclick="sample4_execDaumPostcode()" value="배송지 변경"/>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </form>
+    </div>
+    <table>
+    	<tr>
+    		<td style="position: relative; top: 400; right: 50;">
+    			<%@ include file="./../common/footer.jsp" %>
+    		</td>
+    	</tr>
+    </table>
+=======
 
 		<div class="tab-content dashboard-content">
 	  		<div id="dashboard" class="tab-pane fade show active">
@@ -151,6 +195,7 @@
                       <div id="orders" class="tab-pane fade">
 				</div>
 	</div>
+>>>>>>> f2958e877a79d4bc4b513960096b5e5ed82b6e27
 </div>
 
 </body>
