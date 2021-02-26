@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Benco - Furniture Bootstrap 4 HTML Template</title>
+    <title>3teamProductList</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -52,7 +52,7 @@
             <div class="title-breadcrumbs-inner">
                 <div class="container">
                     <nav class="woocommerce-breadcrumb">
-                        <a href="#">Home</a>
+                        <a href="<%=contextPath%>/main.cu">Home</a>
                         <span class="separator">/</span> Shop
                     </nav>
                 </div>
@@ -80,7 +80,6 @@
                                         <div class="tolbar__area">
                                             <div class="toolbar clearfix">
                                                 <div class="toolbar-inner">
-
                                                     <div class="shop-tab view-mode nav" role=tablist>
                                                         <a class="active" href="#product-grid" data-toggle="tab" role="tab" aria-selected="false">
                                                             <i class="ion-grid"></i>
@@ -117,24 +116,6 @@
 																onclick="writeForm();">상품 등록</button>
 														</c:if>
 													</form>
-													<%-- <form method="get" role="form" name="myform"
-														action="<%=contextPath%>/plist.pr" class="woocommerce-ordering hidden-xs">
-														<input type="hidden" name="command" value="plist.pr">
-                                                        <div class="orderby-wrapper">
-                                                            <select class="orderby" name="mode" id="mode">
-                                                                <option value="all" selected="selected">--
-																	선택하세요---------
-																<option value="productname">상품명</option>
-																<option value="pcategory">상품 종류</option>
-																<option value="pcontents">상품 내용</option>	
-                                                                <option value="popularity">인기종목</option>
-                                                                <option value="rating">인기많은 제품</option>
-                                                                <option value="date">날짜순서</option>
-                                                                <option value="price">높은 가격</option>
-                                                                <option value="price-desc">낮은 가격</option>
-                                                            </select>
-                                                        </div>
-                                                    </form> --%>
                                                 </div>
                                             </div>
                                         </div>
@@ -203,7 +184,7 @@
                                                         <p>
                                                         	${bean.pcontents}Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere
                                                             metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed
-                                                            sit amet sem vitae urna fringilla tempus.
+                                                            sit amet sem vitae urna fringilla tempus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere.
                                                         </p>
                                                         <div class="product-action-2">
                                                             <a href="#" title="Add To Cart"  class="action-plus-2 list_bg_add tooltip">
@@ -250,17 +231,12 @@
 											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 											<p class="form-control-static">${requestScope.pageInfo.pagingStatus}</p>
 										</form>
+									    <div style="margin-left: 300;">
+                                           ${requestScope.pageInfo.pagingHtml}
+		                                </div>
 									</td>
 								</tr>
 							</table>
-							  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div align="center">
-                                            ${requestScope.pageInfo.pagingHtml}
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -268,99 +244,9 @@
             </div>
         </div>
         <!-- modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span class="ion-android-close" aria-hidden="true"></span>
-                        </button>
-                        <div class="qwick-view-left">
-                            <div class="quick-view-learg-img">
-                                <div class="quick-view-tab-content tab-content">
-                                    <div class="tab-pane active show fade" id="modal1" role="tabpanel">
-                                        <img src="<%=contextPath%>/resources/assets/img/quick-view/l1.jpg" alt="">
-                                    </div>
-                                    <div class="tab-pane fade" id="modal2" role="tabpanel">
-                                        <img src="<%=contextPath%>/resources/assets/img/quick-view/l2.jpg" alt="">
-                                    </div>
-                                    <div class="tab-pane fade" id="modal3" role="tabpanel">
-                                        <img src="<%=contextPath%>/resources/assets/img/quick-view/l3.jpg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="quick-view-list nav" role="tablist">
-                                <a class="active" href="#modal1" data-toggle="tab">
-                                    <img src="<%=contextPath%>/resources/assets/img/quick-view/s1.jpg" alt="">
-                                </a>
-                                <a href="#modal2" data-toggle="tab">
-                                    <img src="<%=contextPath%>/resources/assets/img/quick-view/s2.jpg" alt="">
-                                </a>
-                                <a href="#modal3" data-toggle="tab">
-                                    <img src="<%=contextPath%>/resources/assets/img/quick-view/s3.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="qwick-view-right">
-                            <div class="qwick-view-content">
-                                <h3>Handcrafted Supper Mug</h3>
-                                <div class="price">
-                                    <span class="new">$90.00</span>
-                                    <span class="old">$120.00 </span>
-                                </div>
-                                <div class="rating-number">
-                                    <div class="quick-view-rating">
-                                        <i class="ion-ios-star red-star"></i>
-                                        <i class="ion-ios-star red-star"></i>
-                                        <i class="ion-ios-star red-star"></i>
-                                        <i class="ion-ios-star red-star"></i>
-                                        <i class="ion-ios-star red-star"></i>
-                                    </div>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do tempor incididun ut labore et dolore
-                                    magna aliqua. Ut enim ad mi , quis nostrud veniam exercitation .</p>
-                                <div class="quick-view-select">
-                                    <div class="select-option-part">
-                                        <label>Size*</label>
-                                        <select class="select">
-                                            <option value="">- Please Select -</option>
-                                            <option value="">900</option>
-                                            <option value="">700</option>
-                                        </select>
-                                    </div>
-                                    <div class="select-option-part">
-                                        <label>Color*</label>
-                                        <select class="select">
-                                            <option value="">- Please Select -</option>
-                                            <option value="">orange</option>
-                                            <option value="">pink</option>
-                                            <option value="">yellow</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="quickview-plus-minus">
-                                    <div class="cart-plus-minus">
-                                        <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                    </div>
-                                    <div class="quickview-btn-cart">
-                                        <a class="btn-style cr-btn" href="#">
-                                            <span>add to cart</span>
-                                        </a>
-                                    </div>
-                                    <div class="quickview-btn-wishlist">
-                                        <a class="btn-hover cr-btn" href="#">
-                                            <span>
-                                                <i class="ion-ios-heart-outline"></i>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div style="margin-left: 350;">
+		<%@ include file="./../common/footer.jsp" %> 
+	</div>
     </div>
 
 
@@ -377,5 +263,4 @@
     <script src="<%=contextPath%>/resources/assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
-
 </html>

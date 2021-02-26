@@ -5,7 +5,9 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>
         //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
         function sample4_execDaumPostcode() {
@@ -35,7 +37,7 @@
                     // 우편번호와 주소 정보를 해당 필드에 넣는다.
                     document.getElementById('zipcode').textContent = data.zonecode;
                     document.getElementById("address1").textContent = roadAddr;
-                    document.getElementById("address2").remove("#address2");
+                    document.getElementById("address2").textContent = "상세주소변경 여기를 클릭해주세요";
 
                     var guideTextBox = document.getElementById("guide");
                     // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
@@ -56,8 +58,19 @@
             }).open();
         }
         function address2click() {
-			
+			/* alert('아래 상세주소 변경클릭.'); */
+			//$('#myModal').modal("show");
+			$("#modalBtn").click();
 		}
+        $(document).ready(function(){
+        	$('#addrChange').on("click" , function(){
+        		var text = $("#inputValue input").eq(0).val();
+        		$("#address2").text(text);
+        	});
+			$('#addrChange').click(function(){
+    			$('#myModal').modal('hide');
+    		});
+        });
     </script>
     <style type="text/css">
     	.con{
@@ -116,13 +129,37 @@
 														<td align="center">${lists.phone}</td>
 														<td id="zipcode" align="center">${lists.zipcode}</td>
 														<td id="address1" align="center">${lists.address1}</td>
-														<%-- <td id="address2" align="center" onclick="address2click()">${lists.address2}</td> --%>
-														<td align="center">
-															<input id="address2" type="text" onclick="address2click()" value="${lists.address2}">
-														</td>
+														<td id="address2" align="center" onclick="address2click()">${lists.address2}</td>
 													</tr>
 												</tbody>
 											</table>
+											<!-- Trigger the modal with a button -->
+											<div align="right" style="display: none">
+												<button id="modalBtn" type="button" class="btn btn-info btn-lg" style="margin-bottom: 20; margin-top: 10; font-size: 10;"
+													data-toggle="modal" data-target="#myModal">
+														<span style="margin-bottom: 20;">상세 주소 변경</span>
+												</button>
+											</div>
+											
+											<!-- Modal -->
+											<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+											  <div class="modal-dialog modal-dialog-centered" role="document">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											          <span aria-hidden="true">&times;</span>
+											        </button>
+											      </div>
+											      <div class="modal-body" id="inputValue">
+											      	<input type="text" value="" placeholder="여기에 상세주소를 입력해주세요.">
+											      </div>
+											      <div class="modal-footer">
+											        <button id="addrChange" type="button" class="btn btn-primary">변경</button>
+											        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+											      </div>
+											    </div>
+											  </div>
+											</div>
 											<div>
 											</div>
 											<span id="guide" style="color: #999; display: none"></span>
