@@ -53,6 +53,10 @@ public class ProductreviewsDao {
 	public int reviewsTotalCount(int bno) {
 		return this.abcd.update(namespace + "reviewsTotalCount",bno);
 	}
+
+	public Productreviews SelectDataByPk(int bno) {
+		return this.abcd.selectOne(namespace + "SelectDataByPk", bno);
+	}
 	
 	
 	

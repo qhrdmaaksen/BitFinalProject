@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -34,8 +36,9 @@ public class PrrListController extends SuperClass{
 		this.mav = new ModelAndView();
 	}
 	
-	@GetMapping(command)
+	@RequestMapping(value = "/detail.pr" , method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView doGet(
+			@RequestParam(value = "pno", required = true)
 			HttpServletRequest request,
 			@RequestParam(value = "pageNumber", required = false) String pageNumber,
 			@RequestParam(value = "pageSize" , required = false) String pageSize,
@@ -90,7 +93,8 @@ public class PrrListController extends SuperClass{
 		//상세 보기, 수정, 삭제, 답글 등의 링크에 사용될 parameter list 문자열 
 		mav.addObject("parameters", parameters.toString());
 		
-		this.mav.setViewName(this.redirect);
+		this.mav.setViewName(super.getpage);
+		System.out.println("doGet 메소드");
 	
 		return this.mav;
 

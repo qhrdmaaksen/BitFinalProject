@@ -45,5 +45,12 @@
 		select bno, btitle, bwriter, bcontent, bimg, breview, bregdate
 		from productreviews 
 		</select>
+		
+	<select id="SelectDataByPk" parameterType="Integer" resultType="MyProductreviews">
+		select bno, btitle, bwriter, bcontent, bimg, breview, bregdate
+		from productreviews 
+		where bno = #{bno}
+	
+	</select>
 
 </mapper>
