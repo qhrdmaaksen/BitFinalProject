@@ -25,6 +25,7 @@ public class FaqController extends SuperClass{
 		
 		this.mav.setViewName(super.getpage);
 		
+		
 		return this.mav;
 	}
 	
