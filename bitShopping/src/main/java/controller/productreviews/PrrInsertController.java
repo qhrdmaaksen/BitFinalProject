@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import bean.Productreviews;
@@ -19,7 +20,7 @@ import dao.ProductreviewsDao;
 public class PrrInsertController extends SuperClass {
 	private final String command ="/insert.prr";
 	private ModelAndView mav = null;
-	private String redirect = "redirect:/plist.pr";
+	private String redirect = "redirect:/pdetail.pr";
 	
 	@ModelAttribute("productreviews")
 	public Productreviews myproductreviews() {
@@ -39,7 +40,8 @@ public class PrrInsertController extends SuperClass {
 	@PostMapping(command)
 	public ModelAndView doPost(
 		@ModelAttribute("productreviews") @Valid Productreviews bean,
-		BindingResult abcd) {
+		BindingResult abcd,
+		@RequestParam("pno") int pno) {
 		
 		if (abcd.hasErrors()) {
 			System.out.println("유효성 검사에 문제 있음");
@@ -53,7 +55,7 @@ public class PrrInsertController extends SuperClass {
 			cnt = prrdao.InsertData(bean);
 			
 			//request 객체의 내용을 보존하면서 목록 보기 페이지로 넘겨 준다
-			this.mav.setViewName(this.redirect);
+			this.mav.setViewName(this.redirect+"?pno="+pno);
 		}
 		return this.mav;
 	}

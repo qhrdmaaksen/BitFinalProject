@@ -88,10 +88,10 @@ public class PlistController extends SuperClass{ // 상품 목록을 보여주�
 		this.mav.setViewName(super.getpage); 
 		return this.mav ;
 	}
-	
 	@PostMapping(command)
 	public ModelAndView doPost() {
 		this.mav.setViewName(super.postpage); 
 		return this.mav ;
 	}
+	
 }

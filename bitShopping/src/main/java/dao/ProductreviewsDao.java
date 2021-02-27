@@ -35,12 +35,11 @@ public class ProductreviewsDao {
 		return this.abcd.selectOne(namespace + "SelectTotalCount" , map);
 	}
 
-	public List<Productreviews> SelectDataList(int offset, int limit, String mode, String keyword) {
+	public List<Productreviews> SelectDataList(int offset, int limit, String mode, String keyword,int pno) {
 		// 랭킹을 이용하여 해당 페이지의 데이터를 컬랙션으로 반환한다. 
 		RowBounds rowBounds = new RowBounds(offset, limit);
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("mode", mode);
-		map.put("keyword", "%" + keyword + "%");
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("pno", pno);
 		return this.abcd.selectList(namespace + "SelectDataList" , map, rowBounds);
 	}
 	
@@ -57,7 +56,8 @@ public class ProductreviewsDao {
 	public Productreviews SelectDataByPk(int bno) {
 		return this.abcd.selectOne(namespace + "SelectDataByPk", bno);
 	}
-	
+
+
 	
 	
 

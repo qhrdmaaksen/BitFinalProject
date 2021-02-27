@@ -211,7 +211,7 @@
 
         function goOrder(){
     	   
-    	   location.href ="payment.pm" ;
+    	   location.href ="payment.pm";
     	   
           /*   $("#order").append(command);
             $("#order").append(directbuy);

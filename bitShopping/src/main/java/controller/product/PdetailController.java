@@ -1,5 +1,7 @@
 package controller.product;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -9,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import bean.Product;
+import bean.Productreviews;
 import controller.common.SuperClass;
 import dao.ProductDao;
+import dao.ProductreviewsDao;
 
 @Controller
 public class PdetailController extends SuperClass{
@@ -25,6 +29,7 @@ public class PdetailController extends SuperClass{
 	@Qualifier("pdao")
 	private ProductDao dao ;
 	
+	
 	public PdetailController() {
 		// 변경 해야함
 		super("pdetail", "null"); // super(getpage, postpage)
@@ -37,10 +42,13 @@ public class PdetailController extends SuperClass{
 			){
 		Product bean  = dao.SelectDataByPk( pno );
 		mav.addObject("pno", pno);
+		
+		List<Productreviews> lists = dao.SelectDataList(pno);
 				
 		
 		if( bean != null){ //상세 보기로 이동			 
 			mav.addObject("bean", bean);
+			mav.addObject("lists", lists);
 			this.mav.setViewName(super.getpage);	
 		}else{
 			this.mav.setViewName(this.redirect);		 

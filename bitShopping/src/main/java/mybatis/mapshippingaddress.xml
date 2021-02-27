@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MapAddress">
+
+	
+	<select id="getShippingAddress" parameterType="MyAdress" resultType="MyAdress">
+		select * from addresses
+		where id = #{id}
+	</select>
+	
+	<select id="InsertData" parameterType="MyAddress" resultType="MyAddress">
+		select sequ_id, id, shippingname, name, address1, address2, phone
+		from addresses
+		where id = #{id}
+	</select>
+	
+	<!-- <update id="ShippingUpdataData" parameterType="MyMember">
+		update members set
+		zipcode = #{zipcode} ,
+		address1 = #{address1} ,
+		address2 = #{address2}
+		where mid = #{mid}
+	</update> -->
+
+	
+
+</mapper>
+
+
+
+
+
+
