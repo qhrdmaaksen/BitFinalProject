@@ -358,19 +358,19 @@
                 <tbody>
                 <tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">배송지 이름</th>
-                    <td align="center" id="addrshippname">${address.shippingname}</td>
+                    <td align="center" id="addrshippname">${sessionScope.address.shippingname}</td>
                 </tr>
                 <tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">수령인</th>
-                    <td align="center" id="addrname">${address.name}</td>
+                    <td align="center" id="addrname">${sessionScope.address.name}</td>
                 </tr>
                 <tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">배송주소</th>
-                    <td align="center" id="addrtext">${address.address1} ${address.address2}</td>
+                    <td align="center" id="addrtext">${requestScope.address.address1} ${requestScope.address.address2}</td>
                 </tr>
                 <tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">연락처</th>
-                    <td align="center">${address.phone}</td>
+                    <td align="center">${sessionScope.phone}</td>
                 </tr>
                 <tr style="display: none">
                     <td id="seq_addr">${address.seq_add}</td>
@@ -429,7 +429,7 @@
                     </table>
                 </c:if>
                 <p align="right"><span id="monthVal"
-                                       style="font-weight: bolder; background-color: #522772; color: white;">상품 종류 ${requestScope.totalcount} 종류 </span>
+                                       style="font-weight: bolder; background-color: #522772; color: white;">상품 종류 ${product.pcategory} 종류 </span>
                 </p>
             </div>
             <hr>
@@ -459,12 +459,12 @@
                             ${couponitem.name}
                         </c:if>
                     </td>
-                    <td>
+                    <!-- <td>
                         <button style="float: right; font: 10px;" type="button"
                                 class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#couponselectbtn">
                             <span>쿠폰 선택</span>
                         </button>
-                    </td>
+                    </td> -->
                 </tr>
                 <tr align="center">
                     <th>배송비</th>

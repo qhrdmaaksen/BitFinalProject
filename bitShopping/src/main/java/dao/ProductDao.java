@@ -43,8 +43,9 @@ public class ProductDao {
 	}	
 
 	//int = num 을 int = productcode 로 바꿔줌 
-	public Product SelectDataByPk(int productcode) {
-		return this.abcd.selectOne(namespace + "SelectDataByPk", productcode);
+	public Product SelectDataByPk(int pno) {
+		System.out.println("번호확인 : " + pno);
+		return this.abcd.selectOne(namespace + "SelectDataByPk", pno);
 	}
 	
 	public int UpdateData(Product bean) {

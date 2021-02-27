@@ -14,10 +14,9 @@
 		from products
 	</sql> 		
 	
-	<!-- pno 를 productcode로 바꿈 -->
 	<select id="SelectDataByPk" parameterType="Integer" resultType="MyProduct">
 		<include refid="myselect" />
-		 where productcode = #{productcode}
+		 where pno = #{pno}
 	</select>
 	
 	<select id="SelectDataList" resultType="MyProduct">

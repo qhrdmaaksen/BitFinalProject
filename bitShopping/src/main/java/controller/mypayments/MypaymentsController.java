@@ -17,11 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import bean.Address;
 import bean.Member;
 import bean.Product;
 import controller.common.SuperClass;
-import controller.member.AddressDao;
 import dao.ProductDao;
 import shopping.MyCartList;
 import shopping.ShoppingInfo;
@@ -84,46 +82,54 @@ public class MypaymentsController extends SuperClass {
 
 		int totalAmount = 0; // 총 판매 금액
 
-		for (Integer productcode : keylist) { // productcode : 상품 번호 
-			Integer qty = maplists.get(productcode); // 구매 수량
+		for (int pno : keylist) { // pno : 상품 번호 
+			int qty = maplists.get(pno); // 구매 수량
+//
+//			ProductDao pdao = new ProductDao();
+//			System.out.println(pno);
+			// 상품 번호 cno에 대한 Bean 정보
+			 Product bean = pdao.SelectDataByPk(pno);
+			 System.out.println("확인요요2222");
 
-			ProductDao pdao = new ProductDao();
-			System.out.println(productcode);
-			// 상품 번호 productcode에 대한 Bean 정보
-			 Product bean = pdao.SelectDataByPk(productcode); 
-
-			
-			  int productprice = (int) (bean.getPrice() * 0.8); 
-			  int point = bean.getPrice();
-			  
-			  totalAmount += qty * productprice;
-			  
-			  ShoppingInfo shopinfo = new ShoppingInfo();
-			  
-			  shopinfo.setPimg(bean.getPimg1());
-			  shopinfo.setProductname(bean.getProductname());
-			  shopinfo.setProductcode(productcode); shopinfo.setPrice(productprice);
-			  shopinfo.setQty(qty);
 			 
+//			
+			  int price = (int) (bean.getPrice() * 0.8); 	
+			  int point = bean.getPrice();
+//			  
+			  totalAmount += qty * price;
+//			  
+			  ShoppingInfo shopinfo = new ShoppingInfo();
+			
 
-			 lists.add(shopinfo); 
-
-			request.setAttribute("productLists", lists);
-			request.setAttribute("totalcount", lists.size());
-			request.setAttribute("totalprice", totalAmount);
+//			  shopinfo.setPimg(bean.getPimg1());
+//			  shopinfo.setProductname(bean.getProductname());
+//			  shopinfo.setProductcode(pno); shopinfo.setPrice(price);
+//			  shopinfo.setQty(qty);
+//			 
+//
+//			 lists.add(shopinfo); 
+//
+//			request.setAttribute("productLists", lists);
+//			request.setAttribute("totalcount", lists.size());
+//			request.setAttribute("totalprice", totalAmount);
 
 		}
-
-		AddressDao addrdao = new AddressDao();
-		Address address = addrdao.SelectDataByPk2(member.getMid());
-		request.setAttribute("address", address);
-		request.setAttribute("addressList", addrdao.SelectAllAddress(member.getMid()));
-		super.doPost(request, response);
-		// response에 왜 빨간줄이 뜨나 ?
-
-		request.setAttribute("directbuy", request.getParameter("directbuy"));
-		super.GotoPage("mypayments.jsp");
-		return mav;
+//
+//		AddressDao addrdao = new AddressDao();
+//		Address address = addrdao.SelectDataByPk2(member.getMid());
+//		request.setAttribute("address", address);
+//		request.setAttribute("addressList", addrdao.SelectAllAddress(member.getMid()));
+//		super.doPost(request, response);
+//		// response에 왜 빨간줄이 뜨나 ?
+//
+//		request.setAttribute("directbuy", request.getParameter("directbuy"));
+//		super.GotoPage("mypayments.jsp");
+//		return mav;
+		
+		this.mav.setViewName(super.getpage);
+		System.out.println("doGet 메소드");
+	
+		return this.mav;
 
 	}
 }
