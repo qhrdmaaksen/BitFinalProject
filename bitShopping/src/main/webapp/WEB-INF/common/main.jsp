@@ -40,6 +40,9 @@
 		width: 250px !important;
 		height: 320px !important;
 	}
+	h4{
+    	font-family: Roboto Slab !important;
+    }
 
 	 <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="<%=contextPath%>/resources/assets/img/favicon.png">
@@ -70,34 +73,36 @@
 <!-- 사진 슬라이드 시작 -->
 <div id="demo" class="carousel slide" data-ride="carousel">
 
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
+<!--   <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0"></li>
     <li data-target="#demo" data-slide-to="1"></li>
     <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
+    <li data-target="#demo" data-slide-to="4"></li>
+    <li data-target="#demo" data-slide-to="5"></li>
+  </ul> -->
   
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1612946357.jpg" alt="배너1" width="960" height="350">
-      <div class="carousel-caption">
-      </div>   
+      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1602809211.jpg" alt="배너1" width="960" height="350">
     </div>
     
     <div class="carousel-item">
-      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1612866708.jpg" alt="배너2" width="960" height="350">
-      <div class="carousel-caption">
-      </div>   
+      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1577869708.jpeg" alt="배너2" width="960" height="350">
     </div>
     
     <div class="carousel-item">
       <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1612949959.jpg" alt="배너3" width="960" height="350">
-      <div class="carousel-caption">
-        <!-- <h3>New York</h3>
-        <p>We love the Big Apple!</p> -->
-      </div>   
     </div>
     
+    <div class="carousel-item">
+      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1614318530.jpg" alt="배너4" width="960" height="350">
+    </div>
+    
+    <div class="carousel-item">
+      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1614317517.jpg" alt="배너5" width="960" height="350">
+    </div>
   </div>
+  
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </a>

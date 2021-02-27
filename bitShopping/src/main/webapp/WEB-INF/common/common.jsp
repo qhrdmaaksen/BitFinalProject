@@ -231,6 +231,10 @@
 	    color: #8B008B !important;
 	    text-decoration: none !important;
 	}
+	.active li a{
+		font-size: 15px !important;
+		margin: 10px;
+	}
 
 	/* 추가 */
 	.container #headerLogo{position:relative;width:1050px;height:63px;margin-top:0px;}
@@ -286,6 +290,19 @@
                                 <div class="main-menu">
 									<nav>
                                             <ul>
+                                            
+                                            <li class="active"><a href="<%=contextPath%>/plist.pr"> 전체 카테고리 <i class="ion-ios-arrow-down"></i></a>
+                                                    <ul>
+                                                        <li><a href="index.html"> 채소 / 과일 </a></li>
+                                                        <li><a href="index-2.html"> 쌀 / 베이커리</a></li>
+                                                        <li><a href="index-3.html"> 해산 / 정육 </a></li>
+                                                        <li><a href="index-4.html"> 베이커리 / 제과 </a></li>
+                                                        <li><a href="index-5.html"> 치즈 / 계란 </a></li>
+                                                        <li><a href="index-6.html"> 샐러드 / 간편식 </a></li>
+                                                        <li><a href="index-7.html"> 음료 / 우유 / 커피 </a></li>
+                                                    </ul>
+                                              </li>
+                                                <%-- 	카테고리 갯수 많으면 사용할수도 있는 것
                                                 <li><a href="<%=contextPath%>/plist.pr"> 전체 카테고리 <i class="ion-ios-arrow-down"></i></a>
                                                     <ul class="mega-menu">
                                                         <li>
@@ -327,11 +344,11 @@
                                                         </li> -->
                                                         
                                                     </ul>
-                                                </li>
+                                                </li> --%>
 												
-                                                <li><a href="about-us.html"> about us </a></li>
+                                                <li><a href="about-us.html"> 없는 메뉴 </a></li>
 												
-                                                <li><a href="<%=contextPath%>/plist.pr"> 인기상품? </a></li>
+                                                <li><a href="<%=contextPath%>/plist.pr"> TOP20/ING </a></li>
                                                 
 												<li>
 													<c:if test="${whologin == 0}">
