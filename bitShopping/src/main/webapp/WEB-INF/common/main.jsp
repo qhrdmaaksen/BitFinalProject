@@ -36,7 +36,7 @@
  		  background: url(https://res.kurly.com/pc/service/main/1908/ico_prev1_x2.png) no-repeat 50% 50%;
   		  background-size: 52px 52px;
 	}
-	.row img{
+	.product-img img{
 		width: 250px !important;
 		height: 320px !important;
 	}
