@@ -38,7 +38,7 @@ public class PrrListController extends SuperClass{
 	
 	@RequestMapping(value = "/detail.pr" , method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView doGet(
-			@RequestParam(value = "pno", required = true)
+			@RequestParam(value = "pno", required = true) int pno,
 			HttpServletRequest request,
 			@RequestParam(value = "pageNumber", required = false) String pageNumber,
 			@RequestParam(value = "pageSize" , required = false) String pageSize,
@@ -76,7 +76,8 @@ public class PrrListController extends SuperClass{
 											pageInfo.getOffset(), 
 											pageInfo.getLimit(), 
 											parameters.getMode(),
-											parameters.getKeyword());
+											parameters.getKeyword(),
+											pno);
 		
 		//바인딩 해야 할 목록 들 
 		mav.addObject("lists", lists); // 게시물 목록 
@@ -93,7 +94,7 @@ public class PrrListController extends SuperClass{
 		//상세 보기, 수정, 삭제, 답글 등의 링크에 사용될 parameter list 문자열 
 		mav.addObject("parameters", parameters.toString());
 		
-		this.mav.setViewName(super.getpage);
+		this.mav.setViewName(this.redirect+"?pno="+pno);
 		System.out.println("doGet 메소드");
 	
 		return this.mav;

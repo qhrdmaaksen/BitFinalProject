@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import bean.Product;
+import bean.Productreviews;
 
 @Component("pdao")
 public class ProductDao {
@@ -64,5 +65,13 @@ public class ProductDao {
 		// 해당 상품을 삭제합니다.		
 		return this.abcd.delete(namespace + "DeleteData", num);
 	}
+	public List<Productreviews> SelectDataList(int pno) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("pno", pno);
+		return this.abcd.selectList(namespace+"Selectprrlist",map);
+	}
+	
+	
+
 
 }

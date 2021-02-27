@@ -45,6 +45,11 @@
 			where pcontents like #{keyword}
 		</if>
 	</select>
-
+	
+	<select id="Selectprrlist" resultType="MyProductreviews" parameterType="java.util.HashMap">
+	select bno, btitle, bwriter, bcontent, bimg, breview, bregdate,pno
+	from productreviews 
+	where pno = #{pno}
+	</select>
 </mapper>
 		
