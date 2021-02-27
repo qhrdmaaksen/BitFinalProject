@@ -388,7 +388,7 @@
             <div>
                 <c:if test="${requestScope.regular==1}">
                     <table>
-                        <c:forEach var="product" items="${requestScope.productRLists}">
+                        <c:forEach var="product" items="${requestScope.productlists}">
                             <tr>
                                 <td>
                                     <img class="img-thumbnail" alt="prod-img"
@@ -399,10 +399,10 @@
                                 <td>
                                     <span style="padding-left:0px; font-size: 25px; color: blue;">${product.productname}</span>
                                 </td>
-                                <td>
+                                <%-- <td>
                                     <span class="col-md-10"
                                           style="margin-bottom:10px; margin-left: 150px; font-size: 25px; color: red;">${product.months} 개월 정기구매</span>
-                                </td>
+                                </td> --%>
                             </tr>
                         </c:forEach>
                     </table>
@@ -447,9 +447,9 @@
                 <tbody align="center">
                 <tr align="center">
                     <th>총 상품가격</th>
-                    <td><fmt:formatNumber value="${requestScope.totalprice}" pattern="#,###"/>원</td>
+                    <td><fmt:formatNumber value="${sessionScope.totalprice}" pattern="#,###"/>원</td>
                 </tr>
-                <tr align="center">
+              <%--   <tr align="center">
                     <th>할인 쿠폰</th>
                     <td align="center" id="coupontext">
                         <c:if test="${couponitem.name==null}">
@@ -465,12 +465,12 @@
                             <span>쿠폰 선택</span>
                         </button>
                     </td> -->
-                </tr>
+                </tr> --%>
                 <tr align="center">
                     <th>배송비</th>
                     <td id="shippingfee">
                         <c:choose>
-                            <c:when test="${requestScope.totalprice>50000}">
+                            <c:when test="${sessionScope.totalprice>50000}">
                                 <fmt:formatNumber value="0" pattern="#,###"/>원
                             </c:when>
                             <c:otherwise>
@@ -479,20 +479,20 @@
                         </c:choose>
                     </td>
                 </tr>
-                <tr align="center">
+               <!--  <tr align="center">
                     <th>도담도담 캐시</th>
                     <td>0원</td>
-                </tr>
+                </tr> -->
                 <tr align="center">
                     <th>총 결제금액</th>
                     <c:choose>
-                        <c:when test="${requestScope.totalprice>50000}">
-                            <td id="totalprice"><fmt:formatNumber value="${requestScope.totalprice}"
+                        <c:when test="${sessionScope.totalprice>50000}">
+                            <td id="totalprice"><fmt:formatNumber value="${sessionScope.totalprice}"
                                                                   pattern="#,###"/>원
                             </td>
                         </c:when>
                         <c:otherwise>
-                            <td id="totalprice"><fmt:formatNumber value="${requestScope.totalprice + 2500}"
+                            <td id="totalprice"><fmt:formatNumber value="${sessionScope.disTotalPrice + 2500}"
                                                                   pattern="#,###"/>원
                             </td>
                         </c:otherwise>
