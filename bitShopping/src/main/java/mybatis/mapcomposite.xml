@@ -42,7 +42,6 @@
 		rd_nm like '%" + #{dong} + "%' or 
 		search_word like '%" + #{dong} + "%' 
 		order by si_nm, sgg_nm, rd_nm
-	</select>	
-	
-	
+	</select>
+
 </mapper> 

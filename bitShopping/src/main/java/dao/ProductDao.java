@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import bean.Product;
+import bean.Productreviews;
 
 @Component("pdao")
 public class ProductDao {
@@ -43,8 +44,9 @@ public class ProductDao {
 	}	
 
 	//int = num 을 int = productcode 로 바꿔줌 
-	public Product SelectDataByPk(int productcode) {
-		return this.abcd.selectOne(namespace + "SelectDataByPk", productcode);
+	public Product SelectDataByPk(int pno) {
+		System.out.println("번호확인 : " + pno);
+		return this.abcd.selectOne(namespace + "SelectDataByPk", pno);
 	}
 	
 	public int UpdateData(Product bean) {
@@ -63,5 +65,13 @@ public class ProductDao {
 		// 해당 상품을 삭제합니다.		
 		return this.abcd.delete(namespace + "DeleteData", num);
 	}
+	public List<Productreviews> SelectDataList(int pno) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("pno", pno);
+		return this.abcd.selectList(namespace+"Selectprrlist",map);
+	}
+	
+	
+
 
 }

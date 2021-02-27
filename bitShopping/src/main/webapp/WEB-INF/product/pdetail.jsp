@@ -428,6 +428,7 @@ body, input, select, textarea, button {
 	<form name="frmList">
 	<form:form modelAttribute="productreviews" name="myform"
 									action="${contextPath}/list.prr" method="get">
+		<input name="pno" id="pno" type="hidden" value="${bean.pno}">
 		<input type="hidden" name="sort" value=""> 
 		<input type="hidden" name="page_num" value=""> 
 		<input type="hidden"name="goodsno" value="13677">
@@ -491,17 +492,22 @@ body, input, select, textarea, button {
 					<col style="width: 80px;">
 				</colgroup>
 				<tbody>
-					<tr>
 
-						<td align="center">공지</td>
-						<td class="btitle">
-							<div>금주의 Best 후기 안내</div>
-						</td>
-						<td class="user_grade grade_comm"></td>
-						<td class="bwirter">Marketkurly</td>
-						<td class="bregdate">2019-11-01</td>
-						<td><span class="breview" data-sno="6412655">275635</span></td>
-					</tr>
+							<tr>
+		<c:forEach var="bean" items="${requestScope.lists}" >
+		<td align="center">${bean.bno}</td>
+		<td class="btitle">
+		<div>${bean.btitle}</div>
+		<td><details>
+				<summary>내용 자세히 보기</summary>
+				<p>${bean.bcontent}</p>
+			</details></td>
+		<td class="user_grade grade_comm"></td>
+		<td class="bwirter">${bean.bwriter}</td>
+		<td class="bregdate">${bea.bregdate}</td>
+		<td><span class="breview">${bean.breview}</span></td>
+			</c:forEach>
+		</tr>
 				</tbody>
 			</table>
 			<div data-sno="6412655" class="review_view review_notice"
@@ -530,36 +536,10 @@ body, input, select, textarea, button {
 						<col style="width: 80px;">
 					</colgroup>
 					<tbody>
-						<tr>
-					<tbody>
-						<tr>
-
-							<td align="center">공지</td>
-							<td class="btitle">
-								<div>금주의 Best 후기 안내</div>
-							</td>
-							<td class="user_grade grade_comm"></td>
-							<td class="bwirter">Marketkurly</td>
-							<td class="bregdate">2019-11-01</td>
-							<td><span class="breview" data-sno="6412655">275635</span></td>
-						</tr>
+		
+			
 					</tbody>
-					
-		<c:forEach var="bean" items="${requestScope.productreviews.lists}">
-		<td align="center">${requestScope.productreviews.bno}</td>
-		<td class="btitle">
-		<div>${requestScope.productreviews.btitle}</div>
-		<td><details>
-				<summary>내용 자세히 보기</summary>
-				<p>${requestScope.productreviews.bcontent}</p>
-			</details></td>
-		</td>
-		<td class="user_grade grade_comm"></td>
-		<td class="bwirter">${requestScope.productreviews.bwriter}</td>
-		<td class="bregdate">$requestScope.productreviews.bregdate}</td>
-		<td><span class="breview">$requestScope.productreviews.breview}</span></td>
-		</tr>
-	</c:forEach>
+
 	
 	</tbody>
 	
