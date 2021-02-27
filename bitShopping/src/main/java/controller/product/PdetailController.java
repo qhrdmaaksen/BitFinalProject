@@ -24,7 +24,6 @@ public class PdetailController extends SuperClass{
 	//View에 넘겨줄 ModelAndView 객체
 	private ModelAndView mav = null ;
 	
-	
 	@Autowired
 	@Qualifier("pdao")
 	private ProductDao dao ;
@@ -56,12 +55,6 @@ public class PdetailController extends SuperClass{
 		
 		return this.mav ;
 	}
-	
-	/*
-	 * @PostMapping(command) public ModelAndView doPost(){
-	 * 
-	 * return this.mav ; }
-	 */
 	
 	
 }

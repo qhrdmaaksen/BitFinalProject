@@ -42,6 +42,20 @@
             location.href='<%=contextPath%>/plist.pr';
         }
     </script>
+    
+    <style type="text/css">
+    	.main-menu ul li a {
+    		font-size: 17px;
+    	}
+    	.product-img img{
+    		width: 255px;
+    		height: 320px;
+    	}
+    	h4{
+    		font-family: Roboto Slab !important;
+    	}
+    </style>
+    
 </head>
 
 <body>
@@ -59,73 +73,22 @@
             </div>
         </div>
         <!-- breadcrumbs area End -->
-        <div class="shop-wrapper pt-50 pb-60 pr-140">
+        <div class="shop-wrapper">
             <div class="container" >
 
                 <div class="grid-list-product-wrapper" align="center">
                     <div class="product-grid product-view">
                         <div class="row">
-                            <div class="col-xl-3 col-lg-3 col-md-12 col-12">
-                                <div class="row_products_side">
-                                </div>
-                            </div>
 
-                            <div class=" col-xl-9 col-lg-9 col-md-12 col-12">
-
+                            <div class=" col-xl-12 col-lg-12 col-md-12 col-12">
                                 <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-12 ">
-                                        <div class="shop_top_banner">
-                                            <img src="<%=contextPath%>/resources/assets/img/products/쇼핑목록배너.jpg" alt="쇼핑목록배너.jpg">
-                                        </div>
-                                        <div class="tolbar__area">
-                                            <div class="toolbar clearfix">
-                                                <div class="toolbar-inner">
-                                                    <div class="shop-tab view-mode nav" role=tablist>
-                                                        <a class="active" href="#product-grid" data-toggle="tab" role="tab" aria-selected="false">
-                                                            <i class="ion-grid"></i>
-                                                        </a>
-                                                        <a href="#product-list" data-toggle="tab" role="tab" aria-selected="true">
-                                                            <i class="ion-navicon"></i>
-                                                        </a>
-                                                    </div>
-                                                    <p class="woocommerce-result-count"
-                                                        class="form-control-static">${requestScope.pageInfo.pagingStatus}
-                                                    </p>
-													<form class="form-inline" role="form" name="myform"
-														action="<%=contextPath%>/plist.pr" method="get">
-														<input type="hidden" name="command" value="plist.pr">
-														<div class="form-group">
-															<select class="form-control" name="mode" id="mode">
-																<option value="all" selected="selected">--선택하세요---------</option>
-																<option value="productname">상품명</option>
-																<option value="pcategory">상품 종류</option>
-																<option value="pcontents">상품 내용</option>
-															</select>
-														</div>
-														<div class="form-group">
-															<input type="text" class="form-control btn-xs"
-																name="keyword" id="keyword" placeholder="검색 키워드">
-														</div>
-														<button class="btn btn-default btn-warning" type="submit"
-															onclick="search();">검색</button>
-														<button class="btn btn-default btn-warning" type="button"
-															onclick="searchAll();">전체 검색</button>
-
-														<c:if test="${whologin == 2}">
-															<button class="btn btn-default btn-info" type="button"
-																onclick="writeForm();">상품 등록</button>
-														</c:if>
-													</form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <br><br><br><br>
                                 </div>
                                 <div class="shop-product-content tab-content">
                                     <div id="product-grid" class="tab-pane fade active show">
                                         <div class="row">
                                         <c:forEach var="bean" items="${requestScope.lists}">
-                                            <div class="col-lg-4 col-md-6 col-12">
+                                            <div class="col-lg-3 col-md-6 col-12">
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
                                                         <a href="<%=contextPath%>/pdetail.pr?pno=${bean.productcode}">
@@ -139,7 +102,7 @@
                                                     </div>
                                                     <div class="product-content text-center">
                                                         <h4>
-                                                            <a href="product-details.html">${bean.productname}</a>
+                                                            <a href="<%=contextPath%>/pdetail.pr?pno=${bean.productcode}">${bean.productname}</a>
                                                         </h4>
                                                         <div class="product-price-2">
                                                             <div class="price-box">
@@ -155,8 +118,6 @@
                                            	</c:forEach>
                                         </div>
                                     </div>
-
-
 
 
                                     <div id="product-list" class="tab-pane fade">
@@ -244,7 +205,6 @@
             </div>
         </div>
         <!-- modal -->
-    <div style="margin-left: 350;">
 		<%@ include file="./../common/footer.jsp" %> 
 	</div>
     </div>
@@ -264,3 +224,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

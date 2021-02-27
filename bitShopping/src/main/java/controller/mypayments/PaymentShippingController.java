@@ -14,18 +14,18 @@ public class PaymentShippingController extends SuperClass {
 	private final String command = "";
 	private String redirect = "redirect/";
 	private ModelAndView mav = null;
-	
-	@PostMapping(command)
-	public ModelAndView doPost(
-			HttpSession session,
-			) {
-		
-		Address bean = new Address();
-		
-		
-		
-		return this.mav;
-	}
-	
+//	
+//	@PostMapping(command)
+//	public ModelAndView doPost(
+//			HttpSession session,
+//			) {
+//		
+//		Address bean = new Address();
+//		
+//		
+//		
+//		return this.mav;
+//	}
+//	
 
 }
