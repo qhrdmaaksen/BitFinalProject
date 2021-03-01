@@ -15,6 +15,7 @@
 		<typeAlias alias="MyShopInfo" type="shopping.ShoppingInfo"/>
 		<typeAlias alias="MyAddress" type="bean.Address"/>
 		<typeAlias alias="MyTOP50" type="bean.TOP50"/>
+		<!-- <typeAlias alias="MyOrder" type="bean.Order"/> -->
 		<!-- <typeAlias alias="MyService" type="bean.Serivce"/> -->
 	
 	</typeAliases>	
@@ -27,6 +28,7 @@
 		<mapper resource="mybatis/mapproductreviews.xml" />
 		<mapper resource="mybatis/mappayments.xml"/>
 		<mapper resource="mybatis/mapaddress.xml"/>
+		<!-- <mapper resource="mybatis/maporder.xml"/> -->
 		<!-- <mapper resource="mybatis/mapshippingaddress.xml"/> -->
 		<!-- <mapper resource="mybatis/mapservice.xml"/> -->
 	</mappers>

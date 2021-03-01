@@ -23,7 +23,7 @@
 	
 	<select id="SelectDataList4" resultType="MyTOP50">
 		SELECT p.pno, P.productname , p.price, p.pimg1, SUM( NVL (o.amount, 0 )) AS amount 
-		FROM PRODUCTS p inner JOIN orderdetails O ON O.PNO = P.PNO 
+		FROM PRODUCTS p left outer JOIN orderdetails O ON O.PNO = P.PNO 
 		group by p.pno, p.productname, p.price, p.pimg1 
 		order by amount desc
 	</select>

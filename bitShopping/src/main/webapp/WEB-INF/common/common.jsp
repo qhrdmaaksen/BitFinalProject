@@ -304,51 +304,8 @@
                                                         <li><a href="index-7.html"> 음료 / 우유 / 커피 </a></li>
                                                     </ul>
                                               </li>
-                                                <%-- 	카테고리 갯수 많으면 사용할수도 있는 것
-                                                <li><a href="<%=contextPath%>/plist.pr"> 전체 카테고리 <i class="ion-ios-arrow-down"></i></a>
-                                                    <ul class="mega-menu">
-                                                        <li>
-                                                            <ul>
-                                                                <li class="mega-menu-title">Pages</li>
-                                                                <li><a href="portfolio.html"> portfolio</a></li>
-                                                                <li><a href="service.html"> service One</a></li>
-                                                                <li><a href="service-2.html"> service Two</a></li>
-                                                                <li><a href="<%=contextPath%>/faq.sr"> FAQ Page</a></li>
-                                                                <li><a href="404.html"> 404 Error </a></li>
-                                                                <li><a href="single-blog.html"> single blog</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <!-- <li> 드롭다운 목록 일단 줄여 놓았습니다.
-                                                            <ul>
-                                                                <li class="mega-menu-title">special pages</li>
-                                                                <li><a href="cart.html"> cart page</a></li>
-                                                                <li><a href="checkout.html"> Checkout Page</a></li>
-                                                                <li><a href="login-register.html"> login register</a></li>
-                                                                <li><a href="my-account.html"> my account Page</a></li>
-                                                                <li><a href="wishlist.html"> wishlist Page</a></li>
-                                                                <li><a href="product-details.html"> product details </a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <ul>
-                                                                <li class="mega-menu-title">products</li>
-                                                                <li><a href="product-details.html">Awesome wood chair</a></li>
-                                                                <li><a href="product-details.html">Good product name</a></li>
-                                                                <li><a href="product-details.html">Another Product name</a></li>
-                                                                <li><a href="product-details.html">test Producr name</a></li>
-                                                            </ul> 
-                                                        </li> -->
-                                                        
-                                                        <!-- <li class="mega-menu-img"> 드롭다운 하단에 사진 넣게되면 넣을 공간
-                                                            <ul>
-                                                                <li><a class="dot-none" href="shop.html"><img alt="" src="<%=contextPath%>/resources/assets/img/banner/17.jpg"></a></li>
-                                                            </ul>
-                                                        </li> -->
-                                                        
-                                                    </ul>
-                                                </li> --%>
 												
-                                                <li><a href="<%=contextPath%>/top50.cu"> TOP50/ING </a></li>
+                                                <li><a href="<%=contextPath%>/top50.cu"> TOP 50 </a></li>
                                                 
 												<li>
 													<c:if test="${whologin == 0}">
