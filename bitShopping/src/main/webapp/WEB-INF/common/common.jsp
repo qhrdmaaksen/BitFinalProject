@@ -371,14 +371,16 @@
 
                                         <span class="zmdi zmdi-search"></span>
                                         <div class="search__form">
-                                            <form>
                                                 <div class="form-search">
-                                                    <input type="search" placeholder="Enter your search..." value="" class="input-text" id="search">
-                                                    <button>
-                                                        <i class="zmdi zmdi-search"></i>
-                                                    </button>
+                                                <form class="form-inline" role="form" name="myform"
+													action="<%=contextPath%>/mainsearch.cu" method="get">
+													<input type="hidden" name="command" value="mainsearch.cu">
+                                                    <input type="text" placeholder="검색할 상품의 이름을 " value="" class="input-text" id="search" name="keyword">
+	                                                    <button type="submit">
+	                                                        <i class="zmdi zmdi-search"></i>
+	                                                    </button>
+	                                            </form>
                                                 </div>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
