@@ -44,6 +44,15 @@ public class AddressDao extends SuperDao{
 	}
 
 
+	//경희 수정 
+	public int InsertData(Address address) {
+		// TODO Auto-generated method stub
+		System.out.println(this.getClass() + "주소를 등록합니다.");
+		System.out.println(address.toString());
+		return this.abcd.insert(namespace + "InsertData" , address);
+	}
+
+
 	/*
 	 * public List<Address> SelectAllAddress(String mid) { return
 	 * this.abcd.selectOne(namespace, ".SelectAllAddress"); }
