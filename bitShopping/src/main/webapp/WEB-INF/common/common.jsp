@@ -261,8 +261,10 @@
 		<c:if test="${whologin != 0 }">
 			<li class="menu none_sub menu_login"><a href="<%=contextPath%>/logout.me?mid=${sessionScope.loginfo.mid}" class="link_menu">로그아웃</a> <!----></li> <!----> 
 		</c:if>
-		<li class="menu lst"><a href="<%=contextPath%>/faq.sr" class="link_menu">고객센터</a> <ul class="sub">
-		</ul></li></ul>
+		<%-- <li class="menu lst"><a href="<%=contextPath%>/faq.sr" class="link_menu">고객센터</a> <ul class="sub">
+		</ul>
+		</li> --%>
+		</ul>
 	</div>
 		
 	<div class="container">
@@ -346,9 +348,7 @@
                                                     </ul>
                                                 </li> --%>
 												
-                                                <li><a href="about-us.html"> 없는 메뉴 </a></li>
-												
-                                                <li><a href="<%=contextPath%>/plist.pr"> TOP20/ING </a></li>
+                                                <li><a href="<%=contextPath%>/top50.cu"> TOP50/ING </a></li>
                                                 
 												<li>
 													<c:if test="${whologin == 0}">
@@ -359,6 +359,8 @@
 														<a href="<%=contextPath%>/mypage.me?mid=${sessionScope.loginfo.mid}"> 마이페이지 </a>
 													</c:if>
 												</li>
+												
+												<li><a href="<%=contextPath%>/faq.sr"> 고객 센터 </a></li>
                                             </ul>
                                         </nav>
                                 </div>
@@ -368,14 +370,13 @@
                             <div class="header-site-icon">
                                 <div class="header-search same-style">
                                     <div class="sidebar-trigger-search">
-
                                         <span class="zmdi zmdi-search"></span>
                                         <div class="search__form">
                                                 <div class="form-search">
                                                 <form class="form-inline" role="form" name="myform"
 													action="<%=contextPath%>/mainsearch.cu" method="get">
 													<input type="hidden" name="command" value="mainsearch.cu">
-                                                    <input type="text" placeholder="검색할 상품의 이름을 " value="" class="input-text" id="search" name="keyword">
+                                                    <input type="text" placeholder="검색할 상품의 이름을 작성해 주세요." value="" class="input-text" id="search" name="keyword">
 	                                                    <button type="submit">
 	                                                        <i class="zmdi zmdi-search"></i>
 	                                                    </button>
