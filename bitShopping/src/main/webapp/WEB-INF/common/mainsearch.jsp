@@ -87,7 +87,7 @@
                                 <div class="shop-product-content tab-content">
                                     <div id="product-grid" class="tab-pane fade active show">
                                         <div class="row">
-                                        <c:forEach var="bean" items="${requestScope.lists}">
+                                        <c:forEach var="bean" items="${requestScope.lists1}">
                                             <div class="col-lg-3 col-md-6 col-12">
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
@@ -124,7 +124,7 @@
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-12">
                                                 <div class="product-wrapper mb-60">
-                                                	<c:forEach var="bean" items="${requestScope.lists}">
+                                                	<c:forEach var="bean" items="${requestScope.lists1}">
                                                     <div class="product-img">
                                                         <a href="<%=contextPath%>/pdetail.pr?pno=${bean.productcode}">
                                                             <img alt="${bean.pimg1}" src="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}">

@@ -4,15 +4,11 @@
 
 	<mapper namespace="MapperComposite">
 
-
-<!-- 	<select id="SelectDataList1" resultMap="MyProduct">
-		select m.name mname, p.productname pname, od.qty, p.price, p.price * od.qty as amount 
-			from ((members m inner join orders o 
-			on m.mid=o.mid) inner join orderdetails od 
-			on o.oid=od.oid) inner join products p 
-			on od.pno=p.pno 
-	        order by od.qty desc;
-	</select> -->
+<!-- '%" + #{keyword} + "%' -->
+	<select id="SelectDataList1" parameterType="java.util.HashMap" resultType="MyProduct">
+		select * from products
+		where productname like #{keyword}
+	</select>
 	
 	<select id="SelectDataList2"  parameterType="java.util.HashMap" resultType="MyProduct">
 		select * from products
