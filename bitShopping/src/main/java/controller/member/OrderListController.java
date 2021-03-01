@@ -1,11 +1,8 @@
 package controller.member;
 
-import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 import bean.ShoppingInfo;
 import controller.common.SuperClass;
 import dao.OrderDao;
-import shopping.MyCartList;
 
 @Controller
 public class OrderListController extends SuperClass{
@@ -43,6 +39,8 @@ public class OrderListController extends SuperClass{
 		System.out.println("mid shoppingInfo : " + loginfo.getMid());//로그인한 회원 정보 
 		
 		List<ShoppingInfo> lists = odao.SelectDataList(loginfo);//로그인한 회원의 쇼핑정보 객체생성
+		
+		mav.addObject("lists", lists);
 		
 		this.mav.setViewName(super.getpage);
 		return this.mav ;

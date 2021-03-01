@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MapAddress">
+
+	<select id="SelectDataList" parameterType="MyOrder" resultType="MyOrder">
+		select oid , mid , orderdate , invoice
+		from orders
+		where mid = #{mid}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
