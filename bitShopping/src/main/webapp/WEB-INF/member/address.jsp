@@ -67,8 +67,32 @@
         		var text = $("#inputValue input").eq(0).val();
         		$("#address2").text(text);
     			$('#myModal').modal('hide');
+    			
+    			alert('데이터 전송!');
+           		$.ajax({
+           			url : '/mytest/updateAddr.ad',
+           			type : 'post',
+           			data : {
+           				zipcode : $('#zipcode').text(),
+           				address1 : $('#address1').text(),
+           				address2 : $('#address2').text()
+           			},
+           			success : function(res){
+           				console.log(res);
+           				if(res > 0 ) {
+           					alert("데이터 변경 성공!");
+           				}else {
+           					alert("데이터 변경 실패 !");
+           				}
+           			},
+           			error : function(){
+           				alert('실패!');
+           			}
+           		});
+
         	});
         });
+
     </script>
     <style type="text/css">
     	.con{

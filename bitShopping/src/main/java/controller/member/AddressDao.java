@@ -1,5 +1,7 @@
 package controller.member;
 
+import java.util.HashMap;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -41,6 +43,11 @@ public class AddressDao extends SuperDao{
 
 	public Object SelectAllAddress(String id) {
 		return this.abcd.selectList(namespace + ".SelectAllAddress", id);
+	}
+
+
+	public int updateAddr(HashMap<String, Object> paramMap) {
+		return this.abcd.update(namespace+ ".updateAddr",paramMap);
 	}
 
 
