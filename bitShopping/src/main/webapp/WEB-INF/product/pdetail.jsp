@@ -114,6 +114,15 @@ body, input, select, textarea, button {
 .input-element .comment-form-comment {
 	font-weight: bolder;
 }
+		.main-menu ul li a {
+		    font-size: 17px !important;
+		}
+		
+		.product-details-content{
+			padding-left: 100px;
+			padding-top: 50px;
+		}    	
+
 </style>
 
 </head>
@@ -180,51 +189,6 @@ body, input, select, textarea, button {
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="pro-details2">
-                                        <div class="easyzoom easyzoom--overlay">
-                                            <a href="<%=contextPath%>/resources/assets/img/product-details/bl2.jpg">
-                                                <img src="<%=contextPath%>/resources/assets/img/product-details/l2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="pro-details3">
-                                        <div class="easyzoom easyzoom--overlay">
-                                            <a href="<%=contextPath%>/resources/assets/img/product-details/bl3.jpg">
-                                                <img src="<%=contextPath%>/resources/assets/img/product-details/l3.jpg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="pro-details4">
-                                        <div class="easyzoom easyzoom--overlay">
-                                            <a href="<%=contextPath%>/resources/assets/img/product-details/bl4.jpg">
-                                                <img src="<%=contextPath%>/resources/assets/img/product-details/l4.jpg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="pro-details5">
-                                        <div class="easyzoom easyzoom--overlay">
-                                            <a href="<%=contextPath%>/resources/assets/img/product-details/bl3.jpg">
-                                                <img src="<%=contextPath%>/resources/assets/img/product-details/l3.jpg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-details-small nav mt-12 product-dec-slider owl-carousel">
-                                    <a class="active" href="#pro-details1">
-                                        <img src="<%=contextPath%>/resources/assets/img/product-details/s1.jpg" alt="">
-                                    </a>
-                                    <a href="#pro-details2">
-                                        <img src="<%=contextPath%>/resources/assets/img/product-details/s2.jpg" alt="">
-                                    </a>
-                                    <a href="#pro-details3">
-                                        <img src="<%=contextPath%>/resources/assets/img/product-details/s3.jpg" alt="">
-                                    </a>
-                                    <a href="#pro-details4">
-                                        <img src="<%=contextPath%>/resources/assets/img/product-details/s4.jpg" alt="">
-                                    </a>
-                                    <a href="#pro-details5">
-                                        <img src="<%=contextPath%>/resources/assets/img/product-details/s3.jpg" alt="">
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -262,14 +226,8 @@ body, input, select, textarea, button {
 	                                	  <span>add to cart</span>
 	                                	</button>
 	                                </div>
-	                                <!-- <div class="quickview-btn-wishlist">
-	                                    <a class="btn-hover cr-btn" href="#">
-	                                        <span>
-	                                            <i class="ion-ios-heart-outline"></i>
-	                                        </span>
-	                                    </a>	위시 리스트 구현 안함
-	                                </div> -->
-                            </div></form> 
+                            </div>
+                          </form> 
                             <div class="product-categories">
                                 <h5 class="pd-sub-title">Categories</h5>
                                 <ul>
@@ -281,7 +239,7 @@ body, input, select, textarea, button {
                                     </li> -->
 							</ul>
 						</div>
-						<div class="product-share">
+						<!-- <div class="product-share"> 사용 안할듯
 							<h5 class="pd-sub-title">Share</h5>
 							<ul>
 								<li><a href="#"> <i class="ion-social-twitter"></i>
@@ -294,7 +252,7 @@ body, input, select, textarea, button {
 										class="ion-social-instagram-outline"></i>
 								</a></li>
 							</ul>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
