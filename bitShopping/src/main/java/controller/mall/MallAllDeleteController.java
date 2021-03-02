@@ -14,8 +14,8 @@ import dao.CompositeDao;
 import shopping.MyCartList;
 
 @Controller
-public class MallDeleteController extends SuperClass{
-	private final String command = "/delete.mall" ; 
+public class MallAllDeleteController extends SuperClass{
+	private final String command = "/deleteAll.mall" ; 
 	private ModelAndView mav = null ;
 	//private String redirect = "redirect:/delete.mall" ;
 	
@@ -23,26 +23,23 @@ public class MallDeleteController extends SuperClass{
 	@Qualifier("cdao")
 	private CompositeDao dao ;
 	
-	public MallDeleteController() {
+	public MallAllDeleteController() {
 		super(null, null);
 		this.mav = new ModelAndView();
 	}
 	
 	@GetMapping(command)
 	public ModelAndView doGet(
-			@RequestParam(value = "pno", required = true) int pno,
 			HttpSession session){
 		int pcnt = 0 ; // 장바구니에 담긴 상품 수량 체크
 		
 			MyCartList mycart = (MyCartList)session.getAttribute("mycart") ;
 			
-			mycart.DeleteOrder(pno); 
+			mycart.RemoveAllProductInfo(); 
 			
-			pcnt = MyCartList.PCNT;
 			session.setAttribute("pcnt", pcnt);
-			
 			session.setAttribute("mycart", mycart); 
-			this.mav.setViewName("redirect:/list.mall");
+			this.mav.setViewName("redirect:/plist.pr");
 		return this.mav ;
 	}
 	

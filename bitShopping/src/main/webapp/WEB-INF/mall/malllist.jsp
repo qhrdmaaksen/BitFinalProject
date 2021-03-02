@@ -136,15 +136,19 @@
                                        <!--  <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p> -->
                                         <div class="input-group mb-4 border rounded-pill p-2">
                                         	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        	<a href="<%=contextPath%>/plist.pr">
                                             <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill">
                                             	<i class="fa fa-gift mr-2"></i>쇼핑 더 하기
                                             	</button>
+                                            </a>
                                             	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             <div class="input-group-append border-0">
-                                                <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill">
-                                                    전체 목록 삭제하기
-                                                </button>
-                                            </div>
+                                            <a href="<%=contextPath%>/deleteAll.mall">
+	                                                <button id="button-addon3" type="submit" class="btn btn-dark px-4 rounded-pill">
+	                                                    전체 목록 삭제하기
+	                                                </button>
+	                                          </a> 
+                                            </div> 
                                         </div>
                                     </div>
                                 </div>

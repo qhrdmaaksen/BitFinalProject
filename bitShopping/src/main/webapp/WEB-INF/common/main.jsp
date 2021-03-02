@@ -144,7 +144,7 @@
 	                                        <a href="#" title="Quick View" data-target="#exampleModal" data-toggle="modal" class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-search"></i>
 	                                        </a>
-	                                        <a href="#" title="Add To Cart"  class="action-plus-2 tooltip">
+	                                        <a href="<%=contextPath%>/insert.mall?pno=${bean.pno}&pqty=${bean.pqty}&qty=1" title="Add To Cart"  class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-shopping-cart-plus"></i>
 	                                        </a>
 	                                    </div>
@@ -222,7 +222,7 @@
 	                                        <a href="#" title="Quick View" data-target="#exampleModal" data-toggle="modal" class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-search"></i>
 	                                        </a>
-	                                        <a href="#" title="Add To Cart"  class="action-plus-2 tooltip">
+	                                        <a href="<%=contextPath%>/insert.mall?pno=${bean.pno}&pqty=${bean.pqty}&qty=1" title="Add To Cart"  class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-shopping-cart-plus"></i>
 	                                        </a>
 	                                    </div>
