@@ -47,7 +47,12 @@ public class PdetailController extends SuperClass{
 		
 		if( bean != null){ //상세 보기로 이동			 
 			mav.addObject("bean", bean);
+			
+			String mode1 = bean.getPcategory(); // 같은 카테고리 상품 추천
+			List<Product> lists1 = dao.SelectDataList1(mode1);
+			//System.out.println("리스트는 몇 개? : " + lists1.size());
 			mav.addObject("lists", lists);
+			mav.addObject("lists1", lists1);
 			this.mav.setViewName(super.getpage);	
 		}else{
 			this.mav.setViewName(this.redirect);		 

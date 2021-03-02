@@ -17,7 +17,7 @@ import utility.FlowParameters;
 @Controller
 public class MainController extends SuperClass{
 	
-	String mode1 = "과일";
+	String mode1 = "과일"; // 추후 수정이 용이하도록 이곳에 작성 해 주었습니다.
 	String mode2 = "채소";
 	String mode3 = "간식";
 	String mode4 = "베이커리";
