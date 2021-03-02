@@ -1,5 +1,8 @@
 package controller.member;
 
+import java.util.HashMap;
+import java.util.Iterator;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,6 +11,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import bean.Member;
@@ -52,4 +58,15 @@ public class MAddressController extends SuperClass{
 		this.mav.setViewName(super.postpage); 
 		return this.mav ;
 	}
+	
+	@PostMapping("/updateAddr.ad")
+	@ResponseBody
+	public int updateAddr(HttpSession session, @RequestParam HashMap<String, Object> paramMap) {
+		Member member = (Member)session.getAttribute("loginfo");
+		paramMap.put("mid", member.getMid());
+		return adao.updateAddr(paramMap);
+	}
+	
+	
+	
 }
