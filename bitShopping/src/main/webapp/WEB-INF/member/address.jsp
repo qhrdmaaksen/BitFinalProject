@@ -24,7 +24,7 @@
                     // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
                     if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
                         extraRoadAddr += data.bname;
-                    }
+                    } 
                     // 건물명이 있고, 공동주택일 경우 추가한다.
                     if(data.buildingName !== '' && data.apartment === 'Y'){
                         extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
@@ -67,8 +67,32 @@
         		var text = $("#inputValue input").eq(0).val();
         		$("#address2").text(text);
     			$('#myModal').modal('hide');
+    			
+    			alert('데이터 전송!');
+           		$.ajax({
+           			url : '/mytest/updateAddr.ad',
+           			type : 'post',
+           			data : {
+           				zipcode : $('#zipcode').text(),
+           				address1 : $('#address1').text(),
+           				address2 : $('#address2').text()
+           			},
+           			success : function(res){
+           				console.log(res);
+           				if(res > 0 ) {
+           					alert("데이터 변경 성공!");
+           				}else {
+           					alert("데이터 변경 실패 !");
+           				}
+           			},
+           			error : function(){
+           				alert('실패!');
+           			}
+           		});
+
         	});
         });
+
     </script>
     <style type="text/css">
     	.con{

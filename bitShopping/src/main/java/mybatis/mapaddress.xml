@@ -5,6 +5,14 @@
 
 <mapper namespace="MapAddress">
 
+	<update id="updateAddr" parameterType="java.util.HashMap">
+		update members 
+		set zipcode = #{zipcode}
+			, address1 = #{address1}
+			, address2 =  #{address2}
+		where mid = #{mid}
+	</update>
+
 	<select id="SelectDataList" parameterType="MyMember" resultType="MyMember">
 		select name , zipcode , address1 , address2 , phone
 		from members

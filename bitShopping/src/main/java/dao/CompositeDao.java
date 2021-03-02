@@ -11,12 +11,11 @@ import org.springframework.stereotype.Component;
 
 import bean.Postcode;
 import bean.Product;
+import bean.TOP50;
 
 @Component("cdao")
 public class CompositeDao {
 	private final String namespace = "MapperComposite" ;	
-
-	
 	
 	@Autowired
 	SqlSessionTemplate abcd;
@@ -49,7 +48,9 @@ public class CompositeDao {
 		return this.abcd.selectList(namespace + ".SelectDataList3", map2);
 	}
 
-	
+	public List<TOP50> SelectDataList4() { // TOP50 list 출력
+		return this.abcd.selectList(namespace + ".SelectDataList4");
+	}
 	
 	
 	
