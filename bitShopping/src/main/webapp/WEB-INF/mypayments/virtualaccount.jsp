@@ -8,7 +8,7 @@
 	<%@ include file="/WEB-INF/common/common.jsp"%>
 	 <script type="text/javascript">
 	 	function gotohome(){
-	 		$(location).attr("href","http://localhost:8989/SemiProject/dodamdodam?command=index");
+	 		$(location).attr("href","http://localhost:8989/mytest/main.cu");
 	 	}
 	 	function paypay(){
 	 		console.log("#paypay");
@@ -67,6 +67,6 @@
     	<button id="gohome" type="button" class="btn btn-primary" onclick="gotohome()">홈페이지로 돌아가기</button>
     </div>
 </div>
-<%@ include file="../common/footer.jsp" %>
+
 </body>
 </html>

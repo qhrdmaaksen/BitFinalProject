@@ -36,6 +36,22 @@ public class PaymentShippingController extends SuperClass {
 
 	@PostMapping(command)
 	public ModelAndView doPost(@ModelAttribute Address address) {
+		
+		//경희 
+		Address bean = new Address();
+		bean.setAddress1("sample4_roadAddress");
+		bean.setAddress2("sample4_jibunAddress");
+		bean.setId("id");
+		bean.setName("name");
+		bean.setPhone("phone");
+		bean.setShippingname("shippingname");
+		
+		AddressDao adao = new AddressDao();
+		int cnt = -999;
+		cnt = adao.InsertData(bean);
+		
+		////////////////////////////////////////////////////////
+		
 
 		this.adao.InsertData(address);
 

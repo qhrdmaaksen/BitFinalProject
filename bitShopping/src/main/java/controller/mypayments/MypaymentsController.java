@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import bean.Member;
 import bean.Product;
 import controller.common.SuperClass;
+import dao.MallDao;
 import dao.ProductDao;
 import shopping.MyCartList;
 import shopping.ShoppingInfo;
@@ -27,109 +29,48 @@ import shopping.ShoppingInfo;
 @Controller
 public class MypaymentsController extends SuperClass {
 	private final String command = "/payment.pm";
-	private String redirect = "redirect:/plist.pr";
-
+	private String redirect = "mypayments";
 	private ModelAndView mav = null;
 
 	@Autowired
 
-	@Qualifier("pdao")
-	private ProductDao pdao;//
+	@Qualifier("malldao")
+	private MallDao malldao ;//
 
 	public MypaymentsController() {
 
-		super("mypayments", "plist");
+		super("mypayments", null);
 		this.mav = new ModelAndView();
 
 	}
 
-	@RequestMapping(value = "/payment.pm", method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView doPost(HttpSession session, HttpServletRequest request) throws ServletException, IOException {
-		Member member = (Member) session.getAttribute("loginfo");
+	@GetMapping(command)
+	public ModelAndView doGet(
+			HttpSession session){	
+		System.out.println("장바구니 내역을 이용하여 계산을 합니다.");		
+		MyCartList mycart = (MyCartList)session.getAttribute("mycart");
 		
-		/*  if(request.getParameter("directbuy").equals("1")){*/
-		  
-		  
-		/*
-		 * List<ShoppingInfo> lists = new ArrayList<ShoppingInfo>(); ShoppingInfo order
-		 * = new ShoppingInfo(); ProductDao pdao = new ProductDao(); Product product =
-		 * pdao.SelectDataByPk(Integer.parseInt(request.getParameter("productcode")));
-		 * 
-		 * int productprice = (int)(product.getPrice()*0.8);
-		 * 
-		 * order.setPimg(product.getPimg1());
-		 * order.setProductname(product.getProductname());
-		 * order.setProductcode(product.getProductcode()); order.setPrice(productprice);
-		 * order.setQty(Integer.parseInt(request.getParameter("qty")));
-		 * System.out.println(" qty : " +
-		 * Integer.parseInt(request.getParameter("qty"))); lists.add(order);
-		 * 
-		 * request.setAttribute("productLists", lists);
-		 * request.setAttribute("totalcount", lists.size());
-		 * request.setAttribute("totalprice", productprice *
-		 * Integer.parseInt(request.getParameter("qty")));
-		 * 
-		 * 
-		 * }else {
-		 */
-		 
+		if (mycart != null) {
+			System.out.println("maplists : 내가 구매한 상품들의 번호와 수량에 대한 컬렉션");
+			Map<Integer, Integer> maplists = mycart.GetAllOrderLists();
 
-		MyCartList mycart = (MyCartList) session.getAttribute("mycart");
-
-		Map<Integer, Integer> maplists = mycart.GetAllOrderLists();
-		Set<Integer> keylist = maplists.keySet();
-		List<ShoppingInfo> lists = new ArrayList<ShoppingInfo>();
-
-		int totalAmount = 0; // 총 판매 금액
-
-		for (int pno : keylist) { // pno : 상품 번호 
-			int qty = maplists.get(pno); // 구매 수량
-//
-//			ProductDao pdao = new ProductDao();
-//			System.out.println(pno);
-			// 상품 번호 cno에 대한 Bean 정보
-			 Product bean = pdao.SelectDataByPk(pno);
-			 System.out.println("확인요요2222");
-
-			 
-//			
-			  int price = (int) (bean.getPrice() * 0.8); 	
-			  int point = bean.getPrice();
-//			  
-			  totalAmount += qty * price;
-//			  
-			  ShoppingInfo shopinfo = new ShoppingInfo();
+		//	int totalPoint = (Integer)session.getAttribute( "totalPoint" ) ; 
 			
-
-//			  shopinfo.setPimg(bean.getPimg1());
-//			  shopinfo.setProductname(bean.getProductname());
-//			  shopinfo.setProductcode(pno); shopinfo.setPrice(price);
-//			  shopinfo.setQty(qty);
-//			 
-//
-//			 lists.add(shopinfo); 
-//
-//			request.setAttribute("productLists", lists);
-//			request.setAttribute("totalcount", lists.size());
-//			request.setAttribute("totalprice", totalAmount);
-
+			// mem : 계산을 수행하는 당사자
+			Member mem = (Member)session.getAttribute("loginfo");
+			
+			System.out.println("dao.Calculate 메소드를 호출합니다.");
+			// Calculate() 메소드는 계산 로직을 수행해주는 메소드입니다.
+		//	malldao.Calculate(mem, maplists, totalPoint);
+					
+			// 5. 세션 영역의 모든 정보를 지우도록 한다.
+			session.removeAttribute("shoplists"); //쇼핑 정보 삭제
+			session.removeAttribute("totalAmount");//금액 정보 삭제
+			session.removeAttribute("totalPoint");//금액 정보 삭제
+			session.removeAttribute("mycart"); //카트 반납하기		
+			session.setAttribute("message", "결재를 완료했읍니다.\n감사합니다.");
+			this.mav.setViewName(this.redirect);
 		}
-//
-//		AddressDao addrdao = new AddressDao();
-//		Address address = addrdao.SelectDataByPk2(member.getMid());
-//		request.setAttribute("address", address);
-//		request.setAttribute("addressList", addrdao.SelectAllAddress(member.getMid()));
-//		super.doPost(request, response);
-//		// response에 왜 빨간줄이 뜨나 ?
-//
-//		request.setAttribute("directbuy", request.getParameter("directbuy"));
-//		super.GotoPage("mypayments.jsp");
-//		return mav;
-		
-		this.mav.setViewName(super.getpage);
-		System.out.println("doGet 메소드");
-	
-		return this.mav;
-
+		return this.mav ;
 	}
 }

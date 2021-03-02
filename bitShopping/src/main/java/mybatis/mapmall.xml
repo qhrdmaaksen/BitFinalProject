@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="MapperMall">
+	<select id="SelectDataByPk" parameterType="Integer" resultType="MyOrder">
+		select * from orders
+		where oid = #{oid}
+	</select>
+	
+	<insert id="InsertOrder" parameterType="MyOrder">
+		insert into orders(oid,mid,orderdate,remark)
+		values(seqoid.nextval, #{mid}, sysdate, #{remark})
+	</insert>
+	
+	<select id="GetMaxNum" resultType="int">
+		select max(oid) as maxpno from orders
+	</select>
+	
+	<insert id="InsertOrderDetail" parameterType="MyOrderDetail">
+		insert into orderdetails(odid,oid,pno,qty,remark)
+		values (seqodid.nextval, #{oid}, #{pno}, #{qty}, #{remark})
+	</insert>
+	
+	<update id="UpdateStock">
+		update products set stock = stock - #{stock}
+		where pno = #{pno}
+	</update>
+	
+	<update id="UpdatePoint">
+		update members set mpoint = mpoint + #{mpoint}
+		where mid = #{mid}
+	</update>
+	
+	<select id="OrderMall" parameterType="String" resultType="MyOrder">
+		select * from orders
+		where mid = #{mid}
+		order by orderdate desc
+	</select>
+
+
+
+
+
+</mapper>
