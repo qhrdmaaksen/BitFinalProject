@@ -32,17 +32,10 @@ public class MallDeleteController extends SuperClass{
 	public ModelAndView doGet(
 			@RequestParam(value = "pno", required = true) int pno,
 			HttpSession session){
-//		if (session.getAttribute("loginfo") == null) {
-//			this.mav.setViewName("redirect:/login.me");
-//		} else {
 			MyCartList mycart = (MyCartList)session.getAttribute("mycart") ;
-//			if (mycart == null) {
-//				mycart = new MyCartList() ;
-//			}
 			mycart.DeleteOrder(pno); 
 			session.setAttribute("mycart", mycart); 
 			this.mav.setViewName("redirect:/list.mall");
-		//}
 		return this.mav ;
 	}
 }

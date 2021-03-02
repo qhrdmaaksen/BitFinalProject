@@ -112,7 +112,7 @@
                                                         </td>
                                                         <td class="border-0 align-middle"><strong>${shopinfo.qty}</strong></td>
                                                         <td class="border-0 align-middle">
-                                                            <a href="<%=contextPath%>/pdelete.pr?pno=${shopinfo.productcode}" type="button"
+                                                            <a href="<%=contextPath%>/delete.mall?pno=${shopinfo.productcode}" type="button"
                                                                class="card-link-secondary small text-uppercase mr-3">
                                                                 Delete
                                                             </a>
@@ -155,7 +155,7 @@
                                         Order summary
                                     </div>
                                     <div class="p-4">
-                                        <p class="font-italic mb-4">총 구매금액이 50,000원 이상 일 경우 배송비가 부과되지 않습니다.</p>
+                                        <p class="font-italic mb-4">총 구매금액이 20,000원 이상 일 경우 배송비가 부과되지 않습니다.</p>
                                         <ul class="list-unstyled mb-4">
                                             <li class="d-flex justify-content-between py-3 border-bottom">
                                                 <strong class="text-muted">Pre-discount totalamount </strong>
@@ -167,7 +167,7 @@
                                                     Shipping and handling
                                                 </strong>
                                                 <strong>
-                                                    <c:if test="${sessionScope.disTotalPrice >= 50000}">
+                                                    <c:if test="${sessionScope.disTotalPrice >= 20000}">
                                                         <span class="text-grey">
                                                             <s>+ <fmt:formatNumber value="3000" pattern="###,###"/> ￦</s>
                                                         </span>
@@ -184,10 +184,10 @@
                                             <li class="d-flex justify-content-between py-3 border-bottom">
                                                 <strong class="text-muted">Total</strong>
                                                 <strong>
-                                                    <c:if test="${sessionScope.disTotalPrice >= 50000}">
+                                                    <c:if test="${sessionScope.disTotalPrice >= 20000}">
                                                         <h5 class="font-weight-bold"><fmt:formatNumber value="${sessionScope.disTotalPrice}" pattern="###,###"/> ￦</h5>
                                                     </c:if>
-                                                    <c:if test="${sessionScope.disTotalPrice < 50000}">
+                                                    <c:if test="${sessionScope.disTotalPrice < 20000}">
                                                          <h5 class="font-weight-bold"><fmt:formatNumber value="${sessionScope.disTotalPrice + 3000}" pattern="###,###"/> ￦</h5>
                                                     </c:if>
                                                 </strong>

@@ -36,6 +36,7 @@ public class MyCartList {
 		public void DeleteOrder(int pnum) {
 			// pnum는 삭제될 상품 번호
 			this.orderlists.remove(pnum) ;
+			MyCartList.PCNT = orderlists.size() ;
 		}
 		
 //		// 장바구니에 상품을 추가합니다.
@@ -54,13 +55,10 @@ public class MyCartList {
 				this.orderlists.put(pno, newstock);
 			} else {
 				this.orderlists.put(pno, qty) ;
-				MyCartList.PCNT += 1 ;
 			}
+			MyCartList.PCNT = orderlists.size() ;
 		}
 	
-	// 장바구니 내역 정보 반환, 수정, 추가, 삭제 ///////////////////////////
-	// 요기는 연경씨 파트 맞죠 ? ㅎㅎ 화이팅 ! 
-	// ㅎㅎㅎ 넵 감사합니다! 경희씨도 화이팅~~
 
 
 }

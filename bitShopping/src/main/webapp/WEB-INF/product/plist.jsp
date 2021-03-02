@@ -91,11 +91,11 @@
                                             <div class="col-lg-3 col-md-6 col-12">
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
-                                                        <a href="<%=contextPath%>/pdetail.pr?pno=${bean.productcode}">
+                                                        <a href="<%=contextPath%>/pdetail.pr?pno=${bean.pno}">
                                                             <img alt="${bean.pimg1}" src="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}">
                                                         </a>
-                                                        <div class="product-action-2">
-                                                            <a href="#" title="Add To Cart"  class="action-plus-2 tooltip">
+                                                       <div class="product-action-2">
+                                                            <a href="<%=contextPath%>/insert.mall?pno=${bean.pno}&pqty=${bean.pqty}&qty=1" title="Add To Cart" type="submit" class="action-plus-2 tooltip">
                                                                 <i class="zmdi zmdi-shopping-cart-plus"></i>
                                                             </a>
                                                         </div>
@@ -120,7 +120,7 @@
                                     </div>
 
 
-                                    <div id="product-list" class="tab-pane fade">
+                                   <%--  <div id="product-list" class="tab-pane fade">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-12">
                                                 <div class="product-wrapper mb-60">
@@ -157,7 +157,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --%>
                                 </div>
 
                                 <table>
