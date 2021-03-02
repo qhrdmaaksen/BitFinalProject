@@ -18,7 +18,7 @@ public class PaymentShippingController extends SuperClass {
 	private final String command = "";
 	private String redirect = "redirect/";
 	private ModelAndView mav = null;
-<<<<<<< HEAD
+
 
 	@Autowired
 	@Qualifier("adao")
@@ -42,7 +42,7 @@ public class PaymentShippingController extends SuperClass {
 		this.mav.setViewName(this.redirect);
 
 		return this.mav;
-=======
+
 //	
 //	@PostMapping(command)
 //	public ModelAndView doPost(
@@ -56,7 +56,7 @@ public class PaymentShippingController extends SuperClass {
 //		return this.mav;
 //	}
 //	
->>>>>>> 41e12beaf1b5e1cd03a1ae0e3588ab9b958d3197
+
 
 	}
 }

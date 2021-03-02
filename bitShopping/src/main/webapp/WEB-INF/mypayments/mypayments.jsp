@@ -356,21 +356,21 @@
             <table id="deliverytable"
                    style="padding: 10px 0px 10px 16px; font: 12px 돋움, Dotum, sans-werif; white-space: nowrap; width: 100%;">
                 <tbody>
-                <tr align="center">
+                <!--<tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">배송지 이름</th>
-                    <td align="center" id="addrshippname">${sessionScope.address.shippingname}</td>
-                </tr>
+                    <td align="center" id="addrshippname">${requestScope.address.shippingname}</td>
+                </tr> -->
                 <tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">수령인</th>
-                    <td align="center" id="addrname">${sessionScope.address.name}</td>
+                    <td align="center" id="addrname">${sessionScope.loginfo.name}</td>
                 </tr>
                 <tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">배송주소</th>
-                    <td align="center" id="addrtext">${requestScope.address.address1} ${requestScope.address.address2}</td>
+                    <td align="center" id="addrtext">${sessionScope.loginfo.address1} ${sessionScope.loginfo.address2}</td>
                 </tr>
                 <tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">연락처</th>
-                    <td align="center">${sessionScope.phone}</td>
+                    <td align="center">${sessionScope.loginfo.phone}</td>
                 </tr>
                 <tr style="display: none">
                     <td id="seq_addr">${address.seq_add}</td>
@@ -429,7 +429,7 @@
                     </table>
                 </c:if>
                 <p align="right"><span id="monthVal"
-                                       style="font-weight: bolder; background-color: #522772; color: white;">상품 종류 ${product.pcategory} 종류 </span>
+                                       style="font-weight: bolder; background-color: #522772; color: white;">상품 종류 ${product.category} 종류 </span>
                 </p>
             </div>
             <hr>
@@ -452,7 +452,7 @@
               <%--   <tr align="center">
                     <th>할인 쿠폰</th>
                     <td align="center" id="coupontext">
-                        <c:if test="${couponitem.name==null}">
+                        <c:if test="${couponitem.name==null}">s
                             쿠폰 미적용
                         </c:if>
                         <c:if test="${couponitem.name!=null}">
@@ -520,7 +520,7 @@
             <span>개인정보 제공안내</span>
             <a onfocus="blur()" onclick="this.innerHTML=(this.nextSibling.style.display=='none')?'[닫기]':'[열기]';
 				 this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';"
-               href="javascript:void(0)" ;>[열기]</a>
+               href="javascript:void(0)";>[열기]</a>
             <div style="DISPLAY: none">
                 <div class="agreements__content " data-agreements-content=""
                      style="display: block;">
@@ -599,7 +599,7 @@
 </div>
 <script>
     var IMP = window.IMP; // 생략해도 괜찮습니다.
-    IMP.init("imp34864609"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
+    IMP.init("imp38748327"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
 
     var today = new Date();
 
@@ -644,7 +644,7 @@
         }
         if ($("#virtualaccount").is(":checked") == true) {
             var total = parseInt($("#totalprice").text().replace(",", "").replace("원", ""));
-            $(location).attr("href", "http://localhost:8989/SemiProject/pay/virtualaccount.jsp?totalprice=" + total);
+            $(location).attr("href", "http://localhost:8989/mytest/virtualaccount.jsp?totalprice=" + total);
         }
         var obj = document.getElementsByName("momentum");
         if (obj.value == "banktrnsf") {
