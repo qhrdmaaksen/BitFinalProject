@@ -27,9 +27,9 @@ public class MyCartList {
 		}
 		
 		// 장바구니 내역 정보를 수정합니다.
-		public void EditOrder(int pnum, int stock) {
+		public void EditOrder(int pno, int qty) {
 			// pnum는 수정될 상품 번호, stock은 수정할 수량
-			this.AddOrder(pnum, stock);
+			this.orderlists.put(pno, qty);
 		}
 		
 		// 장바구니에 들어 있는 해당 상품을 삭제합니다.
@@ -38,16 +38,7 @@ public class MyCartList {
 			this.orderlists.remove(pnum) ;
 			MyCartList.PCNT = orderlists.size() ;
 		}
-		
-//		// 장바구니에 상품을 추가합니다.
-//		public void AddOrder(int pnum, int stock) {
-//			if (this.orderlists.containsKey(pnum)) { // 동일 상품이 이미 있는 경우
-//				int newstock = this.orderlists.get(pnum) + stock ; 
-//				this.orderlists.put(pnum, newstock);
-//			} else {
-//				this.orderlists.put(pnum, stock) ;
-//			}
-//		}
+
 
 		public void AddOrder(int pno, int qty) {
 			if (this.orderlists.containsKey(pno)) { // 동일 상품이 이미 있는 경우
