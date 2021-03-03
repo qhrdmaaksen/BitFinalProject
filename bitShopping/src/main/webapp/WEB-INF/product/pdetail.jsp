@@ -23,15 +23,17 @@ int formright = 12 - formleft;
 <meta charset="UTF-8">
 <title>상품 상세 페이지</title>
 <script type="text/javascript">
+$(document).ready(function() {
+	
 	$(".star_rating a").click(function() {
-
 		$(this).parent().children("a").removeClass("on");
-
 		$(this).addClass("on").prevAll("a").addClass("on");
-
 		return false;
-
 	});
+	
+}
+	
+	
 </script>
 <style type="text/css">
 div {
@@ -383,7 +385,7 @@ body, input, select, textarea, button {
 			</div>
 			<!--Review And Description Tab Content End-->
 			<!----------------------------------------------------- 상품 후기 리스트  ------------------------------------------------------------------------------------>
-	<form name="frmList">
+	<!-- <form name="frmList"> -->
 	<form:form modelAttribute="productreviews" name="myform"
 									action="${contextPath}/list.prr" method="get">
 		<input name="pno" id="pno" type="hidden" value="${bean.pno}">
@@ -462,7 +464,7 @@ body, input, select, textarea, button {
 			</details></td>
 		<td class="user_grade grade_comm"></td>
 		<td class="bwirter">${bean.bwriter}</td>
-		<td class="bregdate">${bea.bregdate}</td>
+		<td class="bregdate">${bean.bregdate}</td>
 		<td><span class="breview">${bean.breview}</span></td>
 			</c:forEach>
 		</tr>
@@ -530,265 +532,70 @@ body, input, select, textarea, button {
 
 
 
-	<!--Product Description Review Area Start-->
-	<!-- may also like product start -->
-	<div class="product-area pb-65   product-padding">
-		<div class="container">
-			<div class="section-title-2 text-center mb-25">
-				<h2 class="m-0">You may also like…</h2>
-				<p>The most prominent product in the store, which was bought
-					with the highest number - upsell</p>
-			</div>
+ <!-- may also like product start -->
+        <div class="product-area pb-65   product-padding">
+            <div class="container">
+                <div class="section-title-2 text-center mb-25">
+                    <h2 class="m-0"> 이런 상품은 어떠세요? </h2>
+                    <p> 지금 보고계신 상품과 비슷한 상품을 추천 해 드립니다. </p>
+                </div>
 
-			<div class="row">
-				<div class="product-slider-active owl-carousel">
-					<div class="col-lg-4 col-md-6 col-12">
-						<div class="product-wrapper mb-35">
-							<div class="product-img">
-								<a href="product-details.html"> <span class="onsale">Sale!</span>
-									<img alt=""
-									src="<%=contextPath%>/resources/assets/img/products/1.jpg">
-								</a>
-								<div class="product-action-2">
-									<a href="#" title="Add to Compare"
-										class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-refresh"></i>
-									</a> <a href="#" title="Add to Wishlist"
-										class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-favorite-outline"></i>
-									</a> <a href="#" title="Quick View" data-target="#exampleModal"
-										data-toggle="modal" class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-search"></i>
-									</a> <a href="#" title="Add To Cart" class="action-plus-2 tooltip">
-										<i class="zmdi zmdi-shopping-cart-plus"></i>
-									</a>
-								</div>
-								<div class="rating-box">
-									<a href="#" title="1 star"> <i class="far fa-star"></i>
-									</a> <a href="#" title="2 star"> <i class="far fa-star"></i>
-									</a> <a href="#" title="3 star"> <i class="far fa-star"></i>
-									</a> <a href="#" title="4 star"> <i class="far fa-star"></i>
-									</a> <a href="#" title="5 star"> <i class="far fa-star"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-content text-center">
-								<h4>
-									<a href="product-details.html">Commodo dolor</a>
-								</h4>
-								<div class="product-price-2">
-									<div class="price-box">
-										<del>
-											<span class="amount"> <span
-												class="Price-currencySymbol">$</span>80.00
-											</span>
-										</del>
-										<ins>
-											<span class="amount"> <span
-												class="Price-currencySymbol">$</span>75.00
-											</span>
-										</ins>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+                <div class="row">
+                    <div class="product-slider-active owl-carousel">
+	                    <c:forEach var="bean" items="${requestScope.lists1}">
+	                        <div class="col-lg-4 col-md-6 col-12">
+	                            <div class="product-wrapper mb-35">
+	                                <div class="product-img">
+	                                    <a href="<%=contextPath%>/pdetail.pr?pno=${bean.pno}">
+	                                        <span class="onsale">Sale!</span>
+	                                        <img alt="" src="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}">
+	                                    </a>
+	                                    <div class="product-action-2">
+	                                        <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-refresh"></i>
+	                                        </a>
+	                                        <a href="#" title="Add to Wishlist" class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-favorite-outline"></i>
+	                                        </a>
+	                                        <a href="#" title="Quick View" data-target="#exampleModal" data-toggle="modal" class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-search"></i>
+	                                        </a>
+	                                        <a href="<%=contextPath%>/insert.mall?pno=${bean.pno}&pqty=${bean.pqty}&qty=1" title="Add To Cart"  class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-shopping-cart-plus"></i>
+	                                        </a>
+	                                    </div>
+	                                </div>
+	                                <div class="product-content text-center">
+	                                    <h4>
+	                                        <a href="<%=contextPath%>/pdetail.pr?pno=${bean.pno}">${bean.productname}</a>
+	                                    </h4>
+	                                    <div class="product-price-2">
+	                                        <div class="price-box">
+	                                            <del>
+	                                                <span class="amount">
+	                                                    <span class="Price-currencySymbol"></span><fmt:formatNumber value="${bean.price}" pattern="#,##0" /> 원</span>
+	                                            </del>
+	                                            <ins>
+	                                                <span class="amount">
+	                                                    <span class="Price-currencySymbol"></span><fmt:formatNumber value="${bean.price*0.85}" pattern="#,##0" /> 원</span>
+	                                            </ins>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                      </c:forEach>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-					<div class="col-lg-4 col-md-6 col-12">
-						<div class="product-wrapper mb-35">
-							<div class="product-img">
-								<a href="product-details.html"> <img alt=""
-									src="<%=contextPath%>/resources/assets/img/products/2.jpg">
-								</a>
-								<div class="product-action-2">
-									<a href="#" title="Add to Compare"
-										class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-refresh"></i>
-									</a> <a href="#" title="Add to Wishlist"
-										class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-favorite-outline"></i>
-									</a> <a href="#" title="Quick View" data-target="#exampleModal"
-										data-toggle="modal" class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-search"></i>
-									</a> <a href="#" title="Add To Cart" class="action-plus-2 tooltip">
-										<i class="zmdi zmdi-shopping-cart-plus"></i>
-									</a>
-								</div>
-								<div class="rating-box">
-									<a href="#" class="rated" title="1 star"> <i
-										class="far fa-star"></i>
-									</a> <a href="#" class="rated" title="2 star"> <i
-										class="far fa-star"></i>
-									</a> <a href="#" class="rated" title="3 star"> <i
-										class="far fa-star"></i>
-									</a> <a href="#" title="4 star"> <i class="far fa-star"></i>
-									</a> <a href="#" title="5 star"> <i class="far fa-star"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-content text-center">
-								<h4>
-									<a href="product-details.html">Auctor sem</a>
-								</h4>
-								<div class="product-price-2">
-									<div class="price-box">
-										<ins>
-											<span class="amount"> <span
-												class="Price-currencySymbol">$</span>195.00
-											</span>
-										</ins>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 
-					<div class="col-lg-4 col-md-6 col-12">
-						<div class="product-wrapper mb-35">
-							<div class="product-img">
-								<a href="product-details.html"> <img alt=""
-									src="<%=contextPath%>/resources/assets/img/products/5.jpg">
-								</a>
-								<div class="product-action-2">
-									<a href="#" title="Add to Compare"
-										class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-refresh"></i>
-									</a> <a href="#" title="Add to Wishlist"
-										class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-favorite-outline"></i>
-									</a> <a href="#" title="Quick View" data-target="#exampleModal"
-										data-toggle="modal" class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-search"></i>
-									</a> <a href="#" title="Add To Cart" class="action-plus-2 tooltip">
-										<i class="zmdi zmdi-shopping-cart-plus"></i>
-									</a>
-								</div>
-								<div class="rating-box">
-									<a href="#" class="rated" title="1 star"> <i
-										class="far fa-star"></i>
-									</a> <a href="#" title="2 star"> <i class="far fa-star"></i>
-									</a> <a href="#" title="3 star"> <i class="far fa-star"></i>
-									</a> <a href="#" title="4 star"> <i class="far fa-star"></i>
-									</a> <a href="#" title="5 star"> <i class="far fa-star"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-content text-center">
-								<h4>
-									<a href="product-details.html">Endwerst goodst</a>
-								</h4>
-								<div class="product-price-2">
-									<div class="price-box">
-										<ins>
-											<span class="amount"> <span
-												class="Price-currencySymbol">$</span>85.00
-											</span>
-										</ins>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6 col-12">
-						<div class="product-wrapper mb-35">
-							<div class="product-img">
-								<a href="product-details.html"> <img alt=""
-									src="<%=contextPath%>/resources/assets/img/products/11.jpg">
-								</a>
-								<div class="product-action-2">
-									<a href="#" title="Add to Compare"
-										class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-refresh"></i>
-									</a> <a href="#" title="Add to Wishlist"
-										class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-favorite-outline"></i>
-									</a> <a href="#" title="Quick View" data-target="#exampleModal"
-										data-toggle="modal" class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-search"></i>
-									</a> <a href="#" title="Add To Cart" class="action-plus-2 tooltip">
-										<i class="zmdi zmdi-shopping-cart-plus"></i>
-									</a>
-								</div>
-								<div class="rating-box">
-									<a href="#" class="rated" title="1 star"> <i
-										class="far fa-star"></i>
-									</a> <a href="#" class="rated" title="2 star"> <i
-										class="far fa-star"></i>
-									</a> <a href="#" class="rated"> <i class="far fa-star"></i>
-									</a> <a href="#" title="4 star"> <i class="far fa-star"></i>
-									</a> <a href="#" title="5 star"> <i class="far fa-star"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-content text-center">
-								<h4>
-									<a href="product-details.html">Commodo dolor</a>
-								</h4>
-								<div class="product-price-2">
-									<div class="price-box">
-										<ins>
-											<span class="amount"> <span
-												class="Price-currencySymbol">$</span>55.00
-											</span>
-										</ins>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6 col-12">
-						<div class="product-wrapper mb-35">
-							<div class="product-img">
-								<a href="product-details.html"> <img alt=""
-									src="<%=contextPath%>/resources/assets/img/products/10.jpg">
-								</a>
-								<div class="product-action-2">
-									<a href="#" title="Add to Compare"
-										class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-refresh"></i>
-									</a> <a href="#" title="Add to Wishlist"
-										class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-favorite-outline"></i>
-									</a> <a href="#" title="Quick View" data-target="#exampleModal"
-										data-toggle="modal" class="action-plus-2 tooltip"> <i
-										class="zmdi zmdi-search"></i>
-									</a> <a href="#" title="Add To Cart" class="action-plus-2 tooltip">
-										<i class="zmdi zmdi-shopping-cart-plus"></i>
-									</a>
-								</div>
-								<div class="rating-box">
-									<a href="#" class="rated" title="1 star"> <i
-										class="far fa-star"></i>
-									</a> <a href="#" class="rated" title="2 star"> <i
-										class="far fa-star"></i>
-									</a> <a href="#" class="rated"> <i class="far fa-star"></i>
-									</a> <a href="#" title="4 star"> <i class="far fa-star"></i>
-									</a> <a href="#" title="5 star"> <i class="far fa-star"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-content text-center">
-								<h4>
-									<a href="product-details.html">Auctor sem</a>
-								</h4>
-								<div class="product-price-2">
-									<div class="price-box">
-										<ins>
-											<span class="amount"> <span
-												class="Price-currencySymbol">$</span>60.00
-											</span>
-										</ins>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 
 

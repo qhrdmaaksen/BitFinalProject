@@ -356,16 +356,16 @@
 						 		</div>
 						 	</div>
 						 </div> 
-						 	<div class="next">
+						<!--  	<div class="next">
 						 		<a href="/shop/event/lovers/lovers.php" class="total_grade">전체등급 보기</a> 
 						 		<a href="/shop/proc/my_benefit.php?id=benefit" class="next_month">다음 달 예상등급 보기</a>
-						 	</div>
+						 	</div> -->
 						 </div> 
 					<ul class="list_mypage">
 						<li class="user_reserve">
 							<div class="link">
 								<div class="tit">적립금 <!----></div>
-									 <a href="/shop/mypage/mypage_emoney.php" class="info">${sessionScope.loginfo.mpoint}
+									 <a href="/shop/mypage/mypage_emoney.php" class="info">${sessionScope.loginfo.mpoint} 원
 									 <img src="https://res.kurly.com/pc/service/common/1905/ico_arrow_56x56.png" alt="자세히 보기"> 
 								 	<span class="date">소멸 예정 0 원</span></a>
 								 </div>
@@ -373,7 +373,7 @@
 						<li class="user_coupon">
 							<div class="link">
 								<div class="tit">쿠폰 <!----></div> 
-									<a href="/shop/mypage/mypage_coupon.php" class="info"> 2 개 
+									<a href="/shop/mypage/mypage_coupon.php" class="info"> 0 개 
 									<img src="https://res.kurly.com/pc/service/common/1905/ico_arrow_56x56.png" alt="자세히 보기">
 									</a>
 								</div>
@@ -407,16 +407,13 @@
 					</a>
 				</li>
 				<li>
-					<a href="/shop/mypage/mypage_wishlist.php">늘 사는 것</a>
-				</li>
-				<li>
 					<a href="/shop/mypage/mypage_review.php">상품 후기</a>
 				</li>
 				<li>
-					<a href="/shop/mypage/mypage_emoney.php">적립금</a>
+					<a href="/shop/mypage/mypage_emoney.php">적립금 / x</a>
 				</li>
 				<li>
-					<a href="/shop/mypage/mypage_coupon.php">쿠폰</a>
+					<a href="/shop/mypage/mypage_coupon.php">쿠폰 / x</a>
 				</li>
 				<li>
 					<a href="/shop/member/myinfo.php">개인 정보 수정</a>

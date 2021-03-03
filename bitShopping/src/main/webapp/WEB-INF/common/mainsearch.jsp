@@ -91,18 +91,18 @@
                                             <div class="col-lg-3 col-md-6 col-12">
                                                 <div class="product-wrapper mb-60">
                                                     <div class="product-img">
-                                                        <a href="<%=contextPath%>/pdetail.pr?pno=${bean.productcode}">
+                                                        <a href="<%=contextPath%>/pdetail.pr?pno=${bean.pno}">
                                                             <img alt="${bean.pimg1}" src="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}">
                                                         </a>
                                                         <div class="product-action-2">
-                                                            <a href="#" title="Add To Cart"  class="action-plus-2 tooltip">
+                                                            <a href="<%=contextPath%>/insert.mall?pno=${bean.pno}&pqty=${bean.pqty}&qty=1" title="Add To Cart"  class="action-plus-2 tooltip">
                                                                 <i class="zmdi zmdi-shopping-cart-plus"></i>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-content text-center">
                                                         <h4>
-                                                            <a href="<%=contextPath%>/pdetail.pr?pno=${bean.productcode}">${bean.productname}</a>
+                                                            <a href="<%=contextPath%>/pdetail.pr?pno=${bean.pno}">${bean.productname}</a>
                                                         </h4>
                                                         <div class="product-price-2">
                                                             <div class="price-box">
@@ -118,47 +118,6 @@
                                            	</c:forEach>
                                         </div>
                                     </div>
-
-
-                                    <div id="product-list" class="tab-pane fade">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-12">
-                                                <div class="product-wrapper mb-60">
-                                                	<c:forEach var="bean" items="${requestScope.lists1}">
-                                                    <div class="product-img">
-                                                        <a href="<%=contextPath%>/pdetail.pr?pno=${bean.productcode}">
-                                                            <img alt="${bean.pimg1}" src="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h4>
-                                                            <a href="product-details.html">${bean.productname}</a>
-                                                        </h4>
-                                                        <div class="product-price-2">
-                                                            <div class="price-box">
-                                                                <ins>
-                                                                    <span class="amount">
-                                                                        <span class="Price-currencySymbol"></span>${bean.price} 원</span>
-                                                                </ins>
-                                                            </div>
-                                                        </div>
-                                                        <p>
-                                                        	${bean.pcontents}Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere
-                                                            metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed
-                                                            sit amet sem vitae urna fringilla tempus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere.
-                                                        </p>
-                                                        <div class="product-action-2">
-                                                            <a href="#" title="Add To Cart"  class="action-plus-2 list_bg_add tooltip">
-                                                                <i class="zmdi zmdi-shopping-cart-plus"></i> Add to cart
-                                                            </a>
-                                                        </div>
-                                                    </div>
-													</c:forEach>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
                                 <table>
 								<tr>

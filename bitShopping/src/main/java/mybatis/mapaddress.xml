@@ -37,15 +37,14 @@
 		select  * 
 		from addresses
 
-<!-- 	<select id="selectAllAddress" parameterType="MyMember" resultType="MyMember">
-		select 
-		from adresses
-
-		where id = #{id}
-		
+	</select>
+	
+	<insert id="InsertData" parameterType="MyAddress">
+			insert into (seq_add, id,shippingname, name, address1, address2, phone)
+			values(seq_add, #{id},#{shippingname},#{name},#{address1},#{address2},#{phone}) 
 
 	
-	</select>
+	</insert>
 	
 	<select id="SelectDataByPk2" parameterType="MyAddress" resultType="MyAddress">
 		select  seq_add, id, shippingname, name, address1, address2, phone

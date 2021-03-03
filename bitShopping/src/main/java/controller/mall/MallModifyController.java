@@ -12,12 +12,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import bean.Product;
 import controller.common.SuperClass;
+import dao.CompositeDao;
 import dao.ProductDao;
 import shopping.MyCartList;
 
 @Controller
-public class MallInsertController extends SuperClass{
-	private final String command = "/insert.mall" ; 
+public class MallModifyController extends SuperClass{
+	private final String command = "/modify.mall" ; 
 	private ModelAndView mav = null ;
 	private String redirect = "redirect:/list.pr" ;
 	
@@ -25,69 +26,36 @@ public class MallInsertController extends SuperClass{
 	@Qualifier("pdao")
 	private ProductDao dao ;
 	
-	public MallInsertController() {
-		super("plist", null);
+	public MallModifyController() {
+		super("malllist", "malllist");
 		this.mav = new ModelAndView();
 	}	
-	
-	
-	@GetMapping(command)
-	public ModelAndView doGet(
-			@RequestParam(value = "pno", required = true) int pno,
-			@RequestParam(value = "pqty", required = true) int pqty,
-			@RequestParam(value = "qty", required = true) int qty, 
-			HttpSession session){
-			// pqty : 재고, qty : 구매 수량
-		int pcnt = 0 ; // 장바구니에 담긴 상품 수량 체크
-			if (pqty < qty) { //재고 수량 초과				
-				String message = "재고 수량이 부족합니다." ;
-				System.out.println(message);
-				this.mav.addObject("errmsg", message);
-				this.mav.setViewName("redirect:/list.pr");
-			} else { // 판매에 문제 없슴
-				
-				//System.out.println("get으로 왔다");
-				
-				MyCartList mycart = (MyCartList)session.getAttribute("mycart") ;
-				if (mycart == null) { // 카트가 없으면
-					mycart = new MyCartList() ; // 매장 입구에서 카트 준비
-				}
-				mycart.AddOrder(pno, qty); // 카트에 담기
-				pcnt = MyCartList.PCNT;
-				System.out.println("pcnt : " + pcnt);
-				session.setAttribute("pcnt", pcnt);
-				session.setAttribute("mycart", mycart);
-				//new list.mallController().doGet(request, response);
-				this.mav.setViewName("redirect:/list.mall"); 
-			}
-		
-		return this.mav ;
-	}
-	
 	
 	@PostMapping(command)
 	public ModelAndView doPost(
 			@RequestParam(value = "pno", required = true) int pno,
-			@RequestParam(value = "pqty", required = true) int pqty,
 			@RequestParam(value = "qty", required = true) int qty, 
 			HttpSession session){
+		
+		Product bean = dao.SelectDataByPk(pno);
+		int pqty = bean.getPqty();
+		
 			// pqty : 재고, qty : 구매 수량
 		int pcnt = 0 ; // 장바구니에 담긴 상품 수량 체크
 			if (pqty < qty) { //재고 수량 초과				
 				String message = "재고 수량이 부족합니다." ;
 				System.out.println(message);
 				this.mav.addObject("errmsg", message);
-				this.mav.setViewName("redirect:/list.pr");
-			} else { // 판매에 문제 없슴
+				this.mav.setViewName("redirect:/list.mall"); 
+			} else { // 판매에 문제 없음
 				
-				System.out.println("pno : " + pno);
+				System.out.println("get으로 왔다");
 				
 				MyCartList mycart = (MyCartList)session.getAttribute("mycart") ;
 				if (mycart == null) { // 카트가 없으면
 					mycart = new MyCartList() ; // 매장 입구에서 카트 준비
 				}
-				mycart.AddOrder(pno, qty); // 카트에 담기
-				
+				mycart.EditOrder(pno, qty); // 수량 수정하기
 				pcnt = MyCartList.PCNT;
 				System.out.println("pcnt : " + pcnt);
 				session.setAttribute("pcnt", pcnt);

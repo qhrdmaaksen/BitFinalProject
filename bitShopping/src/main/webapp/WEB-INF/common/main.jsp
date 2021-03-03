@@ -144,25 +144,8 @@
 	                                        <a href="#" title="Quick View" data-target="#exampleModal" data-toggle="modal" class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-search"></i>
 	                                        </a>
-	                                        <a href="#" title="Add To Cart"  class="action-plus-2 tooltip">
+	                                        <a href="<%=contextPath%>/insert.mall?pno=${bean.pno}&pqty=${bean.pqty}&qty=1" title="Add To Cart"  class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-shopping-cart-plus"></i>
-	                                        </a>
-	                                    </div>
-	                                    <div class="rating-box">
-	                                        <a href="#" title="1 star">
-	                                            <i class="far fa-star"></i>
-	                                        </a>
-	                                        <a href="#" title="2 star">
-	                                            <i class="far fa-star"></i>
-	                                        </a>
-	                                        <a href="#" title="3 star">
-	                                            <i class="far fa-star"></i>
-	                                        </a>
-	                                        <a href="#" title="4 star">
-	                                            <i class="far fa-star"></i>
-	                                        </a>
-	                                        <a href="#" title="5 star">
-	                                            <i class="far fa-star"></i>
 	                                        </a>
 	                                    </div>
 	                                </div>
@@ -222,7 +205,7 @@
 	                                        <a href="#" title="Quick View" data-target="#exampleModal" data-toggle="modal" class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-search"></i>
 	                                        </a>
-	                                        <a href="#" title="Add To Cart"  class="action-plus-2 tooltip">
+	                                        <a href="<%=contextPath%>/insert.mall?pno=${bean.pno}&pqty=${bean.pqty}&qty=1" title="Add To Cart"  class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-shopping-cart-plus"></i>
 	                                        </a>
 	                                    </div>

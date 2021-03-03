@@ -38,22 +38,16 @@ public class MloginController extends SuperClass{
 	@ModelAttribute("member")
 	public Member some() {
 		return new Member();
-		
 	}
-
 	
 	public  MloginController() {
 		super("login", null); // super(getpage, postpage)
 		this.mav = new ModelAndView();
 	}
-
 	
 	@GetMapping(command)
 	public ModelAndView doGet(){		
-		
-	
 		this.mav.setViewName(super.getpage); // 어디로 갈 것인가.
-			
 		return this.mav ;
 	}
 	
@@ -89,35 +83,25 @@ public class MloginController extends SuperClass{
 					this.mav.setViewName(super.getpage);
 				
 				}else {
-					
 					session.setAttribute("loginfo", member);
 					
 					List<ShoppingInfo> lists = this.mdao.getShoppingInfo(member.getMid());
-					
 					if(lists.size() > 0 ) {
 						MyCartList cart = (MyCartList)session.getAttribute("mycart");
-						
+						int pcnt = 0 ; // 장바구니에 담긴 상품 수량 체크	
+							
 							if(cart == null) {
 								cart = new MyCartList();
-								
 							}
-						
 						for(ShoppingInfo info : lists) {
-							
 							cart.AddOrder(info.getProductcode(), info.getQty());
-							
 						}
+						pcnt = MyCartList.PCNT;
+						session.setAttribute("pcnt", pcnt);
 						session.setAttribute("mycart", cart);
-						
-							
 					}
-					
 					this.mav.setViewName(redirect);
-					
 				}
-				
-				
-				
 			}
 			
 			else { // 문제가 있으면 
@@ -125,11 +109,8 @@ public class MloginController extends SuperClass{
 				this.mav.addObject("password",password);
 				this.mav.setViewName(super.getpage);
 			}
-			
 			return this.mav ;
 	}
-	
-	
 	
 }
 

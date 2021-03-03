@@ -8,14 +8,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Shopping Cart</title>
-<script type="text/javascript">
-        $(document).ready(function () {
-            $('.mdb-select').materialSelect();
-            $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
-                $(this).closest('.select-outline').find('label').toggleClass('active');
-                $(this).closest('.select-outline').find('.caret').toggleClass('active');
-            });
-        })
+	<script type="text/javascript">
+
+
     </script>
     <style>
 	    body{
@@ -52,6 +47,28 @@
 		    line-height: 1.35;
 		    margin: 0 0 5px;
 		}
+		input {
+			height: 30px;
+		    width: 70px;
+		}
+		.form-inline bnt{
+			width: 120px !important;
+			height: 50px !important;
+		}
+		.btn-outline-info:hover {
+		    color: #fff;
+		    background-color: #D8BFD8;
+		    border-color: #8A2BE2;
+		}
+		.btn-outline-info {
+		    color:  #8A2BE2;
+		    background-color: transparent;
+		    background-image: none;
+		    border-color: #8A2BE2;
+		    width: 90px !important;
+			height: 40px !important;
+		}
+		
     </style>
 </head>
 <body id="cartlist_body">
@@ -110,9 +127,18 @@
 																<fmt:formatNumber value="${shopinfo.price}" pattern="###,###"/> ￦
                                                             </s></span>
                                                         </td>
-                                                        <td class="border-0 align-middle"><strong>${shopinfo.qty}</strong></td>
                                                         <td class="border-0 align-middle">
-                                                            <a href="<%=contextPath%>/pdelete.pr?pno=${shopinfo.productcode}" type="button"
+                                                        <form class="form-inline" role="form" method="post" action="<%=contextPath%>/modify.mall">
+                                                                    <input type="hidden" name="pno" value="${shopinfo.productcode}">
+                                                                   <input type="text" name="qty" value="${shopinfo.qty}">
+                                                                    <button type="submit"
+                                                                            class="btn btn-outline-info btn-sm">수량 변경
+                                                                    </button>
+                                                                </form>
+                                                        
+                                                        
+                                                        <td class="border-0 align-middle">
+                                                            <a href="<%=contextPath%>/delete.mall?pno=${shopinfo.productcode}" type="button"
                                                                class="card-link-secondary small text-uppercase mr-3">
                                                                 Delete
                                                             </a>
@@ -136,15 +162,19 @@
                                        <!--  <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p> -->
                                         <div class="input-group mb-4 border rounded-pill p-2">
                                         	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        	<a href="<%=contextPath%>/plist.pr">
                                             <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill">
                                             	<i class="fa fa-gift mr-2"></i>쇼핑 더 하기
                                             	</button>
+                                            </a>
                                             	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             <div class="input-group-append border-0">
-                                                <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill">
-                                                    전체 목록 삭제하기
-                                                </button>
-                                            </div>
+                                            <a href="<%=contextPath%>/deleteAll.mall">
+	                                                <button id="button-addon3" type="submit" class="btn btn-dark px-4 rounded-pill">
+	                                                    전체 목록 삭제하기
+	                                                </button>
+	                                          </a> 
+                                            </div> 
                                         </div>
                                     </div>
                                 </div>
@@ -155,7 +185,7 @@
                                         Order summary
                                     </div>
                                     <div class="p-4">
-                                        <p class="font-italic mb-4">총 구매금액이 50,000원 이상 일 경우 배송비가 부과되지 않습니다.</p>
+                                        <p class="font-italic mb-4">총 구매금액이 20,000원 이상 일 경우 배송비가 부과되지 않습니다.</p>
                                         <ul class="list-unstyled mb-4">
                                             <li class="d-flex justify-content-between py-3 border-bottom">
                                                 <strong class="text-muted">Pre-discount totalamount </strong>
@@ -167,7 +197,7 @@
                                                     Shipping and handling
                                                 </strong>
                                                 <strong>
-                                                    <c:if test="${sessionScope.disTotalPrice >= 50000}">
+                                                    <c:if test="${sessionScope.disTotalPrice >= 20000}">
                                                         <span class="text-grey">
                                                             <s>+ <fmt:formatNumber value="3000" pattern="###,###"/> ￦</s>
                                                         </span>
@@ -184,10 +214,10 @@
                                             <li class="d-flex justify-content-between py-3 border-bottom">
                                                 <strong class="text-muted">Total</strong>
                                                 <strong>
-                                                    <c:if test="${sessionScope.disTotalPrice >= 50000}">
+                                                    <c:if test="${sessionScope.disTotalPrice >= 20000}">
                                                         <h5 class="font-weight-bold"><fmt:formatNumber value="${sessionScope.disTotalPrice}" pattern="###,###"/> ￦</h5>
                                                     </c:if>
-                                                    <c:if test="${sessionScope.disTotalPrice < 50000}">
+                                                    <c:if test="${sessionScope.disTotalPrice < 20000}">
                                                          <h5 class="font-weight-bold"><fmt:formatNumber value="${sessionScope.disTotalPrice + 3000}" pattern="###,###"/> ￦</h5>
                                                     </c:if>
                                                 </strong>
@@ -205,26 +235,34 @@
                 </div>
             </div>
 
- <script>
-        var command = "<input type='hidden' name='command' value='mypayments'>";
-       /*  var directbuy = "<input type='hidden' name='directbuy' value='-1'>" */
 
-        function goOrder(){
-    	   
-    	   location.href ="payment.pm";
-    	   
-          /*   $("#order").append(command);
-            $("#order").append(directbuy);
-            $("#order").append("<input type='hidden' name='regular' value='-1'>");
-            $("#order").submit(); */
-        }
+<!-- 	<script type="text/javascript">
+	
+		function goOrder(){
+			
+			/* var command = '<input name="command" value="mallcartadd" style="display: none;">'; */
+			var command = '<form method="post" action="/controller/calculate.mall"> ';
+			
+			$("#product-form").append(command);
+			$("#product-form").append("<input type='hidden' id='productcode' name='productcode' value='" + ${bean.productcode} + "'>");
+			$("#product-form").append("<input type='hidden' id='totalprice' name='disTotalPrice' value='" + totalprice + "'>");
+			$("#product-form").append("<input type='hidden' id='stock' name='stock' value='${bean.stock}'>");
+			if($("#delivery-select:checked").length == 0){
+				$("#product-form").append("<input type='hidden' id='qty' name='qty' value='"+$("#buy-qty").val()+"'>");
+			}else {
+				var monthVal = $("#monthVal").val();
+				$("#product-form").append("<input type='hidden' type='text' name='months' value='"+monthVal+"'>");
+			}
+			$("#product-form").submit();
+		};
+	
+	
+	</script> -->
 
-        /* function goReguler(){
-            $("#reguler").append(command);
-            $("#reguler").append(directbuy);
-            $("#reguler").append("<input type='hidden' name='regular' value='1'>");
-            $("#reguler").submit();
-        } */
-    </script>
+
+
+
+
+
 </body>
 </html>

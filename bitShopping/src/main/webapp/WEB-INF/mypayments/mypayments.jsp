@@ -4,6 +4,8 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ include file="/WEB-INF/common/common.jsp"%>
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +24,7 @@
         int content = twelve - 2 * offset; //12 - 2 * 오프셋
     %>
     <script type="text/javascript">
-        var coupon_no;
+         var coupon_no; 
 
         function sendaddshipping() {
             new daum.Postcode({
@@ -79,7 +81,7 @@
             }).open();
         }
 
-        $(document).ready(function () {
+         $(document).ready(function () {
 
             var productname = "${param.productname}";
             console.log(productname);
@@ -131,7 +133,7 @@
                 $("#couponselectbtn").modal('hide');
 
             });
-        });
+        }); 
     </script>
     <style type="text/css">
         #payinfotable th {
@@ -169,10 +171,10 @@
     </style>
 </head>
 <body>
-<div class="modal fade" id="couponselectbtn" data-bs-backdrop="static"
+<!-- <div class="modal fade" id="couponselectbtn" data-bs-backdrop="static"
      data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+     aria-labelledby="staticBackdropLabel" aria-hidden="true"> -->
+   <%--  <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">적용하실 쿠폰을 선택해주세요.</h5>
@@ -206,8 +208,8 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
             </div>
         </div>
-    </div>
-</div>
+    </div> --%>
+<!-- </div> -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
@@ -317,7 +319,7 @@
                 <tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">이름
                     </th>
-                    <td align="center">${sessionScope.loginfo.name}(${sessionScope.loginfo.mid})님
+                    <td align="center"><span id="userName">${sessionScope.loginfo.name}</span>(${sessionScope.loginfo.mid})님
                     </td>
                 </tr>
                 <tr align="center">
@@ -327,7 +329,7 @@
                     </td>
                     <td class="col-md-4">
                         <button type="button" class="btn btn-warning btn-sm">
-                            <a href="http://localhost:8989/SemiProject/dodamdodam?command=memodify">수정
+                            <a href="http://localhost:8989/bitShopping/mytest?command=memodify">수정
                             </a>
                         </button>
                     </td>
@@ -356,21 +358,21 @@
             <table id="deliverytable"
                    style="padding: 10px 0px 10px 16px; font: 12px 돋움, Dotum, sans-werif; white-space: nowrap; width: 100%;">
                 <tbody>
-                <tr align="center">
+                <!--<tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">배송지 이름</th>
-                    <td align="center" id="addrshippname">${sessionScope.address.shippingname}</td>
-                </tr>
+                    <td align="center" id="addrshippname">${requestScope.address.shippingname}</td>
+                </tr> -->
                 <tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">수령인</th>
-                    <td align="center" id="addrname">${sessionScope.address.name}</td>
+                    <td align="center" id="addrname">${sessionScope.loginfo.name}</td>
                 </tr>
                 <tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">배송주소</th>
-                    <td align="center" id="addrtext">${requestScope.address.address1} ${requestScope.address.address2}</td>
+                    <td align="center" id="addrtext">${sessionScope.loginfo.address1} ${sessionScope.loginfo.address2}</td>
                 </tr>
                 <tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">연락처</th>
-                    <td align="center">${sessionScope.phone}</td>
+                    <td align="center">${sessionScope.loginfo.phone}</td>
                 </tr>
                 <tr style="display: none">
                     <td id="seq_addr">${address.seq_add}</td>
@@ -386,50 +388,39 @@
             </div>
             <hr style="border: none;">
             <div>
-                <c:if test="${requestScope.regular==1}">
                     <table>
-                        <c:forEach var="product" items="${requestScope.productlists}">
+                       <c:forEach items="${sessionScope.shoplists}" var="shopinfo">
                             <tr>
                                 <td>
-                                    <img class="img-thumbnail" alt="prod-img"
-                                         style="margin-top: 10px; margin-right: 0px;"
-                                         src="${pageContext.request.contextPath}/images/product/${product.images}"
-                                         width="100" height="100">
+                                   <img src="<%=contextPath%>/resources/assets/img/products/${shopinfo.pimg}"
+                                                                     alt="" width="70" class="img-fluid rounded shadow-sm">
                                 </td>
                                 <td>
-                                    <span style="padding-left:0px; font-size: 25px; color: blue;">${product.productname}</span>
+                                    <span style="padding-left:0px; font-size: 25px; color: blue;">${shopinfo.productname}</span>
                                 </td>
-                                <%-- <td>
-                                    <span class="col-md-10"
-                                          style="margin-bottom:10px; margin-left: 150px; font-size: 25px; color: red;">${product.months} 개월 정기구매</span>
-                                </td> --%>
                             </tr>
                         </c:forEach>
                     </table>
-                </c:if>
-                <c:if test="${requestScope.regular==-1}">
+                
                     <table>
-                        <c:forEach var="product" items="${requestScope.productLists}">
                             <tr style="border-bottom: 1px solid #000000;">
                                 <td>
-                                    <img class="img-thumbnail" alt="prod-img"
-                                         style="margin-top: 10px; margin-right: 0px;"
-                                         src="${pageContext.request.contextPath}/images/product/${product.images}"
-                                         width="100" height="100">
+                                    <img src="<%=contextPath%>/resources/assets/img/products/${shopinfo.pimg}"
+                                                                     alt="" width="70" class="img-fluid rounded shadow-sm">
                                 </td>
                                 <td id="product_lists">
-                                    <span style="padding-left: 0px; font-size: 25px; color: blue;">${product.productname}</span>
+                                    <span style="padding-left: 0px; font-size: 25px; color: blue;">${shopinfo.productname}</span>
                                 </td>
                                 <td id="product_lists2">
                                     <span class="col-md-10"
-                                          style="margin-bottom:10px; margin-left: 150px; font-size: 25px; color: red;">${product.qty} 개</span>
+                                          style="margin-bottom:10px; margin-left: 150px; font-size: 25px; color: red;">${shopinfo.pqty} 개</span>
                                 </td>
                             </tr>
-                        </c:forEach>
+                       <%--  </c:forEach> --%>
                     </table>
-                </c:if>
+               
                 <p align="right"><span id="monthVal"
-                                       style="font-weight: bolder; background-color: #522772; color: white;">상품 종류 ${product.pcategory} 종류 </span>
+                                       style="font-weight: bolder; background-color: #522772; color: white;">상품 종류 ${shopinfo.pcategory} 종류 </span>
                 </p>
             </div>
             <hr>
@@ -441,18 +432,18 @@
             <h3 align="center">결제 정보</h3>
             <hr>
         </div>
-        <form method="post" action="<%=YesForm%>">
+        
             <input type="hidden" name="command" value="paymentval">
             <table id="payinfotable" style="margin: 8px 0px 0px; font:12px 돋움, Dotum, sans-serif;">
                 <tbody align="center">
                 <tr align="center">
                     <th>총 상품가격</th>
-                    <td><fmt:formatNumber value="${sessionScope.totalprice}" pattern="#,###"/>원</td>
+                    <td><fmt:formatNumber value="${sessionScope.totalAmount}" pattern="#,###"/>원</td>
                 </tr>
               <%--   <tr align="center">
                     <th>할인 쿠폰</th>
                     <td align="center" id="coupontext">
-                        <c:if test="${couponitem.name==null}">
+                        <c:if test="${couponitem.name==null}">s
                             쿠폰 미적용
                         </c:if>
                         <c:if test="${couponitem.name!=null}">
@@ -466,7 +457,7 @@
                         </button>
                     </td> -->
                 </tr> --%>
-                <tr align="center">
+              <%--   <tr align="center">
                     <th>배송비</th>
                     <td id="shippingfee">
                         <c:choose>
@@ -478,7 +469,7 @@
                             </c:otherwise>
                         </c:choose>
                     </td>
-                </tr>
+                </tr> --%>
                <!--  <tr align="center">
                     <th>도담도담 캐시</th>
                     <td>0원</td>
@@ -520,7 +511,7 @@
             <span>개인정보 제공안내</span>
             <a onfocus="blur()" onclick="this.innerHTML=(this.nextSibling.style.display=='none')?'[닫기]':'[열기]';
 				 this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';"
-               href="javascript:void(0)" ;>[열기]</a>
+               href="javascript:void(0)";>[열기]</a>
             <div style="DISPLAY: none">
                 <div class="agreements__content " data-agreements-content=""
                      style="display: block;">
@@ -598,60 +589,33 @@
     </div>
 </div>
 <script>
-    var IMP = window.IMP; // 생략해도 괜찮습니다.
-    IMP.init("imp34864609"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
-
-    var today = new Date();
-
-    var merchant_uid = today.getMonth() + "" + today.getDate() + "" + today.getHours() + "" + today.getMinutes() + "" + today.getSeconds();
-    var list = new Array();
-
-    var regular = "${regular}";
-    if (${regular==-1}) {
-        <c:forEach var="product" items="${productLists}" varStatus="i">
-        var product = new Object();
-        product.code = "${productLists.get(i.index).getProductcode()}";
-        product.price = "${productLists.get(i.index).getProductprice()}";
-        product.qty = "${productLists.get(i.index).getQty()}";
-        list.push(product);
-        </c:forEach>
-    } else {
-        <c:forEach var="product" items="${productLists}" varStatus="i">
-        var product = new Object();
-        product.code = "${productRLists.get(i.index).getProductcode()}";
-        product.price = "${productRLists.get(i.index).getProductprice()}";
-        product.months = "${productRLists.get(i.index).getMonths()}";
-        list.push(product);
-        </c:forEach>
-    }
-    var p_name = null;
-    if (${productLists.size()>1}) {
-        p_name = "${productLists.get(0).getProductname()} 외 ${(productLists.size()-1)}개";
-    } else {
-        p_name = "${productLists.get(0).getProductname()}";
-    }
-
-    var totalprice = parseInt($("#totalprice").text().replace(",", "").replace("원", ""));
-    var email = "";
-    var b_name = "${sessionScope.loginfo.name}";
-    var b_tel = $("#phonenum").val();
-    var b_addr = $("#addrtext").text();
-
+  
+    IMP.init("imp38748327"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
     function requestPay() {
         if ($("#agreecheck").is(":checked") == false) {
             alert('결제 이용 동의를 선택해주세요.');
             return false;
         }
         if ($("#virtualaccount").is(":checked") == true) {
-            var total = parseInt($("#totalprice").text().replace(",", "").replace("원", ""));
-            $(location).attr("href", "http://localhost:8989/SemiProject/pay/virtualaccount.jsp?totalprice=" + total);
+        	var totalprice = parseInt($("#totalprice").text().replace(",", "").replace("원", ""));
+        	location.href = "/mytest/virtualaccount.pm?totalprice="+totalprice;
+            return false;
         }
-        var obj = document.getElementsByName("momentum");
+        var obj = document.getElementsByName("momentum"); 
         if (obj.value == "banktrnsf") {
             // 여기에 나중에 계좌이체로 처리할 페이지로 이동하게끔 유도
         }
-        var productLists = JSON.stringify(list);
+        //var shoplists = JSON.stringify(lists); // 이 list가 어디있죠 ? 저도 몰라요 ...아마도 왼ㅉ목에 새로 만들어야 할 것 같은... ㅠ
         // IMP.request_pay(param, callback) 호출
+        var today = new Date();
+        var merchant_uid = today.getMonth() + "" + today.getDate() + "" + today.getHours() + "" + today.getMinutes() + "" + today.getSeconds();
+        var email ="";
+        var p_name = $("#userName").text();
+        var totalprice = parseInt($("#totalprice").text().replace(",", "").replace("원", ""));
+        var b_name = $("#userName").text();
+        var b_tel = $("#phone").val();
+        var b_addr = $("#addrtext").text();
+        
         IMP.request_pay({ // param
             pg: "html5_inicis",
             pay_method: "card",
@@ -666,7 +630,7 @@
             if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
                 // jQuery로 HTTP 요청
                 jQuery.ajax({
-                    url: "/dodamdodam?command=payprogress", // 가맹점 서버
+                    url: "/mytest?command=payprogress", // 가맹점 서버
                     method: "POST",
                     contentType: "application/x-www-form-urlencoded; charset=utf-8",
                     data: {
@@ -713,6 +677,4 @@
 </script>
 
 </body>
-
-
 </html>

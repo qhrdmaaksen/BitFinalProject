@@ -14,6 +14,12 @@
 		from products
 	</sql> 		
 	
+	<select id="SelectDataList1" parameterType="String" resultType="MyProduct">
+		select * from products
+		where pcategory = #{mode1}
+	</select>
+	
+	
 	<select id="SelectDataByPk" parameterType="Integer" resultType="MyProduct">
 		<include refid="myselect" />
 		 where pno = #{pno}

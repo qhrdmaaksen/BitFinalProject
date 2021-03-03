@@ -25,8 +25,6 @@ public class MemberDao {
 	public MemberDao() {	}
 	
 	
-	
-	
 	public int InsertData(Member member) {
 		return this.abcd.insert(namespace + ".InsertData", member);
 	}
@@ -82,8 +80,23 @@ public class MemberDao {
 
 
 	public List<ShoppingInfo> getShoppingInfo(String mid) {
-		// TODO Auto-generated method stub
 		
 		return this.abcd.selectList(namespace+".SelectShoppingInfo", mid);
 	}
+
+
+	public void InsertCartData(Member mem, List<ShoppingInfo> lists) {
+		// 1. 장바구니 테이블에 혹시 남아 있을 수 있는 회원의 행을 모두 삭제합니다. 
+		this.abcd.delete(namespace + ".DeleteShoppingInfo", mem.getMid());
+		
+		// 2.반복문을 사용하여 테이블에 인서트 합니다.
+		for(ShoppingInfo shpInfo : lists){
+			this.abcd.insert(namespace + ".InsertShoppingInfo", shpInfo);
+		}
+	}
+	
+	
+
+
+	
 }
