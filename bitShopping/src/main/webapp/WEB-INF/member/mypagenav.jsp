@@ -398,7 +398,7 @@
 		<div class="inner_snb">
 			<ul class="list_menu">
 				<li class="on">
-					<a href="<%=contextPath%>/order.mp">주문 내역</a>
+					<a href="<%=contextPath%>/mypage.me?mid=${sessionScope.loginfo.mid}">주문 목록</a>
 				</li>
 				<li>
 					<a href="<%=contextPath%>/address.ad?" 

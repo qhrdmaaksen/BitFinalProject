@@ -11,27 +11,23 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		.con{
-	   		width: 1000px;
-	   		height: 800px;
-	   	}
-	   	.app{
-	   		padding: 10px;
-	   	}
-	   	.dashboard{
-	   		padding-left: 50px;
-	   		height: 1000px;
-	   	}
-	   	.dashboard-content {
+    		width: 1000px;
+    		height: 800px;
+    	}
+    	.app{
+    		padding: 10px;
+    	}
+    	.dashboard{
+    		padding-left: 50px;
+    		height: 1000px;
+    	}
+    	.dashboard-content {
 		    padding-left: 200px;
 		    padding-top: 100px;
 		    height: 700px;
 		}
 		table{
 			width: 1000px;
-		}
-		.container #body{
-			padding-top: 150px;
-			padding-left: 50px;
 		}
 	</style>	
 </head>
@@ -50,7 +46,7 @@
 								<div class="panel panel-success">
 									<div class="panel-heading">
 										<h3 class="panel-title" style="font-weight: bold;">
-											${sessionScope.loginfo.name} 님 주문 관리 페이지입니다.</h3>
+											${sessionScope.loginfo.name} 님  <span style="color: black">주문 목록</span> 페이지입니다.</h3>
 										<h6 style="color: black">배송지에 따라 상품 정보가 달라질 수 있습니다.</h6>
 									</div>
 									<div class="panel-body">
