@@ -148,23 +148,6 @@
 	                                            <i class="zmdi zmdi-shopping-cart-plus"></i>
 	                                        </a>
 	                                    </div>
-	                                    <div class="rating-box">
-	                                        <a href="#" title="1 star">
-	                                            <i class="far fa-star"></i>
-	                                        </a>
-	                                        <a href="#" title="2 star">
-	                                            <i class="far fa-star"></i>
-	                                        </a>
-	                                        <a href="#" title="3 star">
-	                                            <i class="far fa-star"></i>
-	                                        </a>
-	                                        <a href="#" title="4 star">
-	                                            <i class="far fa-star"></i>
-	                                        </a>
-	                                        <a href="#" title="5 star">
-	                                            <i class="far fa-star"></i>
-	                                        </a>
-	                                    </div>
 	                                </div>
 	                                <div class="product-content text-center">
 	                                    <h4>

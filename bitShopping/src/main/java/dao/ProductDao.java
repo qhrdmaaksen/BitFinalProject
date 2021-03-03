@@ -21,6 +21,13 @@ public class ProductDao {
 	
 	public ProductDao() { }
 	
+	
+	public List<Product> SelectDataList1(String mode1) { // 카테고리
+		//System.out.println("mode1 : " + mode1);
+		return this.abcd.selectList(namespace + "SelectDataList1", mode1);
+	}
+	
+	
 	public int InsertData(Product bean) {	
 		System.out.println(this.getClass() + " : 상품을 등록합니다." ); 
 		return this.abcd.insert(namespace + "InsertData", bean);
