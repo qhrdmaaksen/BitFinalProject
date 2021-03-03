@@ -295,12 +295,12 @@
                                             
                                             <li class="active"><a href="<%=contextPath%>/plist.pr"> 전체 카테고리 <i class="ion-ios-arrow-down"></i></a>
                                                     <ul>
-                                                        <li><a href="<%=contextPath%>/plist.pr?command=plist.pr&mode=pcategory&keyword=채소"> 채소 / 과일 </a></li>
-                                                        <li><a href="javascript:;"> 쌀 / 베이커리</a></li>
-                                                        <li><a href="javascript:;"> 해산 / 정육 </a></li>
-                                                        <li><a href="javascript:;"> 베이커리 / 제과 </a></li>
-                                                        <li><a href="javascript:;"> 치즈 / 계란 </a></li>
-                                                        <li><a href="javascript:;"> 샐러드 / 간편식 </a></li>
+                                                        <li><a href="javascript:;" onclick="searchCategory(this)"> 채소 / 과일 </a></li>
+                                                        <li><a href="javascript:;" onclick="searchCategory(this)"> 쌀</a></li>
+                                                        <li><a href="javascript:;" onclick="searchCategory(this)"> 해산 / 정육 </a></li>
+                                                        <li><a href="javascript:;" onclick="searchCategory(this)"> 베이커리 / 간식 </a></li>
+                                                        <li><a href="javascript:;" onclick="searchCategory(this)"> 치즈 / 계란 </a></li>
+                                                        <li><a href="javascript:;" onclick="searchCategory(this)"> 분식 / 견과류 </a></li>
                                                         <!-- <li><a href="javascript:;"> 음료 / 우유 / 커피 </a></li> -->
                                                     </ul>
                                               </li>
@@ -417,7 +417,20 @@
     <script src="<%=contextPath%>/resources/assets/js/plugins.js"></script>
     <script src="<%=contextPath%>/resources/assets/js/main.js"></script>
 	</div>
-		
+	<script type="text/javascript">
+		function searchCategory(obj) {
+			console.log("click !!!!");
+			var $text = $(obj).text();
+			console.log($text);
+			console.log($text.indexOf("/"));
+			if($text.indexOf("/") > 0) {
+				var arr = $text.replaceAll(" ", "").split("/");
+				location.href = "common.pr?keyword="+arr[0]+"&keyword2="+arr[1];	
+			}else {
+				location.href = "common.pr?keyword="+$text.replaceAll(" ","");
+			}
+		} 
+	</script>
 		
 </header>
 

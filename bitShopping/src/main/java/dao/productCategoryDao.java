@@ -66,4 +66,8 @@ public class productCategoryDao extends SuperDao{
 		return this.abc.selectList(namespace + ".SelectDataListSS", SSmap);
 	}
 
+	public List<Product> SelectDataList(HashMap<String, Object> paramMap) {
+		return this.abc.selectList(namespace + ".SelectDataList", paramMap);
+	}
+
 }

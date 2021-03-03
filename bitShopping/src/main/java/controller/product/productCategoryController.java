@@ -1,11 +1,13 @@
 package controller.product;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import bean.Product;
@@ -40,23 +42,30 @@ public class productCategoryController extends SuperClass{
 		
 		this.mav = new ModelAndView() ; 
 	}
-	@GetMapping("/common.cu")
-	public ModelAndView doGet() {
-		List<Product> FVlists = categoryDao.SelectDataListFV(modeFruit , modeVegetable); 
-		List<Product> Rlists = categoryDao.SelectDataListR(modeRice); 
-		List<Product> SMlists = categoryDao.SelectDataListSM(modeSeafood , modeMeat); 
-		List<Product> BSlists = categoryDao.SelectDataListBS(modeBakery, modeSnack); 
-		List<Product> EClists = categoryDao.SelectDataListEC(modeEgg, modeCheese); 
-		List<Product> SSlists = categoryDao.SelectDataListSS(modeSalad, modeSimplefood); 
+	@GetMapping("/common.pr")
+	public ModelAndView doGet(@RequestParam HashMap<String, Object> paramMap) {
+		if(paramMap.get("keyword2") == null) {
+			paramMap.put("keyword2", "");
+		}
+		System.out.println(paramMap.get("keyword".toString()));
+//		List<Product> FVlists = categoryDao.SelectDataListFV(modeFruit , modeVegetable); 
+//		List<Product> Rlists = categoryDao.SelectDataListR(modeRice); 
+//		List<Product> SMlists = categoryDao.SelectDataListSM(modeSeafood , modeMeat); 
+//		List<Product> BSlists = categoryDao.SelectDataListBS(modeBakery, modeSnack); 
+//		List<Product> EClists = categoryDao.SelectDataListEC(modeEgg, modeCheese); 
+//		List<Product> SSlists = categoryDao.SelectDataListSS(modeSalad, modeSimplefood); 
+		List<Product> resultList = categoryDao.SelectDataList(paramMap);
+		System.out.println("resultList : " + resultList);
 		
-		this.mav.addObject("FVlists", FVlists);
-		this.mav.addObject("Rlists", Rlists);
-		this.mav.addObject("SMlists", SMlists);
-		this.mav.addObject("BSlists", BSlists);
-		this.mav.addObject("EClists", EClists);
-		this.mav.addObject("SSlists", SSlists);
+		this.mav.addObject("lists" , resultList);
+//		this.mav.addObject("FVlists", FVlists);
+//		this.mav.addObject("Rlists", Rlists);
+//		this.mav.addObject("SMlists", SMlists);
+//		this.mav.addObject("BSlists", BSlists);
+//		this.mav.addObject("EClists", EClists);
+//		this.mav.addObject("SSlists", SSlists);
 		
-		this.mav.setViewName(super.getpage);
+		this.mav.setViewName("plist");
 		
 		return this.mav;
 	}

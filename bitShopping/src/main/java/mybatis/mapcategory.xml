@@ -35,4 +35,13 @@
 		where pcategory=#{modeSalad} or pcategory=#{modeSimplefood}
 	</select>
 	
+	<select id="SelectDataList" parameterType="java.util.HashMap" resultType="MyProduct">
+		select * from products
+		where 1=1 AND
+		pcategory=  #{keyword}
+		<if test='!keyword2.equals("")'>
+		OR pcategory=  #{keyword2}
+		</if> 
+	</select>
+	
 </mapper> 
