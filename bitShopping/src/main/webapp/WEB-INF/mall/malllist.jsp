@@ -224,8 +224,8 @@
                                                 <%-- <h5 class="font-weight-bold"><fmt:formatNumber value="${sessionScope.disTotalPrice}" pattern="###,###"/> ￦</h5> --%>
                                             </li>
                                         </ul>
-                                        <form id="order" action="<%=YesForm%>" method="post">
-                                            <button type="button" class="btn btn-dark rounded-pill py-2 btn-block" onclick="goOrder()"> 주문 하기 </button>
+                                        <form class="form-inline" role="form" method="post" action="<%=contextPath%>/modify.mall">
+                                            <button type="button" class="btn btn-dark rounded-pill py-2 btn-block" > 주문 하기 </button>
                                         </form>
                                     </div>
                                 </div>
@@ -237,7 +237,7 @@
 
 
 <!-- 	<script type="text/javascript">
-	
+	//onclick="goOrder()"
 		function goOrder(){
 			
 			/* var command = '<input name="command" value="mallcartadd" style="display: none;">'; */
