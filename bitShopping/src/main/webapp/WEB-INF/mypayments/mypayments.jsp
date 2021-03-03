@@ -319,7 +319,7 @@
                 <tr align="center">
                     <th style="background: #f0f0f5; font-weight: bold;">이름
                     </th>
-                    <td align="center">${sessionScope.loginfo.name}(${sessionScope.loginfo.mid})님
+                    <td align="center"><span id="userName">${sessionScope.loginfo.name}</span>(${sessionScope.loginfo.mid})님
                     </td>
                 </tr>
                 <tr align="center">
@@ -392,7 +392,8 @@
                        <c:forEach items="${sessionScope.shoplists}" var="shopinfo">
                             <tr>
                                 <td>
-                                   <img src="<%=contextPath%>/resources/assets/img/products/${shopinfo.pimg}">
+                                   <img src="<%=contextPath%>/resources/assets/img/products/${shopinfo.pimg}"
+                                                                     alt="" width="70" class="img-fluid rounded shadow-sm">
                                 </td>
                                 <td>
                                     <span style="padding-left:0px; font-size: 25px; color: blue;">${shopinfo.productname}</span>
@@ -402,10 +403,10 @@
                     </table>
                 
                     <table>
-                     <c:forEach items="${sessionScope.shoplists}" var="shopinfo">
                             <tr style="border-bottom: 1px solid #000000;">
                                 <td>
-                                    <img src="<%=contextPath%>/resources/assets/img/products/${shopinfo.pimg}">
+                                    <img src="<%=contextPath%>/resources/assets/img/products/${shopinfo.pimg}"
+                                                                     alt="" width="70" class="img-fluid rounded shadow-sm">
                                 </td>
                                 <td id="product_lists">
                                     <span style="padding-left: 0px; font-size: 25px; color: blue;">${shopinfo.productname}</span>
@@ -415,7 +416,7 @@
                                           style="margin-bottom:10px; margin-left: 150px; font-size: 25px; color: red;">${shopinfo.pqty} 개</span>
                                 </td>
                             </tr>
-                        </c:forEach>
+                       <%--  </c:forEach> --%>
                     </table>
                
                 <p align="right"><span id="monthVal"
@@ -595,28 +596,36 @@
             alert('결제 이용 동의를 선택해주세요.');
             return false;
         }
-        $(function(){
-        	$('#start').click(function(){
-        		location.href = 'virtualaccount.jsp';
-        	});
-        });
+        if ($("#virtualaccount").is(":checked") == true) {
+        	var totalprice = parseInt($("#totalprice").text().replace(",", "").replace("원", ""));
+        	location.href = "/mytest/virtualaccount.pm?totalprice="+totalprice;
+            return false;
         }
         var obj = document.getElementsByName("momentum"); 
         if (obj.value == "banktrnsf") {
             // 여기에 나중에 계좌이체로 처리할 페이지로 이동하게끔 유도
         }
-        var shoplists = JSON.stringify(shoplists);
+        //var shoplists = JSON.stringify(lists); // 이 list가 어디있죠 ? 저도 몰라요 ...아마도 왼ㅉ목에 새로 만들어야 할 것 같은... ㅠ
         // IMP.request_pay(param, callback) 호출
+        var today = new Date();
+        var merchant_uid = today.getMonth() + "" + today.getDate() + "" + today.getHours() + "" + today.getMinutes() + "" + today.getSeconds();
+        var email ="";
+        var p_name = $("#userName").text();
+        var totalprice = parseInt($("#totalprice").text().replace(",", "").replace("원", ""));
+        var b_name = $("#userName").text();
+        var b_tel = $("#phone").val();
+        var b_addr = $("#addrtext").text();
+        
         IMP.request_pay({ // param
             pg: "html5_inicis",
             pay_method: "card",
-            merchant_uid: "merchant_uid",
-            buyer_email: "email",
-            name: "p_name",
-            amount: "totalprice",
-            buyer_name: "b_name",
-            buyer_tel: "b_tel",
-            buyer_addr: "b_addr",
+            merchant_uid: merchant_uid,
+            buyer_email: email,
+            name: p_name,
+            amount: totalprice,
+            buyer_name: b_name,
+            buyer_tel: b_tel,
+            buyer_addr: b_addr,
         }, function (rsp) { // callback
             if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
                 // jQuery로 HTTP 요청
@@ -625,16 +634,16 @@
                     method: "POST",
                     contentType: "application/x-www-form-urlencoded; charset=utf-8",
                     data: {
-                        imp_uid: "rsp.imp_uid",
-                        merchant_uid: "rsp.merchant_uid",
-                        productLists: "productLists",
-                        totalprice: "totalprice",
-                        buyer_email: "email",
-                        buyer_name: "b_name",
-                        buyer_tel: "b_tel",
+                        imp_uid: rsp.imp_uid,
+                        merchant_uid: rsp.merchant_uid,
+                        productLists: productLists,
+                        totalprice: totalprice,
+                        buyer_email: email,
+                        buyer_name: b_name,
+                        buyer_tel: b_tel,
                         buyer_addr: $("#seq_addr").text(),
-                        coupon: "coupon_no",
-                        regular: "regular",
+                        coupon: coupon_no,
+                        regular: regular,
                     },
                     datatype: "json"
                 }).done(function (data) {
@@ -647,7 +656,7 @@
                 console.log("결제 실패");
             }
         });
-    
+    }
 
     Number.prototype.format = function () {
         if (this == 0) return 0;
