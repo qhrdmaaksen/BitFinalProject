@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="MapperCategory">
+
+
+	<select id="SelectDataListFV"  parameterType="java.util.HashMap" resultType="MyProduct">
+		select * from products
+		where pcategory=#{modeFruit} or pcategory=#{modeVegetable}
+	</select>
+	
+	<select id="SelectDataListR"  parameterType="java.util.HashMap" resultType="MyProduct">
+		select * from products
+		where pcategory=#{modeRice}
+	</select>
+	
+	<select id="SelectDataListSM"  parameterType="java.util.HashMap" resultType="MyProduct">
+		select * from products
+		where pcategory=#{modeSeafood} or pcategory=#{modeMeat}
+	</select>
+	
+	<select id="SelectDataListBS"  parameterType="java.util.HashMap" resultType="MyProduct">
+		select * from products
+		where pcategory=#{modeBakery} or pcategory=#{modeSnack}
+	</select>
+	
+	<select id="SelectDataListEC"  parameterType="java.util.HashMap" resultType="MyProduct">
+		select * from products
+		where pcategory=#{modeEgg} or pcategory=#{modeCheese}
+	</select>
+	
+	<select id="SelectDataListSS"  parameterType="java.util.HashMap" resultType="MyProduct">
+		select * from products
+		where pcategory=#{modeSalad} or pcategory=#{modeSimplefood}
+	</select>
+	
+</mapper> 

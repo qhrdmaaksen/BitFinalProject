@@ -8,7 +8,7 @@ public class FlowParameters {
 	// 필드 검색과 관련된 변수들
 	private String mode = "" ;
 	private String keyword = "" ;
-	
+
 	public FlowParameters() { }
 	
 	public FlowParameters(String pageNumber, String pageSize, String mode, String keyword) {
@@ -60,5 +60,4 @@ public class FlowParameters {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	} 
-	
 }

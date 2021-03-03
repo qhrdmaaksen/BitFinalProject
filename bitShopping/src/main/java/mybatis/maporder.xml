@@ -5,10 +5,10 @@
 
 <mapper namespace="MapAddress">
 
-	<select id="SelectDataList" parameterType="MyOrder" resultType="MyOrder">
-		select oid , mid , orderdate , invoice
-		from orders
+	<select id="OrderList" parameterType="String" resultType="MyOrder">
+		select * from orders
 		where mid = #{mid}
+		order by orderdate desc 
 	</select>
 	
 </mapper>

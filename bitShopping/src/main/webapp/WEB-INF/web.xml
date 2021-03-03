@@ -160,17 +160,17 @@
 	
 		<!-- order section -->
 	<servlet>
-		<servlet-name>order</servlet-name>
+		<servlet-name>mypage</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/config/order-config.xml</param-value>
+			<param-value>/WEB-INF/config/mypage-config.xml</param-value>
 		</init-param>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>order</servlet-name>
-		<url-pattern>*.od</url-pattern>
+		<servlet-name>mypage</servlet-name>
+		<url-pattern>*.mp</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

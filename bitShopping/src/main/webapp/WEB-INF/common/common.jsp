@@ -295,13 +295,13 @@
                                             
                                             <li class="active"><a href="<%=contextPath%>/plist.pr"> 전체 카테고리 <i class="ion-ios-arrow-down"></i></a>
                                                     <ul>
-                                                        <li><a href="index.html"> 채소 / 과일 </a></li>
-                                                        <li><a href="index-2.html"> 쌀 / 베이커리</a></li>
-                                                        <li><a href="index-3.html"> 해산 / 정육 </a></li>
-                                                        <li><a href="index-4.html"> 베이커리 / 제과 </a></li>
-                                                        <li><a href="index-5.html"> 치즈 / 계란 </a></li>
-                                                        <li><a href="index-6.html"> 샐러드 / 간편식 </a></li>
-                                                        <li><a href="index-7.html"> 음료 / 우유 / 커피 </a></li>
+                                                        <li><a href="<%=contextPath%>/plist.pr?command=plist.pr&mode=pcategory&keyword=채소"> 채소 / 과일 </a></li>
+                                                        <li><a href="javascript:;"> 쌀 / 베이커리</a></li>
+                                                        <li><a href="javascript:;"> 해산 / 정육 </a></li>
+                                                        <li><a href="javascript:;"> 베이커리 / 제과 </a></li>
+                                                        <li><a href="javascript:;"> 치즈 / 계란 </a></li>
+                                                        <li><a href="javascript:;"> 샐러드 / 간편식 </a></li>
+                                                        <!-- <li><a href="javascript:;"> 음료 / 우유 / 커피 </a></li> -->
                                                     </ul>
                                               </li>
 												
@@ -415,8 +415,7 @@
     <script src="<%=contextPath%>/resources/assets/js/ajax-mail.js"></script>
     <script src="<%=contextPath%>/resources/assets/js/owl.carousel.min.js"></script>
     <script src="<%=contextPath%>/resources/assets/js/plugins.js"></script>
-    <script src="<%=contextPath%>/resources/assets/js/main.js"></script>		
-		
+    <script src="<%=contextPath%>/resources/assets/js/main.js"></script>
 	</div>
 		
 		

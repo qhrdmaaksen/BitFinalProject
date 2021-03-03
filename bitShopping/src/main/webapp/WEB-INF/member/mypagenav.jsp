@@ -398,7 +398,7 @@
 		<div class="inner_snb">
 			<ul class="list_menu">
 				<li class="on">
-					<a href="/shop/mypage/mypage_orderlist.php">주문 내역</a>
+					<a href="<%=contextPath%>/order.od">주문 내역</a>
 				</li>
 				<li>
 					<a href="<%=contextPath%>/address.ad?" 

@@ -38,10 +38,16 @@ public class ProductDao {
 		// 페이징 처리와 필드 검색을 통한 상품 목록을 구해줍니다.
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		Map<String, String> map = new HashMap<String, String>() ;
-		map.put("mode", mode) ;
+		map.put("mode", mode) ; 
 		map.put("keyword", "%" + keyword + "%") ;	
+		
 		return this.abcd.selectList(namespace + "SelectDataList", map, rowBounds);
 	}	
+//	public List<Product> CategoryDataList(String string) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+	
 
 	//int = num 을 int = productcode 로 바꿔줌 
 	public Product SelectDataByPk(int pno) {
@@ -70,7 +76,7 @@ public class ProductDao {
 		map.put("pno", pno);
 		return this.abcd.selectList(namespace+"Selectprrlist",map);
 	}
-	
+
 	
 
 

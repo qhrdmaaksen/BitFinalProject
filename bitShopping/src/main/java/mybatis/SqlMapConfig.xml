@@ -28,6 +28,7 @@
 		<mapper resource="mybatis/mapproductreviews.xml" />
 		<mapper resource="mybatis/mappayments.xml"/>
 		<mapper resource="mybatis/mapaddress.xml"/>
+		<mapper resource="mybatis/mapcategory.xml"/>
 		<!-- <mapper resource="mybatis/maporder.xml"/> -->
 		<!-- <mapper resource="mybatis/mapshippingaddress.xml"/> -->
 		<!-- <mapper resource="mybatis/mapservice.xml"/> -->
