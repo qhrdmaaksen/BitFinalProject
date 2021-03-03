@@ -47,6 +47,22 @@
 	
 	</select>
 	
+	
+		<!-- 회원 로그 아웃과 관련된 항목들 -->
+	<delete id="DeleteShoppingInfo" parameterType="String">
+		delete from shoppinginfo				
+		where mid = #{mid}
+	</delete>
+	
+	<insert id="InsertShoppingInfo" parameterType="MyShopInfo">
+		insert into shoppinginfo(mid, productcode, productname, qty, price, pimg , discount)
+		values(#{mid}, #{productcode}, #{productname}, #{qty}, #{price}, #{pimg}, #{discount})		
+	</insert>	
+	
+	
+	
+	
+	
 </mapper>
 
 

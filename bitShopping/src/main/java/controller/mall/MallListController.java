@@ -24,8 +24,7 @@ import shopping.ShoppingInfo;
 public class MallListController extends SuperClass{
 	private final String command = "/list.mall" ; 
 	private ModelAndView mav = null ;
-	//private String redirect = "redirect:/plist.pr" ;
-	private final double DISCOUNT = 0.15 ;// 할인율 지정
+	public final static double DISCOUNT = 0.15 ;// 할인율 지정
 	
 	@Autowired
 	@Qualifier("pdao")
