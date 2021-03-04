@@ -34,7 +34,7 @@
 <body>
 	<div class="container">
 		<div id="body">
-<<<<<<< HEAD
+
 
 			<li><a href="<%=contextPath%>/shop.li?mid=${sessionScope.loginfo.mid}"> 주문 내역 </a></li>
 
@@ -47,7 +47,6 @@
 
 
 
-=======
  <div class="tab-content dashboard-content">
 		<div id="dashboard" class="tab-pane fade show active">
 			<table>
@@ -96,7 +95,7 @@
 		</div>
 		<div id="orders" class="tab-pane fade"></div>
 	</div>
->>>>>>> d55b1b0bc96ddfcecd4a84394314345f0a290791
+
 		</div>
 	</div>
 </body>

@@ -236,10 +236,10 @@
             </div>
 
 
-<<<<<<< HEAD
+
 	<script type="text/javascript">
-=======
-<!-- 	<script type="text/javascript">
+
+<script type="text/javascript">
 	//onclick="goOrder()"
 		function goOrder(){
 			
@@ -258,7 +258,7 @@
 			}
 			$("#product-form").submit();
 		};
->>>>>>> d55b1b0bc96ddfcecd4a84394314345f0a290791
+
 	
 	  var command = "<input type='hidden' name='command' value='mypayments'>";
       /*  var directbuy = "<input type='hidden' name='directbuy' value='-1'>" */
