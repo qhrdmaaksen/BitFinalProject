@@ -23,21 +23,26 @@ int formright = 12 - formleft;
 <meta charset="UTF-8">
 <title>상품 상세 페이지</title>
 <script type="text/javascript">
-$(document).ready(function() {
-	
-	$(".star_rating a").click(function() {
-		$(this).parent().children("a").removeClass("on");
-		$(this).addClass("on").prevAll("a").addClass("on");
-		return false;
-	});
-	
-}
-	
-	
+<script>
+$('#star_grade a').click(function(){
+    $(this).parent().children("a").removeClass("on");  /* 별점의 on 클래스 전부 제거 */ 
+    $(this).addClass("on").prevAll("a").addClass("on"); /* 클릭한 별과, 그 앞 까지 별점에 on 클래스 추가 */
+    return false;
+});
 </script>
+	
 <style type="text/css">
+<style>
+     #star_grade a{
+        text-decoration: none;
+        color: gray;
+    }
+    #star_grade a.on{
+        color: red;
+    }
+
 div {
-	word-break: break-all;
+	/* word-break: break-all; */
 }
 h2 {
 	display: block;
@@ -78,8 +83,9 @@ body, input, select, textarea, button {
 	border-top: 2px solid #522772;
 }
 .btitle {
-	padding-left: 50px;
-	text-align: left;
+	padding: 15px;
+	margin: 15px;
+	/* text-align: left; */
 }
 #foot {
 	position: fixed;
@@ -91,7 +97,9 @@ body, input, select, textarea, button {
 	bottom: 0px;
 }
 .input_txt {
-	padding-left: 20px
+	padding: 20px;
+	margin: 20px;
+	
 }
 </style>
 <style>
@@ -273,7 +281,7 @@ body, input, select, textarea, button {
 						<ul class="nav dec-and-review-menu">
 							<li><a class="active" data-toggle="tab" href="#description">Description</a>
 							</li>
-							<li><a data-toggle="tab" href="#reviews">Reviews (${requestScope.productreviews.bno})</a></li>
+							<li><a data-toggle="tab" href="#reviews">Reviews (<%=2 %>)</a></li>
 						</ul>
 						<!--Review And Description Tab Menu End-->
 						<!--Review And Description Tab Content Start-->
@@ -347,13 +355,13 @@ body, input, select, textarea, button {
 									<div class="review-form-wrapper">
 										<div class="review-form">
 											<span class="comment-reply-title"> </span>
-											<p class="star_rating">
+											<p id="star_grade">
 
 												<a href="#" class="on">★</a> 
 												<a href="#" class="on">★</a> 
 												<a href="#" class="on">★</a> 
 												<a href="#" class="on">★</a> 
-												<a href="#" class="on">★</a>
+												<a href="#" class="">★</a>
 											</p>
 										</div>
 										<div class="input-element">
@@ -405,14 +413,14 @@ body, input, select, textarea, button {
 							<a href="#none" onclick="window.parent.location.href = '/shop/mypage/mypage_qna.php'" class="emph">1:1 문의</a>에 남겨주세요.
 						</p></li>
 				</ul>
-				<div class="sort" style="bottom: -9px">
+				<!-- <div class="sort" style="bottom: -9px">
 					<select
 						onchange="this.form.sort.value=this.value;this.form.submit()">
 						<option value="1">최근등록순</option>
 						<option value="2">좋아요많은순</option>
 						<option value="3">조회많은순</option>
 					</select>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<table class="xans-board-listheader" width="100%" border="0"
@@ -424,8 +432,8 @@ body, input, select, textarea, button {
 				<col style="width: 51px;">
 				<col style="width: 77px;">
 				<col style="width: 100px;">
-				<col style="width: 40px;">
-				<col style="width: 80px;">
+				<%-- <col style="width: 40px;">
+				<col style="width: 80px;"> --%>
 			</colgroup>
 			<tbody>
 				<tr>
@@ -434,6 +442,7 @@ body, input, select, textarea, button {
 					<th scope="col" class="input_txt">작성자</th>
 					<th scope="col" class="input_txt">작성일</th>
 					<th scope="col" class="input_txt">조회</th>
+					
 				</tr>
 			</tbody>
 		</table>
@@ -448,8 +457,8 @@ body, input, select, textarea, button {
 					<col style="width: 51px;">
 					<col style="width: 77px;">
 					<col style="width: 100px;">
-					<col style="width: 40px;">
-					<col style="width: 80px;">
+					<%-- <col style="width: 40px;">
+					<col style="width: 80px;"> --%>
 				</colgroup>
 				<tbody>
 
@@ -492,8 +501,8 @@ body, input, select, textarea, button {
 						<col style="width: 51px;">
 						<col style="width: 77px;">
 						<col style="width: 100px;">
-						<col style="width: 40px;">
-						<col style="width: 80px;">
+						<%-- <col style="width: 40px;">
+						<col style="width: 80px;"> --%>
 					</colgroup>
 					<tbody>
 		

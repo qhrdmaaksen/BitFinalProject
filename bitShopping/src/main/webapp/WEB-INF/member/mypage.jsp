@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+      
 <%@ include file="./../member/mypagenav.jsp"%>
 
 <!DOCTYPE html>
@@ -28,9 +28,9 @@
 	<div class="container">
 		<div id="body">
 
+			<li><a href="<%=contextPath%>/shop.li?mid=${sessionScope.loginfo.mid}"> 주문 내역 </a></li>
 
-
-			여기에 주문내역 넣어주시면 됩니다.
+			
 			<br><br><br><br><br><br><br><br><br><br><br>
 
 
