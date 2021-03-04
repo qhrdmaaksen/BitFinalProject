@@ -36,9 +36,6 @@
 		<div id="body">
 
 
-			<li><a href="<%=contextPath%>/shop.li?mid=${sessionScope.loginfo.mid}"> 주문 내역 </a></li>
-
-			
 			<br><br><br><br><br><br><br><br><br><br><br>
 
 

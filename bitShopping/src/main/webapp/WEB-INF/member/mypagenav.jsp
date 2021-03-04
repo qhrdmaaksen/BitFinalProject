@@ -407,7 +407,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="/shop/mypage/mypage_review.php">상품 후기</a>
+					<a href="<%=contextPath%>/pdetail.pr?pno=41">상품 후기</a>
 				</li>
 				<li>
 					<a href="/shop/mypage/mypage_emoney.php">적립금 / x</a>

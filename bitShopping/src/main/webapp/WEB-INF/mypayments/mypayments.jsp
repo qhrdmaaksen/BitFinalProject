@@ -660,7 +660,7 @@
                 }).done(function (data) {
                     // 가맹점 서버 결제 API 성공시 로직
                     alert("결제가 성공하였습니다.");
-                    location.href = "<%=NoForm%>index";
+                    location.href = "<%=contextPath%>/";
                 })
             } else {
                 alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);

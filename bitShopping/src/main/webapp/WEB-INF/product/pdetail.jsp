@@ -281,7 +281,7 @@ body, input, select, textarea, button {
 						<ul class="nav dec-and-review-menu">
 							<li><a class="active" data-toggle="tab" href="#description">Description</a>
 							</li>
-							<li><a data-toggle="tab" href="#reviews">Reviews (<%=2 %>)</a></li>
+							<li><a data-toggle="tab" href="#reviews">Reviews (<%=1 %>)</a></li>
 						</ul>
 						<!--Review And Description Tab Menu End-->
 						<!--Review And Description Tab Content Start-->
@@ -343,7 +343,7 @@ body, input, select, textarea, button {
 																<label for="bregdate">작성 일자</label>
 																<div>
 																	<input type="datetime" class="form-control"
-																		name="bregdate" id="bregdate" placeholder="작성 일자"
+																		name="bregdate" id="bregdate" placeholder="yyyy/MM/dd 형식으로 작성해 주세요" 
 																		value="${requestScope.productreviews.bregdate}" />
 
 																</div>
@@ -366,12 +366,12 @@ body, input, select, textarea, button {
 										</div>
 										<div class="input-element">
 											<div class="comment-form-comment">
-												<label>제목*</label> <input type="text" name="btitle"
+												<label>제목*</label> <input type="text" name="btitle" placeholder="4글자 이상 작성해 주세요"
 													id="btitle" value="${requestScope.productreviews.btitle}">
 											</div>
 											<div class="comment-form-comment">
 												<label>내용*</label>
-												<textarea name="bcontent" cols="40" rows="8" id="bcontent"></textarea>
+												<textarea name="bcontent" cols="40" rows="8" id="bcontent" placeholder="5글자 이상 작성해 주세요"></textarea>
 											</div>
 											<%--  <div class="review-comment-form-author">
                                                             <label>작성자* </label>
