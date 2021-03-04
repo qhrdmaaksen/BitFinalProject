@@ -31,7 +31,7 @@
 			where productname like #{keyword}
 		</if>
 		<if test="mode == 'pcategory'">
-			where pcategory like #{keyword}
+			where pcategory like #{keyword} 
 		</if>
 		<if test="mode == 'pcontents'">
 			where pcontents like #{keyword}

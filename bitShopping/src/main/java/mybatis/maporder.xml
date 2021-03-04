@@ -3,12 +3,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="MapAddress">
+<mapper namespace="MapOrder">
 
-	<select id="SelectDataList" parameterType="MyOrder" resultType="MyOrder">
-		select oid , mid , orderdate , invoice
-		from orders
+	<select id="OrderList" parameterType="String" resultType="MyOrder">
+		select * from orders
 		where mid = #{mid}
+		order by orderdate desc 
 	</select>
 	
 </mapper>

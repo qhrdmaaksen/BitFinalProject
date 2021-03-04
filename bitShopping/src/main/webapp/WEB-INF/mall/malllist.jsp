@@ -224,8 +224,8 @@
                                                 <%-- <h5 class="font-weight-bold"><fmt:formatNumber value="${sessionScope.disTotalPrice}" pattern="###,###"/> ￦</h5> --%>
                                             </li>
                                         </ul>
-                                        <form id="order" action="<%=YesForm%>" method="post">
-                                            <button type="button" class="btn btn-dark rounded-pill py-2 btn-block" onclick="goOrder()"> 주문 하기 </button>
+                                        <form class="form-inline" role="form" method="post" action="<%=contextPath%>/modify.mall">
+                                            <button type="button" class="btn btn-dark rounded-pill py-2 btn-block" > 주문 하기 </button>
                                         </form>
                                     </div>
                                 </div>
@@ -236,7 +236,29 @@
             </div>
 
 
+<<<<<<< HEAD
 	<script type="text/javascript">
+=======
+<!-- 	<script type="text/javascript">
+	//onclick="goOrder()"
+		function goOrder(){
+			
+			/* var command = '<input name="command" value="mallcartadd" style="display: none;">'; */
+			var command = '<form method="post" action="/controller/calculate.mall"> ';
+			
+			$("#product-form").append(command);
+			$("#product-form").append("<input type='hidden' id='productcode' name='productcode' value='" + ${bean.productcode} + "'>");
+			$("#product-form").append("<input type='hidden' id='totalprice' name='disTotalPrice' value='" + totalprice + "'>");
+			$("#product-form").append("<input type='hidden' id='stock' name='stock' value='${bean.stock}'>");
+			if($("#delivery-select:checked").length == 0){
+				$("#product-form").append("<input type='hidden' id='qty' name='qty' value='"+$("#buy-qty").val()+"'>");
+			}else {
+				var monthVal = $("#monthVal").val();
+				$("#product-form").append("<input type='hidden' type='text' name='months' value='"+monthVal+"'>");
+			}
+			$("#product-form").submit();
+		};
+>>>>>>> d55b1b0bc96ddfcecd4a84394314345f0a290791
 	
 	  var command = "<input type='hidden' name='command' value='mypayments'>";
       /*  var directbuy = "<input type='hidden' name='directbuy' value='-1'>" */

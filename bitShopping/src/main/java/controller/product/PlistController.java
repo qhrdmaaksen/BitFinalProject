@@ -70,14 +70,19 @@ public class PlistController extends SuperClass{ // 상품 목록을 보여주�
 				pageInfo.getOffset(), 
 				pageInfo.getLimit(), 
 				param.getMode(),
-				param.getKeyword() + "%");
+				param.getKeyword());
 		
 		System.out.println("lists : " + lists);
 		
 		mav.addObject("lists", lists); // 표에 들어갈 상품 목록들
-
+		
 		System.out.println("상품 목록 갯수 : " + lists.size());
-
+		
+		// 카테고리 리스트
+//		List<Product> clists = pdao.CategoryDataList(
+//			param.getKeyword() + "%");
+//		System.out.println("채소 / 과일 : " + clists.toString());
+		
 		mav.addObject("pageInfo" , pageInfo) ; // 페이징 관련 항목들
 
 		// 필드 검색과 관련한 항목들
