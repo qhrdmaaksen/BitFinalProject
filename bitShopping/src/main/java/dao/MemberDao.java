@@ -42,9 +42,6 @@ public class MemberDao {
 		return this.abcd.selectList(namespace + ".GetList", map);	
 	}
 
-
-
-
 	public Member SelectDataByPk(String mid) {
 		return this.abcd.selectOne(namespace + ".SelectDataByPk", mid);
 	}
@@ -56,8 +53,6 @@ public class MemberDao {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("mode", mode);
 		map.put("keyword", "%" + keyword + "%"); // 키워드를 포함하는
-		
-		
 		return this.abcd.selectList(namespace + ".SelectDataList", map, rowBounds);
 	}
 
@@ -67,14 +62,11 @@ public class MemberDao {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("mode", mode);
 		map.put("keyword", "%" + keyword + "%"); // 키워드를 포함하는
-		
-		
 		return this.abcd.selectOne(namespace + ".SelectTotalCount" , map);
 	}
 
 	public int DeleteData(Member bean) {
 		// 해당 id를 사용해서 회원 탈퇴
-		
 		return this.abcd.delete(namespace + ".DeleteData" , bean.getMid());
 	}
 
@@ -94,8 +86,11 @@ public class MemberDao {
 			this.abcd.insert(namespace + ".InsertShoppingInfo", shpInfo);
 		}
 	}
-	
-	
+
+
+	public int UpdateData(Member member) {
+		return this.abcd.update(namespace + ".UpdateData", member);
+	}
 
 
 	

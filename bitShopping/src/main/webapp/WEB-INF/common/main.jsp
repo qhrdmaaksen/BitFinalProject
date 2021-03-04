@@ -259,6 +259,10 @@
 <%@ include file="/WEB-INF/common/footer.jsp" %>
 
 
+
+<br><br><br>
+		<a href="<%=contextPath%>/modify.me?mid=chj1234">회원 정보 수정</a>
+
 <br><br><br>
 <br><br><br>
 		<a href="<%=contextPath%>/list.me">회원 목록 보기</a>

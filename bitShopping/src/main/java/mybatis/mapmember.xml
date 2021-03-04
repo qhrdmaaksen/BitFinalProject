@@ -5,6 +5,19 @@
 
 <mapper namespace="MapMember">
 
+
+	<insert id="UpdateData" parameterType="MyMember">
+		update members set 
+		name = #{name},
+		password = #{password},
+		email = #{email},
+		phone = #{phone},
+		birth = #{birth}
+		where mid = #{mid}
+
+	</insert>
+
+
 	<insert id="InsertData" parameterType="MyMember">
 	insert into members(mid , password , name , email , phone , zipcode, address1 , address2 , gender ,
                     birth , mpoint , createdate )
@@ -43,9 +56,9 @@
 	<select id="SelectShoppingInfo" parameterType="String" resultType="MyShopInfo">
 		select * from shoppinginfo
 		where mid = #{mid}
-	
-	
 	</select>
+	
+	
 	
 	
 		<!-- 회원 로그 아웃과 관련된 항목들 -->
