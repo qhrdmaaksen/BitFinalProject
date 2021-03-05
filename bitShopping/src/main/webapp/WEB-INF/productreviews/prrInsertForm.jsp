@@ -79,7 +79,7 @@ padding-top: 2ex;
 						<label class="control label col-sm-<%=formleft%>" for="bregdate">작성 일자</label>
 						<div class="col-sm-<%=formright%>">
 							<form:input path="bregdate" type="datetime" class="form-control" name="bregdate"
-								id="bregdate" placeholder="작성 일자" value="${bregdate}"/>
+								id="bregdate" placeholder="yyyy/MM/dd 형식으로 작성해 주세요" value="${bregdate}"/>
 							<form:errors cssClass="err" path="bregdate" />
 						</div>
 					</div>

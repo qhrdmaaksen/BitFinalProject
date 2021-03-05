@@ -23,21 +23,26 @@ int formright = 12 - formleft;
 <meta charset="UTF-8">
 <title>상품 상세 페이지</title>
 <script type="text/javascript">
-$(document).ready(function() {
-	
-	$(".star_rating a").click(function() {
-		$(this).parent().children("a").removeClass("on");
-		$(this).addClass("on").prevAll("a").addClass("on");
-		return false;
-	});
-	
-}
-	
-	
+<script>
+$('#star_grade a').click(function(){
+    $(this).parent().children("a").removeClass("on");  /* 별점의 on 클래스 전부 제거 */ 
+    $(this).addClass("on").prevAll("a").addClass("on"); /* 클릭한 별과, 그 앞 까지 별점에 on 클래스 추가 */
+    return false;
+});
 </script>
+	
 <style type="text/css">
+<style>
+     #star_grade a{
+        text-decoration: none;
+        color: gray;
+    }
+    #star_grade a.on{
+        color: red;
+    }
+
 div {
-	word-break: break-all;
+	/* word-break: break-all; */
 }
 h2 {
 	display: block;
@@ -50,6 +55,7 @@ h2 {
 }
 summary {
 	cursor: pointer;
+	padding-left: 10px;
 }
 /*삼각형 없애기*/
 summary {
@@ -78,8 +84,9 @@ body, input, select, textarea, button {
 	border-top: 2px solid #522772;
 }
 .btitle {
-	padding-left: 50px;
-	text-align: left;
+	padding: 15px;
+	margin: 15px;
+	/* text-align: left; */
 }
 #foot {
 	position: fixed;
@@ -91,7 +98,9 @@ body, input, select, textarea, button {
 	bottom: 0px;
 }
 .input_txt {
-	padding-left: 20px
+	padding: 20px;
+	margin: 20px;
+	
 }
 </style>
 <style>
@@ -273,7 +282,7 @@ body, input, select, textarea, button {
 						<ul class="nav dec-and-review-menu">
 							<li><a class="active" data-toggle="tab" href="#description">Description</a>
 							</li>
-							<li><a data-toggle="tab" href="#reviews">Reviews (${requestScope.productreviews.bno})</a></li>
+							<li><a data-toggle="tab" href="#reviews">Reviews (<%=1 %>)</a></li>
 						</ul>
 						<!--Review And Description Tab Menu End-->
 						<!--Review And Description Tab Content Start-->
@@ -335,7 +344,7 @@ body, input, select, textarea, button {
 																<label for="bregdate">작성 일자</label>
 																<div>
 																	<input type="datetime" class="form-control"
-																		name="bregdate" id="bregdate" placeholder="작성 일자"
+																		name="bregdate" id="bregdate" placeholder="yyyy/MM/dd 형식으로 작성해 주세요" 
 																		value="${requestScope.productreviews.bregdate}" />
 
 																</div>
@@ -347,23 +356,23 @@ body, input, select, textarea, button {
 									<div class="review-form-wrapper">
 										<div class="review-form">
 											<span class="comment-reply-title"> </span>
-											<p class="star_rating">
+											<p id="star_grade">
 
 												<a href="#" class="on">★</a> 
 												<a href="#" class="on">★</a> 
 												<a href="#" class="on">★</a> 
 												<a href="#" class="on">★</a> 
-												<a href="#" class="on">★</a>
+												<a href="#" class="">★</a>
 											</p>
 										</div>
 										<div class="input-element">
 											<div class="comment-form-comment">
-												<label>제목*</label> <input type="text" name="btitle"
+												<label>제목*</label> <input type="text" name="btitle" placeholder="4글자 이상 작성해 주세요"
 													id="btitle" value="${requestScope.productreviews.btitle}">
 											</div>
 											<div class="comment-form-comment">
 												<label>내용*</label>
-												<textarea name="bcontent" cols="40" rows="8" id="bcontent"></textarea>
+												<textarea name="bcontent" cols="40" rows="8" id="bcontent" placeholder="5글자 이상 작성해 주세요"></textarea>
 											</div>
 											<%--  <div class="review-comment-form-author">
                                                             <label>작성자* </label>
@@ -405,14 +414,14 @@ body, input, select, textarea, button {
 							<a href="#none" onclick="window.parent.location.href = '/shop/mypage/mypage_qna.php'" class="emph">1:1 문의</a>에 남겨주세요.
 						</p></li>
 				</ul>
-				<div class="sort" style="bottom: -9px">
+				<!-- <div class="sort" style="bottom: -9px">
 					<select
 						onchange="this.form.sort.value=this.value;this.form.submit()">
 						<option value="1">최근등록순</option>
 						<option value="2">좋아요많은순</option>
 						<option value="3">조회많은순</option>
 					</select>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<table class="xans-board-listheader" width="100%" border="0"
@@ -424,8 +433,8 @@ body, input, select, textarea, button {
 				<col style="width: 51px;">
 				<col style="width: 77px;">
 				<col style="width: 100px;">
-				<col style="width: 40px;">
-				<col style="width: 80px;">
+				<%-- <col style="width: 40px;">
+				<col style="width: 80px;"> --%>
 			</colgroup>
 			<tbody>
 				<tr>
@@ -434,6 +443,7 @@ body, input, select, textarea, button {
 					<th scope="col" class="input_txt">작성자</th>
 					<th scope="col" class="input_txt">작성일</th>
 					<th scope="col" class="input_txt">조회</th>
+					
 				</tr>
 			</tbody>
 		</table>
@@ -443,13 +453,13 @@ body, input, select, textarea, button {
 				onclick="view_content(this,event,'notice')">
 				<caption style="display: none">구매후기 내용</caption>
 				<colgroup>
-					<col style="width: 70px;">
-					<col style="width: auto;">
-					<col style="width: 51px;">
-					<col style="width: 77px;">
-					<col style="width: 100px;">
-					<col style="width: 40px;">
-					<col style="width: 80px;">
+					<col style="width: 52px;">
+					<col style="width: 200;">
+					<col style="width: 220px;">
+					<col style="width: 200px;">
+					<col style="width: 200px;">
+					<%-- <col style="width: 40px;">
+					<col style="width: 80px;"> --%>
 				</colgroup>
 				<tbody>
 
@@ -462,7 +472,7 @@ body, input, select, textarea, button {
 				<summary>내용 자세히 보기</summary>
 				<p>${bean.bcontent}</p>
 			</details></td>
-		<td class="user_grade grade_comm"></td>
+		
 		<td class="bwirter">${bean.bwriter}</td>
 		<td class="bregdate">${bean.bregdate}</td>
 		<td><span class="breview">${bean.breview}</span></td>
@@ -492,8 +502,8 @@ body, input, select, textarea, button {
 						<col style="width: 51px;">
 						<col style="width: 77px;">
 						<col style="width: 100px;">
-						<col style="width: 40px;">
-						<col style="width: 80px;">
+						<%-- <col style="width: 40px;">
+						<col style="width: 80px;"> --%>
 					</colgroup>
 					<tbody>
 		

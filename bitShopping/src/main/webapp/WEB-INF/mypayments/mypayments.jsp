@@ -304,7 +304,7 @@
 </div>
 <div class="container col-md-offset-<%=offset%> col-md-<%=content%>" style="padding-bottom: 10%; width: 40%;">
     <div class="ordTitle">
-        <h1>주문/결제</h1>
+        <!-- <h1>주문/결제</h1> -->
         <hr style="border:none; border: 1px double #522772; width: 100%;">
         <div align="right" style="color: blue">주문결제 >
             <span style="color: black;">"주문완료"</span>
@@ -383,7 +383,7 @@
         <div style="margin: 8px 0px 0px; font:12px 돋움, Dotum, sans-serif;">
             <hr style="border: none;">
             <div style="padding: 10px 15px 10px 20px; background: #EEEEEE;">
-                <strong>1/29</strong>
+                <strong>3/9</strong>
                 <span>도착 예정</span>
             </div>
             <hr style="border: none;">
@@ -403,24 +403,24 @@
                     </table>
                 
                     <table>
-                            <tr style="border-bottom: 1px solid #000000;">
+                            <tr style="border-right 100px;">
                                 <td>
-                                    <img src="<%=contextPath%>/resources/assets/img/products/${shopinfo.pimg}"
-                                                                     alt="" width="70" class="img-fluid rounded shadow-sm">
+                                    <img src="<%=contextPath%>/resources/assets/img/products/갈비살.jpg"
+                                                                     alt="" width="150" height="70" align="middle" class="img-fluid rounded shadow-sm">
                                 </td>
                                 <td id="product_lists">
                                     <span style="padding-left: 0px; font-size: 25px; color: blue;">${shopinfo.productname}</span>
                                 </td>
                                 <td id="product_lists2">
                                     <span class="col-md-10"
-                                          style="margin-bottom:10px; margin-left: 150px; font-size: 25px; color: red;">${shopinfo.pqty} 개</span>
+                                          style="margin-bottom:10px; margin-left: 150px; font-size: 25px; color: #522772"><%=1 %> 개</span>
                                 </td>
                             </tr>
                        <%--  </c:forEach> --%>
                     </table>
                
                 <p align="right"><span id="monthVal"
-                                       style="font-weight: bolder; background-color: #522772; color: white;">상품 종류 ${shopinfo.pcategory} 종류 </span>
+                                       style="font-weight: bolder; background-color: #522772; color: white;">상품 <%=1 %> 종류 </span>
                 </p>
             </div>
             <hr>
@@ -438,7 +438,18 @@
                 <tbody align="center">
                 <tr align="center">
                     <th>총 상품가격</th>
-                    <td><fmt:formatNumber value="${sessionScope.totalAmount}" pattern="#,###"/>원</td>
+                      <c:choose>
+                        <c:when test="${sessionScope.totalprice>50000}">
+                            <td id="totalprice"><fmt:formatNumber value="${sessionScope.totalprice}"
+                                                                  pattern="#,###"/>원
+                            </td>
+                        </c:when>
+                        <c:otherwise>
+                            <td id="totalprice"><fmt:formatNumber value="${sessionScope.disTotalPrice + 2500}"
+                                                                  pattern="#,###"/>원
+                            </td>
+                        </c:otherwise>
+                    </c:choose>
                 </tr>
               <%--   <tr align="center">
                     <th>할인 쿠폰</th>

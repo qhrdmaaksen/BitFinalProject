@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+      
 <%@ include file="./../member/mypagenav.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -34,6 +34,23 @@
 <body>
 	<div class="container">
 		<div id="body">
+
+
+
+			<li>
+				<a href="<%=contextPath%>/shop.li?mid=${sessionScope.loginfo.mid}"> 
+					(${sessionScope.loginfo.mid}) ${sessionScope.loginfo.name}님의 주문 내역 </a>
+			</li>
+
+
+			<br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
  <div class="tab-content dashboard-content">
 		<div id="dashboard" class="tab-pane fade show active">
 			<table>
@@ -82,6 +99,7 @@
 		</div>
 		<div id="orders" class="tab-pane fade"></div>
 	</div>
+
 		</div>
 	</div>
 </body>

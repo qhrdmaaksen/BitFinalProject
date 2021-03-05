@@ -64,7 +64,7 @@ public class MallDao {
 			
 			// 4. 해당 상품 번호(pnum)를 이용하여 재고 수량(stock)을 감소시킵니다.
 			map.put("stock", qty) ;
-			map.put("num", pno) ;
+			map.put("no", pno) ;
 			this.abcd.update(namespace + "UpdateStock", map);
 		}
 
@@ -72,12 +72,12 @@ public class MallDao {
 		
 		// 5. 구매자에 대한 마일리지 적립 포인트를 누적시켜 줍니다.
 		//map.put("mpoint", totalPoint) ;
-		map.put("id", mem.getMid()) ;
+		map.put("mid", mem.getMid()) ;
 		this.abcd.update(namespace + "UpdatePoint", map);			
 	}
 	
-	public List<Order> OrderMall(String id) {
-		return this.abcd.selectList(namespace + "OrderMall", id);		
+	public List<Order> OrderMall(String mid) {
+		return this.abcd.selectList(namespace + "OrderMall", mid);		
 	}	
 	
 	public List<ShoppingInfo> ShowDetail(int oid) {
@@ -85,7 +85,7 @@ public class MallDao {
 	}	
 	
 
-	public List<ShoppingInfo> GetShoppingInfo(String id) {
+	public List<ShoppingInfo> GetShoppingInfo(String mid) {
 //		String sql = " select * from shoppinginfos " ;
 //		sql += " where mid = ? " ;
 		return null ;

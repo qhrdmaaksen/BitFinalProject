@@ -104,7 +104,7 @@
 					   class="form-horizontal" role="form" name="myform">
 			
 			<%-- jsp 주석 : isCheck가 false이면 가입이 불가능 합니다. --%>
-			<input type="hidden" name="isCheck" value="true">
+			<input type="hidden" name="isCheck" value="false">
 			
 			<!-- html 주석 : 마일리지 포인트는 숨겨져 넘깁니다. (*참고 : 소스보기 시 이 주석은 보인다.)-->
 			<input type="hidden" name="mpoint" value="5">
