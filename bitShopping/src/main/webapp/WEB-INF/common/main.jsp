@@ -275,7 +275,11 @@
 
 <br><br><br>
 <br><br><br>
-<a href="<%=contextPath%>/delete.me?mid=">회원 탈퇴하기</a>
+<span>
+	<c:if test="${whologin ==1}">
+		<a href="<%=contextPath%>/delete.me?mid=${sessionScope.loginfo.mid}">회원 탈퇴하기</a>
+	</c:if>
+</span>
 <br><br><br>
 <br><br><br>
 

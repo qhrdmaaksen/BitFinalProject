@@ -48,8 +48,14 @@
 		where mid = #{mid}
 	</select>
 
+	<!-- 회원 탈퇴와 관련된 항목들 -->
+	<update id="UpdateOrderRemark" parameterType="String">
+		update orders set remark = #{remark} 
+		where mid = #{mid}
+	</update>
+		
 	<select id="DeleteData" parameterType="String">
-		select * from members
+		delete from members
 		where mid = #{mid}
 	</select>
 	
@@ -57,9 +63,6 @@
 		select * from shoppinginfo
 		where mid = #{mid}
 	</select>
-	
-	
-	
 	
 		<!-- 회원 로그 아웃과 관련된 항목들 -->
 	<delete id="DeleteShoppingInfo" parameterType="String">
@@ -71,10 +74,6 @@
 		insert into shoppinginfo(mid, productcode, productname, qty, price, pimg , discount)
 		values(#{mid}, #{productcode}, #{productname}, #{qty}, #{price}, #{pimg}, #{discount})		
 	</insert>	
-	
-	
-	
-	
 	
 </mapper>
 

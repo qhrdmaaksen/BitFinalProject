@@ -19,7 +19,7 @@ import dao.MemberDao;
 @Controller
 public class MDeleteController extends SuperClass{
 	private final String command = "/delete.me" ; // 요청 커맨드(변경 요망)
-	private final String redirect = "redirect:/xxx.me" ; // 리다이렉션(변경 요망)
+	private final String redirect = "redirect:/login.me" ; // 리다이렉션(변경 요망)
 	
 	// 뷰에 넘겨줄 ModelAndView 객체
 	private ModelAndView mav = null ; 
@@ -30,7 +30,7 @@ public class MDeleteController extends SuperClass{
 	
 	public MDeleteController() {
 		// (변경 요망)
-		super("main", null); // super(getpage, postpage)
+		super("login", null); // super(getpage, postpage)
 		this.mav = new ModelAndView();
 	}
 	
@@ -48,7 +48,7 @@ public class MDeleteController extends SuperClass{
 		// 탈퇴하는 사람에 대한 세선 정보를 완전히 비움
 		session.invalidate();
 
-		this.mav.setViewName(super.getpage); //main 페이지로 이동
+		this.mav.setViewName(super.getpage); //login 페이지로 이동
 		return this.mav ;
 	}
 	
