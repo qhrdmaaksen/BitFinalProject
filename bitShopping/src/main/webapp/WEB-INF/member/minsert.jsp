@@ -315,7 +315,7 @@
 						<p align="center" style="color: white; font-weight: bolder;">가입 하기</p>
 					</button>
 					 
-					<button type="reset" class="w3-button w3-red" style="margin:20px;">
+					<button type="reset" class="w3-button w3-red" style="margin:20px; font-weight: bolder;">
 						<p align="right">초기화</p>
 					</button>
 				</div>

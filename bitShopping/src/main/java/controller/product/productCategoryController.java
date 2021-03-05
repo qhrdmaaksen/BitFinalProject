@@ -43,9 +43,9 @@ public class productCategoryController extends SuperClass{
 		this.mav = new ModelAndView() ; 
 	}
 	@GetMapping("/common.pr")
-	public ModelAndView doGet(@RequestParam HashMap<String, Object> paramMap) {
-		if(paramMap.get("keyword2") == null) {
-			paramMap.put("keyword2", "");
+	public ModelAndView doGet(@RequestParam HashMap<String, Object> paramMap) {//단일 파라미터 전달받을곳
+		if(paramMap.get("keyword2") == null) {//키워드2가없다면 
+			paramMap.put("keyword2", "");//키워드2는 공백처리
 		}
 		System.out.println(paramMap.get("keyword".toString()));
 //		List<Product> FVlists = categoryDao.SelectDataListFV(modeFruit , modeVegetable); 
