@@ -410,13 +410,13 @@
 					<a href="<%=contextPath%>/pdetail.pr?pno=41">상품 후기</a>
 				</li>
 				<li>
+					<a href="<%=contextPath%>/modify.me?mid=${sessionScope.loginfo.mid}">개인 정보 수정</a>
+				</li>
+				<li>
 					<a href="/shop/mypage/mypage_emoney.php">적립금 / x</a>
 				</li>
 				<li>
 					<a href="/shop/mypage/mypage_coupon.php">쿠폰 / x</a>
-				</li>
-				<li>
-					<a href="/shop/member/myinfo.php">개인 정보 수정</a>
 				</li>
 			</ul>
 		</div>
