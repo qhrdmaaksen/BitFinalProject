@@ -29,7 +29,7 @@ import shopping.ShoppingInfo;
 @Controller
 public class MypaymentsController extends SuperClass {
 	private final String command = "/payment.pm";
-	private String redirect = "shopresult";
+	private String redirect = "mypayments";
 	private ModelAndView mav = null;
 
 	@Autowired
