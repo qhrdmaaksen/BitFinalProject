@@ -29,7 +29,7 @@ import shopping.ShoppingInfo;
 @Controller
 public class MypaymentsController extends SuperClass {
 	private final String command = "/payment.pm";
-	private String redirect = "mypayments";
+	private String redirect = "shopresult";
 	private ModelAndView mav = null;
 
 	@Autowired
@@ -68,7 +68,7 @@ public class MypaymentsController extends SuperClass {
 			session.removeAttribute("totalAmount");//금액 정보 삭제
 			session.removeAttribute("totalPoint");//금액 정보 삭제
 			session.removeAttribute("mycart"); //카트 반납하기		
-			session.setAttribute("message", "결재를 완료했읍니다.\n감사합니다.");
+			session.setAttribute("message", "결재를 완료했습니다.\n감사합니다.");
 			this.mav.setViewName(this.redirect);
 		}
 		return this.mav ;
