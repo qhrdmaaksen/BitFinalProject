@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
 <%@ include file="./../common/common.jsp" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,13 +72,6 @@
 			var url = '<%=contextPath%>/idCheck.me?mid=' + mid ;
 			window.open(url , 'mywin' , 'height=150,width=300') ;
 		}
-		<%-- function findZipcode() { /*우편 번호 찾기 버튼 클릭*/
-			
-			var url = '<%=contextPath%>/zipcheck.me';
-			window.open(url, 'mywin', 'height=600, width=720, statusbar=yes, scrollbars=yes, resizable=no');
-														  		// 상태 포커스 , 스크롤 바 , 리사이즈 안되게
-			//alert('우편 번호 찾기') ;
-		} --%>
 		function checkForm() { // 회원 가입 버튼 클릭 함수
 			var isCheck = document.myform.isCheck.value ; 
 			if (isCheck == 'false'){
@@ -89,15 +82,25 @@
 				return true ;
 			}
 		}
+		document.getElementById('changeGender').onclick = changeColor;   
+	    function changeColor() {
+	        document.body.style.color = "purple";
+	        return false;
+	    }   
 	</script>
 	<style type="text/css">
+		#mainbody {
+			margin-left: 500;
+		}
+		#inreset {
+			margin-left: 350;
+		}
 	</style>
 </head>
 <body>
-<div align="center" class="container col-sm-offset-2 col-sm-8">
+<div id="mainbody" class="container col-offset col-sm-6">
 	<h2>회원 가입</h2>
 		<h6 align="right"><label class="redPrefix">*&nbsp;&nbsp;</label>필수 입력 사항</h6>
-	<hr>
 	<div class="panel panel-primary sub_container">
 		<div class="panel panel-body">
 			<form:form modelAttribute="member" action="${contextPath}/insert.me" method="post"
@@ -111,7 +114,7 @@
 			
 			<!-- -------------------------------------------------------------------------------- -->
 			<div class="form-group">
-				<label for="mid" class="col-sm-3">
+				<label for="mid" class="col-sm-2">
 					아이디
 				 	<span  class="redPrefix">
 				 		*
@@ -129,7 +132,7 @@
 			</div>
 			<!-- -------------------------------------------------------------------------------- -->
 			<div class="form-group">
-				<label for="name" class="col-sm-3">
+				<label for="name" class="col-sm-2">
 					이름
 					<span  class="redPrefix">
 				 		*
@@ -143,7 +146,7 @@
 			</div>
 			<!-- -------------------------------------------------------------------------------- -->
 			<div class="form-group">
-				<label for="password" class="col-sm-3">
+				<label for="password" class="col-sm-2">
 					비밀번호
 					<span  class="redPrefix">
 				 		*
@@ -157,7 +160,7 @@
 			</div>
 			<!-- -------------------------------------------------------------------------------- -->
 			<div class="form-group">
-				<label for="email" class="col-sm-3">
+				<label for="email" class="col-sm-2">
 					이메일
 					<span  class="redPrefix">
 				 		*
@@ -171,7 +174,7 @@
 			</div>
 			<!-- -------------------------------------------------------------------------------- -->
 			<div class="form-group">
-				<label for="phone" class="col-sm-3">
+				<label for="phone" class="col-sm-2">
 					휴대폰
 					<span  class="redPrefix">
 				 		*
@@ -185,7 +188,7 @@
 			</div>
 			<!-- -------------------------------------------------------------------------------- -->
 			<div class="form-group">
-				<label for="gender" class="col-sm-3">
+				<label for="gender" class="col-sm-2">
 					성별
 					<span  class="redPrefix">
 				 		*
@@ -193,15 +196,15 @@
 				</label>
 				<div class="col-sm-9" align="left">
 					<label class="radio-inline">
-						<form:radiobuttons path="gender" items="${radiolist}" 
-							itemLabel="mykey" itemValue="mykey" style="margin-left:70px;"/>
+						<form:radiobuttons path="gender" id="changeGender" items="${radiolist}" 
+							itemLabel="mykey" itemValue="mykey" style="margin-left:70px;" onclick="changeColor()"/>
 						<form:errors cssClass="err" path="gender" />
 					</label>
 				</div>
 			</div>
 			<!-- -------------------------------------------------------------------------------- -->
 			<div class="form-group">
-				<label for="birth" class="col-sm-3">
+				<label for="birth" class="col-sm-2">
 					생일
 					<span  class="redPrefix">
 				 		*
@@ -216,7 +219,7 @@
 				<!-- ----------------------------------우편번호 api---------------------------------------------- -->
 			<span id="guide" style="color:#999;display:none"></span>
 			<div class="form-group">
-				<label for="zipcode" class="col-sm-3">
+				<label for="zipcode" class="col-sm-2">
 					우편번호
 					<span  class="redPrefix">
 				 		*
@@ -226,16 +229,16 @@
 					<input type="text" id="fakezipcode" name="fakezipcode" 
 						class="form-control" value="우편번호 찾기를 눌러주세요." disabled="disabled"/>
 						<input type="hidden" name="zipcode" id="zipcode" value="">
-					<div class="col-sm-2" style="margin-bottom: 1px;" align="left">
+					<div class="col-sm-6" style="margin-bottom: 1px; margin-left: 470;">
 						<input type="button" class="w3-btn w3-white w3-border w3-border-purple w3-round-large" value="우편 번호 찾기"
 								style="font-weight: bold;" onclick="sample4_execDaumPostcode();">
 					</div>
-					<div class="form-group" class="col-sm-7" style="margin-top: 5px;">
+					<div class="form-group" class="col-sm-8" style="margin-top: 5px; margin-left: 20;">
 						<label for="address1"></label>
 						<input type="text" name="address1" id="address1"
 								class="form-control" placeholder="도로명주소" value="">
 					</div>
-					<div class="form-group" class="col-sm-7" style="margin-top: 5px;">
+					<div class="form-group" class="col-sm-8" style="margin-top: 5px; margin-left: 20;">
 						<label for="address2"></label>
 						<input type="text" name="address2" id="address2"
 								class="form-control" placeholder="상세주소" value="">
@@ -294,7 +297,7 @@
 			</div> --%>
 			<!-- -------------------------------------------------------------------------------- -->
 			<div class="form-group">
-				<label for="createdate" class="col-sm-3">
+				<label for="createdate" class="col-sm-2">
 					가입 일자
 					<span  class="redPrefix">
 				 		*
@@ -308,15 +311,15 @@
 			</div>
 			<!-- -------------------------------------------------------------------------------- -->
 			<div class="form-group">
-				<div class="col-sm-12">
+				<div class="col-sm-4" id="inreset">
 				
 					<button type="submit" class="w3-button w3-purple w3-border w3-border-purple w3-round-large"
 					onclick="return checkForm()">
-						<p align="center" style="color: white; font-weight: bolder;">가입 하기</p>
+						<p align="right" style="color: white; font-weight: bolder;">가입 하기</p>
 					</button>
 					 
-					<button type="reset" class="w3-button w3-red" style="margin:20px; font-weight: bolder;">
-						<p align="right">초기화</p>
+					<button type="reset" class="w3-button w3-red" style="margin:20px; font-weight: bold;">
+						<p>초기화</p>
 					</button>
 				</div>
 			</div>
