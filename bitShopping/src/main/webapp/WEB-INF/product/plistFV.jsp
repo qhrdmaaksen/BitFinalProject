@@ -68,6 +68,8 @@
                     <nav class="woocommerce-breadcrumb">
                         <a href="<%=contextPath%>/main.cu">Home</a>
                         <span class="separator">/</span> Shop
+                        <span class="separator">/</span> Shop
+                        <span class="separator">/</span> Shop
                     </nav>
                 </div>
             </div>

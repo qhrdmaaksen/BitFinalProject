@@ -17,17 +17,17 @@ import dao.productCategoryDao;
 @Controller
 public class productCategoryController extends SuperClass{
 	
-	String modeFruit = "과일" ;
-	String modeVegetable = "채소" ;
-	String modeRice = "쌀" ;
-	String modeSeafood = "해산" ;
-	String modeMeat = "정육" ;
-	String modeBakery = "베이커리" ;
-	String modeSnack = "제과" ;
-	String modeEgg = "계란" ;
-	String modeCheese = "치즈" ;
-	String modeSalad = "샐러드" ;
-	String modeSimplefood = "간편식" ;
+//	String modeFruit = "과일" ;
+//	String modeVegetable = "채소" ;
+//	String modeRice = "쌀" ;
+//	String modeSeafood = "해산" ;
+//	String modeMeat = "정육" ;
+//	String modeBakery = "베이커리" ;
+//	String modeSnack = "제과" ;
+//	String modeEgg = "계란" ;
+//	String modeCheese = "치즈" ;
+//	String modeSalad = "샐러드" ;
+//	String modeSimplefood = "간편식" ;
 	
 	@Autowired
 	@Qualifier("categoryDao")
