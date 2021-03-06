@@ -40,7 +40,7 @@
 		width: 250px !important;
 		height: 320px !important;
 	}
-	h4{
+	h4, h2, h6{
     	font-family: Roboto Slab !important;
     }
 
@@ -87,19 +87,19 @@
     </div>
     
     <div class="carousel-item">
-      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1577869708.jpeg" alt="배너2" width="960" height="350">
+      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1614910139.jpg" alt="배너2" width="960" height="350">
     </div>
     
     <div class="carousel-item">
-      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1612949959.jpg" alt="배너3" width="960" height="350">
+      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1614758267.jpg" alt="배너3" width="960" height="350">
     </div>
     
     <div class="carousel-item">
-      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1614318530.jpg" alt="배너4" width="960" height="350">
+      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1596164134.jpg" alt="배너4" width="960" height="350">
     </div>
     
     <div class="carousel-item">
-      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1614317517.jpg" alt="배너5" width="960" height="350">
+      <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1583112495.jpg" alt="배너5" width="960" height="350">
     </div>
   </div>
   
@@ -112,6 +112,85 @@
 </div>
 
 <br><br><br>
+
+
+
+
+ <!-- may also like product start -->
+        <div class="product-area pb-65   product-padding">
+            <div class="container">
+                <div class="section-title-2 text-center mb-25">
+                    <h2 class="m-0">인기상품 추천</h2>
+                    <p>컬리에서 가장 인기있는 상품은?</p>
+                </div>
+
+                <div class="row">
+                    <div class="product-slider-active owl-carousel">
+	                    <c:forEach var="bean" items="${requestScope.lists5}">
+	                        <div class="col-lg-4 col-md-6 col-12">
+	                            <div class="product-wrapper mb-35">
+	                                <div class="product-img">
+	                                    <a href="<%=contextPath%>/pdetail.pr?pno=${bean.pno}">
+	                                        <span class="onsale">Sale!</span>
+	                                        <img alt="${bean.pimg1}" src="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}">
+	                                    </a>
+	                                    <div class="product-action-2">
+	                                        <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-refresh"></i>
+	                                        </a>
+	                                        <a href="#" title="Add to Wishlist" class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-favorite-outline"></i>
+	                                        </a>
+	                                        <a href="#" title="Quick View" data-target="#exampleModal" data-toggle="modal" class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-search"></i>
+	                                        </a>
+	                                        <a href="<%=contextPath%>/insert.mall?pno=${bean.pno}&pqty=0&qty=1" title="Add To Cart"  class="action-plus-2 tooltip">
+	                                            <i class="zmdi zmdi-shopping-cart-plus"></i>
+	                                        </a>
+	                                    </div>
+	                                    <div class="rating-box">
+	                                        <a href="#" title="1 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                        <a href="#" title="2 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                        <a href="#" title="3 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                        <a href="#" title="4 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                        <a href="#" title="5 star">
+	                                            <i class="far fa-star"></i>
+	                                        </a>
+	                                    </div>
+	                                </div>
+	                                <div class="product-content text-center">
+	                                    <h4>
+	                                        <a href="<%=contextPath%>/pdetail.pr?pno=${bean.pno}">${bean.productname}</a>
+	                                    </h4>
+	                                    <div class="product-price-2">
+	                                        <div class="price-box">
+	                                            <del>
+	                                                <span class="amount">
+	                                                    <span class="Price-currencySymbol"></span><fmt:formatNumber value="${bean.price}" pattern="#,##0" /> 원</span>
+	                                            </del>
+	                                            <ins>
+	                                                <span class="amount">
+	                                                    <span class="Price-currencySymbol"></span><fmt:formatNumber value="${bean.price*0.85}" pattern="#,##0" /> 원</span>
+	                                            </ins>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                      </c:forEach>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 
 

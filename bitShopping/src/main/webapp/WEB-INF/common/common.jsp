@@ -384,8 +384,8 @@
                                                                 <span class="f-right"><fmt:formatNumber value="${sessionScope.disTotalPrice}" pattern="###,###"/> ￦</span>
                                                             </h5>
                                                             <div class="cart-actions">
-                                                                <a href="<%=contextPath%>/list.mall" class="checkout">View cart</a>
-                                                                <a href="checkout.html" class="checkout">Checkout</a>
+                                                                <a href="<%=contextPath%>/list.mall" class="checkout">Go cart</a>
+                                                                <a href="<%=contextPath%>/plist.pr" class="checkout">More shop</a>
                                                             </div>
                                                         </div>
                                                         <!-- Cart Footer Inner End -->

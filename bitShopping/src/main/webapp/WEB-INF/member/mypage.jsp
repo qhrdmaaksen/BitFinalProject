@@ -29,15 +29,28 @@
 		table{
 			width: 1000px;
 		}
+		.panel-success>.panel-heading {
+		    color: white;
+		    background-color: #8B008B;
+		    border-color: #8B008B;
+		}
+				.dashboard-content h3 {
+		    margin-bottom: 25px;
+		    padding: 20px;
+		}
+		.table-condensed>tbody>tr>td {
+		    padding: 12px;
+		}
+		.dashboard-content .table-responsive .table > tbody > tr > td {
+		    color: #303030;
+		    font-size: 15px;
+		}
+				
 	</style>	
 </head>
 <body>
 	<div class="container">
 		<div id="body">
-			<li>
-				<a href="<%=contextPath%>/shop.li?mid=${sessionScope.loginfo.mid}"> 
-					(${sessionScope.loginfo.mid}) ${sessionScope.loginfo.name}님의 주문 내역 </a>
-			</li>
  <div class="tab-content dashboard-content">
 		<div id="dashboard" class="tab-pane fade show active">
 			<table>

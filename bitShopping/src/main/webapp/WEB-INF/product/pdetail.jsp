@@ -23,116 +23,119 @@ int formright = 12 - formleft;
 <meta charset="UTF-8">
 <title>상품 상세 페이지</title>
 <script type="text/javascript">
-<script>
-$('#star_grade a').click(function(){
-    $(this).parent().children("a").removeClass("on");  /* 별점의 on 클래스 전부 제거 */ 
-    $(this).addClass("on").prevAll("a").addClass("on"); /* 클릭한 별과, 그 앞 까지 별점에 on 클래스 추가 */
-    return false;
-});
-</script>
-	
-<style type="text/css">
-<style>
-     #star_grade a{
-        text-decoration: none;
-        color: gray;
-    }
-    #star_grade a.on{
-        color: red;
-    }
-
-div {
-	/* word-break: break-all; */
-}
-h2 {
-	display: block;
-	font-size: 1.5em;
-	margin-block-start: 0.83em;
-	margin-block-end: 0.83em;
-	margin-inline-start: 0px;
-	margin-inline-end: 0px;
-	font-weight: bold;
-}
-summary {
-	cursor: pointer;
-	padding-left: 10px;
-}
-/*삼각형 없애기*/
-summary {
-	list-style: none;
-}
-summary::-webkit-details-marker {
-	display: none;
-}
-tr {
-	display: table-row;
-	vertical-align: inherit;
-	border-color: inherit;
-}
-form {
-	display: block;
-	margin-top: 0em;
-}
-body, input, select, textarea, button {
-	line-height: 1;
-	color: #4c4c4c;
-	font-size: 12px;
-	max-width: 100%;
-}
-
-.xans-board-listheader {
-	border-top: 2px solid #522772;
-}
-.btitle {
-	padding: 15px;
-	margin: 15px;
-	/* text-align: left; */
-}
-#foot {
-	position: fixed;
-	clear: right;
-	float: right;
-	width: 300px;
-	height: 50px;
-	left: 20;
-	bottom: 0px;
-}
-.input_txt {
-	padding: 20px;
-	margin: 20px;
-	
-}
-</style>
-<style>
-.star_rating {
-	font-size: 0;
-	letter-spacing: -4px;
-}
-.star_rating a {
-	font-size: 22px;
-	letter-spacing: 0;
-	display: inline-block;
-	margin-left: 5px;
-	color: #ccc;
-	text-decoration: none;
-}
-.star_rating a:first-child {
-	margin-left: 0;
-}
-.star_rating a.on {
-	color: #777;
-}
-.input-element .comment-form-comment {
-	font-weight: bolder;
-}
-		.main-menu ul li a {
-		    font-size: 17px !important;
-		}
+	<script>
+	$('#star_grade a').click(function(){
+	    $(this).parent().children("a").removeClass("on");  /* 별점의 on 클래스 전부 제거 */ 
+	    $(this).addClass("on").prevAll("a").addClass("on"); /* 클릭한 별과, 그 앞 까지 별점에 on 클래스 추가 */
+	    return false;
+	});
+	</script>
 		
-		.product-details-content{
-			padding-left: 100px;
-			padding-top: 50px;
-		}    	
+	<style type="text/css">
+	<style>
+	     #star_grade a{
+	        text-decoration: none;
+	        color: gray;
+	    }
+	    #star_grade a.on{
+	        color: red;
+	    }
+	
+	div {
+		/* word-break: break-all; */
+	}
+	h2 {
+		display: block;
+		font-size: 1.5em;
+		margin-block-start: 0.83em;
+		margin-block-end: 0.83em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		font-weight: bold;
+	}
+	summary {
+		cursor: pointer;
+		padding-left: 10px;
+	}
+	/*삼각형 없애기*/
+	summary {
+		list-style: none;
+	}
+	summary::-webkit-details-marker {
+		display: none;
+	}
+	tr {
+		display: table-row;
+		vertical-align: inherit;
+		border-color: inherit;
+	}
+	form {
+		display: block;
+		margin-top: 0em;
+	}
+	body, input, select, textarea, button {
+		line-height: 1;
+		color: #4c4c4c;
+		font-size: 12px;
+		max-width: 100%;
+	}
+	
+	.xans-board-listheader {
+		border-top: 2px solid #522772;
+	}
+	.btitle {
+		padding: 15px;
+		margin: 15px;
+		/* text-align: left; */
+	}
+	#foot {
+		position: fixed;
+		clear: right;
+		float: right;
+		width: 300px;
+		height: 50px;
+		left: 20;
+		bottom: 0px;
+	}
+	.input_txt {
+		padding: 20px;
+		margin: 20px;
+		
+	}
+	</style>
+	<style>
+	.star_rating {
+		font-size: 0;
+		letter-spacing: -4px;
+	}
+	.star_rating a {
+		font-size: 22px;
+		letter-spacing: 0;
+		display: inline-block;
+		margin-left: 5px;
+		color: #ccc;
+		text-decoration: none;
+	}
+	.star_rating a:first-child {
+		margin-left: 0;
+	}
+	.star_rating a.on {
+		color: #777;
+	}
+	.input-element .comment-form-comment {
+		font-weight: bolder;
+	}
+	.main-menu ul li a {
+	    font-size: 17px !important;
+	}
+		
+	.product-details-content{
+		padding-left: 100px;
+		padding-top: 50px;
+	}    	
+	img{
+		width: 100%;
+	}
 
 </style>
 
@@ -245,25 +248,6 @@ body, input, select, textarea, button {
                                     <li>
                                         <a href="#">${bean.pcategory}</a>
                                     </li>
-                                  <!--   <li>  추후 카테고리가 늘어날 수 있으므로
-                                        <a href="#">electronics ,</a>
-                                    </li> -->
-							</ul>
-						</div>
-						<!-- <div class="product-share"> 사용 안할듯
-							<h5 class="pd-sub-title">Share</h5>
-							<ul>
-								<li><a href="#"> <i class="ion-social-twitter"></i>
-								</a></li>
-								<li><a href="#"> <i class="ion-social-tumblr"></i>
-								</a></li>
-								<li><a href="#"> <i class="ion-social-facebook"></i>
-								</a></li>
-								<li><a href="#"> <i
-										class="ion-social-instagram-outline"></i>
-								</a></li>
-							</ul>
-						</div> -->
 					</div>
 				</div>
 			</div>
@@ -271,6 +255,16 @@ body, input, select, textarea, button {
 	</div>
 	
 	
+	<div class="container">
+		<c:if test="${not empty bean.pimg2}">
+			<img src="<%=contextPath%>/resources/assets/img/products/${bean.pimg2}" alt="">
+		</c:if>
+		<br>
+		<c:if test="${not empty bean.pimg3}">
+			<img src="<%=contextPath%>/resources/assets/img/products/${bean.pimg3}" alt="">
+		</c:if>
+	<br>
+	</div>
 	<!-- product details area End -->
 	<!--Product Description Review Area Start-->
 	<div class="product-description-review-area pb-55">
