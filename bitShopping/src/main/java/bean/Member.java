@@ -23,7 +23,7 @@ public class Member {
 	@Email(message="이메일 주소는 " + MUST_INPUT)
 	private String email ;
 	
-	@Length(min = 10, max = 11, message = "전화번호는 특수기호 없이 숫자만 입력해 주세요.")
+	@Length(min = 11, max = 11, message = "전화번호는 특수기호 없이 숫자만, 11자리입니다.")
 	private String phone ;
 	
 	@NotEmpty(message= "우편 번호는(은) " + MUST_INPUT)

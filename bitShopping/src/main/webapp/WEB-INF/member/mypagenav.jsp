@@ -413,7 +413,8 @@
 					<a href="<%=contextPath%>/modify.me?mid=${sessionScope.loginfo.mid}">개인 정보 수정</a>
 				</li>
 				<li>
-					<a href="/shop/mypage/mypage_emoney.php">적립금 / x</a>
+					<a href="<%=contextPath%>/delete.me">회원 탈퇴</a>
+<%-- 					<a href="<%=contextPath%>/delete.me?mid=${sessionScope.loginfo.mid}">회원 탈퇴</a> --%>
 				</li>
 				<li>
 					<a href="/shop/mypage/mypage_coupon.php">쿠폰 / x</a>

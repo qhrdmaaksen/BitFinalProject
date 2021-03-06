@@ -15,7 +15,7 @@
 <script type="text/javascript">
 	function meClose( isCheck ){
 		//alert( isCheck ) ;
-		opener.myform.isCheck.value = isCheck ;
+		opener.joinmyform.isCheck.value = isCheck ;
 		self.close();
 	}
 </script>	

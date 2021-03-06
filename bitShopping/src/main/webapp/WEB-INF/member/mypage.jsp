@@ -34,23 +34,10 @@
 <body>
 	<div class="container">
 		<div id="body">
-
-
-
 			<li>
 				<a href="<%=contextPath%>/shop.li?mid=${sessionScope.loginfo.mid}"> 
 					(${sessionScope.loginfo.mid}) ${sessionScope.loginfo.name}님의 주문 내역 </a>
 			</li>
-
-
-			<br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
-
-
-
  <div class="tab-content dashboard-content">
 		<div id="dashboard" class="tab-pane fade show active">
 			<table>

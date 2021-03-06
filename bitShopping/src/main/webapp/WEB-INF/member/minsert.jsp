@@ -63,17 +63,17 @@
 	</script>
 	<script type="text/javascript">
 		function checkDuplicateId(){//아이디 중복 체크 함수
-			var mid = document.myform.mid.value ;
+			var mid = document.joinmyform.mid.value ;
 			if (mid.length < 4){
 				alert('아이디는 최소 4 자리 이상이어야합니다.')
-				document.myform.mid.focus() ;
+				document.joinmyform.mid.focus() ;
 				return false ;
 			}
 			var url = '<%=contextPath%>/idCheck.me?mid=' + mid ;
 			window.open(url , 'mywin' , 'height=150,width=300') ;
 		}
 		function checkForm() { // 회원 가입 버튼 클릭 함수
-			var isCheck = document.myform.isCheck.value ; 
+			var isCheck = document.joinmyform.isCheck.value ; 
 			if (isCheck == 'false'){
 				alert('아이디 중복 체크를 눌러주세요.')
 				return false ; 
@@ -82,11 +82,6 @@
 				return true ;
 			}
 		}
-		document.getElementById('changeGender').onclick = changeColor;   
-	    function changeColor() {
-	        document.body.style.color = "purple";
-	        return false;
-	    }   
 	</script>
 	<style type="text/css">
 		#mainbody {
@@ -104,7 +99,7 @@
 	<div class="panel panel-primary sub_container">
 		<div class="panel panel-body">
 			<form:form modelAttribute="member" action="${contextPath}/insert.me" method="post"
-					   class="form-horizontal" role="form" name="myform">
+					   class="form-horizontal" role="form" name="joinmyform">
 			
 			<%-- jsp 주석 : isCheck가 false이면 가입이 불가능 합니다. --%>
 			<input type="hidden" name="isCheck" value="false">
@@ -121,12 +116,14 @@
 				 	</span>
 				</label>
 				<div class="col-sm-7">
-					<form:input path="mid" type="text" id="mid" name="mid"
+					<form:input path="mid" type="text" id="mid" name="mid" 
 						class="form-control" value="${mid}" />
 					<form:errors cssClass="err" path="mid" />
 				</div>
 				<div class="col-sm-2" align="left">
-					<input type="button" class="w3-btn w3-white w3-border w3-border-purple w3-round-large" style="font-weight: bold;" value="ID 중복체크"
+					<input type="button" 
+					class="w3-btn w3-white w3-border w3-border-purple w3-round-large" 
+					style="font-weight: bold;" value="ID 중복체크"
 					 onclick="return checkDuplicateId()">
 				</div>
 			</div>
