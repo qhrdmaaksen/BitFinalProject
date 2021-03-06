@@ -248,6 +248,7 @@ int formright = 12 - formleft;
                                     <li>
                                         <a href="#">${bean.pcategory}</a>
                                     </li>
+                                </ul>
 					</div>
 				</div>
 			</div>
@@ -312,14 +313,6 @@ int formright = 12 - formleft;
 												<div class="product-comment">
 													<img src="<%=contextPath%>/resources/assets/img/author.png"
 														alt="">
-													<!-- <div class="product-comment-content">
-                                                        <div class="product-reviews">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                        </div> -->
 													<p class="meta">
 														<input name="pno" id="pno" type="hidden" value="${bean.pno}">
 														<strong>
@@ -396,128 +389,65 @@ int formright = 12 - formleft;
 		<input type="hidden" name="page_num" value=""> 
 		<input type="hidden"name="goodsno" value="13677">
 		<div class="title_txt">
-			<h2>PRODUCT REVIEW LIST</h2>
+			<h2>PRODUCT REVIEW LIST</h2></div>
 			<div class="sort-wrap">
 				<ul class="list_type1 old">
 					<li><span class="ico"></span>
 					<p class="txt">상품에 대한 문의를 남기는 공간입니다. 해당 게시판의 성격과 다른 글은 사전동의 없이
 							담당 게시판으로 이동될 수 있습니다.</p></li>
 					<li><span class="ico"></span>
-					<p class="txt">
-							배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 마이컬리 내 
-							<a href="#none" onclick="window.parent.location.href = '/shop/mypage/mypage_qna.php'" class="emph">1:1 문의</a>에 남겨주세요.
-						</p></li>
+						<p class="txt">
+								배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 마이컬리 내 
+								<a href="#none" onclick="window.parent.location.href = '/shop/mypage/mypage_qna.php'" class="emph">1:1 문의</a>에 남겨주세요.
+						</p>
+					</li>
 				</ul>
-				<!-- <div class="sort" style="bottom: -9px">
-					<select
-						onchange="this.form.sort.value=this.value;this.form.submit()">
-						<option value="1">최근등록순</option>
-						<option value="2">좋아요많은순</option>
-						<option value="3">조회많은순</option>
-					</select>
-				</div> -->
+	</form:form>
 			</div>
 		</div>
+		
+		
 		<table class="xans-board-listheader" width="100%" border="0"
 			cellpadding="0" cellspacing="0">
 			<caption style="display: none">구매후기 제목</caption>
 			<colgroup>
-				<col style="width: 70px;">
-				<col style="width: auto;">
-				<col style="width: 51px;">
-				<col style="width: 77px;">
 				<col style="width: 100px;">
-				<%-- <col style="width: 40px;">
-				<col style="width: 80px;"> --%>
+				<col style="width: 150px;">
+				<col style="width: 300px;">
+				<col style="width: 500px;">
+				<col style="width: 100px;">
+				<col style="width: 100px;">
 			</colgroup>
 			<tbody>
 				<tr>
-					<th scope="col" class="input_txt">번호</th>
-					<th scope="col" class="input_txt">제목</th>
-					<th scope="col" class="input_txt">작성자</th>
-					<th scope="col" class="input_txt">작성일</th>
-					<th scope="col" class="input_txt">조회</th>
-					
+					<td scope="col" class="input_txt">번호</td>
+					<td scope="col" class="input_txt">작성자</td>
+					<td scope="col" class="input_txt">제목</td>
+					<td scope="col" class="input_txt">내용</td>
+					<td scope="col" class="input_txt">작성일</td>
+					<td scope="col" class="input_txt">조회</td>
 				</tr>
+			<tr>
+				<c:forEach var="bean" items="${requestScope.lists}" >
+					<td align="center">${bean.bno}</td>
+					<td class="bwirter">${bean.bwriter}</td>
+					<td class="btitle">
+						<div>${bean.btitle}</div>
+					<td>
+						<details>
+						<summary>내용 자세히 보기</summary>
+						<p>${bean.bcontent}</p>
+						</details>
+					</td>
+					<td class="bregdate">${bean.bregdate}</td>
+					<td><span class="breview">${bean.breview}</span></td>
+				</c:forEach>
+			</tr>				
 			</tbody>
 		</table>
-		<div class="tr_line on">
-			<table class="xans-board-listheaderd tbl_newtype1" width="100%"
-				cellpadding="0" cellspacing="0"
-				onclick="view_content(this,event,'notice')">
-				<caption style="display: none">구매후기 내용</caption>
-				<colgroup>
-					<col style="width: 52px;">
-					<col style="width: 200;">
-					<col style="width: 220px;">
-					<col style="width: 200px;">
-					<col style="width: 200px;">
-					<%-- <col style="width: 40px;">
-					<col style="width: 80px;"> --%>
-				</colgroup>
-				<tbody>
-
-							<tr>
-		<c:forEach var="bean" items="${requestScope.lists}" >
-		<td align="center">${bean.bno}</td>
-		<td class="btitle">
-		<div>${bean.btitle}</div>
-		<td><details>
-				<summary>내용 자세히 보기</summary>
-				<p>${bean.bcontent}</p>
-			</details></td>
+		</div>
+	</div>		
 		
-		<td class="bwirter">${bean.bwriter}</td>
-		<td class="bregdate">${bean.bregdate}</td>
-		<td><span class="breview">${bean.breview}</span></td>
-			</c:forEach>
-		</tr>
-				</tbody>
-			</table>
-			<div data-sno="6412655" class="review_view review_notice"
-				style="display: none;">
-				<div class="inner_review">
-					<div class="name_purchase">
-						<strong class="name"></strong>
-						<p class="package"></p>
-					</div>
-
-					<div class="goods-review-grp-btn"></div>
-				</div>
-			</div>
-			<div class="tr_line">
-				<table class="xans-board-listheaderd tbl_newtype1" width="100%"
-					cellpadding="0" cellspacing="0"
-					onclick="view_content(this,event,'notice')">
-					<caption style="display: none">구매후기 내용</caption>
-					<colgroup>
-						<col style="width: 70px;">
-						<col style="width: auto;">
-						<col style="width: 51px;">
-						<col style="width: 77px;">
-						<col style="width: 100px;">
-						<%-- <col style="width: 40px;">
-						<col style="width: 80px;"> --%>
-					</colgroup>
-					<tbody>
-		
-			
-					</tbody>
-
-	
-	</tbody>
-	
-</table>
-</div>
-</div>
-</form:form>
-
-<%-- <div id="foot">
-	<a href="<%=contextPath%>/insert.prr">상품 후기 작성</a>
-</div> --%>
-<%-- <div align="center">
-	<footer>${requestScope.pagingHtml}</footer>
-</div> --%>
 
 
 <br>
@@ -528,8 +458,7 @@ int formright = 12 - formleft;
 
 
 <!----------------------------------------------------- 상품 후기 리스트  ------------------------------------------------------------------------------------>
-		</div>
-	</div>
+
 	
 	
 <!----------------------------------------------------- 상품 후기 게시판 ------------------------------------------------------------------------------------>
@@ -593,13 +522,6 @@ int formright = 12 - formleft;
                 </div>
             </div>
         </div>
-
-
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 
 

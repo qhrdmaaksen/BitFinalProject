@@ -41,7 +41,6 @@ public class MallInsertController extends SuperClass{
 		if (pqty == 0) {
 			pqty = dao.SelectDataByPk(pno).getPqty();
 		}
-		
 		//System.out.println("pqty : "+ pqty);
 		
 		int pcnt = 0 ; // 장바구니에 담긴 상품 수량 체크

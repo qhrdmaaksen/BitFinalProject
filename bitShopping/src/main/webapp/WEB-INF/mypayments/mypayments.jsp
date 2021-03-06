@@ -328,10 +328,7 @@
                         <input type="text" id="phone" name="phone" value="${sessionScope.loginfo.phone}">
                     </td>
                     <td class="col-md-4">
-                        <button type="button" class="btn btn-warning btn-sm">
-                            <a href="http://localhost:8989/bitShopping/mytest?command=memodify">수정
-                            </a>
-                        </button>
+                    
                     </td>
                 </tr>
             </table>
