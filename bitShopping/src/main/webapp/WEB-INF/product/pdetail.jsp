@@ -55,6 +55,7 @@ h2 {
 }
 summary {
 	cursor: pointer;
+	padding-left: 10px;
 }
 /*삼각형 없애기*/
 summary {
@@ -452,11 +453,11 @@ body, input, select, textarea, button {
 				onclick="view_content(this,event,'notice')">
 				<caption style="display: none">구매후기 내용</caption>
 				<colgroup>
-					<col style="width: 70px;">
-					<col style="width: auto;">
-					<col style="width: 51px;">
-					<col style="width: 77px;">
-					<col style="width: 100px;">
+					<col style="width: 52px;">
+					<col style="width: 200;">
+					<col style="width: 220px;">
+					<col style="width: 200px;">
+					<col style="width: 200px;">
 					<%-- <col style="width: 40px;">
 					<col style="width: 80px;"> --%>
 				</colgroup>
@@ -471,7 +472,7 @@ body, input, select, textarea, button {
 				<summary>내용 자세히 보기</summary>
 				<p>${bean.bcontent}</p>
 			</details></td>
-		<td class="user_grade grade_comm"></td>
+		
 		<td class="bwirter">${bean.bwriter}</td>
 		<td class="bregdate">${bean.bregdate}</td>
 		<td><span class="breview">${bean.breview}</span></td>

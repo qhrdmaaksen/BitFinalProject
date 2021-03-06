@@ -383,7 +383,7 @@
         <div style="margin: 8px 0px 0px; font:12px 돋움, Dotum, sans-serif;">
             <hr style="border: none;">
             <div style="padding: 10px 15px 10px 20px; background: #EEEEEE;">
-                <strong>1/29</strong>
+                <strong>3/9</strong>
                 <span>도착 예정</span>
             </div>
             <hr style="border: none;">
@@ -660,7 +660,7 @@
                 }).done(function (data) {
                     // 가맹점 서버 결제 API 성공시 로직
                     alert("결제가 성공하였습니다.");
-                    location.href = "<%=contextPath%>/";
+                    location.href = "<%=NoForm%>index";
                 })
             } else {
                 alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
