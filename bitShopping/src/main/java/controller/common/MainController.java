@@ -40,11 +40,13 @@ public class MainController extends SuperClass{
 		System.out.println("doget 메소드 시작");
 		List<Product> lists2 = cdao.SelectDataList2(mode1, mode2);
 		List<Product> lists3 = cdao.SelectDataList3(mode3, mode4);
+		List<Product> lists5 = cdao.SelectDataList5();
 		
 		//System.out.println(lists2.size());
 		
 		this.mav.addObject("lists2", lists2);
 		this.mav.addObject("lists3", lists3);
+		this.mav.addObject("lists5", lists5);
 		this.mav.setViewName(super.getpage);
 		
 		return this.mav ;

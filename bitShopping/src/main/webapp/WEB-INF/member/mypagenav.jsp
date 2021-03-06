@@ -401,7 +401,7 @@
 					<a href="<%=contextPath%>/mypage.me?mid=${sessionScope.loginfo.mid}">주문 목록</a>
 				</li>
 				<li>
-					<a href="<%=contextPath%>/address.ad?" 
+					<a href="<%=contextPath%>/address.ad" 
 						onclick="KurlyTracker.setAction('select_shipping_address_list').sendData();location.href = '/shop/mypage/destination/list.php';">
 						배송지 관리
 					</a>

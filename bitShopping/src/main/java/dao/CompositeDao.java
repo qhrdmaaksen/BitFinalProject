@@ -53,8 +53,9 @@ public class CompositeDao {
 	}
 	
 	
-	
-	
+		public List<Product> SelectDataList5() {
+		return this.abcd.selectList(namespace + ".SelectDataList5");
+	}
 	
 	
 	
@@ -71,6 +72,9 @@ public class CompositeDao {
 		return this.abcd.selectList(namespace + ".SelectDataByPk" , map);
 		
 	}
+
+
+
 	
 	
 }

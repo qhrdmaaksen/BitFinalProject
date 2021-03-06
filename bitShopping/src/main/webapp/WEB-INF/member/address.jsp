@@ -114,6 +114,23 @@
 		table{
 			width: 1000px;
 		}
+		.panel-success>.panel-heading {
+		    color: #800080;
+		    background-color: #DDA0DD;
+		    border-color: #DDA0DD;
+		}
+		.dashboard-content h3 {
+		    margin-bottom: 25px;
+		    padding: 20px;
+		}
+		.table-condensed>tbody>tr>td {
+		    padding: 12px;
+		}
+		.dashboard-content .table-responsive .table > tbody > tr > td {
+		    color: #303030;
+		    font-size: 15px;
+		}
+				
     </style>
     
 </head>
@@ -130,7 +147,7 @@
 								<div class="panel panel-success">
 									<div class="panel-heading">
 										<h3 class="panel-title" style="font-weight: bold;">
-											${sessionScope.loginfo.name} 님 <span style="color: black">배송지 관리</span></span> 페이지입니다.</h3>
+											${sessionScope.loginfo.name} 님 <span style="color: black">배송지 관리</span> 페이지입니다.</h3>
 										<h6 style="color: black">배송지에 따라 상품 정보가 달라질 수 있습니다.</h6>
 									</div>
 									<div class="panel-body">
