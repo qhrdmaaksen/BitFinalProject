@@ -66,7 +66,23 @@ public class MemberDao {
 	}
 
 	public int DeleteData(Member bean) {
-		// 해당 id를 사용해서 회원 탈퇴
+		// orders.remark 수정
+		// 해당 id를 이용하여 회원 탈퇴를 수행합니다.		
+						
+		// 탈퇴할 회원이 남긴 정보의 remark 컬럼 정보를 수정합니다.
+		Map<String, String> map = new HashMap<String, String>();
+		String remark = bean.getName() + "(" + bean.getMid() + ")님이 회원탈퇴를 하셨습니다.";
+		
+		map.put("bwriter", bean.getMid()) ;		
+		
+		// orders.remark 수정
+		map.clear();
+		map.put("remark", remark);
+		map.put("mid", bean.getMid());
+		System.out.println("bean.getMid()" + bean.getMid());
+		System.out.println("delete : " + map);
+		this.abcd.update(namespace + ".UpdateOrderRemark" , map);
+		
 		return this.abcd.delete(namespace + ".DeleteData" , bean.getMid());
 	}
 
