@@ -354,7 +354,7 @@ body, input, select, textarea, button {
 									</div>
 									
 									<div class="review-form-wrapper">
-										<div class="review-form">
+										<!-- <div class="review-form">
 											<span class="comment-reply-title"> </span>
 											<p id="star_grade">
 
@@ -364,7 +364,7 @@ body, input, select, textarea, button {
 												<a href="#" class="on">★</a> 
 												<a href="#" class="">★</a>
 											</p>
-										</div>
+										</div> -->
 										<div class="input-element">
 											<div class="comment-form-comment">
 												<label>제목*</label> <input type="text" name="btitle" placeholder="4글자 이상 작성해 주세요"

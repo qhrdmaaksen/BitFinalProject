@@ -56,13 +56,17 @@
 					<div class="delivery_check">
 						<img src="https://res.kurly.com/mobile/service/order/1909/img_success_order_end.gif" alt="아이콘" class="ico">
 							<div class="check">
-								<p class="tit"><span class="name"><%-- ${loginfo.name} --%>ㅎㅎㅎ님의</span> <span class="name">주문이 완료되었습니다.</span></p>
+								<p class="tit"><span class="name"><%-- ${loginfo.name} --%>${sessionScope.loginfo.name}(${sessionScope.loginfo.mid})님</span> <span class="name">주문이 완료되었습니다.</span></p>
 									<strong>내일 아침</strong>에 만나요!
 							</div>
 					</div>
 						<div class="amount_money ">
 							<strong class="tit">결제금액 : </strong>
-									<strong class="money"> 21,520 <span class="won">원 </span></strong>
+									<strong class="money"> 
+									<td id="totalprice"><fmt:formatNumber value="${sessionScope.totalprice}"
+                                                                  pattern="#,###"/>원
+                            </td>
+                            </strong>
 											<strong class="amount"> 1,508 원 적립</strong>
 											<span class="grade">(적립 15%)</span>
 							<p class="desc"><h5> * 적립금은 배송당일에 적립됩니다. </h5> </p>

@@ -329,7 +329,7 @@
                     </td>
                     <td class="col-md-4">
                         <button type="button" class="btn btn-warning btn-sm">
-                            <a href="http://localhost:8989/bitShopping/mytest?command=memodify">수정
+                            <a href="http://localhost:8989/modify.me?mid=hong">수정
                             </a>
                         </button>
                     </td>
@@ -609,7 +609,7 @@
         }
         if ($("#virtualaccount").is(":checked") == true) {
         	var totalprice = parseInt($("#totalprice").text().replace(",", "").replace("원", ""));
-        	location.href = "/mytest/virtualaccount.pm?totalprice="+totalprice;
+        	location.href = "/payprogress.pm?totalprice="+totalprice;
             return false;
         }
         var obj = document.getElementsByName("momentum"); 
@@ -638,33 +638,29 @@
             buyer_tel: b_tel,
             buyer_addr: b_addr,
         }, function (rsp) { // callback
+        	
+        	console.log("실행1");
+        	
             if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
-                // jQuery로 HTTP 요청
-                jQuery.ajax({
-                    url: "/mytest?command=payprogress", // 가맹점 서버
-                    method: "POST",
-                    contentType: "application/x-www-form-urlencoded; charset=utf-8",
-                    data: {
-                        imp_uid: rsp.imp_uid,
-                        merchant_uid: rsp.merchant_uid,
-                        productLists: productLists,
-                        totalprice: totalprice,
-                        buyer_email: email,
-                        buyer_name: b_name,
-                        buyer_tel: b_tel,
-                        buyer_addr: $("#seq_addr").text(),
-                        coupon: coupon_no,
-                        regular: regular,
-                    },
-                    datatype: "json"
-                }).done(function (data) {
-                    // 가맹점 서버 결제 API 성공시 로직
-                    alert("결제가 성공하였습니다.");
-                    location.href = "<%=NoForm%>index";
-                })
+            	
+            	console.log("결제 성공!!!!!!!");
+            	
+            
+            	//location.href = "/test.pm?
+            	location.href = "http://localhost:8989/test.pm";
+            
+            	/* 
+            	    - 상품결제 성공 비지니스로직 구현
+            		- 컨트롤러에 필요정보를 담아서 보낸다.(ex: 상품명, 고객정보(주소,연락처), 재고수량 등등)
+            		- 컨트롤러 왔으면 service 호출하고 dao 호출하고 db 저장한다.
+            		- db 까지 저장 성공했으면 상품 결제 완료 페이지로 이동
+            	*/
+            
+            	
+            
             } else {
-                alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
-                console.log("결제 실패");
+                alert("결제에 실패하였습니다. 에러내용!: " + rsp.error_msg);
+                console.log("결제 실패입니다.");
             }
         });
     }
