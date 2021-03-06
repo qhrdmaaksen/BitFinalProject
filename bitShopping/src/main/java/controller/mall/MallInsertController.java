@@ -32,12 +32,18 @@ public class MallInsertController extends SuperClass{
 	
 	
 	@GetMapping(command)
-	public ModelAndView doGet(
+	public ModelAndView doGet( // 어떤 페이지에서도 바로 장바구니에 넣을 수 있도록
 			@RequestParam(value = "pno", required = true) int pno,
 			@RequestParam(value = "pqty", required = true) int pqty,
 			@RequestParam(value = "qty", required = true) int qty, 
 			HttpSession session){
 			// pqty : 재고, qty : 구매 수량
+		if (pqty == 0) {
+			pqty = dao.SelectDataByPk(pno).getPqty();
+		}
+		
+		//System.out.println("pqty : "+ pqty);
+		
 		int pcnt = 0 ; // 장바구니에 담긴 상품 수량 체크
 			if (pqty < qty) { //재고 수량 초과				
 				String message = "재고 수량이 부족합니다." ;

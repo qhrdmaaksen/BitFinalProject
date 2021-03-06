@@ -401,7 +401,7 @@
 					<a href="<%=contextPath%>/mypage.me?mid=${sessionScope.loginfo.mid}">주문 목록</a>
 				</li>
 				<li>
-					<a href="<%=contextPath%>/address.ad?" 
+					<a href="<%=contextPath%>/address.ad" 
 						onclick="KurlyTracker.setAction('select_shipping_address_list').sendData();location.href = '/shop/mypage/destination/list.php';">
 						배송지 관리
 					</a>
@@ -413,7 +413,8 @@
 					<a href="<%=contextPath%>/modify.me?mid=${sessionScope.loginfo.mid}">개인 정보 수정</a>
 				</li>
 				<li>
-					<a href="/shop/mypage/mypage_emoney.php">적립금 / x</a>
+					<a href="<%=contextPath%>/delete.me">회원 탈퇴</a>
+<%-- 					<a href="<%=contextPath%>/delete.me?mid=${sessionScope.loginfo.mid}">회원 탈퇴</a> --%>
 				</li>
 				<li>
 					<a href="/shop/mypage/mypage_coupon.php">쿠폰 / x</a>

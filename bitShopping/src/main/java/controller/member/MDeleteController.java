@@ -7,7 +7,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,26 +32,30 @@ public class MDeleteController extends SuperClass{
 	
 	public MDeleteController() {
 		// (변경 요망)
-		super("login", null); // super(getpage, postpage)
+		super("delete", null); // super(getpage, postpage)
 		this.mav = new ModelAndView();
 	}
 	
 	@GetMapping(command)
 	public ModelAndView doGet( // mid 파라미터로 , 필수 , 타입은 String
-			@RequestParam(value = "mid" , required = true) String mid ,
 			HttpSession session) {
 				
-
-		Member bean = this.mdao.SelectDataByPk(mid) ;
-
-		int cnt = -999999 ;
-		cnt = this.mdao.DeleteData(bean) ;
-
-		// 탈퇴하는 사람에 대한 세선 정보를 완전히 비움
-		session.invalidate();
-
 		this.mav.setViewName(super.getpage); //login 페이지로 이동
 		return this.mav ;
+	}
+	//get 디비 selete
+	//post 디비 insert
+	// delete 디비 delete
+	// put 값을 전부다 update
+	// patch 값을 부분적으로 update
+	@GetMapping("userdelete.me")
+	public ModelAndView delete(@RequestParam("mid") String mid, HttpSession session) {
+		Member bean = this.mdao.SelectDataByPk(mid) ;
+		int cnt = -999999 ;
+		cnt = this.mdao.DeleteData(bean) ;
+		session.invalidate();
+		mav.setViewName("redirect:login.me");
+		return mav;
 	}
 	
 //	@PostMapping(command)

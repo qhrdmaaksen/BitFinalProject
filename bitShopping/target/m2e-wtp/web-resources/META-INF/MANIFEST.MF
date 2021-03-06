@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: bitcamp
+=======
+Built-By: Kwon yk
+>>>>>>> 9306f2df56a1bb700ed8b76a67e8411c8a0e53e3
 Build-Jdk: 12.0.2
 Created-By: Maven Integration for Eclipse
 

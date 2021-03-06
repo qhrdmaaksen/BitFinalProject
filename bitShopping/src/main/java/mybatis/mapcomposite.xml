@@ -27,6 +27,18 @@
 		group by p.pno, p.productname, p.price, p.pimg1 
 		order by amount desc
 	</select>
+	
+	<select id="SelectDataList5" resultType="MyTOP50">
+		SELECT p.pno, P.productname, p.price , p.pimg1, SUM( NVL (o.qty, 0 )) AS qty
+		FROM PRODUCTS p 
+		inner JOIN orderdetails O 
+		ON O.PNO = P.PNO 
+		group by p.pno, p.productname, p.price, o.qty, p.pimg1 
+		order by o.qty desc
+	</select>
+	
+	
+	
 
 
 

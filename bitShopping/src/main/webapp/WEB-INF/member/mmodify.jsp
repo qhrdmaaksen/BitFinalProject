@@ -77,16 +77,18 @@
 					 						  <form:input path="createdate" type="hidden" id="createdate" name="createdate"  value="${member.createdate}"/>
                                                    <!--  <p>Already have an account?
                                                     </p> -->
-                                                    <div class="input-radio">
+                                                   
+                                                    <label>Name</label> 
+                                                   		<form:input path="name" type="text" id="name" name="name" 
+															class="form-control" value="${name}" />
+														<form:errors cssClass="err" path="name" />
+													 <div class="input-radio">
+                                                    <label>Gender</label> <br>
                                                         <span class="custom-radio">
                                                             <input name="gender" value="남자" type="radio"> 남자</span>
                                                         <span class="custom-radio">
                                                             <input name="gender" value="여자" type="radio"> 여자</span>
                                                     </div>
-                                                    <label>Name</label>
-                                                   		<form:input path="name" type="text" id="name" name="name" 
-															class="form-control" value="${name}" />
-														<form:errors cssClass="err" path="name" />
                                                     <label>Password</label>
                                                     	<form:input path="password" type="password" id="password" name="password" 
 															class="form-control" value="${password}" />
@@ -108,7 +110,7 @@
                                                     </span>
                                                     <span class="custom-checkbox">
                                                         <input name="newsletter" value="1" type="checkbox">
-                                                        <label>마켓컬리의 개인 정보 이용에 동의합니다. (필수)
+                                                        <label>마켓컬리의 광고 및 정보 수집 개인 정보 이용에 동의합니다. (선택)
                                                             <br>
                                                             <p>*주소지 변경은 마이페이지 내 주소지 변경 탭에서 변경 가능합니다.</p>
                                                         </label>
