@@ -84,11 +84,11 @@
                                                         <a href="<%=contextPath%>/pdetail.pr?pno=${bean.pno}">
                                                             <img alt="${bean.pimg1}" src="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}">
                                                         </a>
-                                                        <%-- <div class="product-action-2">
-                                                            <a href="<%=contextPath%>/insert.mall?pno=${bean.pno}&pqty=${bean.pqty}&qty=1" title="Add To Cart"  class="action-plus-2 tooltip">
+                                                        <div class="product-action-2">
+                                                            <a href="<%=contextPath%>/insert.mall?pno=${bean.pno}&pqty=0&qty=1" title="Add To Cart"  class="action-plus-2 tooltip">
                                                                 <i class="zmdi zmdi-shopping-cart-plus"></i>
                                                             </a>
-                                                        </div> --%>
+                                                        </div> 
                                                     </div>
                                                     <div class="product-content text-center">
                                                         <h4>

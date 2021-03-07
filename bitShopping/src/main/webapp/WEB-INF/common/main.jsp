@@ -135,7 +135,7 @@
 	                                        <img alt="${bean.pimg1}" src="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}">
 	                                    </a>
 	                                    <div class="product-action-2">
-	                                        <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
+	                                       <!--  <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-refresh"></i>
 	                                        </a>
 	                                        <a href="#" title="Add to Wishlist" class="action-plus-2 tooltip">
@@ -143,7 +143,7 @@
 	                                        </a>
 	                                        <a href="#" title="Quick View" data-target="#exampleModal" data-toggle="modal" class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-search"></i>
-	                                        </a>
+	                                        </a> -->
 	                                        <a href="<%=contextPath%>/insert.mall?pno=${bean.pno}&pqty=0&qty=1" title="Add To Cart"  class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-shopping-cart-plus"></i>
 	                                        </a>
@@ -275,7 +275,7 @@
 	                                        <img alt="" src="<%=contextPath%>/resources/assets/img/products/${bean.pimg1}">
 	                                    </a>
 	                                    <div class="product-action-2">
-	                                        <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
+	                                        <!-- <a href="#" title="Add to Compare" class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-refresh"></i>
 	                                        </a>
 	                                        <a href="#" title="Add to Wishlist" class="action-plus-2 tooltip">
@@ -283,7 +283,7 @@
 	                                        </a>
 	                                        <a href="#" title="Quick View" data-target="#exampleModal" data-toggle="modal" class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-search"></i>
-	                                        </a>
+	                                        </a> -->
 	                                        <a href="<%=contextPath%>/insert.mall?pno=${bean.pno}&pqty=${bean.pqty}&qty=1" title="Add To Cart"  class="action-plus-2 tooltip">
 	                                            <i class="zmdi zmdi-shopping-cart-plus"></i>
 	                                        </a>
@@ -339,20 +339,13 @@
 
 
 
-<br><br><br>
-		<a href="<%=contextPath%>/modify.me?mid=chj1234">회원 정보 수정</a>
 
-<br><br><br>
 <br><br><br>
 		<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
 <br><br><br>
 
 		<a href="<%=contextPath%>/list.prr">상품 후기 게시판</a>
-<br><br><br>
 
-	<a href="<%=contextPath%>/payment.pm">결제하기</a>
-
-<br><br><br>
 <br><br><br>
 <span>
 	<c:if test="${whologin ==1}">
@@ -364,7 +357,7 @@
 
 <a href="<%=contextPath%>/test.cu"> 주문 완료 테스트 페이지  </a>
 <br><br><br>
-<a href="<%=contextPath%>/service.sr"> 1:1문의 Page</a>
+<a href="<%=contextPath%>/service.sr?mid=${sessionScope.loginfo.mid}"> 1:1문의 Page</a>
 <br><br><br>
 <br><br><br>
 
