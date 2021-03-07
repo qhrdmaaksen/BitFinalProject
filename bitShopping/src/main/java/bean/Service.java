@@ -4,7 +4,7 @@ import java.sql.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class Serivce {
+public class Service {
 	private int sno ; // 글번호
 	private String swriter;
 	private String stitle;
@@ -49,7 +49,7 @@ public class Serivce {
 	public void setSimg(String simg) {
 		this.simg = simg;
 	}
-	public Serivce() {
+	public Service() {
 		super();
 	}
 	public MultipartFile getAbcd() {

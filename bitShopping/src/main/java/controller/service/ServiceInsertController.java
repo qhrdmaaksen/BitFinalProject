@@ -21,7 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import bean.Member;
-import bean.Serivce;
+import bean.Service;
 import controller.common.SuperClass;
 import dao.ServiceDao;
 
@@ -54,7 +54,7 @@ private ServiceDao dao ;
 	@PostMapping(command)
 	public ModelAndView doPost(
 			HttpSession session,
-			@ModelAttribute("bean") Serivce serivce,
+			@ModelAttribute("bean") Service serivce,
 			BindingResult asdf,
 			HttpServletRequest request) {
 		

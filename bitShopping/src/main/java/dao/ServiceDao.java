@@ -7,7 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import bean.Serivce;
+import bean.Service;
 
 
 @Component("sdao")
@@ -17,13 +17,12 @@ public class ServiceDao extends SuperDao{
 	@Autowired
 	SqlSessionTemplate abcd;
 
-	public List<Serivce> SelectServicelist(String writer) {
+	public List<Service> SelectServicelist(String writer) {
 		
 		return this.abcd.selectList(namespace+".SelectService", writer);
 	}
 
-	public int InsertService(Serivce bean) {
-		
+	public int InsertService(Service bean) {
 		
 		return this.abcd.insert(namespace+".InsertData",bean);
 	}

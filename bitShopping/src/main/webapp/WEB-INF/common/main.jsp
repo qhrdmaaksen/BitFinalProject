@@ -82,6 +82,7 @@
   </ul> -->
   
   <div class="carousel-inner">
+  
     <div class="carousel-item active">
       <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1602809211.jpg" alt="배너1" width="960" height="350">
     </div>
@@ -101,6 +102,7 @@
     <div class="carousel-item">
       <img src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1583112495.jpg" alt="배너5" width="960" height="350">
     </div>
+    
   </div>
   
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
@@ -340,7 +342,7 @@
 
 
 
-<br><br><br>
+<%-- <br><br><br>
 		<a href="<%=contextPath%>/list.me">회원 목록 보기</a>
 <br><br><br>
 
@@ -360,7 +362,7 @@
 <a href="<%=contextPath%>/service.sr?mid=${sessionScope.loginfo.mid}"> 1:1문의 Page</a>
 <br><br><br>
 <br><br><br>
-
+ --%>
 
 
 

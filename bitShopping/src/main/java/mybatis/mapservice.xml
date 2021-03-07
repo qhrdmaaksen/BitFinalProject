@@ -11,11 +11,10 @@
 		where swriter = #{writer}
 	</select>
 	
-	<insert id="InsertData" parameterType="MyService">
+<!-- 	<insert id="InsertData" parameterType="MyService">
 		insert into service (sno,swriter,stitle,scontent,swritedate,simg)
 		values (seqsno.nextval,#{swriter,jdbcType=VARCHAR},#{stitle,jdbcType=VARCHAR},#{scontent,jdbcType=VARCHAR},sysdate,#{simg,jdbcType=VARCHAR})
 		
-	
-	</insert>
+	</insert> -->
 
 </mapper>

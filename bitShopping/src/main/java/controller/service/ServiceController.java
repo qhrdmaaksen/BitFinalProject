@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import bean.Member;
-import bean.Serivce;
+import bean.Service;
 import controller.common.SuperClass;
 import dao.ServiceDao;
 
@@ -25,9 +25,9 @@ public class ServiceController extends SuperClass{
 	private ModelAndView mav = null ;
 	private String redirect = "redirect:/list.pr" ;
 	
-@Autowired
-@Qualifier("sdao")	
-private ServiceDao dao ;
+	@Autowired
+	@Qualifier("sdao")	
+	private ServiceDao dao ;	
 
 
 	public ServiceController() {
@@ -45,7 +45,7 @@ private ServiceDao dao ;
 		System.out.println("swriter알아보기");
 		
 		
-		List<Serivce> bean  = dao.SelectServicelist(swriter.getMid());
+		List<Service> bean  = dao.SelectServicelist(swriter.getMid());
 		
 		mav.addObject("slist", bean);
 		
