@@ -8,7 +8,7 @@
 	<%@ include file="/WEB-INF/common/common.jsp"%>
 	 <script type="text/javascript">
 	 	function gotohome(){
-	 		$(location).attr("href","http://localhost:8989/mytest/main.cu");
+	 		$(location).attr("href","http://localhost:8989/main.cu");
 	 	}
 	 	function paypay(){
 	 		console.log("#paypay");

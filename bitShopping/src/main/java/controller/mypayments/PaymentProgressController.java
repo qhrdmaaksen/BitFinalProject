@@ -29,7 +29,7 @@ public class PaymentProgressController extends SuperClass {
 		 * 
 		 */
 		
-	@GetMapping("/virtualaccount.pm")
+	@GetMapping(command)
 	public ModelAndView gotoPage() {
 		ModelAndView mv = new ModelAndView("virtualaccount");		
 		return mv;

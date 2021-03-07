@@ -9,8 +9,8 @@
 	</select>
 	
 	<insert id="InsertOrder" parameterType="MyOrder">
-		insert into orders(oid,mid,orderdate,remark)
-		values(seqoid.nextval, #{mid}, sysdate, #{remark})
+		insert into orders(oid,mid,orderdate,invoice,remark)
+		values(seqoid.nextval, #{mid}, sysdate,#{invoice}, #{remark})
 	</insert>
 	
 	<select id="GetMaxNum" resultType="int">

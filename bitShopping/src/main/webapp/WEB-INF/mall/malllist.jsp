@@ -224,9 +224,16 @@
                                                 <%-- <h5 class="font-weight-bold"><fmt:formatNumber value="${sessionScope.disTotalPrice}" pattern="###,###"/> ￦</h5> --%>
                                             </li>
                                         </ul>
-                                        <form class="form-inline" role="form" method="post" action="<%=contextPath%>/modify.mall">
-                                            <button type="button" class="btn btn-dark rounded-pill py-2 btn-block" onclick="goOrder();"> 주문 하기 </button>
-                                        </form>
+                                       				<c:if test="${whologin == 0}">
+														<a href="<%=contextPath%>/login.me" onclick="logincheck()">
+															<button type="button" class="btn btn-dark rounded-pill py-2 btn-block"> 주문 하기 </button>
+														</a>
+													</c:if>
+													
+													<c:if test="${whologin != 0}">
+														<button type="button" class="btn btn-dark rounded-pill py-2 btn-block" onclick="goOrder();"> 주문 하기 </button>
+													</c:if>
+                                            <!-- <button type="button" class="btn btn-dark rounded-pill py-2 btn-block" onclick="goOrder();"> 주문 하기 </button> -->
                                     </div>
                                 </div>
                             </div>
@@ -239,26 +246,15 @@
 
 	<script type="text/javascript">
 	
-	  var command = "<input type='hidden' name='command' value='mypayments'>";
-      /*  var directbuy = "<input type='hidden' name='directbuy' value='-1'>" */
 
        function goOrder(){
    	   
+ 
    	   location.href ="payment.pm";
-   	   
-         /*   $("#order").append(command);
-           $("#order").append(directbuy);
-           $("#order").append("<input type='hidden' name='regular' value='-1'>");
-           $("#order").submit(); */
+
        }
 
-       /* function goReguler(){
-           $("#reguler").append(command);
-           $("#reguler").append(directbuy);
-           $("#reguler").append("<input type='hidden' name='regular' value='1'>");
-           $("#reguler").submit();
-       } */
-	
+
 	</script>
 
 
