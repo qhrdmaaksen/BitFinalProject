@@ -61,13 +61,13 @@
 							</div>
 					</div>
 						<div class="amount_money ">
-							<strong class="tit">결제금액 : </strong>
+							<strong class="tit">결제금액 : 27,150원 </strong>
 									<strong class="money"> 
 									<td id="totalprice"><fmt:formatNumber value="${sessionScope.totalprice}"
                                                                   pattern="#,###"/>원
                             </td>
                             </strong>
-											<strong class="amount"> 1,508 원 적립</strong>
+											<strong class="amount"> 4,120 원 적립</strong>
 											<span class="grade">(적립 15%)</span>
 							<p class="desc"><h5> * 적립금은 배송당일에 적립됩니다. </h5> </p>
 						

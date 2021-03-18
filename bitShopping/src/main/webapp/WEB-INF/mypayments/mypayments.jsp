@@ -406,7 +406,7 @@
                     <table>
                             <tr style="border-right 100px;">
                                 <td>
-                                    <img src="<%=contextPath%>/resources/assets/img/products/갈비살.jpg"
+                                    <img src="<%=contextPath%>/resources/assets/img/products/비스테까 티라미슈.jpg"
                                                                      alt="" width="150" height="70" align="middle" class="img-fluid rounded shadow-sm">
                                 </td>
                                 <td id="product_lists">
@@ -440,13 +440,13 @@
                 <tr align="center">
                     <th>총 상품가격</th>
                       <c:choose>
-                        <c:when test="${sessionScope.totalprice>50000}">
+                        <c:when test="${sessionScope.totalprice>20000}">
                             <td id="totalprice"><fmt:formatNumber value="${sessionScope.totalprice}"
                                                                   pattern="#,###"/>원
                             </td>
                         </c:when>
                         <c:otherwise>
-                            <td id="totalprice"><fmt:formatNumber value="${sessionScope.disTotalPrice + 2500}"
+                            <td id="totalprice"><fmt:formatNumber value="${sessionScope.disTotalPrice}"
                                                                   pattern="#,###"/>원
                             </td>
                         </c:otherwise>
@@ -489,13 +489,13 @@
                 <tr align="center">
                     <th>총 결제금액</th>
                     <c:choose>
-                        <c:when test="${sessionScope.totalprice>50000}">
+                        <c:when test="${sessionScope.totalprice>20000}">
                             <td id="totalprice"><fmt:formatNumber value="${sessionScope.totalprice}"
                                                                   pattern="#,###"/>원
                             </td>
                         </c:when>
                         <c:otherwise>
-                            <td id="totalprice"><fmt:formatNumber value="${sessionScope.disTotalPrice + 2500}"
+                            <td id="totalprice"><fmt:formatNumber value="${sessionScope.disTotalPrice}"
                                                                   pattern="#,###"/>원
                             </td>
                         </c:otherwise>
@@ -610,7 +610,7 @@
         }
         if ($("#virtualaccount").is(":checked") == true) {
         	var totalprice = parseInt($("#totalprice").text().replace(",", "").replace("원", ""));
-        	location.href = "/payprogress.pm?totalprice="+totalprice;
+        	location.href = "/controller/payprogress.pm?totalprice="+totalprice;
             return false;
         }
         var obj = document.getElementsByName("momentum"); 
@@ -648,7 +648,7 @@
             	
             
             	//location.href = "/test.pm?
-            	location.href = "http://localhost:8989/test.pm";
+            	location.href = "http://localhost:8989/controller/test.pm";
             
             	/* 
             	    - 상품결제 성공 비지니스로직 구현

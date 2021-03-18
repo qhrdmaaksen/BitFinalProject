@@ -22,9 +22,9 @@ public class ServiceDao extends SuperDao{
 		return this.abcd.selectList(namespace+".SelectService", writer);
 	}
 
-	public int InsertService(Service bean) {
-		
-		return this.abcd.insert(namespace+".InsertData",bean);
+
+	public int InsertData(Service service) {
+		return this.abcd.insert(namespace+".InsertData",service);
 	}
 	
 

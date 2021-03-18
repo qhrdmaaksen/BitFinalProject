@@ -54,7 +54,7 @@ public class MDeleteController extends SuperClass{
 		int cnt = -999999 ;
 		cnt = this.mdao.DeleteData(bean) ;
 		session.invalidate();
-		mav.setViewName("redirect:login.me");
+		mav.setViewName("redirect:main.cu");
 		return mav;
 	}
 	

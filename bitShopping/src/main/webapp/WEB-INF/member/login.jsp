@@ -1,16 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/common/common.jsp"%>
 <!DOCTYPE html>
-<%
-String contextPath = request.getContextPath();
-String mappingName = "/controller"; //서블릿에 정의되어 있슴
 
-//폼 태그에서 사용할 변수
-//YesForm = contextPath + mappingName ;
-
-//폼이 아닌 곳에서 사용할 변수
-//NoForm = contextPath + mappingName + "?command=" ;
-%>
 <html>
 <head>
 <title>Bootstrap Example</title>
@@ -124,7 +116,7 @@ String mappingName = "/controller"; //서블릿에 정의되어 있슴
 
 			<div id="qnb" class="quick-navigation"></div>
 			<div class="section_login">
-				<table border="1" style="border-color: purple;">
+				<!-- <table border="1" style="border-color: purple;"> -->
 					<tr>
 						<td>
 							<h3 class="tit_login">로그인</h3>
@@ -164,5 +156,8 @@ String mappingName = "/controller"; //서블릿에 정의되어 있슴
 		</div>
 	</div>
 
+
+	<%@ include file="/WEB-INF/common/footer.jsp"%>
+	
 </body>
 </html>

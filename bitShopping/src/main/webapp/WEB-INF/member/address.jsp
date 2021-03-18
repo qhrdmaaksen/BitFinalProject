@@ -68,9 +68,9 @@
         		$("#address2").text(text);
     			$('#myModal').modal('hide');
     			
-    			alert('데이터 전송!');
+    			/* alert('데이터 전송!'); */
            		$.ajax({
-           			url : '/mytest/updateAddr.ad',
+           			url : '/controller/updateAddr.ad',
            			type : 'post',
            			data : {
            				zipcode : $('#zipcode').text(),
@@ -80,7 +80,7 @@
            			success : function(res){
            				console.log(res);
            				if(res > 0 ) {
-           					alert("데이터 변경 성공!");
+           					alert("배송지 변경이 완료되었습니다.");
            				}else {
            					alert("데이터 변경 실패 !");
            				}

@@ -203,7 +203,7 @@
                                                         </span>
                                                         ￦<fmt:formatNumber value="0" pattern="###,###"/>
                                                     </c:if>
-                                                    <c:if test="${sessionScope.disTotalPrice < 50000}">
+                                                    <c:if test="${sessionScope.disTotalPrice < 20000}">
                                                         <fmt:formatNumber value="3000" pattern="###,###"/> ￦</c:if>
                                                 </strong>
                                             </li>
